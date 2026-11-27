@@ -171,3 +171,16 @@ referenced object descriptors and the driver's actual enumeration
 remain separate dependencies. See the
 [controller setup trace](controller-axis-property-setup.md#device-creation-and-data-format)
 for the callback's device-creation and format calls.
+
+The format header points to `0052f040` and specifies 44
+object records of 16 bytes each. In all thirteen executables,
+the resulting 704-byte table has SHA-256
+`6e45fb2cbb31c8225802f52546fba1c0f7417b2e5123357a669055f7452e3b8d`.
+The eight distinct nonzero GUID pointers in the records also
+resolve to identical 16-byte values across the comparison set.
+To reproduce, read the count, stride and pointer from the
+six-DWORD header at `0052f300`, compare the pointed-to table,
+then compare the GUID bytes behind the first DWORD of each
+record with a nonzero pointer. This extends the local identity
+check to the full static format passed to DirectInput. Driver
+interpretation and device support remain unmeasured.
