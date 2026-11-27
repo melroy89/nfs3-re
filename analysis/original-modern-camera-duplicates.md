@@ -47,3 +47,9 @@ Modern initializer adds the Race Now policy call, retains the same binary32 argu
 The Cancel MOVSD path has an additional register contract: it explicitly writes ESI/EDI and advances them to **ESI00678900 / EDI006fbbb8** after four forward copies. The transition callback saves only EBX/EDX/EBP, and its shared epilogue`0045da9e..0045daa4` clears EAX then restores those three registers; it does **not** restore ESI/EDI. The initializer’s PUSHAD/POPAD does restore its own general registers, so these two routines must not be assigned one generic preservation rule. Actual caller reliance on the Cancel outputs remains unresolved; no ABI defect or runtime failure is asserted.
 
 This narrows the earlier snapshot-layout unknown and records a required reconstruction contract. Complete choice labels, generic lifecycle, remaining aliases and runtime Cancel/persistence behaviour remain unverified. No setting, callback or target instruction was executed.
+
+### The paired camera rewrite lands in 1.5.1
+
+The 1.5.0 initializer still saves the four camera choices individually in the older shadow order and updates the assists text using ID `0x196`. It calls the Race Now policy near its tail at `0045d991). Version 1.5.1 calls the policy before the other setup work at `0045d923`, uses the four forward copies to the new shadow layout, saves the additional `006fd1cc` value and drops the local assists text update. Its transition callback changes at the same boundary, so the paired save and Cancel restore stay in the same release.
+
+Compare the 124-byte window at `0045d920` and the 196-byte callback at `0045d9e0`. Both are byte-identical from 1.5.1 through 1.6.1. The two 24-byte registrations named above also match from 1.4.0 through 1.6.1. This dates the callback changes without relying on a change to which initializer is registered. Runtime menu behavior remains unverified.
