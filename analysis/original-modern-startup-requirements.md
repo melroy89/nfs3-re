@@ -559,9 +559,12 @@ content changes as well as its directory metadata.
 
 In the checked 1.5.3 DX5, SoftTri and sound DLLs, the new directory
 sizes likewise match the descriptor count plus terminator, and each
-IAT range ends at the last thunk-list terminator. In the nGlide
-`voodoo2a.dll`, the IAT directory starts at the first thunk but
-ends four bytes beyond that computed endpoint. Reproduce using
+IAT range ends at the last thunk-list terminator. In all three
+`voodoo2a.dll` copies, the IAT directory starts at the first thunk.
+Its exclusive end is RVA `0xe270`, four bytes past the final
+thunk-list terminator. The extra DWORD at `0xe26c` is zero in
+each copy. Their 60-byte import directory covers both 20-byte
+descriptors and the null descriptor. Reproduce using
 PE directory entries 1 and 12 and each descriptor's FirstThunk
 plus four bytes per import and terminator. These details establish
 a common packaging change. Startup causality remains unverified.
