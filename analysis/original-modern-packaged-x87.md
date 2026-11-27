@@ -101,3 +101,7 @@ than the thread or stack frame. If two scopes overlap in the
 same loaded DLL, the second save can overwrite the word the first
 scope will restore. No such overlap was observed. Caller
 serialization and indirect references remain unverified.
+
+### DX8 device creation does not request FPU preservation
+
+The inspected `IDirect3D8::CreateDevice` call at `60003d4c` passes behavior flags `24h` from `60003d3f` in retained 1.6.0 and 1.6.1. The [object and argument trace](original-modern-renderer-texel-alignment.md) identifies this as the device-creation call. The `D3DCREATE_FPU_PRESERVE` bit (`02h`) is clear at that site. This evidence concerns the flags passed at creation and is separate from the explicit rounding helpers above. It leaves the graphics runtime's actual effect on the calling thread's control word unverified. [Wine Direct3D 8 header](https://github.com/wine-mirror/wine/blob/master/include/d3d8.h)
