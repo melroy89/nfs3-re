@@ -502,3 +502,22 @@ To reproduce, disassemble the startup wrapper, the initializer
 around `004b5cb1`, and the paired cleanup ranges. These changes
 explain a startup and shutdown code delta without identifying
 the affected systems or verifying the reported startup fix.
+
+### Packaged defaults at the 1.5.3 boundary
+
+The 1.5.2 and 1.5.3 archives contain identical `nfs3.ini`
+bytes (SHA-256
+`a700df1b45d789159978cb514f6580c5720ec1a9401f02a853e473f3493ca2f1`).
+A comparison of the 84 CRC-bearing archive members by exact
+path, size and CRC reports the same paths and 19 changed members:
+the game EXE, five renderer DLLs, `eacsnd.dll`, four menus, six
+language files and two readmes. The changed renderer members
+are the dgVoodoo, Glide3x and nGlide copies of `voodoo2a.dll`,
+plus `dx5a.dll` and `softtria.dll`.
+
+Reproduce with `7z l -slt` on the retained archives and
+`7z x -so <archive> nfs3.ini` for the byte comparison.
+This excludes a change to the bundled INI bytes at this
+boundary. The archive inventory identifies DLL changes worth
+checking against the startup claim, without establishing which
+DLL loaded or which change addresses MP153-014.
