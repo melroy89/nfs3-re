@@ -276,6 +276,20 @@ initializer windows through 1.4.0 have no direct stores to those
 two addresses. Other writers and effective fog remain outside this
 release comparison.
 
+The tier-derived write to `00791b28` survives in 1.0.0–1.3.1
+at `00472f0b` (the original store address), then moves to
+`00472e97` in 1.4.0. The initializer has no direct write to
+that address in the six retained builds from 1.5.0 through 1.6.1.
+The old table row supplies `0,0,1,1,1` at tiers 0–4.
+
+A whole-image `objdump -d -Mintel` operand search finds only
+the initializer store in the supplied original and no exact-address
+operand in 1.6.1. The address is in loader-zero-filled `.bss` in
+both images. These checks date the removed write and establish
+initial storage. The cell's purpose, indirect readers/writers
+and runtime lifetime remain unresolved, so there is no verified
+player-facing change attributable to this write alone.
+
 ### ECX tier survives the two intervening mode calls
 
 The later mirror byte read at`00472e02` occurs after calls to mode selector`00448394` and field10 accessor`00448368`. The expanded audit retains their exact bytes: the selector uses balanced PUSHAD/POPAD on its normal return; the accessor and its leaf`00448348` write EAX and the selected-index global, but not ECX. Thus the original effective tier survives these two calls under ordinary valid-stack/no-alias-mutation conditions. This closes the earlier specific callee-register question for the later table lookup, without certifying every mode helper or failure path.
