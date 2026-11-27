@@ -97,3 +97,12 @@ A scan of `004ccb00..004ccf00` finds no instance of that
 exact seven-byte flag test in the hosted original or retained
 1.0.0–1.3.1. This dates the observed gate in this window and
 leaves other input paths and OS shortcut behavior unverified.
+
+
+The gate reads the raw `PreventMinimize` value. Version 1.4.0
+publishes it at `004b5615`; 1.5.0 publishes it at `004b5607`
+after reading the key at `0053ed3c` with a caller default of zero.
+In 1.3.1, the older installer instead writes its EAX argument
+to the same cell at `004cdca0`. Thus the exact flag-test scan above
+dates the new callback block, while the [hook history](original-modern-window-handling.md#the-120-keyboardhook-setting-gates-the-original-style-installer)
+accounts for earlier uses of the shared setting cell.
