@@ -109,6 +109,12 @@ Consequently, with outer byte `009f3d2d != 0`, the recurring foreground route is
 
 Modern replaces that entire tail with a direct jump at `004cd655` back to `004cd582`, moves the epilogue and fills `004cd663..004cd6b7` with NOPs. The local IsIconic test, conditional foreground request and ShowCursor(0) request are removed together. The complete producers of these predicate inputs and `009f3d2d` are not reconstructed here, so this should not be simplified to “every lost-focus event always forces restoration” in the original.
 
+### The inspected loop tail changes in 1.4.0
+
+Retained 1.1.0, 1.2.0, 1.3.0 and 1.3.1 still begin this tail at `004cd655` with the original test of `009f3d2d`. The `nfs3.exe` member from the retained 1.4.0 archive (SHA-256 `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`) instead jumps directly to `004cd582` and places the epilogue at `004cd65a`, as in 1.5.0 and installed 1.6.1. The handle-clear instruction at `004cd64f` remains in place. To check the boundary, stream the 1.4.0 member with `7z x -so` and use `objdump -d -Mintel --start-address=0x4cd64d --stop-address=0x4cd665` on it and the retained 1.3.1 EXE.
+
+This dates the removal of this particular loop tail to the inspected 1.3.1 → 1.4.0 boundary. MP100-040 describes an earlier focus change. Its attribution to this specific mechanism remains unverified, and other focus paths may account for the release note.
+
 ### Original mode-state producers: a bounded link
 
 The extended focus audit also retains original producer witnesses. At `0050818a`, raster setup tests **bit0 of `00564390`** and writes a normalized byte to `009f3d2d`: bit set loads AL=1; bit clear branches to `00508265`, clears AL and jumps back to the common store at `0050819f`. This operation is downstream of a `005644fc` check; its missing-state diagnostic route is not asserted to be nonreturning. This is an exact bit-to-state link, not a complete enumeration of renderer flags.
