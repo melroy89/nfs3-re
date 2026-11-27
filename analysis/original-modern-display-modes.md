@@ -338,6 +338,12 @@ EnumAdapterModes' result is not checked locally before reading its output. Succe
 MP110-007 and MP150-039 advance vendor-only→partial. Preserve unsigned size tests, local failure behaviour and the distinct slot1 policy in reconstruction. No DLL/API, game or target instructions were executed, no toolchain was installed and no executable or Ghidra database was changed.
 
 
+### The mode builder accounts for the DX8 executable-byte changes in 1.5.0
+
+The [hash-pinned 1.4.0 and 1.5.0 DX8 members](original-modern-renderer-loading.md#dx8-package-history) retain image base `60000000`, entry RVA `975e`, and the same 47 export names, ordinals, RVAs and forwarder fields. Match executable bytes by RVA because 1.5.0 merges the old executable `PACODE` section into `.text`. Comparing section names or ordinal positions overstates the code change.
+
+Compare RVA `1000..12000` (old raw `.text`) and `12000..18000` (old raw `PACODE`) against the same ranges in the new `.text` using `pefile.PE.get_data`. The only differing positions are the 63 consecutive bytes `45de..461d`, in the mode-builder edit above. The entire old `PACODE` payload, including its raw padding, is identical at its original RVA. This scopes the DLL's executable-byte delta to mode enumeration. The PE section layout, resources and non-code state are outside that conclusion, and selecting a different display mode can still change rendering inputs.
+
 ### DX8 ordinary mode order is append order, with a special slot
 
 The expanded [three-build audit](evidence/audits/dx8-mode-admission-history.json) records the builder's selected ordering contract. After initialization count2 reserves indices0/1. Ordinary accepted modes use the current count as their index, increment it, and write a40-byte record; the ordinary capacity guard rejects when count≥256. Under fresh initialization and no external/alias mutation, these ordinary records therefore occupy slots2 onward in accepted enumeration order, not a width/height sort.
