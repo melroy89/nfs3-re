@@ -153,6 +153,13 @@ A separate 15-byte helper `004bc670..004bc67f` retains its later call `004bc530`
 
 Therefore this retarget preserves the direct dialog-clear operation while dropping this wrapper's reset of `00559234`. It is not only call flattening: one global write is absent from this local route. Later `004bc530` behavior is already bounded in the [race-initialization/reset comparison](original-modern-race-initialization.md). Any subsequent indirect effects must be traced separately before claiming that the global necessarily remains nonzero after the complete operation.
 
+The retained release sequence dates the change to **1.5.0**. Disassemble the EXE member from each [retained upstream archive](captures/modern-differences/upstream/history/) with `objdump -D -Mintel`, checking windows `0044be20..0044be34` and `004bc673..004bc678` (exclusive ends). The adjacent EXE hashes are pinned in the [1.4.0/1.5.0 audit inputs](scripts/audit_endpoint_comma_history.py).
+
+| Checked builds | Context store at `0044be26` | Call at `004bc673` |
+|---|---|---|
+| Hosted original and retained 1.0.0 through 1.4.0 | `89 15 34 92 55 00` | `e8 a8 f7 f8 ff` → wrapper `0044be20` |
+| Retained 1.5.0 through official 1.6.1 | `90 90 90 90 90 90` | `e8 98 98 f8 ff` → dialog clear `00445f10` |
+
 **Bounded work status: done; confidence: verified static call edges and exact stores.** Required follow-up is finalizer caller cadence, the active meaning/other writers of `00559234`, and actual menu/race transition behavior. Preserve these version-specific writes and their order in reconstruction; do not silently restore the old wrapper reset to Modern. No executable bytes, Ghidra state or maintained C were changed.
 
 ## Car Detail binding and historical High-budget bypass
