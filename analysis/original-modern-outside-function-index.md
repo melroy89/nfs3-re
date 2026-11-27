@@ -183,6 +183,7 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004dc837..004dc85c` | All 37 bytes become NOPs in the [player-spec filename builder](original-modern-config-loading.md#executable-update-deletion-config-and-both-player-specifications). The skipped append is replaced by a configured prefix containing `carspecs`. | Host filesystem case handling and actual file access remain untested. |
 | `004dc9cd..004dc9eb` | All 30 bytes become NOPs over the [player-spec timestamp and conditional deletion path](original-modern-config-loading.md#executable-update-deletion-config-and-both-player-specifications). | Other reset and write branches remain present. |
 | `00472a26..00472a41` | All 26 differences are NOPs in the [config timestamp bypass span](original-modern-config-loading.md#executable-update-deletion-config-and-both-player-specifications). The preceding jump at `00472a24` lands at `00472a5b`. | The skipped bytes changed across releases. Other incoming edges were not verified. |
+| `00472a56..00472a5b` | Five NOPs replace the last three operand bytes of the call to `004723f0` and the following short jump. The [config bypass history](original-modern-config-loading.md#executable-update-deletion-config-and-both-player-specifications) traces its replacement jump from `00472a54` to `00472ac8` in 1.5.0 and `00472acd` from 1.5.3. | The inspected load entry skips this code and lands at `00472a5b`. Other incoming edges remain unverified. |
 | `004bc8a7..004bc8e0` | The first nine bytes match. All 48 differences are NOPs over the [original race-reset wrapper and alignment](original-modern-race-initialization.md). Its direct caller at `004c47fe` switches from `004bc8b0` to `004bc530` in 1.6.0, the first retained release with the padding. | The paired original/final audit maps the redistributed calls. Runtime reset results remain unverified. |
 | `00418644..004186a0` | All 44 differences lie at `00418644..00418670`, padded after the shortened [race volume update](original-modern-music-start.md). The 1.5.2/1.5.3 pair dates this change to the same boundary as the volume toggle. | Runtime mixer levels remain untested. |
 | `00494c84..00494cb0` | All 44 bytes become padding. The original tail issues text drawing and renderer calls. Modern's [localized label formatter](original-modern-loading-artwork.md) returns at `00494c83`, leaving drawing to its caller. | Call ordering in a rendered loading screen remains untested. |
@@ -298,7 +299,8 @@ changed bytes**, with full index coverage for **212 of 337** intervals.
 The other **125 intervals** have 300 changed bytes and no matching
 mechanism row. No interval has partial overlap. The largest remaining
 gaps have five changed bytes each, including `00472a56..00472a5b`.
-These counts measure documented evidence links for this fixed
+The config row now accounts for that interval, raising the indexed
+total to **21,631 bytes across 213 intervals**. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
