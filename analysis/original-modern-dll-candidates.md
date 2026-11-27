@@ -316,3 +316,24 @@ covered in the [DX5 reference comparison](original-modern-dx5-reference-pair.md#
 The count operands describe local insertion guards. The game-facing mode
 catalog also depends on the caller and on the display modes supplied by the
 renderer API.
+
+### The EXE selects the renamed adapters by path
+
+The original EXE's [indexed renderer table](original-modern-renderer-loading.md#6-original-environment-override-and-selection-wrapper)
+contains `softtria.dll` at index 1, `voodoo2a.dll` at index 4 and
+`d3da.dll` at index 6. In the 1.1.0 EXE, the
+[filename parser](original-modern-renderer-loading.md#early-filename-and-device-suffix-interface-then-driver-key-rename)
+instead derives the following paths for well-formed lowercase
+`VideoDriver` inputs. Each derived basename matches a root-level member
+of the same 1.1.0 archive.
+
+| Input | Derived path | Early renderer class |
+|---|---|---|
+| `softtri` | `.\softtri.dll` | 1 |
+| `voodoo2` | `.\voodoo2.dll` | 4 |
+| `dx5` | `.\dx5.dll` | 6 |
+
+Extracting the archive's `nfs3.ini` shows `VideoDriver=Voodoo2`. The
+fallback literal at the EXE's profile read is `dx5`. These are two
+different sources of selection. Successful DLL loading or hardware
+selection requires separate evidence.
