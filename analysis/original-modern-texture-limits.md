@@ -91,3 +91,25 @@ At count100 or any unsigned larger value, the early route has EAX0 and returns t
 The full410-byte callback is retained. Channel-mask parsing and other fields remain part of its contract; this count guard does not establish that arbitrary malformed descriptors terminate or validate safely. Count writers outside the registration/reset and callback, reentrancy, synchronization, device acceptance and full storage lifetime remain unverified.
 
 **MP120-016 advances vendor-only→partial:** the claimed component contains a concrete pre-write format-count guard consistent with bounding enumeration. The inspected reference bundle and110 archive do not supply the claimed NFS4 DX6 predecessor, so this audit does **not** prove that120 introduced the guard, identify the prior overflowing array or reproduce the reported crash. Required follow-up is an identified prepatch DX6 binary and paired callback/layout comparison, followed by a controlled scenario for runtime acceptance. No driver, API, game, instruction probe or Ghidra database was executed/changed.
+
+### The EXE clamp first appears in retained 1.5.1
+
+Search the file-backed executable sections of the retained EXEs for the
+clamp-loop bytes `8b1d8c277a0039d87304d1eb75f8891d8c277a00` and
+disassemble the preceding descriptor reads. There is one match per
+retained release from 1.5.1 onwards and no exact match in the hosted
+reference or retained 1.1.0–1.5.0 EXEs.
+
+| Release | Clamp-loop start | Descriptor source immediately before the field reads |
+|---|---|---|
+| 1.5.1 | `004b5b60` | Fresh `THRASH_about` call through `009ef980` |
+| 1.5.2–1.5.3 | `004b5b70` | Same fresh call |
+| 1.6.0 | `004b5b61` | Same fresh call |
+| 1.6.1 | `004b5be7` | Cached descriptor at `007a3a5c` |
+
+The matched blocks all compare unsigned dwords at descriptor offsets
+`+14h` and `+20h` before the same halving loop. The [Voodoo2 producer](original-modern-dll-candidates.md#shared-adapters-after-the-provider-split)
+starts publishing Glide's maximum texture size into those fields in
+1.5.0. The exact consumer above follows in 1.5.1, alongside the
+configurable-extent change. The negative exact-byte search does not
+exclude a differently encoded limit in earlier builds.
