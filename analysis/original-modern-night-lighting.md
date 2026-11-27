@@ -62,3 +62,22 @@ The full viewport wrapper **`004bc470..004bc529`** and optional-pass admission s
 The other two visible calls to `004bc470`, at **`004bc6d8`** and **`004bc712`**, supply EAX=0. In the session1 branch, the call shared at `004bc772` also receives EAX=0 and EDX=1, so **the call address alone is insufficient to identify a mirror pass**. Its incoming register values distinguish that route from the optional EAX=1 route.
 
 This establishes tag1 as the **optional mirror-setting-gated render pass**, rather than an arbitrary guessed tag. Combined with the Rear View Detail binding, Modern admits the retained night-lighting body for that pass at High/Medium, whereas original rejects it. Full camera orientation, transitive context mutations, actual visible headlights and the claim’s clouds/lightnings remain unverified. No runtime or historical-release equivalence is claimed. The complete `0041b9b0` prefix differs elsewhere between versions; retaining both spans does not label it byte-identical.
+
+### Rear View Detail binding is present in Modern 1.5.0
+
+The retained 1.5.0 descriptor at `00556564` already binds
+`mirrorlevel` to `006fd1d8` and the choice list at `0055623a`
+(187, 186, 185, terminator). Its key pointer resolves to
+`00537ec0`. In 1.5.1 the key moves to `00537720`, with the
+same storage and list. The 1.4.0 row instead points to
+`DownloadWebSite` and uses different storage and list pointers.
+For reproduction, extract `nfs3.exe` from each retained
+archive and decode the five DWORDs at PE RVA `156564h`.
+The retained 1.5.0 `fedata/menus/graphics.mnu` and
+`fedata/menus/psgraph.mnu` both bind `listname=mirrorlevel`.
+
+The named setting therefore predates the
+[1.5.2 car-detail budget exception](original-modern-vehicle-dispatch.md#budget-gate-changes-at-the-advertised150-boundary).
+The descriptor and asset checks cover the menu binding. They
+leave historical visual effects and the feature's full lighting
+and track-model behavior open.
