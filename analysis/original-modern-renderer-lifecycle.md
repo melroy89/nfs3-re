@@ -335,3 +335,15 @@ reader relocation for a parsed device suffix. Earlier uses of
 `007a3a70` include literal stores from renderer setup, so the
 numeric device meaning cannot be carried backward by address.
 Other callers and actual device selection remain unverified.
+
+The address move preserves the initial zero by a different PE
+mechanism. In 1.5.3 the device DWORD at `0055fdbc` is file-backed
+`.data` with four zero bytes. In 1.6.0 and 1.6.1 its counterpart
+`007a3a70` falls inside the declared `.bss` extent with a zero
+raw-data pointer. A decoded direct-operand sweep finds the suffix
+parser as the only direct `MOV` writer to the device DWORD in
+1.5.3 and 1.6.0. With ordinary initial state and no intervening
+writer, a name without a device suffix therefore leaves index
+zero for initial selection. A later name without a suffix can
+retain a previously parsed value. Indirect writes and live
+device selection remain outside this comparison.
