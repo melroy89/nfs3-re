@@ -338,13 +338,43 @@ original_fn: .incbin "{original_path}"
 
 class LineBoundaryDifferential(unittest.TestCase):
     def test_original_vs_maintained(self):
+        self.compare_rows(make_rows(load_probe()), "line-boundary-differential.json")
+
+    def test_precision_witnesses(self):
+        small = 2.0 ** -55
+        delta = 2.0 ** -23
+        line = (-delta, -delta, -delta, -delta, 1 - delta, 1)
+        cases = (
+            ("edge-mask", (small, 0, 1, 1, small, 0), (1, 1, 2, 2)),
+            ("coordinate", line, (-1, 0, 1, 1)),
+            ("acceptance", line, (-1, 0, 0, 1)),
+        )
+        words = (0x007F, 0x027F, 0x037F)
+        rows = [
+            dict(case=name, values=values, bounds=bounds, policy=1, mask=0, cw=word)
+            for name, values, bounds in cases for word in words
+        ]
+        evidence = self.compare_rows(rows, "line-boundary-precision-differential.json")
+        observed = [
+            (row["original"]["accepted"], row["original"]["scratch_bits"], row["original"]["mask"])
+            for row in evidence["rows"]
+        ]
+        one = ["0x3f800000", "0x3f800000"]
+        zero = ["0x00000000", "0x00000000"]
+        residual = ["0x00000000", "0x28800000"]
+        rejected = ["0xa87ffffe", "0x28800000"]
+        self.assertEqual(observed, [
+            (True, one, 4), (True, one, 4), (True, one, 1),
+            (True, zero, 4), (True, residual, 4), (True, residual, 4),
+            (True, zero, 4), (False, rejected, 0), (False, rejected, 0),
+        ])
+
+    def compare_rows(self, rows, report_name):
         for tool in ("gcc", "as", "ld"):
             self.assertIsNotNone(shutil.which(tool), f"required tool missing: {tool}")
         self.assertTrue(SOURCE.is_file(), f"maintained source missing: {SOURCE}")
         self.assertTrue(HEADER.is_file(), f"maintained header missing: {HEADER}")
         original_binary, body = executable_bytes()
-        probe = load_probe()
-        rows = make_rows(probe)
         (ROOT / "analysis/tmp").mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="line-boundary-diff-", dir=ROOT / "analysis/tmp") as tmp:
             work = Path(tmp)
@@ -411,7 +441,8 @@ class LineBoundaryDifferential(unittest.TestCase):
         evidence["sw_differences"] = sw_differences
         outdir = ROOT / "analysis/tmp"
         outdir.mkdir(parents=True, exist_ok=True)
-        (outdir / "line-boundary-differential.json").write_text(json.dumps(evidence, indent=2) + "\n")
+        (outdir / report_name).write_text(json.dumps(evidence, indent=2) + "\n")
+        return evidence
 
 
 if __name__ == "__main__":

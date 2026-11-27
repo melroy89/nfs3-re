@@ -1411,3 +1411,5 @@ The [native i386 differential harness](../reconstruction/tests/test_line_boundar
 | Tightened upper bound | Accepted, mask `0x04` | Null, mask zero | Null, mask zero |
 
 The maintained C matched the original return class, scratch bits and mask for all nine rows. The harness also checked input buffers and canaries. These are isolated x87 execution results. The 53-bit setting still uses x87's exponent range, and gameplay, replay and ARM64 behavior remain outside the test.
+
+The nine rows are now a named regression check. Run `python3 -m unittest reconstruction.tests.test_line_boundary.LineBoundaryDifferential.test_precision_witnesses -v` from the repository root. It asserts the expected return, exact scratch bits and edge mask in addition to comparing the original instructions with maintained C. Its output is `analysis/tmp/line-boundary-precision-differential.json`, separate from the existing 304-row report.
