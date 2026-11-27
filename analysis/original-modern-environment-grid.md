@@ -96,3 +96,40 @@ The hosted original and all twelve retained Modern executables form two exact by
 Reproduce by extracting `nfs3.exe` from `history/nfs3_orig.7z`, the eleven `history/nfs3_modern_patch_v*.7z` archives, and the final `nfs3_modern_patch.7z` under `analysis/captures/modern-differences/upstream/`. Read the corresponding PE RVA ranges and compare the complete bytes. For reconstruction, retain 4.0 for the hosted original strip behavior and use 3.5 for the final Modern behavior. The grid renderer admission diverges earlier and can be selected independently.
 
 The installed Modern `nfs3.exe` (SHA-256 `2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb`) matches official 1.6.1 (SHA-256 `240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6`) byte for byte in the two builders above, the dispatcher `0047a190..0047a1e8`, the gate helper `0047b380..0047b39f`, and the projector `00479370..004794fc`. A local run can therefore exercise the verified Modern implementation in these spans. To date the visual change to 1.5.0, compare the archived 1.4.0 and 1.5.0 builds under matched conditions.
+
+Run this read-only check from the project root with Python 3, `pefile` and `7z`. It verifies all three routine histories together and compares each span byte for byte.
+
+```python
+from pathlib import Path
+import subprocess
+
+import pefile
+
+upstream = Path("analysis/captures/modern-differences/upstream")
+history = upstream / "history"
+archives = [
+    history / "nfs3_orig.7z",
+    *sorted(history.glob("nfs3_modern_patch_v*.7z")),
+    upstream / "nfs3_modern_patch.7z",
+]
+spans = [(0x79500, 369), (0x7B850, 536), (0x7A190, 88)]
+rows = {}
+for archive in archives:
+    raw = subprocess.check_output(["7z", "e", "-so", str(archive), "nfs3.exe"])
+    pe = pefile.PE(data=raw)
+    rows[archive.name] = tuple(pe.get_data(rva, size) for rva, size in spans)
+
+original = rows["nfs3_orig.7z"]
+first = rows["nfs3_modern_patch_v1.0.0.7z"]
+cutover = rows["nfs3_modern_patch_v1.5.0.7z"]
+assert len(rows) == 13
+assert first[0] == original[0] and first[1] != original[1]
+assert first[2] == original[2]
+assert cutover[0] != first[0] and cutover[2] != first[2]
+assert cutover[1] == first[1]
+for archive in archives[1:-1]:
+    version = tuple(map(int, archive.stem.rsplit("_v", 1)[1].split(".")))
+    assert rows[archive.name] == (first if version < (1, 5, 0) else cutover)
+assert rows[archives[-1].name] == cutover
+print("Verified three routine histories across 13 archives.")
+```
