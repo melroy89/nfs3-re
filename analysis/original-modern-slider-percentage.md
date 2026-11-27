@@ -362,3 +362,22 @@ word. This locates the 1.5.3 control-word change within the
 upstream split without inferring that it changes ordinary
 finite slider results. Reproduce by disassembling that range
 in both archived executables.
+
+### Concrete final-conversion example
+
+For a type-1 volume slider, take the quantizer result as binary32
+`0x3e947ae1` (approximately 0.29). Holding this result fixed
+isolates final conversion from differences inside the quantizer.
+With enough x87 precision to represent the product exactly,
+multiplication by 100 gives 28.99999916553497314453125.
+The 1.5.2 positive bias at `0053ae80` decodes from
+`0x3ba3d70a` to approximately 0.005. Adding it and truncating
+gives 29. The 1.5.3 direct FISTP likewise gives 29 under
+round-to-nearest, and gives 28 under round-toward-zero or
+round-toward-minus-infinity with that same unrounded product.
+
+Reproduce using exact arithmetic for the two binary32 operands
+and applying the stated integer rounding rules. This example
+shows why the change cannot be evaluated from the FISTP opcode
+alone. The assumed quantizer result and control word are inputs
+to the derivation. Neither was observed in a game session.
