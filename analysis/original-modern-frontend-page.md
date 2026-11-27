@@ -76,7 +76,11 @@ Modern thus extends the preceding text page and repurposes the last page slot; i
 
 Helper `0044240c` scans the +4 sentinel field from index zero and returns the last nonzero-field index. Reset `00442428` calls it, stores the result into both `00555c34` and selected index `00555c28`, clears state `005f40c0`, stores literal 63 to `00555c30` and returns. With the inspected table unchanged, this computes **75** and selects Modern's resource record. This connects data layout to a selection producer; the reset caller, subsequent state machine and displayed pixels are not exercised here.
 
-Catalog **MP100-047**, “About slide was added to Credits,” is now **partially supported by static evidence**: the named resource, new type-5 rendering arm, repurposed last slot and reset selection are traced. The original/final pair cannot establish introduction in v1.0.0, navigation behavior, successful decoding or the displayed content. Those limits remain explicit rather than treating the catalog entry as wholly verified.
+### The credits resource page is already present in 1.0.0
+
+The archived 1.0.0 `nfs3.exe` (SHA-256 `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`) already extends record 74 to text IDs `046a..0475` and replaces record 75 with `{5, 200, "cred", 0}`. The dispatch limit at `00441d03` is already 5. Its sixth switch target is `0041d7c8`, where the code reads the selected record's +4 field, calls `004b55d8`, and then uses the unpack and shape-lookup helpers `004f2620` and `004ef1e0`. The PE resource tree contains type 10, numeric ID 200, language 0, with a 49,862-byte payload (SHA-256 `078e2b0f9a4a435f8f7518bbd248480865816e9e079bb410b02ad59f57285977`). Final 1.6.1 uses the named `ABOUT.QFS` resource and a different switch target as described above.
+
+This dates the type-5 credits-page change in MP100-047 to the first retained Modern release. The intermediate resource-ID transition, navigation, payload decoding and displayed content remain unverified.
 
 ## Installed text range: blank separator and row positions
 
