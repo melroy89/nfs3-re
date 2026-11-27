@@ -396,3 +396,25 @@ The entry stub and initial runtime code are unchanged in the
 captured range. Imported targets, called routines, and actual
 startup on the affected systems remain separate questions.
 MP153-014 remains vendor-claimed.
+
+### First observed change on the 1.5.3 startup path
+
+The four direct call targets from `005158a0` have matching
+instruction bytes in the checked windows in 1.5.2 and 1.5.3:
+`004ff41c..004ff490`, `004e0640..004e0680`,
+`004ff338..004ff390` and `00524290..00524310` (exclusive
+ends). The last window includes the call at `005242de` to
+the application entry `004a39f0`.
+
+At application VA `004a3a3e`, 1.5.3 inserts two direct calls.
+`004f2790` returns the clock value from the timeGetTime import.
+`00517784` stores EAX to the RNG state at `007a32b4`.
+The two existing calls to `004f1c70` and `004a38c0` follow
+at `004a3a48` and `004a3a4d`, ten bytes later than before.
+Disassemble the four windows above and the application prefix
+`004a39f0..004a3a65` in both retained executables to reproduce.
+
+This dates the startup RNG seed call pair to 1.5.3 and links it
+to the [final RNG analysis](original-modern-music-selection.md).
+It does not attribute MP153-014 to the insertion. The observed
+pair seeds a value without a local failure test.
