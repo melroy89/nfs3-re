@@ -678,7 +678,7 @@ The original, 1.1.0 and 1.2.0 share the complete 132-byte callback installer at 
 
 ### Original and 1.1.0 share the low-level validation code
 
-For MP110-004, the original and retained 1.1.0 match across all 1,027 bytes of the low-level loader at `004f8390..004f8792` (span SHA-256 `a89065f76a7fde509536f1d48a22113dd8b41b40868283153679903c61d07392`). In both builds, the path at `004f874d` calls the bound about export when present. A null descriptor skips the version comparison. A nonnull descriptor reaches the check of DWORD `+8` against `0x68` at `004f8764`. On mismatch, `004f876f` clears EBX before the diagnostic, and the common return at `004f870c` copies EBX to EAX. This establishes a shared local validation mechanism. The 1.0.0 executable, validation in other callers, and the driver's own checks remain open, so the comparison cannot date the advertised improvement.
+For MP110-004, the original and retained 1.1.0 match across all 1,027 bytes of the low-level loader at `004f8390..004f8792` (span SHA-256 `a89065f76a7fde509536f1d48a22113dd8b41b40868283153679903c61d07392`). In both builds, the path at `004f874d` calls the bound about export when present. A null descriptor skips the version comparison. A nonnull descriptor reaches the check of DWORD `+8` against `0x68` at `004f8764`. On mismatch, `004f876f` clears EBX before the diagnostic, and the common return at `004f870c` copies EBX to EAX. This establishes a shared local validation mechanism. Validation in other callers and the driver's own checks remain open, so the comparison cannot date the advertised improvement.
 
 The original and 1.1.0 also share the decoded switch wrapper at `004f87e0..004f882d`. Its two branches call the same low-level loader after resolving an optional environment override and, when a driver handle is already present, running the old cleanup wrapper. A separate change is visible in 1.2.0. On a null LoadLibraryA return, the original and 1.1.0 branch at `004f83ae` to `004f871a`, format the requested name using `%sa` at `0054d3a0`, and retry LoadLibraryA at `004f8730`. Version 1.2.0 replaces that target span with NOPs and routes the failed load toward the zero-result return at `004f86ee`. The about-descriptor version comparison at `004f8764` still exists. This identifies removal of an alternate-name retry separately from the advertised 1.1.0 validation improvement.
 
@@ -719,3 +719,14 @@ at `004fb6f0` and publishes EAX to `0055fdbc`. The device setup at
 `VideoDriver` parser's `@digit` branch, which writes to the same
 device cell. This dates the separate-key to suffix transition.
 Full parser edge cases and hardware device selection remain untested.
+
+
+The recovered 1.0.0 EXE also matches the hosted reference and 1.1.0
+across the 1,027-byte loader at `004f8390..004f8793` and the 77-byte
+switch span at `004f87e0..004f882d`, with exclusive ends. The
+`%sa` format at `0054d3a0` matches in all three. In particular,
+1.0.0 already has both the alternate-name retry and the same local
+descriptor check. The 1.0.0→1.1.0 boundary therefore preserves this
+loader's validation and retry instructions. The inspected retry
+is removed in 1.2.0. Other validation paths and the eventual
+filename accepted by Windows remain unqualified.
