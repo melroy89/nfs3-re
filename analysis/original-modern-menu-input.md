@@ -163,3 +163,16 @@ The expanded entry-order audit compares the flags WORD at template+4 for **all32
 |Compass |`00557a44` |0000h |0200h |Adds this initial skip reason |
 
 The other29 checked flag WORDs match. This refines the preceding selectlist finding: the initial eligibility revision both admits one class and excludes two others on the checked navigation route. It is not a global removal of disabled/skip policy. The census covers these flags only, not every template byte or template allocation extent; runtime parsed fields, initialization and callbacks can change effective flags. It does not prove the semantic interactivity of every performance/Compass instance or correct traversal in every menu. MP140-015 remains partial, with no target execution or database mutation.
+
+### Direct caller census at both relocation boundaries
+
+A linear `objdump -d -Mintel` scan finds four decoded direct calls to the three modifier entries in each representative build (1.4.0, 1.5.0 and 1.5.3). All four follow both changes of destination.
+
+| Consumer | 1.4.0 call site | 1.5.0 and 1.5.3 call site |
+|---|---|---|
+| Shift-sensitive dialog input | `00445ea4` | `00445ea4` |
+| Shift-sensitive ordinary menu input | `0044a3a0` | `0044a3a0` |
+| Alt in the window hook | `004cccc2` | `004ccbd6` |
+| Control in the window hook | `004cccd3` | `004ccbe7` |
+
+In final 1.6.1 the dialog call still uses ZF directly via `JE` at `00445ea9`. A held Shift writes `0x4b00` to DX before the common continuation at `00445eaf`. See the [dialog input comparison](original-modern-dialog-input.md) and [window modifier gate](original-modern-window-key.md) for the paired behaviour. The census covers decoded direct calls in the three representative images. Indirect dispatch and live input remain outside its scope.
