@@ -367,9 +367,8 @@ The 1.4.0 change also replaces the immediate fixed mode request
 seen after the 1.0.0 and 1.3.1 calls. At `004b5c59` it instead
 scans for the lowest set bit in `007a3a58`, compares the resulting
 index to 6 and branches or dispatches through the table at
-`004b5be0`. The scan establishes this control-flow change at the
-call site. It does not establish the zero-mask case or the full
-behavior of each table target.
+`004b5be0`. The mask selects a renderer-type setup branch. The table and local
+setup calls are decoded below.
 
 For reproduction, linearly decode each retained EXE with
 `objdump -d -Mintel` and search for calls naming `0x9ef944`.
@@ -378,3 +377,30 @@ six-byte call ending in `ff 15 44 f9 9e 00`. Calls via a copied
 pointer are outside this census. The corresponding [DX5 driver
 selection code](original-modern-dx5-reference-pair.md#out-of-range-display-indices-fall-back-to-slot-zero)
 retains its slot-zero fallback across these releases.
+
+#### Version 1.4.0 renderer-type setup after display selection
+
+In the retained 1.4.0 EXE (SHA-256
+`7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`),
+the parser at `004b5abe..004b5ae5` writes `007a3a58` from
+the first byte of the normalized type string. Its outputs are
+`0x40` for d, `0x10` for v, `0x02` for s and `0x01` otherwise.
+Read seven little-endian DWORDs at `004b5be0` to recover the
+dispatch destinations. State pairs below are selector and value
+for slot `009ef96c`, in call order. The vertical bar marks the
+intervening call through slot `009ef970`.
+
+| Lowest bit | Target | Local setup |
+|---|---|---|
+| 0, 5 | `004b5d53` | Common return |
+| 1, 2 | `004b5c70` | `(10,2), (3,0) \| (4,0), (6,0), (2,0)`, then calls `00431c50` |
+| 3, 4 | `004b5d11` | Sets `007a3a68`, `007a3a60` and `007a3a70` to 1, then `(10,2) \| (4,1), (2,0)` |
+| 6 | `004b5cb2` | Sets `007a3a68` and `007a3a60` to 1, requests mode arguments `(1,2,1)` at `004b5ccc`, calls `004b5940`, then `(10,2), (104,0) \| (4,1), (6,1), (2,0)` |
+
+The fixed request survives in the d-type branch, after its flag
+stores. The v-type store at `004b5d25` is a separate use of
+`007a3a70` in 1.4.0. The display-selection call in this build
+already received its adapter index from `0055fdbc`. The
+normal type parser supplies nonzero masks, while BSF itself
+leaves the destination undefined for a zero input. Runtime
+renderer results and callee effects remain unverified.
