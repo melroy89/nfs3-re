@@ -517,3 +517,24 @@ PE RVA `be570h`. This dates the cached descriptor read to 1.6.1
 for a helper shared by the old and new viewport initializers.
 The matching earlier code does not establish identical descriptors
 from different renderer DLLs.
+
+#### Release history of the seven direct call replacements
+
+Reading the six bytes at each old call address in the table above
+establishes when that exact site used the indirect about call
+(`ff 15 80 f9 9e 00`):
+
+| Old call addresses | Retained builds with the call at those addresses |
+|---|---|
+| `00488a8e`, `0049c5c5`, `004be581`, `004d37be` | Hosted original and Modern 1.0.0–1.6.0 |
+| `004bed99`, `004beddd` | Modern 1.5.0–1.6.0 |
+| `004beec0` | Modern 1.5.2–1.6.0 |
+
+At `004beec0`, 1.5.0 and 1.5.1 instead contain six NOPs.
+All seven sites use the cached load in official 1.6.1. At the
+first four sites the new load follows a NOP. At the last three
+the load starts at the old call address. To reproduce, extract
+the root EXE from each retained archive and inspect six
+file-backed bytes at each listed VA. Earlier different bytes
+establish only that the exact site did not contain the call.
+The reorganized texture-limit path remains a separate comparison.
