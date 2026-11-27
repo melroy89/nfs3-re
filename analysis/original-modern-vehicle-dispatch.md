@@ -165,13 +165,23 @@ All four EXEs have the same20-byte descriptor at`005566f4`: name pointer`00537fa
 
 The complete **1079-byte classifier `004bb5d0..004bba07` is identical in all four EXEs**. It indexes four binary32 thresholds by`16*cardetail`, applies context-dependent scales and compares its projected-depth result with those thresholds. The table itself changes between supplied original and Modern:
 
-| Detail ordinal | Supplied original row |1.4.0,1.5.0 and official final row |
+| Detail ordinal | Supplied original row | Modern 1.0.0–1.6.1 row |
 |---:|---|---|
 |0 High |30,60,120,300 |100,175,250,300 |
 |1 Medium |0,45,90,300 |30,60,120,300 |
 |2 Low |0,20,60,300 |0,45,90,300 |
 
-Thus the old High row becomes Modern Medium and old Medium becomes Modern Low; Modern introduces a different High row and omits old Low from this three-row table. This supports the **threshold-policy portion of MP100-012**, not a complete texture-quality/side-mirror claim or its precise1.0.0 introduction. Historical1.4.0/1.5.0 table equality proves the threshold expansion was already present before the separate1.5.0 fix. These values are classifier inputs, not metres or guaranteed visible model choices. Binary64 factors`00540130=0.75` and`00540138=0.6` are retained across all four.
+Modern 1.0.0 introduces a new High threshold row while retaining
+the same three menu choices. The old High becomes Medium, the old
+Medium becomes Low, and the old Low row is dropped. All 12 retained
+Modern EXEs share these rows. The hosted original and those Modern
+EXEs have identical classifier bytes and menu labels. To reproduce,
+compare PE RVAs `bb5d0h` (1,079-byte classifier), `15623ah` (eight-byte
+label list) and `15fdf4h` (12 little-endian binary32 values).
+The separately verified binary64 factors at `00540130` and
+`00540138` are 0.75 and 0.6 in the original, 1.4.0, 1.5.0 and final.
+This supports the threshold portion of MP100-012. Visible model,
+texture and mirror outcomes remain unverified.
 
 ### Budget gate changes at the advertised1.5.0 boundary
 
