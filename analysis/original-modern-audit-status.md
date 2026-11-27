@@ -55,8 +55,8 @@ multiplayer compatibility require additional tick-matched evidence.
 
 The [outside-function index](original-modern-outside-function-index.md) inventories
 337 changed intervals and 21,926 differing bytes. Matching exact interval boundaries
-in its linked explanation rows to the JSON inventory identifies 112 intervals
-containing 19,597 differing bytes. The other 225 intervals contain 2,329 differing
+in its linked explanation rows to the JSON inventory identifies 132 intervals
+containing 20,338 differing bytes. The other 205 intervals contain 1,588 differing
 bytes. These counts measure direct navigation from the index. Some remaining
 intervals already have partial notes or links for subranges, and a linked row
 can still have open semantic questions.
