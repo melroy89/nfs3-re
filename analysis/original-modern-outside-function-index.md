@@ -363,6 +363,18 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004becca..004bed20` | The only changed byte, `004becf8`, retargets the call at `004becf7` from `004dbce0` to `004dbcc0`. | The [projection comparison](original-modern-projection.md) describes both wrapper contracts. |
 | `00533e62..00533e86` | The only changed byte, `00533e82`, changes the thunk at `00533e80` from import slot `0053466c` to `00534668`. The paired import tables bind those slots to DirectDrawEnumerateA and PlaySoundA, respectively. | This records repurposed thunk code, with caller behavior separate. |
 
+| `0040fefa..0040fefc` | NOPs follow the Modern return, overlapping the end of the original EAX test and the opcode of its JE. | Local byte comparison. |
+| `0042649a..0042649c` | NOPs replace the original MOV EAX,ECX at this boundary. | Local byte comparison. |
+| `004264be..004264c0` | NOPs replace another original MOV EAX,ECX at the next return boundary. | Local byte comparison. |
+| `00431c1a..00431c1c` | NOPs replace the first two bytes of the original alignment LEA after an unchanged RET. | Local byte comparison. |
+| `004378b6..004378b8` | NOPs replace the final two displacement bytes of the original call to 00442a40. | Local byte comparison. |
+| `0043f7c9..0043f7e0` | The only two changed bytes replace the original POP ECX and RET with NOPs. The following table bytes match. | Local byte comparison. |
+| `004445ce..004445d0` | Two NOPs replace an original self-move after the return. | Local byte comparison. |
+| `0044831e..00448320` | NOPs replace the final immediate byte of the original shift and the first opcode byte of ADD EAX,EDX. | Local byte comparison. |
+| `00472402..00472404` | NOPs after the new configuration helper return replace the start of the original MOV EDI,006fbb44. | Local byte comparison. |
+| `0047f9a2..0047f9a4` | NOPs replace the first two bytes of the original MOV [EBP-4],EAX. | Local byte comparison. |
+| `00494c5a..00494c5c` | NOPs after the Modern return replace the last two bytes of the original FLD [EBP-0xc]. | Local byte comparison. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -395,7 +407,9 @@ bytes across 267 intervals**, leaving 113 bytes across 70 intervals at `e68cd1c`
 The final seven three-byte rows bring coverage to **21,834 bytes
 across 274 intervals**, leaving 92 bytes across 63 intervals at `846caa1`.
 The four operand and data rows bring coverage to **21,839 bytes
-across 278 intervals**, leaving 87 changed bytes across 59 intervals. These counts measure documented evidence links for this fixed
+across 278 intervals**, leaving 87 changed bytes across 59 intervals at `e7c6bd6`.
+The eleven two-byte rows bring coverage to **21,861 bytes across
+289 intervals**, leaving 65 changed bytes across 48 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
