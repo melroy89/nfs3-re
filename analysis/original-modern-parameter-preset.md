@@ -307,9 +307,12 @@ preset writes still precede the conversion gate in each version.
 
 ### Direct callers discard the observed EAX and flag differences
 
-Linear disassembly of retained 1.3.1 and official 1.6.1 finds the
-same three direct calls to `0041d620`. The checked continuations
-match across the pair.
+Linear disassembly of the hosted original and all 12 retained Modern
+EXEs finds the same three direct calls to `0041d620` and one direct
+call to its wrapper `0041d870`. The supplied original has those
+same call sites. The checked continuations match across the
+13 archive/package EXEs. Reproduce with `objdump -d -Mintel`
+and compare the instructions at the call sites below.
 
 | Call site | Continuation |
 |---|---|
@@ -322,7 +325,7 @@ return state. The wrapper can still pass that state through to
 a computed caller. No runtime trace was taken.
 
 The first continuation's callee `0041d310..0041d349` also
-matches across the pair. Its 57-byte body computes the record
+matches across the same 13 EXEs. Its 57-byte body computes the record
 address from the replacement EAX value, using the 84-byte stride.
 The sole conditional jump at `0041d334` uses the preceding
 comparison against DWORD `007a3d14`. The callee publishes the
