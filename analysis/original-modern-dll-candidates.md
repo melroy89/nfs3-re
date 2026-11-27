@@ -142,3 +142,15 @@ The [hosted/final lifecycle comparison](original-modern-glide-reference-identity
 ## Glide self-module filename producer verified
 
 The [entry-path follow-up](original-modern-glide-reference-identity.md#entry-callback-supplies-the-module-directory-handle) verifies the unchanged PE-entry/CRT wrapper and changed user callback: final stores its first DLL-entry argument into the exact cell passed to GetModuleFileNameA for the prefixed Glide load attempt. Reference callback only returns1. The changed callback itself has no detach release; indirect/registered finalizers and other callers remain separate. This strengthens the earlier own-module path description without asserting provider identity or universal cleanup.
+
+## Early Modern renderer filenames
+
+The retained reference `nfs3_orig.7z` (SHA-256 `374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127`) and author-hosted 1.1.0 archive (SHA-256 `31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac`) contain the following root-level names. Each compared pair has a code section at RVA `1000h` with the same raw length. The counts compare the full raw code sections at equal offsets.
+
+| Reference name | Modern 1.1.0 name | Changed code bytes / raw code bytes |
+|---|---|---:|
+| `d3da.dll` | `dx5.dll` | 283 / 55,296 |
+| `softtria.dll` | `softtri.dll` | 16 / 245,760 |
+| `voodoo2a.dll` | `voodoo2.dll` | 345 / 52,224 |
+
+The reference D3D and SoftTri members match the corresponding installed files by SHA-256. The reference Voodoo2 member is a distinct artifact from the installed copy. The archive evidence supports the three filename correspondences and shows that each pair also differs in code. It leaves the exact introduction release before or at 1.1.0, the authors' source lineage, and the behavior of the changed bytes open.

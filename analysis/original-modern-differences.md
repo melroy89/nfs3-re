@@ -796,7 +796,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **35 Claimed, 60 Static, 195 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **32 Claimed, 60 Static, 198 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -1077,10 +1077,10 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP110-008 | The driver reports resolutions in a slightly different order. | Claimed |
 | MP110-009 | The problem with ugly 16-bit menu was fixed by using 32-bit mode. | Claimed |
 | MP110-010 | The problem with non-working video still not solved. It's recommended to disable the intro video by the NoMovie ini setting. | Claimed |
-| MP110-011 | Renamed from voodoo2a.dll to voodoo2.dll. | Claimed |
+| MP110-011 | Renamed from voodoo2a.dll to voodoo2.dll. | Partial |
 | MP110-012 | Always reports that all resolutios are 16-bit even when nGlide is used. Otherwise making screenshots by pressing Alt+P will not work because in low-level all Glide resolutions are still 16-bit modes from the game's side. | Claimed |
-| MP110-013 | Renamed from d3da.dll to dx5.dll similar to dx8.dll, because it uses DirectX 5. | Claimed |
-| MP110-014 | Renamed from softtria.dll to softtri.dll. | Claimed |
+| MP110-013 | Renamed from d3da.dll to dx5.dll similar to dx8.dll, because it uses DirectX 5. | Partial |
+| MP110-014 | Renamed from softtria.dll to softtri.dll. | Partial |
 
 ### Version 1.0.0 (2015-05-17)
 
