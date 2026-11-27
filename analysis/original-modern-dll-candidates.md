@@ -145,13 +145,13 @@ The [entry-path follow-up](original-modern-glide-reference-identity.md#entry-cal
 
 ## Early Modern renderer filenames
 
-The retained reference `nfs3_orig.7z` (SHA-256 `374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127`) and author-hosted 1.1.0 archive (SHA-256 `31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac`) contain the following root-level names. Each compared pair has a code section at RVA `1000h` with the same raw length. The counts compare the full raw code sections at equal offsets.
+The retained reference `nfs3_orig.7z` (SHA-256 `374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127`) and author-hosted 1.1.0 archive (SHA-256 `31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac`) contain the following root-level names. Each code section begins at RVA `1000h`. The counts compare shared raw offsets. Modern Voodoo2 also has 512 additional raw code-section bytes.
 
 | Reference name | Modern 1.1.0 name | Changed code bytes / raw code bytes |
 |---|---|---:|
 | `d3da.dll` | `dx5.dll` | 283 / 55,296 |
 | `softtria.dll` | `softtri.dll` | 16 / 245,760 |
-| `voodoo2a.dll` | `voodoo2.dll` | 345 / 52,224 |
+| `voodoo2a.dll` | `voodoo2.dll` | 345 / 51,712 shared (+512 Modern) |
 
 The reference D3D and SoftTri members match the corresponding installed files by SHA-256. The reference Voodoo2 member is a distinct artifact from the installed copy. The archive evidence supports the three filename correspondences and shows that each pair also differs in code. It leaves the exact introduction release before or at 1.1.0, the authors' source lineage, and the behavior of the changed bytes open.
 
@@ -218,3 +218,25 @@ disassembling the two ranges with `objdump -d -Mintel`. The call and table
 changes are verified statically. Table contents and initialization, the new
 entry's complete behavior, and the effect on available display modes remain
 open. The supplied installed Voodoo2 copy is a different baseline.
+
+The full new routine extends through the return at `6000daf0`. The earlier
+302-byte count covers only the shared raw offsets. The original section ends
+at `6000da00` exclusive, while the Modern section extends to `6000dc00`.
+
+At `6000d8a0`, a latch at `600127b8` skips setup after the first completed
+attempt. On the first attempt, thunk `6000d89a` resolves through IAT slot
+`6000e278` to `glide3x.dll!_grQueryResolutions@8`. The routine queries once
+with a null output pointer and again with a buffer sized by the first return.
+If either return is zero or the second call's first signed dword is at most
+255, it invokes the legacy setup at `60001940` and copies 18 dwords of table
+data and 180 dwords of mode records from the old bases to the new ones.
+
+The other path walks 16-byte query records. It checks the first two words
+against signed minimums of 640 and 480, finds an existing width/height pair
+or an empty 40-byte slot, and caps new insertions at 46 slots. For accepted
+entries it updates both retargeted tables and keeps the greater signed value
+from the query's dword at offset 8 and the record's field at offset 20.
+The fallback stores 0 at `600127bc` and the query path stores 1. Both set
+the setup latch to 1 before returning. These checks establish how the
+adapter populates the tables. Actual provider output, the meaning of the
+offset-8 field and the resulting in-game list remain unverified.
