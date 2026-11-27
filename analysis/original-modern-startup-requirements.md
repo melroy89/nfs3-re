@@ -657,3 +657,15 @@ not add a DLL entry-point routine. Reproduce by inspecting the
 resource tree, version strings and optional header of the exact
 `eacsnd.dll` members. Loading and exported API calls were not
 exercised.
+
+The hosted original sound DLL is carried byte-for-byte through
+Modern 1.5.2, and the 1.5.3 member is then carried unchanged
+through 1.6.1. Both identities share the same 29,696-byte
+raw code section (SHA-256
+`4409d32d183500b49691037224802e7f86a33219b9aa740bafa2bc6cd153066c`).
+All 16 export records match by name, ordinal, RVA and forwarder
+status between the hosted original and final. Reproduce by
+extracting `eacsnd.dll` from each archive, hashing the whole
+member and its first raw section, and comparing the PE exports.
+This bounds the sound DLL change to evidence outside its code
+and export records. Actual backend behavior remains untested.
