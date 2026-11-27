@@ -1305,3 +1305,20 @@ Direct calls at `00495589` and `004b5c84` reach that helper. Thus the
 loss of either original address is insufficient evidence of a loss of
 single-precision selection. These witnesses date the selected code sites
 and calls. They leave path frequency and runtime precision unmeasured.
+
+A GNU `objdump -d -Mintel` sweep of the retained EXEs finds the following
+decoded direct calls to `004955d4`. Addresses are hexadecimal VAs.
+
+| Release | Call sites |
+|---|---|
+| 1.5.0 | `00495589`, `004b5c84` |
+| 1.5.1 | `00495589`, `004b5ccf` |
+| 1.5.2 | `00495589`, `004b5ce5` |
+| 1.5.3 | `00495159`, `00495589`, `004a3e67`, `004a3ea8`, `004b5cef`, `004bc7e7` |
+| 1.6.0 | None decoded |
+
+The extra four 1.5.3 sites correspond to the loading-artwork return,
+both frontend-return paths and the race-render return. Together with
+the old mask bytes above, this traces how 1.5.3 centralized the
+switch before 1.6.0 removed it. This sweep counts decoded instructions,
+not runtime invocations or indirect calls.
