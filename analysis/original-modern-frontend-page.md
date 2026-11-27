@@ -587,3 +587,11 @@ The hosted original and the 1.0.0 package both dispatch `texteffects` widgets th
 To reproduce, list `nfs3_orig.7z` and `nfs3_modern_patch_v1.0.0.7z` from the retained history directory with `7z l -ba`, then extract and count case-insensitive `codelink=texteffects` assignments in each top-level `fedata/menus/*.mnu` member. Normalize paths to lowercase for pairing. The original has six matching layouts out of 80 and 1.0.0 has twelve out of 51. Five matching layouts are shared and retain the widget, seven shared layouts gain it, and the original-only `perdata.mnu` accounts for the remaining original match.
 
 This verifies expansion on seven packaged menus. The vendor's “all slides without large amount of text” criterion and actual rendering remain unverified.
+
+## 1.0.0 changes the graphics and opponent menu effect bindings
+
+The layouts named in MP100-049 both change in the retained original and 1.0.0 archives. In `graphics.mnu`, the patch removes the `nfslogo` image widget at (23, 9), tagged `nbal`, and adds `texteffects` to the existing image widget at (236, 118). Both records use priority 8. The latter binding selects the existing flying brands route described above.
+
+In `opponent.mnu`, the sole text diff removes `bandeffects` from the binding at (137, 0), priority 9, leaving `back maineffects`. The executable still contains the `bandeffects` test. At `004603e7`, the draw route checks the widget's binding through `004429c0`, then calls `004a47c0` at `004603f8` on a match. The 22-byte span `004603e7..004603fd` matches in the hosted original and 1.0.0 (SHA-256 `5922e1153d927e794864fdcd086084aa1d9ef8b437f15e3e85a00b7f6b1f1b53`).
+
+To reproduce, extract `GRAPHICS.MNU` and `OPPONENT.MNU` from the original `fedata/MENUS` and their lowercase counterparts from the 1.0.0 `fedata/menus`. Normalize CRLF before diffing. These edits establish changes to which animation paths the two layouts request. The reported visual defect and whether these edits fix it remain unverified.
