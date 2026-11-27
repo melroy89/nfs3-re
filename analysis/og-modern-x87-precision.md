@@ -1271,3 +1271,22 @@ Neither decoded race-loop body at `004c4e40..004c5540` executes an x87 instructi
 For Modern's added race-entry renderer request there are two local ways to skip the external call. A zero support flag at `007a3a54` returns from `00431c34` immediately. Otherwise selector `15h` reaches `00431a4c`, where the requested value 4 is compared with cached DWORD `00554e5c`. Equality branches directly to the integer return at `00431a93`. Only a different cached value causes a store of 4 followed by the indirect `_THRASH_setstate@8` call at `00431a5c`. Both skip paths leave x87 untouched. The provider path depends on the active driver, device state and cache. The [DX7 state dispatch](original-modern-renderer-loading.md#the-unchanged-dx7-dispatcher-gives-those-payloads-different-meanings) supplies a concrete external branch to include in a precision comparison when that driver is selected.
 
 In the official 1.6.1 DX7 DLL (SHA-256 `2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c`), the admitted selector `15h`, payload 4 branch at `60004c44..60004ca9` uses integer instructions. It calls helper `60008a10` four times. That helper also uses integer instructions in its local body. If `6001822c` is nonzero and the signed DWORD at `60058874` is nonpositive when a call enters, the helper skips its two internal preparation calls and dispatches directly through device vtable slot `+50h` at `60008a3e`. Checks apply separately to each of the four calls. This locates the external implementation boundary for the short route. The device method, optional preparation paths and runtime branch selection remain unverified for x87 preservation.
+
+### Modern 1.0.0 retains the original precision switches at three boundaries
+
+The [recovered 1.0.0 baseline](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+matches the author-hosted original and 1.1.0 byte for byte across the
+following three EXE spans. Extract each root `nfs3.exe` and compare
+the listed intervals by PE RVA after subtracting image base `00400000`.
+
+| VA interval, exclusive end | Retained behavior |
+|---|---|
+| `004a3e34..004a3ef9` | Application dispatcher retains the frontend transitions back to single precision and the race-session call at `004a3ef4`. |
+| `00495159..00495180` | Loading-artwork tail retains the reset, mask and single-precision load. |
+| `004bc7f1..004bc818` | Race-render tail retains the single-precision restoration sequence. |
+
+The same-address spans differ in the sampled 1.5.3 and 1.6.0 archives.
+This establishes that the first retained Modern release still uses the
+original switches at these boundaries. Actual control words inside
+race, replay and network processing remain dependent on the executed
+path and intervening calls.
