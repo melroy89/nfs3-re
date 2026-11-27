@@ -450,3 +450,23 @@ its own accumulator reload. In 1.6.1 the same address instead
 holds the [cached renderer descriptor pointer](original-modern-renderer-loading.md),
 with direct stores at `004f84f5` and `004f8542`. The scan
 cannot exclude reads through a computed address in the earlier builds.
+
+#### Version 1.6.1 preserves the calls and drops the result mask
+
+The final EXE's loop at `004b5b23..004b5b3e` (end exclusive)
+calls the same state slot with all five pairs in the same
+order. After the indirect call at `004b5b2f`, it advances the
+table pointer and increments the loop counter without testing
+EAX. The loop falls directly into the `(10,2)` setup call
+sequence. Thus the 1.6.0-to-1.6.1 change removes result
+accumulation and publication while preserving the five
+requests. This explains how the descriptor can occupy the
+former mask cell without a subsequent overwrite by this loop.
+
+The 40 table bytes at PE RVA `15fd94h` match between the
+retained 1.6.0 and 1.6.1 EXEs (SHA-256
+`4340dc71acc29777ad540683833970e4878e6c84924132277ed777efb57da604`).
+The final loop's 27 bytes have SHA-256
+`fccba56e4bffed1a967aed3fd1e79c56c473ce5526b52ca9bdec5e3ba230c026`.
+This comparison establishes argument and local control-flow
+continuity. Driver effects remain dependent on the bound implementation.
