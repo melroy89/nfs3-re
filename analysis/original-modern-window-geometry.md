@@ -23,15 +23,28 @@ The complete 293-byte creation prefix matches in the hosted original
 and all 12 retained Modern EXEs (SHA-256
 `e0add23982d1febe223063fc069a625cf5102662d0b5fe08c3f18f6e2a432d13`).
 Its file-backed input differs. The DWORD at `0056128c` starts at
-`10000000h` in the hosted original and `10080000h` in every retained
+`10000000h` in both the supplied and hosted originals and `10080000h` in every retained
 Modern EXE. Thus 1.0.0 already adds the `WS_SYSMENU` bit to the
-base `WS_VISIBLE` style. The byte-zero context branch also supplies
-caption bits, which Microsoft specifies for displaying the system
-menu. Compare 293 bytes at PE RVA `cd350h` and four bytes at
+base `WS_VISIBLE` style. Microsoft specifies a caption for displaying
+the system menu. Compare 293 bytes at PE RVA `cd350h` and four bytes at
 `16128ch` in the extracted EXEs. This verifies the requested style
 from the initial data. Actual title-bar behavior and later style
 changes remain outside this comparison.
 [Microsoft window styles](https://learn.microsoft.com/en-us/windows/win32/winmsg/window-styles)
+
+With those initial DWORDs, the resulting style passed to CreateWindowExA
+is as follows. These are derived OR results for the three local branches.
+
+| Local branch | Original | Modern 1.0.0–1.6.1 |
+|---|---|---|
+| Context byte nonzero | `90000000h` | `90080000h` |
+| Context byte zero, flag `0x20` set | `10cf0000h` | `10cf0000h` |
+| Context byte zero, flag `0x20` clear | `10ca0000h` | `10ca0000h` |
+
+The byte-zero branch already ORs in the system-menu bit in both
+executables (`00ca0000h` includes `00080000h`). The observed
+base-style difference therefore reaches the API only on the
+nonzero-context branch, where this construction does not add a caption.
 
 ## Modern shortens post-creation setup
 
