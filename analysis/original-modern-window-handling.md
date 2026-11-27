@@ -118,7 +118,22 @@ initial pointer. Reproduce by checking PE RVA `1612a4h` and the
 prefix at `cd6c0h` in the extracted EXEs. Registration success
 and any later writes to the pointer remain untested.
 
-Both still build class style `0x0b`, procedure `004cd2d0`, zero extra bytes, icon/cursor/name fields and call RegisterClassA. On class-registration failure, original gets the last error, calls its diagnostic routine and returns zero (`004cd787..004cd79e`); Modern calls the fatal-error wrapper `004b570c` with a message (`004cd74b..004cd750`). The wrapper's known fatal-error behavior is existing research, not newly executed here. The [geometry comparison](original-modern-window-geometry.md) now verifies retained creation policy through CreateWindowExA, shortened post-creation setup and three identical sizing helpers; context producers and all windowed/fullscreen effects remain unresolved.
+The initial icon argument at `005612a8` changes in the same
+release. The hosted original and Modern 1.0.0–1.3.1 store the
+integer resource identifier `0x7f00`. Starting in 1.4.0, the
+DWORD points to the string `MAIN.ICO`. Its address moves across
+releases, but all seven retained EXEs from 1.4.0 onward resolve
+it to the same string and contain an icon group by that name.
+Both versions call `LoadIconA` through `00534760` with the
+module handle. The class cursor field is explicitly zero, and
+the background still comes from `GetStockObject(4)` through
+`0053445c`. The class identifier pointer at `005612a0` also
+retains its initial address `0054045c` throughout. Compare the
+file-backed DWORDs at PE RVA `1612a0h` and resolve the corresponding
+resource entries in each extracted image. The icon returned by
+the OS and its appearance remain untested.
+
+Both still build class style `0x0b`, procedure `004cd2d0`, zero extra bytes and the remaining class fields before calling RegisterClassA. On class-registration failure, original gets the last error, calls its diagnostic routine and returns zero (`004cd787..004cd79e`); Modern calls the fatal-error wrapper `004b570c` with a message (`004cd74b..004cd750`). The wrapper's known fatal-error behavior is existing research, not newly executed here. The [geometry comparison](original-modern-window-geometry.md) now verifies retained creation policy through CreateWindowExA, shortened post-creation setup and three identical sizing helpers; context producers and all windowed/fullscreen effects remain unresolved.
 
 ## PreventMinimize: final mechanism versus historical claim
 
