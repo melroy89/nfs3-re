@@ -1322,3 +1322,22 @@ both frontend-return paths and the race-render return. Together with
 the old mask bytes above, this traces how 1.5.3 centralized the
 switch before 1.6.0 removed it. This sweep counts decoded instructions,
 not runtime invocations or indirect calls.
+
+The matching saved-control-word helper at `004955c8` also appears in
+1.5.0. Its 12-byte body in 1.5.0–1.5.2 executes FINIT, loads
+`0079f3f4`, waits, and returns. In 1.5.3 the body is ten bytes and has
+no explicit wait around FLDCW. The same-address target in 1.4.0 starts
+with a comparison against `007a27ac`, so its decoded caller does not
+count as a call to this precision helper.
+
+| Release | Decoded direct calls to saved-control-word helper |
+|---|---|
+| 1.5.0 | `00495272`, `004b5c95` |
+| 1.5.1 | `00495272`, `004b5ce1` |
+| 1.5.2 | `00495272`, `004b5cf5` |
+| 1.5.3 | `00494fc1`, `00495272`, `00495614`, `004a3e5a`, `004a3e9b`, `004b5d01`, `004bc692` |
+| 1.6.0 | None decoded. The helper bytes are NOPs. |
+
+The helper loads the saved value, so its behavior depends on the
+preceding writer to that cell. The call census does not measure the
+control word on an executed path.
