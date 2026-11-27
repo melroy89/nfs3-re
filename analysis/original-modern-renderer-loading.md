@@ -771,3 +771,27 @@ binds `005344c0` to `KERNEL32.ExitProcess`. Thus the selected
 failure path requests process exit after the dialog, provided
 the intervening cleanup calls return normally. See the
 [shared exit chain](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess).
+
+#### Startup failure signal across retained releases
+
+A decoded sweep of the archived EXEs confirms that the instruction
+immediately after the consolidated loader call tests
+`THRASH_about` slot `009ef980` in every retained release
+from 1.2.0 through 1.6.0. The address of that test moves:
+
+| Release | About-slot test VA |
+|---|---|
+| 1.2.0 and 1.3.0 | `004b58af` |
+| 1.3.1 | `004b58b4` |
+| 1.4.0 | `004b5c1d` |
+| 1.5.0 | `004b59eb` |
+| 1.5.1 | `004b5a0f` |
+| 1.5.2 and 1.5.3 | `004b5a1f` |
+| 1.6.0 | `004b5a1a` |
+
+At this startup site, 1.6.1 instead tests EAX at `004b5a84`
+immediately after invoking the rewritten loader. Extract the root
+EXEs and locate direct calls to `004f8390` or, in final,
+`004f84a8` using `objdump -d -Mintel` to reproduce. The check
+dates the observed failure-signal change for MP161-006. It does
+not establish runtime diagnostics or the behavior of other callers.
