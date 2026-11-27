@@ -388,3 +388,21 @@ therefore brings the adapter's declared dimensions into agreement with
 the Glide token it already passed. This establishes the API meaning.
 The shipped nGlide provider's internal mapping and successful live
 mode creation remain unverified.
+
+#### Fallback tables across the early provider split
+
+The 720-byte record table at PE RVA `fdd4` and 72-byte token table at
+`100a4` are byte-identical in seven retained adapters: root
+`voodoo2.dll` in 1.1.0, then both `drivers/dgvoodoo/voodoo2.dll` and
+`drivers/nglide/nglide.dll` in 1.2.0, 1.3.0 and 1.3.1. Their SHA-256
+digests are respectively
+`5827c1a7e312a9be6393d39e792b105b9608caa7eb15f5d43803530e89179c34`
+and `6635dc5a03d5f287ccd18cf67417441b0d579d5b573397812da536d7df5a9795`.
+The 1280×1024 / `0x0d` pairing thus survives the introduction of the
+separate nGlide adapter.
+
+The 1.4.0-and-later archive members lack that record at the old RVA and
+stride. The [final Voodoo2 comparison](original-modern-glide-reference-identity.md)
+traces the final descriptor to runtime-built records at `60013000`.
+An absent record at the old offset does not establish that 1280×1024 is
+unavailable in those releases.
