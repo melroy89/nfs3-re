@@ -283,3 +283,13 @@ The original and final bank processors match over `00502620..0050273f`. They con
 The original and final share the 105-byte lookup at `004e9bf8..004e9c61` (SHA-256 `afeb08ce7e144bfb65f6e5ed8fbf3d0fae6d2953ba240295658a75949d2aa78b`). It extracts the signed bank selector from request byte `+4`, validates it through `00502570`, and loads the bank pointer from the corresponding 12-byte handle record. It rejects a negative request ID and any ID at or above the bank's WORD count at `+6`. For the type-2 frontend bank, `004e9c53` loads the rebased pointer at `bank + 0x0c + 4*ID` and forwards it to `00501de8` at `004e9c59`.
 
 With FESFX loaded, IDs 0 through 7 therefore select the eight headers in the order listed above. The shared middleware already bounds-checks the loaded bank in the original. Modern 1.4.0 adds a separate check earlier in the frontend request builder. This maps IDs to bank entries. Their audible content and playback success remain unverified.
+
+The hosted original and all twelve retained Modern executables match byte for byte over the following ranges. Extract `nfs3.exe` from each archive and hash the listed half-open PE VA ranges to reproduce.
+
+| Range | Checked operation | SHA-256 |
+|---|---|---|
+| `00410b50..00410c2b` | Bank filename construction and handle publication | `7dd5d81b51c08bd1065c755aebe36a6e3d7d400934c1b440ccfed106ba4f9eae` |
+| `00502620..0050273f` | Bank type, entry count and directory rebasing | `0ec696a7ef5773ad58c081e7b000f16e6e03b993000a49f52a6ee2ab8bc616d7` |
+| `004e9bf8..004e9c61` | Bounded request ID lookup and patch dispatch | `afeb08ce7e144bfb65f6e5ed8fbf3d0fae6d2953ba240295658a75949d2aa78b` |
+
+The dated frontend request changes therefore enter a retained bank lookup. The compared ranges cover the rebasing loop and dispatch entry. Downstream patch processing and backend playback remain separate.
