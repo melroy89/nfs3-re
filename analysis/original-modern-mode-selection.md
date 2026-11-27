@@ -388,3 +388,21 @@ disassembly finds the four direct calls above and no direct jumps
 to the old entry in 1.5.1. It finds neither direct calls nor direct
 jumps to that address in 1.5.2. This establishes retirement of the
 old entry at that address. Computed references are outside the scan.
+
+### Replacement body fingerprints
+
+All three implementations start at `004beeb0`. Extract the root
+EXE for each release and hash the file-backed bytes from that entry
+through its final RET. The ranges below exclude padding.
+
+| Release | End (exclusive) | Bytes | SHA-256 |
+|---|---|---:|---|
+| 1.5.2 | `004bef9f` | 239 | `c4098b78e087db97e57e99add2800aa23f90f55f8cf3e9bb15d17d22a70cbce0` |
+| 1.5.3 and 1.6.0 | `004bef8f` | 223 | `7bbbb89cba721a06d62c2286868e51709528eca18442a0b5a0f8020c2f8378a5` |
+| 1.6.1 | `004bef9d` | 237 | `6f140aa2f9aef3eef21462d342a40e51ad35401e5a053e3c58723735fa9f8671` |
+
+The [selected-dimension centring change in 1.5.3](original-modern-nglide-window-history.md#exe-mode-publication-changes-to-selected-dimension-centring)
+therefore remains byte-identical in 1.6.0 at this entry. The next
+local changes are the [1.6.1 refresh and setup ordering](#161-changes-the-ordering-of-descriptor-refresh-and-mode-setup).
+The matching 1.5.3 and 1.6.0 bodies can still invoke different
+renderer DLL code or receive different mode records.
