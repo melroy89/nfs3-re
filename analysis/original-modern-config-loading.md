@@ -198,17 +198,16 @@ after a successful open, restores it into EBX for the write call
 write. Actual bytes committed to disk and serialized field meanings
 remain unverified.
 
-The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
+The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, and helper error contracts remain untested.
 
-The earliest retained Modern member, 1.1.0, already bypasses both
-timestamp checks. At `00472a22` the config loader zeros EAX and jumps
-to `00472a5b` instead of using the original timestamp comparison.
-The player-spec loader's span `004dc9c7..004dc9eb` matches across
-1.1.0, 1.4.0 and 1.5.0, including the jump to its read path.
-The original direct call to `00472940` at `00472a2e` has no counterpart
-in the config-load windows of the 11 retained Modern packages. This
-dates the selected bypasses to at least 1.1.0. The 1.0.0 executable
-and actual upgrade behavior remain unverified.
+Modern 1.0.0 already bypasses both timestamp checks. At
+`00472a22` the config loader zeros EAX and jumps to `00472a5b`
+instead of using the original timestamp comparison. The player
+loader bypasses the timestamp helper and branches to its read path
+at `004dc9eb` when the file-existence check succeeds. The 1.0.0
+and 1.1.0 EXEs match byte for byte at PE RVAs `72a22h` (7 bytes)
+and `dc9c7h` (36 bytes). These local comparisons date both
+bypasses. Actual upgrade behavior remains unverified.
 
 A direct byte comparison of the supplied original and the `nfs3.exe`
 members of all 11 retained Modern archives (1.1.0 through 1.6.1)
