@@ -229,3 +229,19 @@ For otherwise admissible same-size inputs, the new exact raw-depth key allows di
 ## Reference debug names are available separately
 
 The [bounded reference-debug extraction](original-modern-original-reference-bundle.md#dx5-and-voodoo-debug-records-have-independent-export-anchors) records961 names across193 units for this pinned `d3da.dll`, with all34 exports independently anchored to `_D3D_` names. The same parser also handles the Voodoo/SoftTri references. Use the [debug manifest](evidence/audits/renderer-reference-debug.json) for raw stored addresses and unit ownership; nonexport mapping, signatures and complete types remain unverified. This supplements the existing byte/control-flow comparison rather than identifying another set of code changes. No labels or prototypes were automatically applied.
+
+### Out-of-range display indices fall back to slot zero
+
+The shared exported selector at `60001654` takes a signed index.
+After the optional helper call at `600016f5`, it checks the index
+against zero and the count at `60010ef0`. A negative index or an
+index at least equal to the count branches to `600016ff`. That
+branch writes selected index zero to `60010ef4`, loads the first
+pointer from `60012860` and copies the first name from `60012720`
+through the same common path used by an in-range index. The selector
+does not return a separate invalid-index error on that path. It
+also has no separate check that slot zero exists when the count is
+zero. The original reference and final DX5 selector share this
+policy. The EXE's device-number parsing and storage changed
+separately, as traced in the [renderer lifecycle comparison](original-modern-renderer-lifecycle.md#the-140-startup-check-uses-the-older-initializer-target).
+Actual enumeration and hardware selection remain unverified.
