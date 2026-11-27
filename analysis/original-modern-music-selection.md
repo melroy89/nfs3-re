@@ -225,6 +225,23 @@ This classifies all64 changed bytes in interval `00477fc2..00478010`:
 | `00478000..00478005` | Five-byte frame/return no-op | NOPs |
 | `00478005..00478010` |11 alignment bytes | NOPs |
 
+The race-loading caller switches targets in **1.5.3**. The call stays
+at `004a34a4` across that boundary, while the old 36-byte wrapper becomes
+all NOPs. The retained release sequence is:
+
+| Modern Patch | Call site | Target |
+|---|---|---|
+| 1.0.0–1.3.1 | `004a34ad` | `00477fd0` |
+| 1.4.0 | `004a349f` | `00477fd0` |
+| 1.5.0–1.5.2 | `004a34a4` | `00477fd0` |
+| 1.5.3 | `004a34a4` | `0040fefc` |
+| 1.6.0–1.6.1 | `004a3489` | `0040fefc` |
+
+To reproduce, extract each retained `nfs3.exe`, decode the five-byte
+relative call at the listed address and inspect the 36 bytes from
+`00477fd0`. This dates replacement of this direct caller. Audible
+results remain untested.
+
 The original wrapper first checks `006fbb54`. Nonzero skips its work. Zero
 loads selected circuit `006fd4ac` into EAX, calls original music loader
 `00410030`, calls cancellation/service poll `004a33d0`, then compares abort
