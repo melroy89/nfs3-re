@@ -49,9 +49,14 @@ The callers in the existing Ghidra notes invoke this routine from `LoadAndRender
 
 ## Early Modern already has the six-tile loading-artwork path
 
-**Verified static historical correspondence; image quality untested.** The [early/final audit](evidence/audits/loading-tile-history.json), reproduced with `python3 analysis/scripts/audit_loading_tile_history.py`, pins author-hosted1.1.0 and official final EXEs. Both request square extent256 at`00494d23` and grid counts3/2 at`00494d3e/00494d43`. This dates presence of the six-iteration mechanism to an early retained release, without asserting1.0.0 introduction.
+**Verified static historical correspondence; image quality untested.** The [early/final audit](evidence/audits/loading-tile-history.json), reproduced with `python3 analysis/scripts/audit_loading_tile_history.py`, pins author-hosted1.1.0 and official final EXEs. Both request square extent256 at`00494d23` and grid counts3/2 at`00494d3e/00494d43`. The retained 1.0.0 EXE already has this setup. All five
+retained EXEs from 1.0.0 through 1.3.1 match the 748-byte early window
+(SHA-256 `68ea56baf641768ca62f8ab1fbf7b7042cb807c74589a0b69fa6348bc9b4f1b3`).
+All seven retained EXEs from 1.4.0 through 1.6.1 match the final window
+(SHA-256 `1acb94808f1eee324abac9660275ea67210be728c7a86e2ad2d1bec82c56e616`).
+Compare 748 bytes at PE RVA `94cb0h` in each archived `nfs3.exe`.
 
-The748-byte comparison window`00494cb0..00494f9c` differs at exactly nine bytes. This is an explicit envelope, potentially including padding, not a new assertion about RET/function boundaries:
+The transition from 1.3.1 to 1.4.0 changes exactly nine bytes in `00494cb0..00494f9c`. This is an explicit envelope, potentially including padding, not a new assertion about RET/function boundaries:
 
 | Differing byte locations | Classification |
 |---|---|
