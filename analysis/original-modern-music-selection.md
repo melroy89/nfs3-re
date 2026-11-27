@@ -546,3 +546,9 @@ The combined PE VA span `00410330..0041039f` matches in the hosted original, Mod
 A nonzero `006fbb54` returns before cleanup in both routines. At `00410a40`, the skipped body calls `004e8b60`, `004e7b28` and `004e7388`, updates `005525a0` and conditionally releases the resource at `00570a50`. At `00410aa0`, the skipped body calls the shutdown helper `004e784c`, releases the stream object through `004e4b50` and clears `00552598`. A zero flag still requires the separate audio-state checks in each routine.
 
 The complete range `00410a40..00410acf` has SHA-256 `0950f65a446825273e8918904dd190f1a2328e47eb814158c14b9e8bcdc39fbe` in the hosted original, Modern 1.0.0 and official 1.6.1. This documents the effect of the branch at each cleanup entry. Which resources are live at a given call and how teardown behaves in Wine remain unverified.
+
+### Both start paths update state before testing the flag
+
+In the hosted original and official 1.6.1, the first start path stores a byte to `00552590` at `0041052c` and publishes the selected track ID from EDI to `0055258c` at `00410537`. The nonzero `RemoteOnly` branch at `0041053f` then exits to `004107a7`. Consequently the stored track selection can change even when this path skips stream startup.
+
+The second start path clears `00552590` at `004107f1` before testing the flag. Its rejection at `004107f9` still returns directly in both executables. The epilogue moves from `004109c1` to `00410990` as the start body changes. See the [paired start routines](original-modern-music-start.md) for downstream stream and volume work. These are observed store and branch instructions. Actual stream state and audible playback remain untested.
