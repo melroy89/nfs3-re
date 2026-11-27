@@ -224,6 +224,17 @@ file-backed spans in the extracted EXEs. This establishes continuity
 of these two local consumers. Race and list consumers, event ordering,
 and actual input behavior remain outside this check.
 
+The frontend mouse-state wrapper and both coordinate scalers
+also match the hosted original in every retained Modern EXE.
+Compare the 173-byte window `00451480..0045152d` and the 48-byte
+viewport-read window at `004beb80`. The wrapper first calls
+`00435310` to read mouse state, then scales only the two coordinate
+outputs when `00559234` is nonzero. Button and wheel outputs
+bypass these conversions. This verifies the scaling instructions
+and their gate. The lower reader, live viewport values and
+the [release-specific context writers](original-modern-frontend-sound.md)
+can still affect the result.
+
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
 `004fb470` state/clip/capture processing, external message delivery, mouse
