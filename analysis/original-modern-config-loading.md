@@ -611,3 +611,22 @@ system metrics. The [window geometry comparison](original-modern-window-geometry
 records the style constants and API arguments. This is the static
 link from the saved raster flag to window style selection, conditional
 on reaching that creation path with the same context state.
+
+The 18-byte conversion from the INI cell `0067900c` to display
+flags `00564390` is byte-identical at each entry below. In 1.5.1
+there is no decoded load of the former reset cell into EAX in
+display setup.
+
+| Release | Conversion entry |
+|---|---|
+| 1.5.2 and 1.5.3 | `004b5bd1` |
+| 1.6.0 | `004b5bc2` |
+| 1.6.1 | `004b5c50` |
+
+The subsequent raster bit test and state publication at
+`0050818a..005081a4`, including the zero branch at
+`00508265..0050826c`, also match across those four EXEs.
+Compare the root archive members at these VAs using
+`objdump -d -Mintel`. This verifies that the local Boolean
+mapping persists despite relocation. It leaves renderer-specific
+presentation and other flag producers outside the comparison.
