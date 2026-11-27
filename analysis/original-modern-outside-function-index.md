@@ -293,6 +293,15 @@ Intervals not listed here remain available in the full JSON inventory. A row her
 
 At the `4c51910` checkpoint, mechanism table rows covered every changed byte in **180 of 337** outside-body intervals (21,330 bytes). The remaining **157 intervals** had 596 changed bytes and no overlapping mechanism row. This measures whether a changed byte has a route into the research, including partial explanations. It makes no claim about semantic coverage or changes inside saved function bodies.
 
+At `9f73934`, the same intersection covers **21,626 of 21,926
+changed bytes**, with full index coverage for **212 of 337** intervals.
+The other **125 intervals** have 300 changed bytes and no matching
+mechanism row. No interval has partial overlap. The largest remaining
+gaps have five changed bytes each, including `00472a56..00472a5b`.
+These counts measure documented evidence links for this fixed
+inventory. They do not measure how much of the executable's
+behavior is understood.
+
 Count coverage by intersecting the union of the half-open address ranges in the mechanism table with each interval's `changed_runs` from the JSON inventory. Do not require table ranges to match inventory endpoints: several rows deliberately cover only the changed run within a longer interval. The largest interval still lacking a route at this checkpoint is `0041a877..0041a8d0` (14 changed bytes).
 
 ## Largest removed startup span: entry-by-entry handoff
