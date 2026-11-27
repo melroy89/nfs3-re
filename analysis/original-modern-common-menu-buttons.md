@@ -550,3 +550,20 @@ The title moves to the start of the definition and several background
 image coordinates change. The [slider analysis](original-modern-slider-percentage.md)
 covers how the executable interprets the percentage field. Removing
 this authored link leaves any other route to `cedmain` open.
+
+A scan for active `nextmenu=cedmain` fields across every packaged
+menu identifies nine matches in the hosted original: seven
+`ced01dbg.mnu` through `ced07dbg.mnu` return links, the Advanced
+button in `cedbasic.mnu`, and the pause-menu Car Tuning button
+(`PSE_LAUNCHCAREDIT`). Modern 1.0.0 ships only the pause link.
+Versions 1.1.0–1.4.0 ship both the pause and Advanced links.
+No exact active field targeting `cedmain` occurs in the retained
+1.5.0–1.6.1 menu archives. In 1.4.0 the two links occur at line 17
+of `cedbasic.mnu` and line 147 of `pause.mnu`.
+
+To reproduce, extract each packaged `fedata/menus/*.mnu` member
+using its stored path and match whole lines against
+`^\s*nextmenu\s*=\s*cedmain\s*$` case-insensitively. This establishes
+the removal of both shipped navigation links in 1.5.0. It leaves
+direct executable routes and menus retained by an existing
+installation unverified.
