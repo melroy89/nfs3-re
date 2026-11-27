@@ -175,10 +175,15 @@ After the verified zero reset, the traced callback must subsequently increment t
 
 ### Packaged loading setting and separate title delay
 
-The retained 1.3.1 package's `nfs3.ini` lacks
-`LoadingSplashTime`. The 1.4.0 package adds `LoadingSplashTime=5`
-under `[NFS3]`. Its executable computes the loading budget from
-that setting as described above. The separately configured
+All five retained packages from 1.0.0 through 1.3.1 omit
+`LoadingSplashTime` from `nfs3.ini`. All seven retained packages from
+1.4.0 through 1.6.1 ship `LoadingSplashTime=5`. To reproduce, extract
+the archive member with `7z x -so <archive> nfs3.ini` and check the
+setting in each package. This records the shipped default. The consumer
+and budget arithmetic are documented separately above. Its executable computes the loading budget from
+that setting as described above.
+
+The separately configured
 `IntroSplashTime` appears in 1.5.0 and has its own consumer at
 `00472fc0`. Both settings are present in the 1.5.0 package.
 The title delay and the race loading budget can therefore be
