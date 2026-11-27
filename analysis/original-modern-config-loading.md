@@ -643,3 +643,14 @@ flag read and this legacy store. The checked normal 1.5.2
 startup already captures the display flag before that zero write.
 Other aliases and any effect of rereading the cell after config
 load remain outside the scan.
+
+Final 1.6.1 retains the same ordering on the inspected startup path.
+Application setup calls INI reader `004b5580` at `004a3e4e`,
+then display setup `004b5c00` at `004a3e8d`. The reader's
+`004b5702` store supplies the value read at `004b5c50`, and
+`004b5c5d` publishes the inverted Boolean to `00564390`.
+The display initializer loads the saved configuration only later,
+at `004b5d21`. Consequently the legacy clear on the matching-length
+config path does not undo the display flag already published by
+this initializer. This is a static ordering result for the selected
+startup path, independent of successful renderer or window creation.
