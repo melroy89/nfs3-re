@@ -31,7 +31,7 @@ At original `00495159..0049517f`:
 00495179 FLDCW [0079f3ec]              ; PC=00, RC=00
 ```
 
-The mask clears precision bits 8–9 and rounding bits 10–11, so the resulting low word is **`007f` (single precision, nearest)**, not binary64/double precision. The same reset/save/clear/load sequence appears at original AND sites `004955df`, `004a3e83`, `004a3ec9`, `004b622f`, `004bc807`. No corresponding decoded `AND EAX,fffff0ff` site remains in Modern Patch. These are static instruction witnesses, not observations of every runtime path.
+The mask clears precision bits 8–9 and rounding bits 10–11, so the resulting low word is **`007f` (single precision, nearest)**, not binary64/double precision. The same reset/save/clear/load sequence appears at original AND sites `004955df`, `004a3e83`, `004a3ec9`, `004b622f`, `004bc807`. No corresponding decoded `AND EAX,fffff0ff` site remains in final Modern Patch 1.6.1. These are static instruction witnesses, not observations of every runtime path.
 
 | Boundary | Original executable | Modern Patch executable |
 |---|---|---|
@@ -1341,3 +1341,24 @@ count as a call to this precision helper.
 The helper loads the saved value, so its behavior depends on the
 preceding writer to that cell. The call census does not measure the
 control word on an executed path.
+
+#### Saved control-word writers
+
+A decoded direct-operand scan for `0079f3f4` in the listed archived EXEs
+finds the following stores and loads. The stores publish EAX before the
+mask clears its precision and rounding bits. The loads consume the
+low word through FLDCW.
+
+| Build | Direct stores | Direct FLDCW instructions |
+|---|---|---:|
+| 1.0.0 | `0049516a`, `004955da`, `004a3e7e`, `004a3ec4`, `004b622a`, `004bc802` | 7 |
+| 1.5.0 | `0049516a`, `004955e5`, `004a3e7e`, `004a3ec4`, `004bc802` | 6 |
+| 1.5.3 | `004955e3` | 1, at `004955cb` |
+| 1.6.0 | None decoded | None decoded |
+
+In 1.5.3 every decoded direct store to the cell has converged on the
+single-precision helper. That helper resets x87 before saving, so its
+write supplies the reset word `037f` to subsequent loads. The scan
+does not establish which writer runs first or exclude indirect or
+overlapping writes. Reproduce with `objdump -d -Mintel` on each
+archive member and filter decoded operands for `79f3f4`.
