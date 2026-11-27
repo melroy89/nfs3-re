@@ -196,3 +196,15 @@ and decode these call sites. The changes to the separate
 frontend cache-refresh loop leave this enumeration and sweep
 sequence intact. Runtime device counts and branch selection
 remain unverified.
+
+The 162-byte subsystem initializer at `00434f20..00434fc2`
+also matches across the hosted original and all twelve retained
+Modern releases. On its initialization branch it passes
+`005f1ff8` and length `0x880` (16 records of 136 bytes) to
+the clear helper, then clears all 16 interface pointers at
+`005f1fb8` and initializes a field in each corresponding
+record to 75. The loop bound is the immediate 16 at
+`00434f48`. Compare PE RVA `0x34f20` for `0xa2` bytes in
+each archive to reproduce. Together with the enumeration and
+query checks, this shows that slot 15 storage and initialization
+survive the frontend cache-refresh change.
