@@ -291,5 +291,7 @@ The hosted original and all twelve retained Modern executables match byte for by
 | `00410b50..00410c2b` | Bank filename construction and handle publication | `7dd5d81b51c08bd1065c755aebe36a6e3d7d400934c1b440ccfed106ba4f9eae` |
 | `00502620..0050273f` | Bank type, entry count and directory rebasing | `0ec696a7ef5773ad58c081e7b000f16e6e03b993000a49f52a6ee2ab8bc616d7` |
 | `004e9bf8..004e9c61` | Bounded request ID lookup and patch dispatch | `afeb08ce7e144bfb65f6e5ed8fbf3d0fae6d2953ba240295658a75949d2aa78b` |
+| `005021ac..005022ce` | Tagged patch preparation | `35ae373afd85f50da8e84ff01eb2620ecd201b035358b7d253a2511d8a3a43c1` |
+| `00501de8..005021ab` | Tagged patch playback interpreter | `798afbc6b090e340c85b9124bf478a5a34fd7b7e3160c05987ccfeb5ee4f70b9` |
 
-The dated frontend request changes therefore enter a retained bank lookup. The compared ranges cover the rebasing loop and dispatch entry. Downstream patch processing and backend playback remain separate.
+The dated frontend request changes therefore enter a retained bank lookup. The compared ranges now extend through the tagged patch preparation and playback interpreter bodies. They establish local code identity. Active bank data, backend callees and audible output remain separate.
