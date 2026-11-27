@@ -74,6 +74,15 @@ All formulas require valid accessible records, source reads and direction flag a
 
 The expanded preset audit now compares complete setter `0041d610..0041d61a`, complete advance helper `0041d870..0041d89d`, and callsite neighborhoods around `0041aaf6` and `0041da01`. All these retained spans are byte-identical between original and official Modern. Each of the three CALL operands is checked against target `0041d620`; these are confirmed direct callers, not proof of exhaustive indirect-call coverage.
 
+The hosted original and all 12 retained Modern releases also match
+over both complete helper bodies. Hash 45 file-backed bytes at PE RVA
+`1d870h` to reproduce the advance helper's SHA-256
+`f68b7f83e72c09171e985707509eda114e050d9915208320ab68a1edee1a10c1`.
+The 10 bytes at PE RVA `1d610h` are
+`55 89 e5 a3 28 bc 6f 00 5d c3` throughout. This confirms that
+the original setter and four-position cycle were retained even as
+the selected records and table layout changed.
+
 - **Setter `0041d610`:** writes incoming EAX to `006fbc28`, restores its frame and returns. There is no normalization or apply call. Thus a valid cycle does not make every selector producer safe.
 - **Advance caller `0041d894`:** loads the selector, increments with32-bit wrapping, publishes that incremented value, performs signed division by4, publishes the signed remainder, then applies the preset. Values0..3 cycle0→1→2→3→0. Arbitrary inputs can produce negative remainders; do not replace the routine with unsigned masking without qualifying its input domain. There are two stores, so the incremented intermediate value exists before the remainder store; no cross-thread observation or synchronization is established.
 - **Object-position update caller `0041aaf6`:** saves its incoming EAX object pointer in ECX, applies presets, then supplies EDX as the record selector to `0041d310` before continuing with object+4. Its reliance on ECX/EDX surviving the apply call is supported by both versions' saved-register contracts. The [existing object/bucket analysis](detailed-analysis-notes.md) supplies the later consumer context; this new capture is deliberately only the entry/call prefix.
