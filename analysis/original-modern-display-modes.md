@@ -63,6 +63,19 @@ Key comparison length depends on `Hide16bitModes` (`007a2798`):
 
 This explains the specific “hide 16-bit modes when corresponding 32-bit modes exist” mechanism. It does not globally discard every 16-bit mode or force a 32-bit driver mode when no matching candidate exists. The cached descriptor and list initialization (`00448320`) matter: it enumerates only while count is zero, rather than always rebuilding as original initializer `004482c0` does. Other count-reset paths are not excluded by this chapter.
 
+In retained 1.4.0 the collector still uses the append path
+with signed count rejection at 101. In 1.5.0 the sorted collector
+tests `007a2798` at `00448221` to choose the key length, and the
+settings code stores the integer reader's result at `004b564e`.
+The named key and these operands are present in every retained
+release from 1.5.0 onward. The complete 269-byte collector at
+PE RVA `48210h` matches in all five releases from 1.5.0 through
+1.6.0 (SHA-256
+`2c6100e3605e3edeb50d30502df12c9ab50f1d532b989648940b07b87d8eeea9`).
+The 1.6.1 collector is a different byte sequence and retains
+the same key-length check. This dates the setting-to-collector
+path independently of which mode rows a driver supplies.
+
 ## 4. Count boundary differs from the headline limit
 
 At `00448263..0044826c`, Modern checks `count > 0x64` with unsigned **JA**, rather than `count >= 0x64`. A new unique candidate is admitted when count equals 100 and increments it to **101**. Duplicate/replacement processing occurs before that admission check. Original checks signed `count >= 20` before appending.
