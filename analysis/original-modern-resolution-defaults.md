@@ -300,3 +300,17 @@ depends on the renderer's eligible records. No rendering was tested.
 At `00473279`, the original and retained 1.1.0–1.4.0 load the scalar score from `006fbc18`, call `004bee80`, and pass its result to `004483a0`. From 1.5.0 the frontend instead calls the dimension-based selector directly. Its target is `0044838e` in 1.5.0, `00448398` in retained 1.5.1–1.6.0, and `00448394` in final 1.6.1.
 
 At each of those entry points the helper initializes the requested depth to 32, allowing depth 16 only when `007a2798` is zero and bit 0 of `006fbc14` is clear. It reads width and height as unsigned WORDs at `006fbc18` and `006fbc1a`. The historical address changes preserve that local policy. The frontend caller uses the current settings, so the default initializer's separate write of `006fbc14=1` does not establish a 32-bit request for every frontend entry. Requested depth and the chosen display mode remain distinct because the selector can consider eligible mismatched modes.
+
+### Desktop-area defaults are already present in 1.0.0
+
+The [recovered 1.0.0 EXE](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+matches 1.1.0 at the ten-byte startup call sequence at `004a6e3b`,
+the metrics helper at `004f9140..004f915b`, and the default-score
+branch at `00472e31..00472e67` (exclusive ends). Both PE import
+tables resolve slot `00534750` to `USER32.GetSystemMetrics`.
+Thus the qualifying branch already uses desktop width × height + 32
+in 1.0.0. The alternate branches retain the 640×480×16 score.
+
+This dates the target-score calculation in MP100-011. It does not
+establish first-run reachability in every configuration, exact
+dimension matching, or successful selection on a running machine.
