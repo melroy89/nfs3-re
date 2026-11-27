@@ -246,6 +246,17 @@ To reproduce, disassemble `0046a52b..0046a5e0` in the four
 retained EXEs. This dates the local mapping and conversion
 changes. Actual displayed values and dead-zone coverage remain open.
 
+The entire original percentage tail survives through 1.4.0.
+In the hosted original and all six retained Modern builds from
+1.0.0 through 1.4.0, the 191-byte range `0046a52b..0046a5ea`
+has SHA-256
+`e9c79bb2a2be44c66fdefcf7b1fd883563bb18c8e08aea3a7b7e3292d4087a79`.
+Read this range from PE RVA `0x6a52b` in each archived executable
+to reproduce the comparison. The first change to this tail in the
+retained Modern builds is the 1.5.0 type-admission and mapping edit
+described above. Earlier changes to the caller's inputs remain
+outside this byte comparison.
+
 The conversion change persists through 1.6.1. Reading 132 bytes
 from PE RVA `0x6a52b` gives the same SHA-256 within each group:
 
