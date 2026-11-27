@@ -50,13 +50,13 @@ This strengthens **MP140-073** to a confirmed local default-to-consumer mechanis
 | Baseline | Header+10h, profiles P0..P5 | Role-pair interpretation from linked consumer evidence |
 |---|---|---|
 |Supplied original, previously audited |4,1,4,1,4,1 |Racer4 / cop1 |
-|Modern1.1.0 |3,1,3,1,3,1 |Racer3 / cop1 |
+|Modern1.0.0–1.1.0 |3,1,3,1,3,1 |Racer3 / cop1 |
 |Modern1.3.1 |3,1,3,1,3,1 |Racer3 / cop1 |
 |Modern1.4.0 |3,3,3,3,3,3 |Both3 |
 |Official final1.6.1 |3,3,3,3,3,3 |Both3 |
 
-The complete43-byte store block `00485949..00485974` is identical in1.1.0/1.3.1: load EAX with binary32 bits40400000h (3.0), EBX with3f800000h (1.0), and alternate stores to `006fbc60`, `006fbe04`, `006fbfa8`, `006fc14c`, `006fc2f0`, `006fc494`. The complete1.4.0 replacement `00485943..0048596c`,41 bytes, loads EBX=40400000h and writes all six destinations from EBX. Final retains that block byte-for-byte at `00485932..0048595b`. These ranges end before the next unrelated default assignment, with no calls or branches inside the captured stores.
+The 43-byte store block at `00485944..0048596f` in 1.0.0 is byte-identical to `00485949..00485974` in all retained releases from 1.1.0 through 1.3.1 (SHA-256 `ec06fc648399ee4f2c3141eeb8350d7fca18d2e6ab5e0126ed5aa23e987a7f14`): load EAX with binary32 bits40400000h (3.0), EBX with3f800000h (1.0), and alternate stores to `006fbc60`, `006fbe04`, `006fbfa8`, `006fc14c`, `006fc2f0`, `006fc494`. The complete1.4.0 replacement `00485943..0048596c`,41 bytes, loads EBX=40400000h and writes all six destinations from EBX. Final retains that block byte-for-byte at `00485932..0048595b`. These ranges end before the next unrelated default assignment, with no calls or branches inside the captured stores.
 
-This dates **MP140-073's equalization mechanism directly to1.3.1→1.4.0** and gives **MP100-032 partial historical support** from an early retained EXE. The old1×/3× bullet describes early Modern, not final Modern;1.0.0 introduction remains unverified. This also distinguishes two edits: racer4→3 between supplied original and early Modern, then cop1→3 between1.3.1 and1.4.0.
+This dates **MP140-073's equalization mechanism directly to1.3.1→1.4.0** and gives **MP100-032 partial historical support** from an early retained EXE. The retained 1.0.0 executable verifies the advertised 1×/3× defaults. Final Modern uses 3× for both roles. This also distinguishes two edits: racer4→3 between supplied original and early Modern, then cop1→3 between1.3.1 and1.4.0.
 
 The numbers are stored profile multipliers reaching the map-position scale under the linked selected-profile path. They are not physical pixel ratios, actual visible coverage or marker-size factors. Preferences can overwrite defaults; map fitting/recentering, active role/profile, later edits, source lifetime and rendering remain separate. Both catalog claims remain partial rather than runtime-verified. No executable, saved Ghidra database or maintained C changes were made.
