@@ -560,3 +560,13 @@ The second start path clears `00552590` at `004107f1` before testing the flag. I
 The hosted original, Modern 1.0.0 and official 1.6.1 all push path slot `007a2a34` and format `%s%s` at `0041084c..0041085a`; the preceding branch pushes a name from the table at `005525a8`. In the original installer-record layout that slot is record index 8. Modern 1.0.0 initializes it from zero-based string 5 in the consecutive NUL-terminated defaults at `0053ec2c`, written into 128-byte slots from `007a27b4`. That entry is `.\GameData\Audio\PC\`. Official 1.6.1 also initializes the same slot to a [relative PC audio directory](original-modern-startup-paths.md#original-installer-records-and-final-path-slots).
 
 Thus 1.0.0 changes both the producer of the directory prefix and the filename used for playback. The song path is relative to the process's effective working directory. Later writes and successful file access were not tested.
+
+Across all twelve retained Modern releases, the two argument pushes at `0041084c..00410856` are byte-identical. The initializer tables retain the PC audio prefix at index 5 while changing its spelling:
+
+| Releases | Source table VA | Initialized prefix |
+|---|---|---|
+| 1.0.0–1.3.1 | `0053ec2c` | `.\GameData\Audio\PC\` |
+| 1.4.0–1.5.3 | `0053eb20` | `.\gamedata\audio\pc\` |
+| 1.6.0–1.6.1 | `0053f42c` | `.\gamedata\audio\pc\` |
+
+Reproduce by extracting each executable, reading the sixth NUL-terminated string from the listed table and comparing the two pushes. The 1.4.0 table rewrite preserves the music slot address and changes its casing. Behaviour on a case-sensitive host remains untested.
