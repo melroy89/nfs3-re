@@ -200,7 +200,7 @@ For the following instruction-derived cases, assume ordinary positive fitting di
 
 The last case reinforces the existing limit: these EXE predicates alone do not enforce a640×480 minimum. Conversely, bypassing the old budget gate does not make all resolutions valid. Final still has ratio/depth/flag restrictions, driver enumeration/storage limits and machine-width arithmetic; providers, mode callbacks and allocations can impose additional limits.
 
-**MP100-003 advances to partial historical support:** a concrete original size restriction is removed in early Modern, with useful larger local candidates admitted. “No unreasonable maximum limits” remains broader than this evidence.1.0.0 introduction, actual mode menus and rendered operation remain unverified. The follow-up below now dates depth narrowing to1.4.0→1.5.0 and separates later descriptor caching. This also separates at least three edits—budget removal, aspect/depth policy and later descriptor-cache refactor—rather than silently assigning final's entire helper to the first release. No driver, game, instruction probe, Ghidra write or executable mutation occurred.
+**MP100-003 advances to partial historical support:** a concrete original size restriction is removed in early Modern, with useful larger local candidates admitted. “No unreasonable maximum limits” remains broader than this evidence.The restriction is already bypassed in 1.0.0. Actual mode menus and rendered operation remain unverified. The follow-up below now dates depth narrowing to1.4.0→1.5.0 and separates later descriptor caching. This also separates at least three edits—budget removal, aspect/depth policy and later descriptor-cache refactor—rather than silently assigning final's entire helper to the first release. No driver, game, instruction probe, Ghidra write or executable mutation occurred.
 
 ## Depth narrowing and descriptor caching occur in different releases
 
@@ -208,10 +208,18 @@ The last case reinforces the existing limit: these EXE predicates alone do not e
 
 | Boundary | Verified selected-body change |
 |---|---|
-|1.1.0→1.4.0 endpoints |Complete226-byte inline enumerator identical |
+|1.0.0–1.4.0, all six retained releases |Complete 226-byte inline enumerator identical |
 |1.4.0→1.5.0 |Inline signed depth>=16 predicate replaced by shared67-byte eligibility helper requiring16 or32; enumerator/search use that helper |
 |1.5.0–1.6.0, all five retained releases |Complete enumerator, nearest-mode search and eligibility bodies identical |
 |1.6.0→1.6.1 |Enumerator/search replace about-slot calls with cached-descriptor loads; eligibility body unchanged |
+
+The 226-byte inline enumerator at PE RVA `bed90h` has SHA-256
+`84a8ea1447b72f9083948d93858788cbc0a1bd79128b8f7771dff7980eed7f47`
+in each of the six retained Modern archives through 1.4.0.
+The corresponding hosted original span hashes to
+`ff88ba280cea0606c66f86e484e3acb4fbc63cb59a8340c443f9ca39516fbb0d`.
+This dates the budget bypass and the broader geometry and depth
+checks to 1.0.0 in the EXE enumerator.
 
 The complete 67-byte eligibility helper at `004bee60..004beea3`
 also matches in all six retained releases from 1.5.0 through 1.6.1
