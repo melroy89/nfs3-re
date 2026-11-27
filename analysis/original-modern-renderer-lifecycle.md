@@ -404,3 +404,29 @@ already received its adapter index from `0055fdbc`. The
 normal type parser supplies nonzero masks, while BSF itself
 leaves the destination undefined for a zero input. Runtime
 renderer results and callee effects remain unverified.
+
+#### Version 1.5.0 moves the D3D mode request and records state-call results
+
+In retained 1.5.0 (EXE SHA-256
+`d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae`),
+the type dispatch at `004b5a16` uses the seven DWORDs at
+`004b59a0`. Bits 0/5 return at `004b5b29`, bits 1/2 run the
+software path at `004b5a2d`, bits 3/4 run the Voodoo-like
+path at `004b5ae7`, and bit 6 runs the D3D-like path at
+`004b5a6f`. The software and Voodoo-like paths retain the
+1.4.0 local state-call sequences and stores listed above.
+
+The D3D-like path retains its two flag stores and subsequent
+state-call sequence. In place of the local fixed mode request
+and call to `004b5940`, it loops over five selector/value pairs
+at `0055fd94`: `(13,1), (13,0), (4,2), (206,1), (104,1)`.
+At `004b5a97` it tests each state call's return and sets the
+corresponding bit in EDI when EAX is nonzero. It stores the
+resulting five-bit mask to `007a3a5c` at `004b5aa7`. Each bit
+tracks the result of the call at that row index, including the
+two distinct calls using selector 13. The table bytes match in
+every retained release from 1.5.0 through 1.6.0. The mode
+request itself is in the startup initializer through slot
+`009ef958` at `005176a1`, as described above. These are static
+call-site and data observations. The meaning of each return
+and the live driver's response remain unverified.
