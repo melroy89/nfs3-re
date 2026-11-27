@@ -207,3 +207,13 @@ Extract both `nfs3.ini` and `nfs3.exe` from the matching archive when comparing 
 In retained 1.4.0, the integer reader stores `PreventMinimize` with fallback zero to `00561284` at `004b5615` and `ScreenshoterEnabled` with fallback one to `00561288` at `004b563b`. Installer `004ccd2c` adds the two DWORDs and attempts installation only if the wrapping sum is nonzero and the handle at `00561280` is zero. It tries hook type `0x0d` first, then type 2 with the current thread ID on failure. Both attempts take callback `004ccc70`. Thus with ordinary values 0 and 1, disabling minimization prevention alone still permits installation for screenshots. These addresses are specific to 1.4.0. Actual hook installation remains untested.
 
 The create/activate/destroy lifecycle is already present in retained 1.4.0. Window initialization registers `0001 → 004ccdb0`, `0002 → 004ccdd0` and `001c → 004ccdf0` at `004cd77c..004cd7a0`. The create callback's installation call is at `004ccdb9`, the destroy cleanup call at `004ccde3`, and the activation handler calls install or cleanup at `004cce18` and `004cce1f`. This places the new lifecycle in the same retained release as the setting rename. The corresponding helper and call sites have moved to their final addresses by retained 1.5.0. The static registration does not establish the order in which a particular Windows or Wine session delivers those messages.
+
+The full 100-byte installer matches between 1.4.0 at `004ccd2c`
+and 1.5.0 at `004ccc40` except for four bytes in the two immediate
+callback addresses. Both hook attempts switch from `004ccc70` to
+`004ccb84`. All six retained installers from 1.5.0 through 1.6.1
+match at the latter installer address, including the final RET.
+Compare the 100 file-backed bytes in the extracted EXEs to reproduce.
+This dates the final install policy to 1.4.0 and the callback
+redirection at those call sites to 1.5.0. Callback behavior and OS
+hook acceptance are separate from the installer comparison.
