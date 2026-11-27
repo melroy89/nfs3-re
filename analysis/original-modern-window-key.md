@@ -65,3 +65,13 @@ bytes at PE RVA `ccaa0h` in the extracted archive members.
 The separate removal of [OS toggle resets at window creation](original-modern-window-geometry.md#removed-startup-reset-of-keyboard-toggles)
 already appears in 1.0.0. Actual message translation under Wine
 or different keyboard layouts remains untested.
+
+The three later bytes are relative-call operands in the adjacent
+window-message handler. From 1.5.2 to 1.5.3, the Alt call at
+`004ccbd6` moves from `004f1fe0` to `004f1fd4`, and the
+Control call at `004ccbe7` moves from `004f1fdc` to
+`004f1fd0`. The complete shared block starting at the Control
+entry (32 bytes) matches at the two locations. It requests
+`GetAsyncKeyState` with virtual key `0x11` or `0x12` and
+returns the high-bit test in EAX and ZF. This is a relocation
+of the modifier check with no change to the nearby branch policy.
