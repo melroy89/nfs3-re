@@ -78,6 +78,15 @@ Original code applies the adjustment when **music setting `006fbbe4 == 1` OR sty
 | Level update `00418620` | If byte `00552908` is nonzero, apply predicate and subtraction to configured race level `006fbbf0`; clamp signed-negative; call `004e8b60` | Same admission byte, direct configured level at `00418637`, call `0041863c` |
 | Toggle `004187e0`, enabling branch | Apply predicate/subtraction/clamp to configured race level, call `004e8b60`, set enabled byte1 | Direct configured level at `004187f8`, call `004187fd`, set byte1 |
 
+The toggle changes in **1.5.3**. The complete 96-byte envelope
+`004187e0..00418840` matches the supplied original through 1.5.2
+and matches final Modern from 1.5.3 onward across all retained
+archives. The enable branch now passes `006fbbf0` directly to
+`004e8b60`, and enable and disable share the byte store and return.
+The shorter routine leaves `0041880c..00418840` as padding.
+Actual playback levels and the downstream audio response remain
+unverified.
+
 On the toggle’s disabling path both versions send level0 to `004e8b60` and clear the enabled byte; Modern refactors the final byte assignment through AL. Level update retains an earlier EAX=120 call to `004e73d0` before checking that byte. These retained operations prevent mistaking the patch for removal of all level management.
 
 For ordinary configured level80 and initial table values, the old adjusted backend inputs can be65,74 or80 depending on circuit; Modern supplies80 in these paths. For level5, old adjusted inputs become0 for adjustments15/6, whereas Modern supplies5. These are arithmetic examples derived from instructions, not executed audio measurements. Original subtraction wraps at32 bits, then `TEST/JGE` checks the signed result; the shorthand `max(0, level−adjustment)` is scoped to normal small nonnegative inputs. A C translation must not introduce signed-overflow undefined behavior or silently extend that shorthand to arbitrary machine inputs.

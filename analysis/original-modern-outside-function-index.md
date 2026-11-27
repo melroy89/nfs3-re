@@ -69,6 +69,7 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `0041880c..00418840` | All 51 differing bytes are in the padding after the shortened [stream-volume toggle](original-modern-music-start.md). The original tail contains the conditional subtraction and clamp before restoring race music volume. | Live playback and mixer output remain unverified. |
 | `004a51ae..004a51f8` | All 74 bytes become NOPs. The [original command-line body](original-modern-command-line.md) parses the numeric `-D3D` suffix and publishes the device field at `0055fdbc`. | Actual device selection and priority against other producers remain unverified. |
 | `00473162..0047319a` | Modern jumps across this 56-byte range and fills it with NOPs, accounting for 54 differences. The [original startup configuration path](original-modern-config-loading.md) includes the conditional graphics-defaults call after the saved/current renderer check. Modern retains the title-delay helper at an earlier call site. | Real config reset and graphics initialization outcomes remain untested. |
 | `004722c7..00472300` | Modern NOPs replace all 57 bytes of this [original defaults-time language mapper tail](original-modern-language-table.md#removed-defaults-time-language-mapper-00472250). The interval starts inside the Italian argument setup, followed by comparisons that store ordinals 4 or 5 for Italian or Swedish. | Modern loads language through the separate configuration path. |
