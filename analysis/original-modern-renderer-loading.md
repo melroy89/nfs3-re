@@ -318,6 +318,14 @@ beam rendering was removed, or exclude another control mechanism. No target,
 API, driver or instruction probe was executed; executable/database bytes
 were preserved.
 
+### 1.5.0 replaces the LightBeams setting with a contextual fog gate
+
+The retained 1.4.0 EXE reads `[THRASH] LightBeams` with default 0 at `004b5ae8..004b5b0b`, normalizes the result to 0 or 1, and stores it at `007a3a54`. The state-14 setter tests bit 0 of that byte at `00470ad4`. At the same setter address, 1.5.0 instead calls `00472158`, which checks the effective fog gate `007a3a64`. With that gate disabled, the helper maps the input to −1 unless the cache at `00678b40` already contains −1, in which case it returns zero and the setter exits. With the gate enabled, it returns the incoming EAX. The producer at `004b58c4..004b58e7` now reads `[THRASH] FogSupport`, still with default 0, and stores the normalized result at the reused address `007a3a54`. Both import slots resolve to `GetPrivateProfileIntA`. See the [contextual gate comparison](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) for the new fog inputs.
+
+All seven retained 1.4.0 driver INIs contain `LightBeams`; none of the eight shipped 1.5.0 driver INIs contains it. In DX5 the sole file change is deletion of `LightBeams=1`. `File=dx5a.dll`, `Type=d3d` and `DirectDrawLagFix=1` remain identical, and neither DX5 INI requests `FogSupport`. Thus using identical INI text alone would not equalize these versions' state-14 handling. Actual emitted renderer requests and the visible horizon remain untested.
+
+Reproduce from the pinned [1.4.0 and 1.5.0 nfs3.exe identities](original-modern-projection.md#the-150-wide-angle-edge-glitch-remains-unattributed) and `drivers/*/thrash.ini` archive members. Resolve the key/section arguments as PE strings. DX5 INI SHA-256 values are `efd7a2492380b31abc45c9884d71e95f091239751b08ae1d712376bae08ef4bb` and `77cdb61083d6563cc34109996b957a54dd3254c30dab7e0f1398eb0cae066a5f`, respectively.
+
 ## Removed legacy DirectDraw enumeration wrapper and register adapter
 
 The [read-only audit](scripts/audit_removed_ddraw_enumerator.py) retains
