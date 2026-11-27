@@ -447,16 +447,16 @@ In retained 1.3.1, page record 75 at `00555c08` contains DWORDs `5, 200, 0x64657
 
 In 1.4.0, the same record has type 5 and replaces the inline fields with pointers `0053ee28` and `0053ee34`. The [resource history](original-modern-pe-resources.md#resource-history-across-retained-releases) records the corresponding replacement of numeric `10/200/0` by named `10/ABOUT.QFS/0`. This identifies the numeric resource's use on the 1.3.1 About route. Successful resource loading and decoded pixels remain unverified.
 
-The numeric resource route is already present in retained **1.1.0**, the earliest available Modern executable. The original's record 75 holds type 3 and text IDs `0x470..0x475`. Every retained release from 1.1.0 through 1.3.1 holds the same type-5 record with ID 200 and inline `cred`. The resource call moves independently of the record.
+The numeric resource route is already present in retained **1.0.0**. The original's record 75 holds type 3 and text IDs `0x470..0x475`. Every retained release from 1.0.0 through 1.3.1 holds the same type-5 record with ID 200 and inline `cred`. The resource call moves independently of the record.
 
 | Release | Type-5 resource call | Loader entry |
 |---|---|---|
-| 1.1.0 | `0041d7d6` | `004b55d8` |
+| 1.0.0–1.1.0 | `0041d7d6` | `004b55d8` |
 | 1.2.0 | `0041d7d6` | `004b5654` |
 | 1.3.0 | `0040fede` | `004b5654` |
 | 1.3.1 | `0040fede` | `004f1ea0` |
 
-All four call sites read record+4 into EAX and all four loader entries pass type 10 and the EAX resource identifier to `FindResourceA`. This dates the text-to-resource change to 1.1.0 or earlier. The 1.4.0 change is specifically from a numeric ID to a named resource. The 1.0.0 route and the decoded artwork remain unverified.
+At each listed location the caller reads record+4 into EAX and the loader passes type 10 and the EAX resource identifier to `FindResourceA`. This dates the executable route to 1.0.0. The 1.4.0 change is from a numeric ID to a named resource. The decoded comparison below starts at 1.1.0.
 
 ### Decoded About resource across retained builds
 
@@ -494,8 +494,8 @@ At `00441d01`, the original compares EDX with unsigned maximum 4, then indexes t
 
 | Retained releases | Type-5 target |
 |---|---|
-| 1.1.0–1.2.0 | `0041d7c8` |
+| 1.0.0–1.2.0 | `0041d7c8` |
 | 1.3.0–1.5.2 | `0040fed0` |
 | 1.5.3–1.6.1 | `00437820` |
 
-This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range. The 1.0.0 dispatch table remains unverified.
+This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range.

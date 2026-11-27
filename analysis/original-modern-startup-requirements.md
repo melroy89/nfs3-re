@@ -280,7 +280,7 @@ The normalized normal-import sets and selected PE OS/subsystem versions/flags ar
 
 Keep historical endpoints distinct: the original probe described above uses GetVersionExA and a platform-dependent policy; these130/131 bodies use GetVersion's byte; the final Modern same-address region is removed/NOP-filled. No single guessed C body or OS policy represents all three stages. No target/API/instruction execution or executable/Ghidra modification occurred.
 
-The earliest retained Modern executable, 1.1.0, already replaces the original startup call at `004a3d67` and both original drive-type calls at `004b635b` and `004b63bc` with five NOPs apiece. Its PE import table also lacks `GetDriveTypeA`. The former helper entry itself holds another routine's epilogue in that build, so the removal is established by the original call sites and import table. This supplies partial static support for MP100-039. The 1.0.0 executable and actual startup with no CD present remain unverified.
+Retained 1.1.0 replaces the original startup call at `004a3d67` and both original drive-type calls at `004b635b` and `004b63bc` with five NOPs apiece. Its PE import table also lacks `GetDriveTypeA`. The former helper entry itself holds another routine's epilogue in that build, so the removal is established by the original call sites and import table. This supplies partial static support for MP100-039. Retained 1.0.0 already lacks the `GetDriveTypeA` import and has five NOPs at both `004a3d67` and `004b63bc`. At `004b635b` it uses `MOV EDX,0x20` in place of the original call. Actual startup with no CD present remains unverified.
 
 ### The mutex slot becomes the process-heap slot in 1.4.0
 

@@ -50,15 +50,17 @@ separate driver-option path above. The trace covers the local
 argument effects. Actual renderer acceptance and priority against
 other device-selection producers remain unverified.
 
-The original numeric body is already absent from the parser in the
-earliest retained release, 1.1.0. That build compares an eight-byte
+Retained 1.0.0 still compares the four-byte `-D3D` literal at `0053d684`
+and uses the numeric body through the store at `004a51f3`. Retained
+1.1.0 replaces that route. Its parser compares an eight-byte
 driver prefix and calls the replacement setter at `004b57d4`.
 The remaining instructions inside the old 74-byte body range are
 part of the replacement parser, including the call at `004a51b1`
 and jump to the common continuation at `004a51f8`. In 1.4.0–1.6.0
 the last call and jump occupy `004a51ae..004a51b5`; the remaining
 67 bytes are NOPs. The entire range only becomes NOPs in 1.6.1.
-The exact 1.0.0 transition remains unverified.
+This dates the parser replacement to 1.0.0 → 1.1.0. Compare
+`004a5198..004a51f8` in the extracted archived executables.
 
 The 1.6.0 parser first copies the argument into scratch, then
 uses in-place case conversion. Its tail call at `004a51ae`
@@ -91,7 +93,7 @@ Modern's help-building loop explicitly tests each switch text's first byte and s
 
 Argument iteration decrements the saved count before loading an argument (`004a50a7..004a50cd`). It therefore visits trailing arguments before earlier ones, excluding the executable at index zero on the ordinary path. The setter and INI bypass are now traced below, establishing bounded duplicate-driver behavior rather than inferring it solely from iteration order.
 
-**MP110-003** is statically supported by the original renderer-option table versus Modern's universal prefix route and INI bypass bit. Exact release introduction still needs the v1.1.0/predecessor binaries. The local Modern-derived executable's separate About-text edit is outside this official-baseline parser comparison.
+**MP110-003** is statically supported by the original renderer-option table versus Modern's universal prefix route and INI bypass bit. The retained 1.0.0 and 1.1.0 parser bodies date the replacement of the original numeric route as described above. The local Modern-derived executable's separate About-text edit is outside this official-baseline parser comparison.
 
 ## Duplicate driver options: name and suffix are separate state
 
