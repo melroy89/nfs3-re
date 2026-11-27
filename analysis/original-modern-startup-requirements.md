@@ -572,3 +572,24 @@ byte for byte: the dgVoodoo and nGlide `glide3x.dll` wrappers,
 header edit to the six changed DLLs and the executable within
 this archive pair. It also leaves the source of the reported
 startup fix unresolved.
+
+### Import directory history through 1.6.1
+
+Across the hosted original and all twelve retained Modern executables,
+1.5.3 is the first build with a populated IAT data-directory entry.
+
+| Executable | Import directory size | IAT directory RVA and size |
+|---|---:|---|
+| Hosted original | `0x14f7` | Zero |
+| Modern 1.0.0–1.3.1 | `0x14e2` | Zero |
+| Modern 1.4.0 | `0x14db` | Zero |
+| Modern 1.5.0–1.5.2 | `0x14bd` | Zero |
+| Modern 1.5.3–1.6.1 | `0xdc` | `0x134458`, `0x368` |
+
+All six updated DLL members also retain their 1.5.3 import directory
+sizes and IAT RVAs and sizes in 1.6.0 and 1.6.1. To reproduce, extract
+each exact archive member and compare optional-header data directories
+1 and 12. A zero IAT directory in the older headers leaves the
+descriptor-referenced thunk lists in place. This comparison establishes
+when the explicit directory appears and how long it persists. Actual
+loader behavior on the systems mentioned in MP153-014 remains unknown.
