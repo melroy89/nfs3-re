@@ -436,3 +436,23 @@ above. This establishes the original-to-early-Modern
 height formula continuity for positive viewport heights.
 Other rectangle fields and rendered proportions remain
 separate comparisons.
+
+The following examples hold the physical rectangle fixed across
+formulas to isolate the logical projection change. The heights
+in the final column apply the 1.6.x width-based formula to those
+same dimensions. They exclude the separately documented changes
+to authored bounds and border inset.
+
+| Viewport height | Assumed physical mirror width × height | Original–1.4.0 logical height | 1.5.x logical height | 1.6.x logical height |
+|---:|---:|---:|---:|---:|
+| 480 | 193 × 64 | 120 | 120 | 120 |
+| 720 | 385 × 96 | 180 | 210 | 240 |
+
+For the second row, the height-derived term is 180 and the
+width-derived term is 240. The 1.5.x calculation averages them
+to 210 and places the logical origin 57 units above the physical
+top by arithmetic shift of the height difference. The formula
+change can therefore leave one rectangle unchanged in height and
+change another by 30 units. These are derived examples with
+assumed dimensions. Actual viewport inputs and rendered mirror
+proportions remain untested.
