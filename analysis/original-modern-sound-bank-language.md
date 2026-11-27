@@ -89,6 +89,8 @@ On a successful directory test with validated Swedish selection, the final produ
 
 **MP120-012 advances vendor-only→partial:** selected final directory fallback and original/final Swedish filename-code changes support concrete portions of the claim. The [historical follow-up below](#historical110-to120-dates-the-selected-fallback-and-swedish-code) now dates these selected changes110→120; every failure path and the promised absence of crashes/playback success remain unverified. No game, audio/API operation, instruction probe or Ghidra modification occurred; executable/database bytes are unchanged.
 
+Decoding all seven DWORD pointers in both tables across the hosted original and all twelve retained Modern executables confirms two groups. The original, 1.0.0 and 1.1.0 decode to `E,G,F,S,I,E,E`. Every retained release from 1.2.0 through 1.6.1 decodes to `E,G,F,S,I,W,E`. To reproduce, extract the executable from each archive, read 28 bytes at PE RVAs `0x9ff0` and `0x12950` as little-endian pointers and resolve their strings via the image base. The 1.1.0, 1.2.0, 1.4.0 and 1.6.1 patch archives have no direct members under `GameData/Audio/Speech/` in their member listings. This leaves installed speech-bank contents outside the archive check.
+
 ## Historical110 to120 dates the selected fallback and Swedish code
 
 The [historical speech audit](evidence/audits/speech-language-history.json), reproduced with `python3 analysis/scripts/audit_speech_language_history.py`, pins author-hosted110/120 archives and EXEs, both complete selected path initializers,120 helpers,24-slot literal banks and two filename tables. This directly dates the previously described selected final mechanisms without assuming their final addresses/contracts were already in use.
