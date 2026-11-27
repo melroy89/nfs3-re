@@ -169,3 +169,17 @@ bit and can skip the title playback call at `00473159`. This dates
 the INI producer for MP100-024 to the named release. The inspected
 path covers the title movie. Other intro requests and actual
 playback suppression remain unverified.
+
+### Early title and idle paths use different movie gates
+
+The complete 253-byte idle controller `00496200..004962fd` matches
+the hosted original in 1.0.0, 1.1.0 and 1.3.1. Version 1.4.0 differs
+in that window. The early controller tests the `RemoteOnly`-derived
+flag at `00496217`. It has no local read of the `NoMovie` bit, and
+the three decoded direct callers in 1.0.0 (`00452f63`, `0045cff7`,
+`0045d307`) invoke it without an immediate test of bit 11.
+
+The early INI setting therefore has a verified direct effect on title
+playback admission. Whether higher-level callers can prevent entry to
+the idle controller remains separate. The later availability-mask
+mechanism supplies the independently verified option-to-idle path.
