@@ -105,3 +105,7 @@ serialization and indirect references remain unverified.
 ### DX8 device creation does not request FPU preservation
 
 The inspected `IDirect3D8::CreateDevice` call at `60003d4c` passes behavior flags `24h` from `60003d3f` in retained 1.6.0 and 1.6.1. The [object and argument trace](original-modern-renderer-texel-alignment.md) identifies this as the device-creation call. The `D3DCREATE_FPU_PRESERVE` bit (`02h`) is clear at that site. This evidence concerns the flags passed at creation and is separate from the explicit rounding helpers above. It leaves the graphics runtime's actual effect on the calling thread's control word unverified. [Wine Direct3D 8 header](https://github.com/wine-mirror/wine/blob/master/include/d3d8.h)
+
+### The shared EXE DirectDraw cooperation call leaves both FPU bits clear
+
+The original and official 1.6.1 match at `004ebe50..004ebec9` and `004ebf0c..004ebf27`. The DirectDraw cooperation call at `004ebec6` selects `08h` for normal mode or `11h` for exclusive fullscreen. A nonzero `00564edc` on the fullscreen branch changes the flags to `51h`. All three values leave `DDSCL_FPUSETUP` (`0800h`) and `DDSCL_FPUPRESERVE` (`1000h`) clear. This establishes the argument at the shared executable call, independently of the DX8 DLL's device flags. It does not establish which renderer setup routes use this object or how the live DirectDraw implementation treats x87. [DirectDraw cooperative-level documentation](https://learn.microsoft.com/en-us/windows/win32/api/ddraw/nf-ddraw-idirectdraw7-setcooperativelevel)
