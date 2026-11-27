@@ -142,3 +142,16 @@ hardware 3D buffer count. The bit can therefore indicate a
 nonzero maximum even when the number of free 3D buffers is
 zero. This is a static layout match. Actual driver values and
 EAX effect availability remain unverified.
+
+The hardware-buffer bit is provisional until the DLL chooses
+a result path. At RVA `0x17ee` the routine tests the low nibble
+of the result. At `0x1869` it also tests mask `0x3e` in the
+second byte. A positive result that passes both tests reaches
+the common return path at `0x148d` with bit `0x20000` intact
+if it was set earlier. If either mask test fails, the fallback
+at `0x17f8` overwrites the whole DWORD with −1 before querying
+the buffer format. Successful fallback format matches can replace
+it with a small format code, for example 1 at `0x183e` or 2
+at `0x1898`. Thus a nonzero hardware-buffer maximum is enough
+to set the intermediate bit. The returned bit also depends on
+the later format checks and fallback outcome.
