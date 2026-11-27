@@ -721,6 +721,8 @@ against entries obtained from the original 11-slot filename table
 and publishes the selected index. The original-style command-line
 overrides follow this lookup.
 
+The 1.0.0 INI ships `VideoDriver=Voodoo2`; the reader's fallback at `0053ee70` is `d3d`. At `004b62e4`, helper `004f93b0` lowercases ASCII A–Z in the buffer. The comparison at `004b576b` checks only the configured string length against each filename. The first matching table entries for `d3d`, `voodoo2` and `softtri` are indices 6, 4 and 1, respectively (`d3da.dll`, `voodoo2a.dll`, `softtria.dll`). This establishes all three named choices for MP100-023 before overrides. The comparison permits prefixes and does not establish successful DLL initialization.
+
 Independently, setup at `004b6323..004b6339` passes section `NFS3`,
 key `VideoDeviceId` and default zero to the integer-profile wrapper
 at `004fb6f0` and publishes EAX to `0055fdbc`. The device setup at

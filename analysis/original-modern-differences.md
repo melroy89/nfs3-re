@@ -866,7 +866,7 @@ This first-reference index includes all **290 release-note entries across 12 rel
 Use the stable IDs when choosing original or Modern behaviour for a reconstructed C module. An executable comparison can guide reconstruction of original behaviour; it does not supply the original source code. The [detailed catalog](modern-patch-change-catalog.md) retains source line numbers, categories, evidence links and qualifications. **Static** means bounded static support, **Partial** means only part of the claim is supported, **Unresolved** includes historical claims needing other releases, and **Claimed** means vendor-only. None of these labels establishes runtime equivalence.
 
 The current table contains **290 unique release-note IDs**: 60 Static,
-202 Partial and 28 Claimed. The count comes from the status column below.
+203 Partial and 27 Claimed. The count comes from the status column below.
 A row can bundle multiple changes, and the executable inventory includes
 differences outside the release notes. Function-navigation coverage and
 catalog status therefore measure different things.
@@ -1184,7 +1184,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-020 | The game reads system settings from ini file now. No more registry! Name of the ini file have to be exactly like the name of game's exe file, but with *.ini extension. For example, for nfs3.exe it have to be nfs3.ini. | Partial |
 | MP100-021 | The game automatically binds own process to one core for avoiding hang, so there is no more reasons to install any SDB compatibility files to run this game. This behaviour might be disabled, see SingleProcAffinity setting in ini file. | Partial |
 | MP100-022 | The game doesn't require file install.win which was created by NFS3 installation utility. All settings which were in this file were moved to ini file (Language and RemoteOnly options). | Partial |
-| MP100-023 | You can choose thrash video driver from ini file, simply set VideoDriver setting to D3D, Voodoo2, or SoftTri. You can set device number in VideoDeviceId setting (but it affects only D3D mode, as in original version of NFS3). | Claimed |
+| MP100-023 | You can choose thrash video driver from ini file, simply set VideoDriver setting to D3D, Voodoo2, or SoftTri. You can set device number in VideoDeviceId setting (but it affects only D3D mode, as in original version of NFS3). | Partial |
 | MP100-024 | You can disable all intro movies by NoMovie setting in ini file. | Partial |
 | MP100-025 | Suppressing of displaying Windows Error Reporting dialog on fatal errors is disabled by default. So if something go wrong you will know about it. But you can enable suppressing of error reporting via NoErrorReporting setting in the ini file. | Static |
 | MP100-026 | Internal heap memory limit was extended from 16 to 32 MiB. It have to solve “Out of memory” problem on some rare cases. Also you can control it by OwnHeapLimitMb ini setting (it may be from 16 to 512). | Static |
