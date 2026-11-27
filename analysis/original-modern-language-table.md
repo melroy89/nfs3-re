@@ -336,8 +336,12 @@ The hosted original and official 1.6.1 retain the following checks at the same a
 | `00440682` | `racenet`, `modem`, `serial` |
 | `00440936` | `creategame` |
 | `00442ab5`, `0044d141` | `AudioB` in two separate call paths |
+| `00453068` | `SETUP_ONEPLAYERBUTTON`, `SETUP_TWOPLAYERBUTTON`, `SETUP_LOADBUTTON` |
 
 Reproduce by disassembling the named branches and resolving the lookup arguments as PE strings. These item-state changes are separate from the [alternate TCP menu branch removed in 1.4.0](original-modern-network-port-menu.md#nonzero-remoteonly-selected-a-different-menu-path-before-140). The [Connect menu comparison](connect-menu-dispatch-crosswalk.md) documents the separate removal of the RaceNet callback store. The resulting visibility of each item depends on the loaded menu and other state writes.
 
 
 In both executables, ordinary navigation at `0044a76c` tests the accumulated item flags with mask `0x1101` and rejects the candidate at `0044a772` when any tested bit is set. Thus bit 0 disables ordinary selection. This says nothing about drawing the item. The [selection-state analysis](connect-menu-selection-state.md#disabled-items-and-racenet-fallback) also records why an already selected item or another dispatch path needs a separate check.
+
+
+The first-screen gate at `00453068..004530ad` is byte-identical in the hosted original, retained 1.0.0 and official 1.6.1. In all three, the same addresses resolve to the three Setup tokens. With a nonzero flag, it disables ordinary selection of any matching items before continuing at `004530ad`. With zero, it skips all three lookups. This links the flag to ordinary local-game entry choices as well as music, movies and the separate connection menu.
