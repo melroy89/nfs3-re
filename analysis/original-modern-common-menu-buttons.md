@@ -443,3 +443,23 @@ Reproduce by reading those two PE ranges from each archive.
 This covers the static preset inputs for all valid ordinals.
 The record count, pre-existing record fields and downstream
 rendering remain outside this comparison.
+
+### Hosted original menu baseline
+
+The hosted original archive `upstream/history/nfs3_orig.7z`
+(SHA-256 `374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127`)
+contains both uppercase members. Each matches its local backup
+byte for byte:
+
+| Archive member | SHA-256 |
+|---|---|
+| `fedata/MENUS/GRAPHICS.MNU` | `d8af15a148fff2ec865c9ce6337e095bb340bb7f863419cfba245fb2574c6722` |
+| `fedata/MENUS/ADVGRPH.MNU` | `5900f10ec59b68b9fed049ae08cc4bb112d90322bcc91826c3313d5f7f278f4d` |
+
+The hosted members place both `widescreen` bindings at Graphics
+lines 51 and 72 and both `viewlevel` bindings at Advanced Graphics
+lines 14 and 34, matching the placement in Modern 1.2.0. The
+Graphics link to Advanced Graphics is also present at line 274.
+This establishes the baseline against the hosted original package
+for these two menus. Retail disc provenance and other backup
+members remain outside this check.
