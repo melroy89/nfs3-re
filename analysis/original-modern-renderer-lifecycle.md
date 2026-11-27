@@ -347,3 +347,34 @@ writer, a name without a device suffix therefore leaves index
 zero for initial selection. A later name without a suffix can
 retain a previously parsed value. Indirect writes and live
 device selection remain outside this comparison.
+
+### The EXE moves the display-selection call in three releases
+
+A direct-operand scan of the hosted original and all 12 retained
+Modern `nfs3.exe` members finds one indirect call explicitly naming
+`009ef944` in each. The call and argument bytes read from each PE
+agree with the following sequence.
+
+| Build | Argument setup | Call | Device DWORD |
+|---|---|---|---|
+| Hosted original and 1.0.0–1.3.1 | `004b5ce4`, load EDX then push | `004b5ceb` | `0055fdbc` |
+| 1.4.0 | `004b5c4d`, push from memory | `004b5c53` | `0055fdbc` |
+| 1.5.0–1.5.3 | `0051768b`, push from memory | `00517691` | `0055fdbc` |
+| 1.6.0 | `0051768b`, push from memory | `00517691` | `007a3a70` |
+| 1.6.1 | `0051765f`, push from memory | `00517665` | `007a3a70` |
+
+The 1.4.0 change also replaces the immediate fixed mode request
+seen after the 1.0.0 and 1.3.1 calls. At `004b5c59` it instead
+scans for the lowest set bit in `007a3a58`, compares the resulting
+index to 6 and branches or dispatches through the table at
+`004b5be0`. The scan establishes this control-flow change at the
+call site. It does not establish the zero-mask case or the full
+behavior of each table target.
+
+For reproduction, linearly decode each retained EXE with
+`objdump -d -Mintel` and search for calls naming `0x9ef944`.
+Use the PE image base to read the argument setup through the
+six-byte call ending in `ff 15 44 f9 9e 00`. Calls via a copied
+pointer are outside this census. The corresponding [DX5 driver
+selection code](original-modern-dx5-reference-pair.md#out-of-range-display-indices-fall-back-to-slot-zero)
+retains its slot-zero fallback across these releases.
