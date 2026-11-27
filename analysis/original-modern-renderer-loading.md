@@ -730,3 +730,15 @@ descriptor check. The 1.0.0→1.1.0 boundary therefore preserves this
 loader's validation and retry instructions. The inspected retry
 is removed in 1.2.0. Other validation paths and the eventual
 filename accepted by Windows remain unqualified.
+
+On the two-null path in 1.1.0, the alternate attempt stores its
+result to the handle cell `00564a6c` at `004f8737` and jumps to
+`004f83b4`. A null handle there branches to `004f86ee`. In
+1.2.0 the first attempt's handle store at `004f83a7` remains,
+and the null branch at `004f83ae` goes directly to `004f86ee`.
+Both failure routes clear descriptor signature flag `00564410`
+and return EAX=0 through the same epilogue because EBX was cleared
+at `004f83a5`. Neither local route reaches the export resolution
+or descriptor calls. This identifies the preserved failure result
+and removed retry without assuming anything about export slots
+left over from earlier loads or actions by the caller.
