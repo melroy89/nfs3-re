@@ -1212,3 +1212,18 @@ The complete scheduler through the optional timing branches and the registration
 | `00524793` | `005244e0` |
 
 The last callback is the byte-identical renderer idle adapter. It calls the runtime slot at `009ef93c` bound as `_THRASH_idle@0` in the renderer interface. Identical registration logic cannot establish identical x87 behavior for this route because the loaded renderer implements the callback. The table records candidate registrations. It does not establish which slots are active or due before a particular race loop.
+
+### Inspected renderer idle exports return without changing x87 state
+
+PE export lookup for `_THRASH_idle@0` gives the following module-relative addresses. Every listed entry begins with opcode `c3` (plain RET), so calling that export directly does not execute an x87 instruction or delegate to another routine.
+
+| Renderer DLLs inspected | Export RVA |
+|---|---|
+| Installed original `D3DA.DLL` and official Modern `dx5a.dll` | `1138h` |
+| Installed original and official Modern `softtria.dll` | `3480h` |
+| Installed original `VOODOOA.DLL` | `2620h` |
+| Installed original `VOODOO2A.DLL` | `2610h` |
+| Official Modern `dx6a.dll`, `dx7a.dll`, `dx8a.dll` | `11d0h`, `1370h`, `3060h` respectively |
+| Official Modern `voodoo2a.dll` in the dgVoodoo, Glide3x and nGlide directories, three byte-identical copies | `28d0h` |
+
+This resolves the idle adapter's precision effect for those provider files if the runtime slot points to the exported entry. The DLLs were read from the local original install and the official 1.6.1 archive. Alternate providers, runtime slot reassignment and the other periodic callbacks remain outside this check.
