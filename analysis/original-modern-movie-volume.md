@@ -139,7 +139,7 @@ wrapper output and perceived loudness remain untested.
 On the admitted packet path, `00523e5a..00523e63` pushes both level
 outputs from the locals written by the pan helper. In the call at
 `00523e7a` to `005000b8`, they arrive as stack arguments 5 and 6,
-counting from the return address. After the mixer prologue those
+numbered with the first argument immediately after the return address. After the mixer prologue those
 arguments are at `[ESP+28h]` and `[ESP+2ch]`. The shared setup tail
 at `005001ff..00500218` copies their low bytes into mixer record
 offsets `+1/+2` and duplicates them at `+4/+5`. The record becomes
@@ -160,3 +160,16 @@ that final byte twice to the callback at record `+ddch`, along with
 the subrecord pointer at `+dc4h`. This is the mixer setup's secondary
 level path. The separate stereo pair remains in the record, and the
 callback's effect on output samples still requires inspection.
+
+The secondary branch is not selected by the menu-volume byte directly.
+The platform packet routine reads its second stack argument at
+`00523e4f` from
+`[ESP+20h]` and forwarded as mixer argument 9. The mixer copies its
+low byte to record `+3` at `0050021b..00500222`. The source is the
+separate quotient pushed at `00511477` from channel `+38h`,
+`+39h` and global `00a0a260`. Channel `+38h` comes from stream
+header byte 9. Channel `+39h` comes from config byte 10, which the
+movie's default initializer sets to 127. Thus the patched movie
+volume affects the stereo pair, while a different input determines
+whether the secondary callback is reached. The live header and
+global values remain unverified.
