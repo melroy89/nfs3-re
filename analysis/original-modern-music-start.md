@@ -25,6 +25,8 @@ The same address **`005525fc`** also changes use: the old block stores a selecte
 
 The entire **250-byte tail `004106b8..004107b1`** is identical. It appends style-dependent suffixes, formats paths, requests a map/resource, starts the stream and makes level/fade calls before setting active global `005525a0=1`. This is instruction equality, not proof that the same assets, inputs or provider state reach it.
 
+Immediately before this tail, Modern jumps from `0041069f` to `004106b8`, filling `004106a1..004106b8` with 23 NOPs. Original instead selects the `rock` suffix when any of `0055eb2e & 0x30` or `0055eb2f & 1` is set. With those bits clear, the retained test selects `tech` only when DWORD `00552854` equals 1 and selects `rock` otherwise. Modern always uses that retained test at this site. This suffix decision is separate from the earlier track-ID selection. The emitted path and audible playback were not tested.
+
 At the tail:
 
 | Callsite | Retained input setup and call |
