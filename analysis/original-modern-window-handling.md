@@ -168,6 +168,15 @@ The interval starts at an original CALL instruction within the sequence.
 | `0201,0203,0204,0206,0207,0209` (left/right/middle down and double-click) | `004cd130` |87 bytes, end exclusive`004cd187` |
 | `0200,0202,0205,0208` (move and left/right/middle up) | `004cd190` |84 bytes, end exclusive`004cd1e4` |
 
+The retained 1.4.0 initializer already registers all ten messages
+with these same handlers at `004cd842..004cd8d8`. The old 65-byte
+tail matches the hosted original through 1.3.1 and is entirely
+NOPs from 1.4.0 through 1.6.1. Both complete handler bodies match
+the hosted original in all 12 retained releases. Reproduce by
+comparing the file-backed spans above and disassembling the new
+registration calls in the 1.4.0 archive member. This dates the
+registration move to the release that also changed the hook lifecycle.
+
 Both callbacks first require nonzero context, using the six-argument callback
 layout already verified through the retained dispatcher. They map wParam
 bits0,1,4 to EBXbits0,1,2, extract packed lParam coordinates and call
