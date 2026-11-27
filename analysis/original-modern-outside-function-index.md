@@ -350,6 +350,14 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004f93b5..004f93b8` | NOPs replace the original `CMP ECX,EBX` and the opcode of its following unsigned branch. | The original branch crosses the Modern boundary. |
 | `004f93c5..004f93c8` | NOPs replace `SUB ECX,ECX; DEC ECX` before the old string scan. | The Modern routine returns before this interval. |
 
+| `0049e9f1..0049e9f4` | NOPs replace the immediate byte of the original service-mode compare and the following JE. Modern jumps past them in the [network endpoint setup](original-modern-network-endpoints.md). | This accounts for the removed local early-success branch. |
+| `004a2f8d..004a2f90` | Zero bytes in the original become NOP alignment between the [Modern endpoint helper](original-modern-network-endpoints.md) and [movie availability builder](original-modern-idle-movie.md). | The interval lies after the endpoint helper's RET. |
+| `004a3f05..004a3f08` | NOPs replace three bytes of the original near-jump displacement. Modern uses a short jump at `004a3f03` to `004a3ea0`. | The jump targets differ. |
+| `004a3f37..004a3f3a` | NOPs replace the final displacement bytes of the original call to `0040fed0`. Modern jumps to `004a3f3a`. | Local call removal. |
+| `004dbc91..004dbc94` | NOPs replace the start of an original call to `004a33d0`. Modern returns immediately before this interval. | The original call extends past the Modern boundary. |
+| `004f91e9..004f91ec` | NOPs after the Modern return replace part of the original EAX test and its following conditional jump. | The original function continues through the new boundary. |
+| `005177a9..005177ac` | NOPs replace three address bytes of the original store at `005177a7` in the [renderer mode callback](original-modern-renderer-lifecycle.md). | Modern returns before this interval. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -378,7 +386,9 @@ intervals**, leaving 164 changed bytes across 87 intervals at `6d098d8`.
 The HUD and startup rows bring the total to **21,786 bytes across
 258 intervals**, leaving 140 changed bytes across 79 intervals at `6f324d2`.
 The nine startup and string-helper rows bring coverage to **21,813
-bytes across 267 intervals**, leaving 113 bytes across 70 intervals. These counts measure documented evidence links for this fixed
+bytes across 267 intervals**, leaving 113 bytes across 70 intervals at `e68cd1c`.
+The final seven three-byte rows bring coverage to **21,834 bytes
+across 274 intervals**, leaving 92 bytes across 63 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
