@@ -314,3 +314,26 @@ in 1.6.1.
 The immediate load and call establish the argument source.
 They do not establish that the index identifies the same mode
 across builds or that every invocation is direct.
+
+The direct stores to the mode-index cell change at the 1.5.0
+boundary. The hosted original and 1.0.0–1.4.0 include a startup
+store at `004b6111`, immediately after a call to `004bee80`,
+in addition to an earlier startup store and the race store.
+From 1.5.0 onward the decoded startup store instead seeds 1,
+with no second direct write to this cell during that startup
+sequence.
+
+| EXE | Startup store of 1 | Race store |
+|---|---|---|
+| 1.5.0 | `004b5b84` | `004a341d` |
+| 1.5.1 | `004b5bcf` | `004a341d` |
+| 1.5.2–1.5.3 | `004b5be8` | `004a341d` |
+| 1.6.0 | `004b5bd9` | `004a340d` |
+| 1.6.1 | `004b5c67` | `004a340d` |
+
+The race store takes the result of the mode accessor before
+initializing the viewport. The original-to-final accessor
+comparison is in the [display-mode report](original-modern-display-modes.md#original-accessor-counterparts-and-the-race-init-handoff).
+The startup seed describes that store alone. It does not
+identify the mode ultimately applied by the driver or exclude
+indirect updates to the cell.
