@@ -25,6 +25,15 @@ Comparing the union of both direct-call lists in each retained release from 1.4.
 
 Extending the same scan back to the hosted original finds an identical set of 77 call addresses through 1.3.1. At 1.4.0, fifteen addresses drop out and nine enter, leaving 71. The nine additions are the eight wrapper clients listed above and the wrapper's forwarding call. The dropped addresses are `0043eb68`, `0043eb7d`, `0043eb92`, `0043ecea`, `0043ef48`, `0043ef67`, `0044a3c4`, `0044a407`, `0044a41c`, `00462520`, `00462662`, `004626a0`, `00464176`, `0046429e` and `004642d8`. Reproduce by extracting each EXE, filtering `objdump -d -Mintel` for CALL destinations `004181c4` and `004181d0`, then comparing instruction addresses. The address changes include shared-tail rewrites. They do not represent a count of user actions lost or added.
 
+The 176-byte window at `004181d0..00418280` includes the full original handler and the padding after the shorter final handler. Its release groups line up with three edits: the 1.4.0 request gates, the 1.5.0 volume-source change and the 1.5.2 mode-branch consolidation. Read RVA `0x181d0` for `0xb0` bytes to reproduce.
+
+| Executables | Window SHA-256 |
+|---|---|
+| Hosted original and 1.0.0–1.3.1 | `8fc43b899ec0430ed01370922b08b92c1d18791e77c25f7986172b66401c0f52` |
+| 1.4.0 | `63e1247d8ef8b9a2fe92a1259eda037197503a88a8c259bfb4a101dd721ca487` |
+| 1.5.0–1.5.1 | `3e28255037b020a816f5a7b1f20ba02275c7817582b5eab0c6cae9183ebe893e` |
+| 1.5.2–1.6.1 | `07d4aa7e8efae706cbcab3b8499650e9e583096ce23df354f7877446e876a5ff` |
+
 Original `004181d0..0041827f` consumes EAX as the sound identifier and EDX as a caller-supplied volume multiplier. It preserves that multiplier in EBX, checks globals `00559234` (must be zero) and `0055290c` (must be nonzero), then builds a 16-byte request record. There is no local ID-range or per-ID elapsed-counter gate in this routine.
 
 For record byte `+8`, original computes the low-32-bit product of **55 × `[006fbbf4]` × caller multiplier**, arithmetic-shifts it right by **14**, and stores its low byte (`00418204..0041822e`). The intermediate multiplications wrap at machine width; this is not unrestricted real-number multiplication. Different caller multipliers can therefore produce different requested levels even with the same shared setting.
