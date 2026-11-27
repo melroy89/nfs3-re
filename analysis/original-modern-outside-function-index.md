@@ -78,6 +78,20 @@ The final image contains fully padded ranges whose padding arrived in separate r
 | `0047f9bd..0047fbe0`, [border geometry](original-modern-border-geometry.md) | 1.5.3 (0 of 547) | 1.6.0 |
 | `004fd280..004fd490`, [projection](original-modern-projection.md) | 1.5.3 (0 of 528) | 1.6.0 |
 | `004f85c0..004f8b50`, [renderer loading](original-modern-renderer-loading.md) | 1.6.0 (776 of 1,424) | 1.6.1 |
+
+Inside the final renderer padding run, the first removals occurred much earlier. The directly compared subranges below use the same retained archive members as the surrounding table. The complete 1,424-byte run becomes padding only in 1.6.1.
+
+| Subrange | First fully padded release | Original or historical role |
+|---|---|---|
+| `004f871a..004f8741` | 1.2.0 | Alternate-name `%sa` LoadLibrary retry on a null handle. |
+| `004f87a0..004f87d9`, `004f87e0..004f882e` | 1.2.0 | Old renderer cleanup/snapshot and switch wrappers. |
+| `004f8930..004f8a50` | 1.4.0 | Old initialization entry region. A new wrapper starts at the upper boundary. |
+| `004f8830..004f88b3` | 1.5.0 | Old renderer callback installer. |
+| `004f8b27..004f8b50` | 1.6.0 | Remainder after the replacement wrapper's earlier return removes its integer projection setup. |
+| `004f8a50..004f8b4b` | 1.6.1 | Entire 1.4.0-era replacement wrapper window. |
+
+See the [renderer loader history](original-modern-renderer-loading.md#renderer-wrapper-removal-and-snapshot-body-retention) and [startup call sites](original-modern-renderer-lifecycle.md#startup-call-sites-for-the-140160-renderer-wrapper) for control-flow evidence. This timeline records the bytes and named entry regions. Other subranges of the larger loader run still require their own boundaries and attribution.
+
 | `00517170..00517580`, [renderer snapshots](original-modern-renderer-loading.md#removed-original-renderer-snapshot-bank) | 1.6.0 (2 of 1,040) | 1.6.1 |
 | `004a39c6..004a3d94`, [startup policy](original-modern-startup-policy.md) | 1.6.0 (511 of 974) | 1.6.1 |
 
