@@ -778,7 +778,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **38 Claimed, 60 Static, 192 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **37 Claimed, 60 Static, 193 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -1106,7 +1106,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-036 | Smooth loading indication. Original game does almost nothing between 58% and 100%. | Partial |
 | MP100-037 | Original game makes a copy of music file when loading gameplay, maybe to solve problem with slow CD-ROMs in 90's. Now game plays gameplay music directly from source file. It saves a little time and 10 MiB of resource of your SSD on every gameplay start. | Partial |
 | MP100-038 | Num Lock, Caps Lock и Scroll Lock aren't turned off automatically on every game start. | Static |
-| MP100-039 | The game doesn't requires CD anymore. | Claimed |
+| MP100-039 | The game doesn't requires CD anymore. | Partial |
 | MP100-040 | The game doesn't try to revert focus every time when it was loosed because it might be a cause of impossibility to kill game process in some situations when the game continuously steals the focus from Task Manager. | Partial |
 | MP100-041 | Smart installation checking (it checks existance of some critical game data directories). | Partial |
 | MP100-042 | Some error message boxes were fixed a little. All errors have “error” icon, all warnings have “warning” icon, all fatal errors are displayed with one button “Ok”, not “Ok” and “Cancel” where both buttons do same thing. | Partial |
