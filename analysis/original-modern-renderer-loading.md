@@ -810,3 +810,9 @@ fixed strings at `0053d12a` and `0053d147`.
 This dates the change in diagnostic detail while the about-pointer
 gate remains in use. Actual dialogs and provider behavior were
 not exercised.
+
+### Renderer wrapper removal and snapshot body retention
+
+The complete cleanup wrapper at `004f87a0..004f87d9` (57 bytes) and switch wrapper at `004f87e0..004f882e` (78 bytes) match the hosted original in 1.0.0 and 1.1.0. Both spans are all NOPs in every retained release from 1.2.0 onward. In contrast, the snapshot bank at `00517170..00517580` remains byte-identical to the original through 1.6.0 and is first padded in 1.6.1. That separates removal of the wrapper call path from removal of the snapshot bodies.
+
+Reproduce by comparing the two wrapper spans and the snapshot range at PE RVAs `0xf87a0`, `0xf87e0` and `0x117170` in the original and retained Modern archive members. The [outside-function inventory](original-modern-outside-function-index.md) records the final padding separately. The comparison establishes physical removal and its release boundary. Indirect paths before 1.6.1 remain outside this check.
