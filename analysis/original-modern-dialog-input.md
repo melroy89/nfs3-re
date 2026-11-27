@@ -22,7 +22,7 @@ Handler result3’s action identity, full per-dialog navigation behavior, callba
 
 ### Release boundary for Tab and Escape feedback
 
-The 45-byte dispatcher span `00445e9a..00445ec7` matches the hosted original through retained 1.3.1. The original passes Tab through to the selected handler as value 9. In 1.4.0 the same span gains Tab normalization, direct handler-table dispatch and the result-3 sound call together. From 1.4.0 through 1.6.1, the only differences in this span are relative call displacements at `00445ea4` (Shift test) and `00445ebf` (sound request). Mask those four-byte operands when comparing the seven archived builds. See the [modifier relocation table](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) for the Shift targets. This dates the dispatcher changes. It leaves individual handler history and audible feedback separate.
+The 45-byte dispatcher span `00445e9a..00445ec7` matches the hosted original through retained 1.3.1. The original passes Tab through to the selected handler as value 9. In 1.4.0 the same span gains Tab normalization, direct handler-table dispatch and the result-3 sound call together. From 1.4.0 through 1.6.1, the only differences in this span are relative call displacements at `00445ea4` (Shift test) and `00445ebf` (sound request). Mask those four-byte operands when comparing the seven archived builds. The four DWORDs at `00445e48` point to local wrappers `00445ea1`, `00445eab`, `00445eb5` and `00445ebf` through 1.3.1. From 1.4.0 they point directly to the four handlers listed above. See the [modifier relocation table](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) for the Shift targets. This dates the dispatcher changes. It leaves individual handler history and audible feedback separate.
 
 ## First handler: Escape versus navigation feedback
 
@@ -114,7 +114,7 @@ This connects the changed initial replace flag to the relevant ordinary prefille
 
 The [existing local-name/roster evidence](original-modern-ghost-loading.md#player-identity-fields-are-explicitly-restored) independently binds `006fd2fc` to local player identity; the localized Player One/Two paths and their text pointers provide the direct dialog correspondence. These caller prefixes are unchanged, so the observed difference comes from shared initialization/handler policy, not a newly added name/IP constructor.
 
-MP140-035 now has **partial static support** for the reported previous-text-loss repair, with constructor, prefill, flag and insertion links. Real typing, all character filters/buffer edge cases, later state changes and1.4.0-specific introduction remain unverified. No input event, game dialog or instruction probe was executed.
+MP140-035 now has **partial static support** for the reported previous-text-loss repair, with constructor, prefill, flag and insertion links. The constructor store at `00444ca0` retains its original EDX input through 1.3.1. From 1.4.0 onward, `XOR EAX,EAX` followed by the store at `00444c9d` clears the flag. Compare PE RVA `0x44c94` for 22 bytes in each retained executable. Real typing, all character filters and later state changes remain unverified. No input event, game dialog or instruction probe was executed.
 
 ## Retained filter1 and bounded prefill contract
 
@@ -130,4 +130,4 @@ The constructor supplies the missing termination premise: it requests a256-byte 
 
 At a full prefilled length, Modern's cleared replace flag causes the retained capacity gate to reject an additional ordinary character, preserving the existing text. Original's initial flag can bypass that capacity gate, clear the buffer and accept replacement. This boundary is part of the policy change, rather than proof of a new overflow or an unlimited append path. Other key branches and real input timing were not exercised.
 
-MP140-035 remains partial: the local mechanism, selected caller/filter binding and ordinary termination contract are verified statically; all filters, callback/active-language lifetimes, malformed storage, actual typing and historical introduction are not. No target instructions or external input API were executed.
+MP140-035 remains partial: the local mechanism, selected caller/filter binding and ordinary termination contract are verified statically; all filters, callback/active-language lifetimes, malformed storage and actual typing remain unverified. No target instructions or external input API were executed.
