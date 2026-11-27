@@ -496,6 +496,22 @@ The repository's [RefPack decoder](scripts/decode_logo_refpack.py) expands every
 
 To reproduce, extract each archive executable and pass the language-zero type-10 payload to `decode()` from the linked script. Select numeric ID 200 through 1.3.1 and name `ABOUT.QFS` thereafter. Compare the decoded prefix through offset `0x28` separately from the remaining bytes.
 
+The last three release transitions change between 18,803 and
+20,521 of the 172,864 four-byte image records:
+
+| Transition | Compressed bytes in later build | Changed image records |
+|---|---:|---:|
+| 1.5.2 → 1.5.3 | 45,945 | 20,070 |
+| 1.5.3 → 1.6.0 | 47,038 | 20,521 |
+| 1.6.0 → 1.6.1 | 47,372 | 18,803 |
+
+All three changed-record sets span columns 28–543 and stored rows
+62–233, zero-based, assuming the 584-wide sequential layout.
+Compare four-byte records after the 40-byte common prefix and use
+quotient and remainder by 584 to reproduce the bounds. The decoded
+content changes on every transition. Displayed orientation and
+appearance remain untested.
+
 All eleven adjacent release comparisons have the same changed-pixel bounds in the decoded storage order, `x=28..543` and `y=62..233` inclusive, zero-based within the 584 × 296 image. Pixels outside that rectangle are identical across all twelve builds. The 1.0.0 → 1.1.0 boundary changes 25,001 pixel slots. The 1.0.0 pixel area has SHA-256 `c62f34506d07c9fd727828fc7330c5de6596b5940ffa0649f64d296a04c6065a`. The smallest change is 16,387 pixel slots from 1.3.0 to 1.3.1, and the largest is 33,437 from 1.3.1 to 1.4.0. Reproduce by comparing four-byte groups after offset `0x28` and mapping each changed group index to its remainder and quotient by 584. This establishes which stored pixel slots changed and does not depend on channel order or display orientation.
 
 ### The 1.4.0 shape-name interface changes with the resource ID
@@ -531,13 +547,3 @@ At `00441d01`, the original compares EDX with unsigned maximum 4, then indexes t
 | 1.5.3–1.6.1 | `00437820` |
 
 This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range.
-
-For the 1.5.2 → 1.5.3 pair, 20,070 of the 172,864 four-byte
-image records differ after decoding. The changed records span
-columns 28–543 and stored rows 62–233, zero-based, assuming the
-584-wide sequential layout. Reproduce by comparing each four-byte
-record after the shared 40-byte prefix, then dividing its index
-by 584 for the row and taking the remainder for the column.
-The compressed size reduction accompanies a change in decoded
-image data. This comparison leaves displayed orientation and
-visual appearance untested.
