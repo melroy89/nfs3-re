@@ -97,6 +97,16 @@ The descriptor slot at `00556924` changes from `buyERTS_at75` in 1.4.0 to `fog` 
 
 Reproduce with the retained 1.4.0 and 1.5.0 archives: compare `fedata/menus/advgrph.mnu`, read the five DWORDs at descriptor VA `00556924` in each EXE, and resolve the English offsets at `4 * text ID` in `fedata/text/text.eng`.
 
+With the shipped 1.5.0 driver profile selected and read successfully, the configuration inputs are:
+
+| `FogSupport` | Shipped profiles | Initial support at `007a3a54` |
+|---|---|---:|
+| 1 | DX6, dgVoodoo, Glide3x, nGlide | 1 |
+| 0 | DX7, DX8 | 0 |
+| Absent | DX5, SoftTri | 0 (parser fallback) |
+
+Read `drivers/*/thrash.ini` in the same archive to reproduce the matrix. In the checked 1.5.0 menu helper, `004377e9` clears the live selection when support is zero. After each successful item lookup, `00437816` clears bit 0 of item byte `+4` for nonzero support, while `0043781c` sets it for zero support. This records the actual menu-state update and distinguishes a shipped opt-in from a claim about fog output. Renderer initialization and subsequent scene-context changes can affect the live result.
+
 ## SFX intensity control admits an additional renderer-state bit
 
 The complete paired local tail **`00448728..00448765`**,61 bytes, differs at exactly one byte: TEST mask at`0044873e` changes **40h → 50h**. Both versions look up token **`SFX_INTENSITY`** at`00538e3c` through`00442a40`; a missing item skips setup. For a present item they test global byte`007a3a58`.
