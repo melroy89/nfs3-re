@@ -274,3 +274,13 @@ In 1.5.2, the fixed source is replaced by the bounded selector
 advance described above. This accounts for three selection
 policies over the same 256 table bytes. Actual rendering still
 depends on the consumers and active mode.
+
+The conversion instructions are already present in 1.0.0. The
+53-byte span from loading the binary64 scale through popping it
+after the loop matches across all 12 retained Modern EXEs. It starts
+at `0041d68b` in 1.0.0–1.3.1, `0041d687` in 1.4.0,
+`0041d6a1` in 1.5.0–1.5.1, and `0041d6ad` from 1.5.2.
+The eight bytes of the scale at `00536ce4` also match in every
+build. This verifies the five conversion operations independently
+of the changing table addresses and second-record source policy.
+Different inputs or live x87 control words can still affect results.
