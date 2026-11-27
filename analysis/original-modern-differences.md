@@ -725,7 +725,9 @@ The [logo loader and animation investigation](original-modern-frontend-page.md#o
 
 See also [renderer state14 setter policy](original-modern-state14.md): changed zero-input handling and conditional disabled-state cleanup.
 
-See also [dialog input dispatch](original-modern-dialog-input.md): Shift/Tab normalization, direct handler table and result3 sound request.
+Modern 1.4.0 adds Shift-sensitive Tab routing, calls the four dialog handlers directly, adds cursor and result-3 sound requests, and preserves prefilled IP addresses and player names on the first accepted character. The three inspected edit callers retain their original text limits. The inspected connection notice gains a second line with the Escape instruction in the same release. Live input, sound and cancellation remain untested. [Dialog input evidence](original-modern-dialog-input.md)
+
+Modern 1.0.0 and 1.6.0 each adjust four horizontal texture-coordinate arguments for the dialog quads. The shared quad builder, partial-clipping path and inspected Glide conversion retain their original bytes. The visible texture-sampling effect remains untested. [Dialog rendering evidence](original-modern-dialog-input.md#four-renderer-float-arguments-receive-small-adjustments)
 
 See also [dropdown input shared sound tail](original-modern-dropdown-input.md): selection-route feedback and consolidated close/update ordering.
 
