@@ -669,3 +669,19 @@ extracting `eacsnd.dll` from each archive, hashing the whole
 member and its first raw section, and comparing the PE exports.
 This bounds the sound DLL change to evidence outside its code
 and export records. Actual backend behavior remains untested.
+
+The game-side sound loader also retains its code at this boundary.
+The 870-byte window from `004e1dec` has SHA-256
+`45ed0852a4b5b767078e5e660c39870a2b6a3844880f4f823879582b6aedc67e`
+in both 1.5.2 and 1.5.3. At `004e1df1` it calls LoadLibraryA
+with the bare filename `eacsnd.dll`. It then resolves
+`_iSNDdllversion@0`, calls it and compares EAX with
+`0x100003` at `004e1e1e` before resolving
+`_iSNDdirectsetfunctions@32`. Both EXEs resolve the same three
+file-backed strings at `00549c60`, `00549cd8` and `00549d68`.
+
+Reproduce by comparing PE RVA `0xe1dec` for `0x366` bytes,
+disassembling the load and export checks and resolving their
+import slots. The API version gate uses an exported function
+return. The new PE version resource is outside that check.
+DLL search results and actual loader acceptance remain untested.
