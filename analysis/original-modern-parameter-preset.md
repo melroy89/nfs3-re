@@ -260,3 +260,17 @@ already replaces the original factor multiplication on this route,
 and all four Full rows already start with 500. The later changes to
 the routine still require separate comparison of the apply logic.
 The values are static presets and visible distance remains untested.
+
+### Second-record selection changes independently of the table
+
+Through 1.4.0, the apply loop reads two consecutive four-WORD
+groups from the selected row. In 1.5.0, the branch at
+`0041d678..0041d691` replaces the source for the second record
+only when Rear View Detail is 2 and the mode is not two-player.
+It loads `0041d7c0`, offset `0xe8` from that build's table base,
+which selects the second group of selector 3's night row.
+The same branch appears in 1.5.1, with the same table base.
+In 1.5.2, the fixed source is replaced by the bounded selector
+advance described above. This accounts for three selection
+policies over the same 256 table bytes. Actual rendering still
+depends on the consumers and active mode.
