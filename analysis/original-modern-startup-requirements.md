@@ -632,3 +632,14 @@ and resolving each operand against that build's import table. Slot
 `00534664` resolves to sixteen decoded clock calls in 1.5.3. The
 scan covers decoded instruction operands. Loaded function pointers
 and computed references remain outside its scope.
+
+The base-relocation directory independently corroborates those
+decoded references. For each PE `HIGHLOW` relocation, read the
+file-backed DWORD at its RVA and compare it with the affected slot
+addresses. In 1.5.2 there are nine matching operands. In 1.5.3
+there are 25: the nine updated operands and sixteen operands for
+the new clock slot. All matches correspond to the decoded CALL/JMP
+sites above. No additional relocated data pointer to those slots
+appears in either build. This check covers absolute operands
+registered for rebasing. It leaves references calculated at
+runtime outside the search.
