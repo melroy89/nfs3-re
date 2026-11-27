@@ -728,3 +728,14 @@ size and characteristics for each section in the paired PE
 headers. The executable's file layout changed without moving
 its mapped section addresses. This comparison leaves open
 the loader's behavior on the affected systems.
+
+Comparing resource payloads by type, name or ID, and language
+accounts for the contents of the smaller resource section.
+The 13 resource keys match in 1.5.2 and 1.5.3. Eleven payloads
+match byte for byte. Version resource `(16, 1, 0)` changes
+while retaining its 984-byte length. The embedded `ABOUT.QFS`
+resource `(10, ABOUT.QFS, 0)` shrinks from 46,315 to 45,945
+bytes. No resource key is added or removed. To reproduce, walk
+the PE resource tree and hash each payload using its data RVA
+and size. The comparison identifies the changed payloads.
+It leaves decoding the QFS content and the startup outcome open.
