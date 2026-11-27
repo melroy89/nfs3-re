@@ -738,4 +738,5 @@ resource `(10, ABOUT.QFS, 0)` shrinks from 46,315 to 45,945
 bytes. No resource key is added or removed. To reproduce, walk
 the PE resource tree and hash each payload using its data RVA
 and size. The comparison identifies the changed payloads.
-It leaves decoding the QFS content and the startup outcome open.
+The [decoded About comparison](original-modern-frontend-page.md#decoded-about-resource-across-retained-builds)
+confirms changed image data. Startup causality remains open.

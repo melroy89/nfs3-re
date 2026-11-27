@@ -531,3 +531,13 @@ At `00441d01`, the original compares EDX with unsigned maximum 4, then indexes t
 | 1.5.3–1.6.1 | `00437820` |
 
 This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range.
+
+For the 1.5.2 → 1.5.3 pair, 20,070 of the 172,864 four-byte
+image records differ after decoding. The changed records span
+columns 28–543 and stored rows 62–233, zero-based, assuming the
+584-wide sequential layout. Reproduce by comparing each four-byte
+record after the shared 40-byte prefix, then dividing its index
+by 584 for the row and taking the remainder for the column.
+The compressed size reduction accompanies a change in decoded
+image data. This comparison leaves displayed orientation and
+visual appearance untested.
