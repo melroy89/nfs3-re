@@ -78,3 +78,22 @@ The range covers the setter dispatch through the device vtable at
 `00436c0d` and both return sites. This verifies continuity of
 the game's DirectInput call code. The driver-supplied vtable and
 the results of the property call remain runtime dependencies.
+
+### Initializer changes first appear in 1.5.0
+
+The 492-byte initializer envelope at `00443070..0044325c`
+matches the hosted original in every retained Modern release
+through 1.4.0. Starting with 1.5.0, the entire envelope matches
+official final. This dates the register-save rewrite, enabled-row
+index change and removal of the named-widget tail to the same
+release boundary. The slider writeback rounding change follows
+in 1.5.3.
+
+| Executables | SHA-256 of the 492-byte window |
+|---|---|
+| Hosted original and Modern 1.0.0–1.4.0 | `ec1509aac09ead23a57b4a9fe304211037a688915a0b907e6078d9256e956c27` |
+| Modern 1.5.0–1.6.1 | `48864d29d4b0fc9e8ab278a842fb5111837a2eda836b117be76ed14719efb13d` |
+
+Reproduce by extracting each archived executable and reading the
+fixed window from PE RVA `0x43070`. The comparison dates the code
+change. Actual visibility of the named controls remains untested.
