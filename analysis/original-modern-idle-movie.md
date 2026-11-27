@@ -209,3 +209,24 @@ The 1.4.0 window handler at `004cce04..004cce14` also compares and
 stores the activation argument to the same global, at `004cce0f`.
 This dates the application-activation mechanism. Actual Windows or
 Wine minimize/restore event sequences remain untested.
+
+### Availability is cached on the inspected startup path
+
+A GNU `objdump -d -Mintel` sweep found one decoded direct call to the
+builder in each checked EXE. Scanning the executable sections for
+the little-endian mask address `68 27 7a 00` found six occurrences
+per EXE. They resolve to the two writes below, the builder's return
+load, the title bit test and two idle bit tests.
+
+| Build | Direct call | Clear mask | Set available bit |
+|---|---|---|---|
+| 1.4.0 | `004a3a87` | `004a2f87` | `004a2fd4` |
+| 1.6.1 | `004a3e66` | `004a2f93` | `004a2fe0` |
+
+The title and idle controller read the cached mask. A file added after
+this scan remains ineligible on those paths until the mask changes.
+A removed file can still reach a playback request, where the existing
+wrapper performs its own file check. This is conditional on the
+cached state. The evidence counts direct call sites and address
+operands. It leaves indirect rebuilds and repeated execution of the
+startup path unresolved.
