@@ -109,3 +109,22 @@ All load source DWORDs `007cdb88/8c/90/94` and publish to `007a2750/54/58/5c` th
 These are coordinate-extent derivations, not measured pixel changes. This directly dates the replacement of the fixed policy to the1.5.3→1.6.0 pair and explains why the1.6.0 release note differs from the old one-pixel note. It also demonstrates that “0–3” is not a global upper bound. Original/final source-rectangle construction can differ, so the table is not a universal original-versus-final image-size comparison.
 
 **MP100-018 advances to partial historical support:** The retained 1.0.0 EXE has the fixed +1/+1 mechanism and calls it at `004be864` and `004bea2a`. The same 36 bytes match at the listed locations in every retained release through 1.5.3. Actual pixel coverage and gap elimination remain unverified. **MP160-008 remains partial**, now with its historical code boundary established. The old helper does not save its working EAX/EBX/ECX/EDX/EDI; the later helper adds PUSHAD/POPAD, preserving general registers but not flags. A C replacement must distinguish the rectangle results from the exposed register/flag contract. Raw direct-E8 candidates are retained as a bounded search, not an exhaustive decoded reachability proof. No runtime probes, Ghidra writes or executable changes were made.
+
+The corrected rectangle has two decoded direct update sites in
+each retained Modern EXE. The viewport initializer's call moves
+with the helper. A second viewport-update call stays at
+`004bea2a` and changes its target at each relocation.
+
+| Release | Initializer call | Second update call | Correction helper |
+|---|---|---|---|
+| 1.0.0–1.3.1 | `004be864` | `004bea2a` | `004be874` |
+| 1.4.0 | `004be85f` | `004bea2a` | `004be868` |
+| 1.5.0–1.5.3 | `004be847` | `004bea2a` | `004be850` |
+| 1.6.0–1.6.1 | `004be851` | `004bea2a` | `004be85c` |
+
+Reproduce with `objdump -d -Mintel`, searching for direct calls
+to the helper entry appropriate to each build. In 1.5.0–1.5.3,
+`004be874` is the setter used by the relocated helper and by
+other viewport paths. Searching the old address alone in those
+builds would count those setter calls as correction calls.
+This census leaves indirect updates and draw-time freshness open.
