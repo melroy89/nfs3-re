@@ -395,6 +395,47 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
+### Single-byte differences
+
+Each row contains exactly one changed byte. The last column shows
+the original instruction containing that byte in linear disassembly.
+It identifies a candidate instruction boundary, with reachability
+and code-versus-data interpretation requiring separate evidence.
+
+| Outside-body interval | Verified byte replacement | Original linear decode |
+|---|---|---|
+| `0040ffb3..0040ffb4` | At `0040ffb3`, `00` becomes NOP. | `0040ffb1: inc    DWORD PTR [eax+0x0]` |
+| `00431c33..00431c34` | At `00431c33`, `5d` becomes NOP. | `00431c33: pop    ebp` |
+| `0043697f..00436980` | At `0043697f`, `c9` becomes NOP. | `0043697e: mov    ecx,ecx` |
+| `004376fb..004376fc` | At `004376fb`, `50` becomes NOP. | `004376f9: mov    WORD PTR [eax+0x6],dx` |
+| `00439cd3..00439cd4` | At `00439cd3`, `8d` becomes NOP. | `00439cd3: lea    eax,[eax+0x0]` |
+| `0043fd43..0043fd44` | At `0043fd43`, `00` becomes NOP. | `0043fd3f: call   0x4d1850` |
+| `0044072f..00440730` | At `0044072f`, `00` becomes NOP. | `0044072a: lea    eax,[eax+0x0]` |
+| `0044a24b..0044a24c` | At `0044a24b`, `c6` becomes NOP. | `0044a24a: mov    esi,eax` |
+| `00472430..00472431` | At `00472430`, `00` becomes NOP. | `0047242c: call   0x4b56d0` |
+| `00472923..00472924` | At `00472923`, `75` becomes NOP. | `00472922: lea    esi,[ebp-0x10]` |
+| `0047a1b1..0047a1b2` | At `0047a1b1`, `19` becomes NOP. | `0047a1b0: je     0x47a1cb` |
+| `0047b39f..0047b3a0` | At `0047b39f`, `00` becomes NOP. | `0047b39a: lea    eax,[eax+0x0]` |
+| `0049559f..004955a0` | At `0049559f`, `c4` becomes NOP. | `0049559e: mov    eax,0x55e4c4` |
+| `004a354b..004a354c` | At `004a354b`, `ff` becomes NOP. | `004a3547: call   0x495230` |
+| `004a3557..004a3558` | At `004a3557`, `00` becomes NOP. | `004a3555: mov    eax,0x1` |
+| `004b57f3..004b57f4` | At `004b57f3`, `08` becomes NOP. | `004b57f1: mov    DWORD PTR [esi],0x8` |
+| `004b5d83..004b5d84` | At `004b5d83`, `00` becomes NOP. | `004b5d7e: cmp    DWORD PTR ds:0x564364,0x0` |
+| `004be89b..004be89c` | At `004be89b`, `02` becomes NOP. | `004be899: mov    ecx,0x280` |
+| `004beea3..004beea4` | At `004beea3`, `00` becomes NOP. | `004beea0: jg     0x4bef35` |
+| `004ccc3f..004ccc40` | At `004ccc3f`, `c3` becomes NOP. | `004ccc3f: ret` |
+| `004d17af..004d17b0` | At `004d17af`, `c0` becomes NOP. | `004d17ae: mov    eax,eax` |
+| `004d188f..004d1890` | At `004d188f`, `89` becomes NOP. | `004d188f: mov    eax,edx` |
+| `004dbc47..004dbc48` | At `004dbc47`, `e8` becomes NOP. | `004dbc47: call   0x4a33d0` |
+| `004e3013..004e3014` | At `004e3013`, `d1` becomes NOP. | `004e3012: not    ecx` |
+| `004f1ebb..004f1ebc` | At `004f1ebb`, `54` becomes NOP. | `004f1eba: fst    DWORD PTR [esp+0x8]` |
+| `004f8513..004f8514` | At `004f8513`, `24` becomes NOP. | `004f8512: mov    ds:0x9ef924,eax` |
+| `004f853b..004f853c` | At `004f853b`, `8b` becomes NOP. | `004f853b: mov    esi,DWORD PTR ds:0x564a6c` |
+| `004f9417..004f9418` | At `004f9417`, `89` becomes NOP. | `004f9417: mov    edx,eax` |
+| `004f943b..004f943c` | At `004f943b`, `14` becomes NOP. | `004f943a: add    BYTE PTR [esp],dl` |
+| `004fb713..004fb714` | At `004fb713`, `57` becomes NOP. | `004fb713: push   edi` |
+| `00517783..00517784` | At `00517783`, `5f` becomes NOP. | `00517783: pop    edi` |
+
 ## Research index coverage
 
 At the `4c51910` checkpoint, mechanism table rows covered every changed byte in **180 of 337** outside-body intervals (21,330 bytes). The remaining **157 intervals** had 596 changed bytes and no overlapping mechanism row. This measures whether a changed byte has a route into the research, including partial explanations. It makes no claim about semantic coverage or changes inside saved function bodies.
@@ -432,6 +473,12 @@ The remaining two-byte rows bring coverage to **21,895 bytes across
 306 intervals**, leaving 31 one-byte intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
+
+The 31 single-byte rows complete address indexing for this inventory.
+All **21,926 changed bytes in 337 intervals** now have a row.
+This includes rows recording only a verified byte replacement and
+linear decode. Code inside saved function bodies and behavioral
+verification remain separate.
 
 Count coverage by intersecting the union of the half-open address ranges in the mechanism table with each interval's `changed_runs` from the JSON inventory. Do not require table ranges to match inventory endpoints: several rows deliberately cover only the changed run within a longer interval. The largest interval still lacking a route at this checkpoint is `0041a877..0041a8d0` (14 changed bytes).
 
