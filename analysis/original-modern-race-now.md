@@ -172,3 +172,7 @@ The predicate at `004cf090..004cf11e` is byte-identical in all three.
 For the same menu entries and token bytes, the address substitution
 leaves the local lookup rule intact. The table contents and state
 read by the predicate remain distinct inputs.
+
+The 1.4.0 policy already looks up both background tokens, at its earlier entry `004377c0`. It loads `2btt` at `004377d3` and calls `00442a40` at `004377d8`, then loads `3btt` at `004377f4` and calls the same lookup at `004377f9` on the zero-`007a276c` branch. The Options initializer calls this earlier policy at `00442ae3`. The same release adds `codelink=3btt` to eleven previously main-only image sections in the [menu assets](original-modern-options-postgame.md#where-the-140-package-drops-main-only-restrictions). The executable and assets thus supply both ends of the lookup at this boundary.
+
+Decoded references to the two string addresses were already present at `00460312` and `00460320` in 1.0.0–1.3.1. The new 1.4.0 sites extend their use into this policy. In 1.5.0 the policy references move to `00437627` and `00437648`. Reproduce by disassembling the instructions naming `0053a990` and `0053a998` and checking the Options caller. This establishes the lookup binding, while actual entry visibility still depends on menu state.
