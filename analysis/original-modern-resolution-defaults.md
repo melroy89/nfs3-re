@@ -441,6 +441,16 @@ inside relative-call operands. The adjacent 58-byte span at
 | 1.5.1–1.6.0 | `00448398` | `0044836c` |
 | 1.6.1 | `00448394` | `00448368` |
 
+Following the field-getter calls in all six EXEs yields the same
+nine bytes, `e8 db ff ff ff 8b 40 10 c3`. Each calls the record
+resolver 32 bytes before the getter, then returns DWORD `[EAX+0x10]`.
+The complete 32-byte resolver also matches at the three distinct
+locations `00448347`, `0044834c` and `00448348`. It compares the
+selected index with the count, resets an out-of-range index to zero,
+and returns the address computed with a 276-byte stride. This confirms
+the direct field-read contract from 1.5.0 onward despite relocation.
+It does not establish that index zero contains a populated record.
+
 The local tier computation, table bytes and stores therefore stay
 stable in the inspected span. Matching local bytes leaves changes in
 the tier producer, the called routines and live user settings in scope
