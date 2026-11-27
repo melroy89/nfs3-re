@@ -192,7 +192,7 @@ Final's checked config tail`00472b1d..00472b2b` clears ECX and writes zero to`00
 
 A literal-search qualification matters: early1.1.0 lacks the lowercase filename literal but retains **one case-insensitive INSTALL.WIN occurrence**, within`RENDITION not yet supported (INSTALL.WIN)`. This diagnostic is not itself a file-open call, nor is its presence evidence that the new INI path still depends on that file. Its complete caller/lifetime is not qualified by this audit. Final has no case-insensitive ASCII occurrence. Original file reading is established through the captured open/read/copy path, not merely its filename string.
 
-**MP100-022 advances to partial historical support:** the original installer-record settings path is replaced by early INI selectors, while the old bullet's “Language and RemoteOnly moved to INI” must not be presented as final Modern's configuration contract. Actual startup without the file, every file-access path, original file/read failures, later gate writers and1.0.0 introduction remain unverified. `RemoteOnly` is the observed key name; it is not independently equated to multiplayer or a particular external-media arrangement. No installer file, INI, game, API, instruction probe or Ghidra database was executed or changed.
+**MP100-022 advances to partial historical support:** the original installer-record settings path is replaced by early INI selectors, while the old bullet's “Language and RemoteOnly moved to INI” must not be presented as final Modern's configuration contract. Actual startup without the file, every file-access path, original file/read failures, later gate writers remain unverified. `RemoteOnly` is the observed key name; it is not independently equated to multiplayer or a particular external-media arrangement. No installer file, INI, game, API, instruction probe or Ghidra database was executed or changed.
 
 
 ## RemoteOnly reader removal is dated 1.3.1 to 1.4.0
@@ -276,3 +276,21 @@ Direct extraction of `nfs3.exe` from each retained Modern archive and disassembl
 | 1.6.1 | `004a6e89` | `004f93dc` | EAX |
 
 The byte mapper itself matches in all eleven releases (span SHA-256 `12faceab764ccdbbbeeaffb3213def7775e07263b5d2a97f620a888f07514172`). Thus 1.6.1 is the first retained release to switch this selector to the EAX wrapper, with the same ASCII mapping throughout the retained Modern history. This comparison covers the normalization step after the configuration reader returns. Reader precedence and handling of overlong values are separate questions.
+
+### Version 1.0.0 already reads the two settings from INI
+
+The [recovered 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+establishes the earliest retained Modern baseline. Its EXE passes
+`NFS3/Language` to the string-profile wrapper at `004a6ecd`, with
+destination `007a2634` and capacity 8. The read is followed by
+`004f93b0` at `004a6ed2`. The RemoteOnly helper at
+`004b62a0..004b62c1` passes `NFS3/RemoteOnly` and default zero to
+the integer-profile wrapper at `004b62af`. It normalizes nonzero
+results to 1. The config-tail call and store to `006fbb54` match
+1.1.0 byte for byte.
+
+This dates the replacement of the original installer-record producers
+to the retained 1.0.0 release. Its only case-insensitive ASCII
+`install.win` occurrence is in the Rendition diagnostic. That
+string census leaves other file-access routes and successful startup
+without the file unverified.
