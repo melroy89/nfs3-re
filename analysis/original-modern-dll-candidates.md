@@ -406,3 +406,16 @@ stride. The [final Voodoo2 comparison](original-modern-glide-reference-identity.
 traces the final descriptor to runtime-built records at `60013000`.
 An absent record at the old offset does not establish that 1280×1024 is
 unavailable in those releases.
+
+The destination moved before the fixed fallback disappeared. At
+`60001c29`, 1.1.0 loads table base `60012880`; both adapters in the
+retained 1.2.0, 1.3.0 and 1.3.1 archives load `60013000`. The three
+1.4.0 adapter members retain that address. Read this instruction with
+`objdump -d -Mintel --start-address=0x60001c29 --stop-address=0x60001c2e`
+on each extracted member.
+
+The [historical producer comparison](original-modern-voodoo-reference-pair.md#historical131-to140-about-calls-retarget-without-changing-its-publications)
+shows that the inspected 1.3.1 dgVoodoo helper can still copy the fixed
+table into that destination. The inspected 1.4.0 Glide3x helper instead
+uses query retries and has no corresponding copy. This dates the pointer
+move to 1.2.0 and distinguishes it from the later helper rewrite.
