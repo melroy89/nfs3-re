@@ -405,7 +405,7 @@ normal type parser supplies nonzero masks, while BSF itself
 leaves the destination undefined for a zero input. Runtime
 renderer results and callee effects remain unverified.
 
-#### Version 1.5.0 moves the D3D mode request and records state-call results
+#### Version 1.5.0 moves the D3D mode request and inlines the result loop
 
 In retained 1.5.0 (EXE SHA-256
 `d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae`),
@@ -417,8 +417,8 @@ path at `004b5ae7`, and bit 6 runs the D3D-like path at
 1.4.0 local state-call sequences and stores listed above.
 
 The D3D-like path retains its two flag stores and subsequent
-state-call sequence. In place of the local fixed mode request
-and call to `004b5940`, it loops over five selector/value pairs
+state-call sequence. It drops the local fixed mode request
+and inlines the former `004b5940` loop over five selector/value pairs
 at `0055fd94`: `(13,1), (13,0), (4,2), (206,1), (104,1)`.
 At `004b5a97` it tests each state call's return and sets the
 corresponding bit in EDI when EAX is nonzero. It stores the
@@ -430,3 +430,23 @@ request itself is in the startup initializer through slot
 `009ef958` at `005176a1`, as described above. These are static
 call-site and data observations. The meaning of each return
 and the live driver's response remain unverified.
+
+The five calls and result mask already existed in the hosted
+original. The complete helper at `004b5940..004b5994` (end
+exclusive) matches the hosted original and all six retained
+Modern EXEs from 1.0.0 through 1.4.0. Its SHA-256 is
+`693dc34afe8a23442ef6cd9e09a33a3ef1796f3d04b7111de5de1fef31c3c9a4`.
+It clears `007a3a5c`, then reads and updates it after each
+call. The 1.5.0 loop accumulates in EDI and publishes once
+after the fifth call. The source table at `0055fd94` matches
+the hosted original and all retained Modern releases through
+1.6.0.
+
+A linear disassembly scan for explicit operands naming
+`007a3a5c` finds only the mask store in 1.5.0 through 1.6.0,
+at `004b5aa7`, `004b5acb`, `004b5adb`, `004b5adb` and
+`004b5ad6` respectively. The 1.4.0 helper's direct read is
+its own accumulator reload. In 1.6.1 the same address instead
+holds the [cached renderer descriptor pointer](original-modern-renderer-loading.md),
+with direct stores at `004f84f5` and `004f8542`. The scan
+cannot exclude reads through a computed address in the earlier builds.
