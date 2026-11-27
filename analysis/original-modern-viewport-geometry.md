@@ -383,3 +383,20 @@ reproduction, read PE RVAs `b6102h` (15 bytes) and
 Modern score and final float storage have separate contracts.
 The driver table supplied at runtime determines the actual
 dimensions.
+
+The hosted original interprets EAX as a target width. At
+`004bef13..004bef1f` it computes the absolute distance
+between the row width and EAX for ordinary display dimensions.
+Eligibility requires exact `3 × width = 4 × height`, depth
+15 or 16, row field `+0x14` at least 2, and low flags
+`+0x10` with bit 0 set and bit 1 clear. The 1.4.0 selector
+instead admits truncated `100 × width / height` from 124
+through 178 and depth at least 16, then compares the
+pixel-count-plus-depth score. It retains the field and flag
+checks. Both walk indices starting at 1, keep the first
+eligible row on a tie and return 1 if none qualify. Both
+overwrite incoming EDX with the initial index after querying
+the descriptor, so the caller's literal 90 is unused by the
+local selection logic. These rules describe ordinary mode
+records and the checked lookup body, with no runtime table
+captured for this comparison.
