@@ -337,3 +337,20 @@ Extracting the archive's `nfs3.ini` shows `VideoDriver=Voodoo2`. The
 fallback literal at the EXE's profile read is `dx5`. These are two
 different sources of selection. Successful DLL loading or hardware
 selection requires separate evidence.
+
+#### Voodoo2 fallback depth in 1.1.0
+
+The 1.1.0 file-backed table at PE RVA `fdd4` contains 18 records of 40
+bytes each. Reading each as ten little-endian dwords gives zero dimensions
+and depth in slots 0 and 17, and depth 16 at offset 8 in all 16 populated
+slots. These include the 320×200 and 640×400 entries, so the query path's
+640×480 floor cannot be generalized to the fallback.
+
+The legacy setup loop at `60001a09..60001a5d` traverses populated slots 1–16.
+It reads depth at `60001a0f` for the memory calculation and updates fields
+at offsets 20 and 24. The alternate local write at `60001b73` updates those
+same fields. The fallback copies all 18 records at `6000d920..6000d931`.
+Together with the explicit depth-16 store on the successful query branch,
+this gives static support for both sources of populated 16-bit records.
+Later writes, the exact exported mode list under nGlide, and the Alt+P
+screenshot consequence remain unverified.
