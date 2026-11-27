@@ -241,7 +241,22 @@ Compare the two file-backed spans at PE RVAs `1d620h` and
 `1d6e4h` in the extracted EXEs. The first span differs from
 final in every retained build through 1.5.1. It groups into
 matching byte sequences for 1.0.0–1.3.1, 1.4.0, and 1.5.0–1.5.1.
-The second span already varies within the first group. Those are
-same-address byte comparisons. The earlier function and data
-boundaries require separate tracing before assigning those bytes
-to preset rows or attributing a visual change.
+The final table address does not identify the earlier table. Following
+the actual immediate load into ESI gives this layout:
+
+| Retained releases | Table base | Bytes |
+|---|---|---:|
+| 1.0.0–1.3.1 | `0041d6c8` | 256 |
+| 1.4.0 | `0041d6c0` | 256 |
+| 1.5.0–1.5.1 | `0041d6d8` | 256 |
+| 1.5.2–1.6.1 | `0041d6e4` | 256 |
+
+All twelve tables match the final table hash above at their actual
+bases. The early code at `0041d625` loads the table base, advances
+by 64 bytes per view-distance selector, then adds 32 for night and
+16 for two-player mode when their respective tests pass. It copies
+four WORDs into each of two records as 16.16 values. Thus 1.0.0
+already replaces the original factor multiplication on this route,
+and all four Full rows already start with 500. The later changes to
+the routine still require separate comparison of the apply logic.
+The values are static presets and visible distance remains untested.
