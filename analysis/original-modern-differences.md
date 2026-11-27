@@ -964,7 +964,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-004 | “Rear View Mirror” detail setting. Low is equivalent to the original; Medium is for better track 3D model and view distance; High is for the best track 3D model, clouds, lightnings, and light from the car headlights and cop flashers rendering. | Partial |
 | MP150-005 | Better proportions of the objects in the rear view mirror. | Partial |
 | MP150-006 | Fixed direction of the camera of the rear view mirror. The horizon is on the middle of the mirror now (for a better view). | Partial |
-| MP150-007 | Fixed a small horizon glitch at the edge of a screen when the wide view angle is enabled. | Claimed |
+| MP150-007 | [Fixed a small horizon glitch at the edge of a screen when the wide view angle is enabled.](original-modern-environment-grid.md#150-reduces-an-offset-used-to-build-the-projected-strips) | Claimed |
 | MP150-008 | An ability to enable or disable the fog effect directly from the graphics settings menu. | Partial |
 | MP150-009 | An ability to set volume of menu sounds separately from the volume of the ingame special effects. | Static |
 | MP150-010 | No more "Render_GetTm() raM out of raN" error for high poly cars. Corresponding buffer is increased from 0.8 MiB to 8 MiB. | Partial |
