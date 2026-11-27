@@ -67,6 +67,14 @@ states clear, zero selects table `00564898` and nonzero selects
 `0x41` in the latter in both EXEs. This links the post-creation
 clear to a concrete lowercase/uppercase translation choice.
 
+The hosted original and all 12 retained Modern executables also
+match for that translator body, the latch's four initial bytes, and the
+file-backed lookup spans `00564898..0056494e` and
+`0056494e..005649a9` (exclusive ends). These spans end at the next
+observed table bases. The comparison does not establish a valid index
+range. It places the startup difference in the reset condition,
+with the inspected translator and lookup data retained throughout.
+
 The clear on a failed creation can make a difference when the latch
 was already nonzero. It writes the game's own translation state.
 The separate startup calls discussed below request OS keyboard
