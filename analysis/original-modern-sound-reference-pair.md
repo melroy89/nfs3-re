@@ -67,3 +67,16 @@ The comment attributes the base to an NFS III build dated1998/08/04. That is an 
 - **Not claimed:** whole-game sound equivalence, changed sound algorithms, identical FPU state at DLL entry, or that metadata addition alone fixes audio.
 
 Two successful audit runs produced identical evidence. Existing EXEs, saved Ghidra state, raw C exports and maintained reconstruction sources were preserved. No new instruction probes, compilation or game/API calls were used.
+
+## The API version call invalidates the capability cache
+
+The shared `_iSNDdllversion@0` body at DLL RVA `0x13c4`
+returns `0x100003` and writes −1 to DLL RVA `0xa8fc`.
+The exported `_iSNDdirectcaps@4` at RVA `0x1428` tests
+that cell at RVA `0x1438`. A nonnegative value is returned
+immediately. A negative value enters capability discovery,
+and its common result path stores EAX back to the same cell
+at RVA `0x14bf`. Thus querying the version invalidates the
+cached capability result. This behavior is shared by the
+hosted original and final DLL code. The device-dependent
+value returned by a fresh query remains unmeasured.
