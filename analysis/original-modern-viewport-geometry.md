@@ -422,3 +422,17 @@ intermediate overflow. The changed logical height feeds the
 mirror projection rectangle. It supplies a code-level
 mechanism relevant to the advertised proportions, while
 the visual judgment in the release note remains untested.
+
+The hosted original supplies the same quarter-height term
+through a different setter interface. It computes the term
+at `004be80c..004be816`, pushes it at `004be832`, and
+passes the mirror record to `004beb00` at `004be876`.
+That setter copies its stack argument to record offset
+`+0x0c` and returns with `RET 4`. Modern 1.0.0–1.3.1
+instead save the quarter-height term at `004be756` and
+restore it into EDX at `004be792` for their register-based
+setter. Version 1.4.0 keeps the term at the relocated sites
+above. This establishes the original-to-early-Modern
+height formula continuity for positive viewport heights.
+Other rectangle fields and rendered proportions remain
+separate comparisons.
