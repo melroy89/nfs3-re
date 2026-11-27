@@ -301,3 +301,11 @@ endpoints), and disassembling `004dfd56..004dfd73`. The
 catalog's claim that dead-zone values are rounded correctly
 still requires observed outputs or a demonstrated numerical
 difference under relevant input and x87 state.
+
+Across all twelve retained releases, the 29-byte helper window at
+PE RVA `0xdfd56` has two byte identities. SHA-256 prefixes are
+`e8e5057d4262fa80` through 1.5.2 and `019f722d3e162d96` from
+1.5.3 through 1.6.1. The two-axis renderer changes one release
+sequence earlier: its full range has prefixes `b907c032e5724e4a`
+through 1.4.0 and `6217a0a2bf564d1b` from 1.5.0 onward.
+The renderer and helper therefore have distinct release boundaries.
