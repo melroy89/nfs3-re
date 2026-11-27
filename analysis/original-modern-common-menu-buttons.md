@@ -567,3 +567,23 @@ using its stored path and match whole lines against
 the removal of both shipped navigation links in 1.5.0. It leaves
 direct executable routes and menus retained by an existing
 installation unverified.
+
+The executable still looks up both control names after the
+packaged links disappear. The hosted original and all twelve
+Modern releases have identical instruction bytes in these
+two ranges (end exclusive):
+
+| Control | String VA | Code range |
+|---|---|---|
+| `CEB_GOTOADVANCED` | `00537184` | `0042838c..004283a7` |
+| `PSE_LAUNCHCAREDIT` | `005392e0` | `0044cdff..0044ce14` |
+
+The first range passes the string through `00427c20` before
+calling `00442a40`. The second passes its name to `00442a40`
+directly. In each range a zero result skips the write, while a
+nonzero result sets bit `0x10` in the returned object's byte at
+offset 5. These are lookup and flag-update sites. They contain
+no direct transfer to a tuning screen. A bounded search of the
+hosted original and Modern 1.4.0, 1.5.0 and 1.6.1 executable bytes
+also finds no NUL-terminated `cedmain` string, ignoring case.
+That search leaves computed names and external asset routes open.
