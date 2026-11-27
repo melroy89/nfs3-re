@@ -579,3 +579,11 @@ At `00441d01`, the original compares EDX with unsigned maximum 4, then indexes t
 | 1.5.3–1.6.1 | `00437820` |
 
 This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range.
+
+## 1.0.0 enables flying brands on seven additional menu layouts
+
+The hosted original and the 1.0.0 package both dispatch `texteffects` widgets through the same checked executable span `0046019c..004601ce`. The call at `004601c4` targets `004a4410` in both. The 1.0.0 package enables that existing draw route on seven shared layouts by adding one `codelink=texteffects` each: `advgrph.mnu`, `audio.mnu`, `connect.mnu`, `graphics.mnu`, `level.mnu`, `mainmult.mnu` and `mainsplt.mnu`. The last confirms the release note's split-screen example. Both packages already specify one on `main.mnu`.
+
+To reproduce, list `nfs3_orig.7z` and `nfs3_modern_patch_v1.0.0.7z` from the retained history directory with `7z l -ba`, then extract and count case-insensitive `codelink=texteffects` assignments in each top-level `fedata/menus/*.mnu` member. Normalize paths to lowercase for pairing. The original has six matching layouts out of 80 and 1.0.0 has twelve out of 51. Five matching layouts are shared and retain the widget, seven shared layouts gain it, and the original-only `perdata.mnu` accounts for the remaining original match.
+
+This verifies expansion on seven packaged menus. The vendor's “all slides without large amount of text” criterion and actual rendering remain unverified.
