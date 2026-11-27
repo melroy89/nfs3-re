@@ -245,3 +245,18 @@ Compare the root EXE members by PE RVA with exclusive ends and
 dereference each filename pointer relative to image base `00400000`.
 The controller's stability leaves its input producers, option
 spellings and movie playback callees free to change separately.
+
+### Availability builder release history
+
+The complete 108-byte builder moves from `004a2f84` in 1.4.0 to
+`004a2f90` in 1.5.0. Comparing by entry-relative offset shows four
+changed bytes at offsets `1dh`, `35h`, `41h` and `48h`. Each
+adjusts a relative call to preserve its target after the move.
+The 1.5.0 body then matches every retained build through 1.6.0.
+
+Version 1.6.1 changes two bytes in the body, at offsets `35h`
+and `41h`. The path-building calls at `004a2fc4` and `004a2fd0`
+retarget from `004f939c` to `004f93b8`. The mask logic and the
+call to the file-attribute wrapper at `004a2fd7` retain their
+bytes. The comparison establishes stability of the local policy.
+Path helper behavior and live filesystem results are separate.
