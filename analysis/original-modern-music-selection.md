@@ -540,3 +540,9 @@ Compare PE RVA `0x13336` for `0x395` bytes. The hosted original and all twelve r
 The default creator at `00410330` and sized creator at `00410370` both return immediately when `006fbb54` is nonzero. They leave the stream pointer at `00552598` untouched. When the flag is zero and the separate audio gate `00552910` is nonzero, both call `004e4790` with EDX `0x4000` and EBX zero, then store its return value. The default request passes `0x4b000` (300 KiB) in EAX. The sized request shifts incoming EAX left by 10, retaining the low 32 bits. These are requested sizes. See the [allocator contract](detailed-analysis-notes.md) for the separate initialization and failure paths.
 
 The combined PE VA span `00410330..0041039f` matches in the hosted original, Modern 1.0.0 and official 1.6.1 (SHA-256 `dfeb82c3809f3b1d8881928d91d9dbd47c93eb4347c9439cdec78e67c68a4c54`). The [configuration change](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140) therefore removed the normal user-controlled input to these branches while retaining both creators.
+
+### The same flag gates two music cleanup routines
+
+A nonzero `006fbb54` returns before cleanup in both routines. At `00410a40`, the skipped body calls `004e8b60`, `004e7b28` and `004e7388`, updates `005525a0` and conditionally releases the resource at `00570a50`. At `00410aa0`, the skipped body calls the shutdown helper `004e784c`, releases the stream object through `004e4b50` and clears `00552598`. A zero flag still requires the separate audio-state checks in each routine.
+
+The complete range `00410a40..00410acf` has SHA-256 `0950f65a446825273e8918904dd190f1a2328e47eb814158c14b9e8bcdc39fbe` in the hosted original, Modern 1.0.0 and official 1.6.1. This documents the effect of the branch at each cleanup entry. Which resources are live at a given call and how teardown behaves in Wine remain unverified.
