@@ -488,3 +488,16 @@ is NOPs. These observations separate retirement of the
 remaining loader call from the earlier removal of the
 temporary copy. They do not establish the lifetime of
 every resource managed by the old helpers.
+
+The early Modern calls are to the game's pool allocator and
+release helper, not to file I/O. In 1.4.0 the loader saves
+the allocator result from EAX to `[EBP+0x7a]` at
+`00410094`. The copy-bypass path reloads that same pointer
+at `00410214` and passes it to `004e1890` if nonzero.
+The 1.5.0–1.5.2 rewrite removes both the allocation and its
+paired release on this path. The earlier loader puts
+`0x80000` in EDX on entry, but calls `004a33d0` before
+allocating. The exact size reaching the allocator depends
+on that intervening call. See the
+[game pool comparison](original-modern-heap-initialization.md)
+for the independently identified allocator and release helpers.
