@@ -319,5 +319,14 @@ match across the pair.
 
 The immediate continuations show no dependency on the changed
 return state. The wrapper can still pass that state through to
-a computed caller, and the first continuation's callee is outside
-this local check. No runtime trace was taken.
+a computed caller. No runtime trace was taken.
+
+The first continuation's callee `0041d310..0041d349` also
+matches across the pair. Its 57-byte body computes the record
+address from the replacement EAX value, using the 84-byte stride.
+The sole conditional jump at `0041d334` uses the preceding
+comparison against DWORD `007a3d14`. The callee publishes the
+selected pointer to `005dd830` and returns. It therefore does
+not consume the preset routine's arithmetic flags on this path.
+This check concerns EAX and arithmetic flags, with indirect
+callers still outside the census.
