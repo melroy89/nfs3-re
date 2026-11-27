@@ -240,3 +240,13 @@ Modern EXE. Read the spans at PE RVAs `6cac0h` (8 bytes),
 newly admitted renderer path uses the existing callback mechanism
 and writes the same setting. This comparison stops at the getter's
 dispatched leaves and leaves runtime callback invocation untested.
+
+The packaged `fedata/menus/advgrph.mnu` in each of the
+12 retained Modern archives includes the slider codelink
+`SFX_INTENSITY` and text key `kMenuADVGRPHAlphaInt001`.
+In 1.0.0 the slider block sets `percenttype=0` and `ypos=6`.
+The 1.6.0 block still has the same codelink but sets
+`percenttype=1` and `ypos=7`. The binding therefore survives
+layout and presentation edits. The asset and EXE checks
+establish the shipped control and its setup path from 1.0.0.
+Actual control availability still depends on active menu state.
