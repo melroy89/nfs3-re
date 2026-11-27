@@ -587,3 +587,22 @@ no direct transfer to a tuning screen. A bounded search of the
 hosted original and Modern 1.4.0, 1.5.0 and 1.6.1 executable bytes
 also finds no NUL-terminated `cedmain` string, ignoring case.
 That search leaves computed names and external asset routes open.
+
+### Installed Wine prefix retains legacy tuning links
+
+A read-only scan of the local NFS3 Wine prefix found that
+`FEDATA/MENUS/CEDMAIN.MNU` still exists and matches the hosted
+original (SHA-256
+`7888b2fc78ec1bbeb10b041c7536755b5d40d0ff1d97f0f85c50ee541c736e7d`).
+The installed lowercase `cedbasic.mnu` and `pause.mnu` contain
+no active `nextmenu=cedmain` field. The same directory has
+eleven active fields targeting it in nine legacy files:
+one each in `CED01DBG.MNU` through `CED07DBG.MNU` and two each
+in `MATTMNU.MNU` and `SUB.MNU`. The separate `fedata_org`
+backup is outside this count.
+
+The installed executable was identified by SHA-256
+`2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb`.
+This establishes file retention for this installation and shows why
+archive omission alone cannot establish feature removal. Whether
+the game can enter any of those nine legacy menus remains untested.
