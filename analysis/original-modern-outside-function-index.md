@@ -63,15 +63,25 @@ The [CPU calibration follow-up](original-modern-cpu-tier.md#removed-calibration-
 
 The [DDE browser-code follow-up](original-modern-removed-dde.md) identifies original URL-command construction and its callback beneath the 621-byte NOP run `004901c3..00490430`. The run begins inside an original branch operand; lack of autoanalysis entries is not evidence of padding. Original caller reachability remains unresolved, and Modern still retains all seven DDE imports.
 
-## When three old code ranges become all NOPs
+## When old code ranges become all NOPs
 
-The final image contains three fully padded ranges whose padding arrived in separate releases. Read each complete PE VA range from the archive executables and count bytes equal to `0x90`. The earlier counts may include instruction operands. The all-NOP result establishes the state of the whole range.
+The final image contains fully padded ranges whose padding arrived in separate releases. Read each complete PE VA range from the archive executables and count bytes equal to `0x90`. The earlier counts may include instruction operands. The all-NOP result establishes the state of the whole range.
 
 | Range and existing counterpart | Last retained build with other bytes | First all-NOP build, retained through 1.6.1 |
 |---|---|---|
 | `004ccdb4..004cce90`, [window callbacks](original-modern-window-handling.md) | 1.4.0 (22 of 220 bytes are `0x90`) | 1.5.0 |
 | `00472566..0047262b`, [config defaults](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) | 1.5.2 (127 of 197) | 1.5.3 |
 | `0048575b..0048582c`, [HUD parser](original-modern-hud-layout.md) | 1.5.3 (1 of 209) | 1.6.0 |
+| `004901c3..00490430`, [DDE browser code](original-modern-removed-dde.md) | 1.3.1 (2 of 621) | 1.4.0 |
+| `004b5db1..004b67b0`, [startup and setup](#large-nop-replacements-and-reused-research) | 1.4.0 (1,408 of 2,559) | 1.5.0 |
+| `004befcd..004bf110`, [display-mode apply](original-modern-display-modes.md) | 1.5.2 (321 of 323) | 1.5.3 |
+| `0047f9bd..0047fbe0`, [border geometry](original-modern-border-geometry.md) | 1.5.3 (0 of 547) | 1.6.0 |
+| `004fd280..004fd490`, [projection](original-modern-projection.md) | 1.5.3 (0 of 528) | 1.6.0 |
+| `004f85c0..004f8b50`, [renderer loading](original-modern-renderer-loading.md) | 1.6.0 (776 of 1,424) | 1.6.1 |
+| `00517170..00517580`, [renderer snapshots](original-modern-renderer-loading.md#removed-original-renderer-snapshot-bank) | 1.6.0 (2 of 1,040) | 1.6.1 |
+| `004a39c6..004a3d94`, [startup policy](original-modern-startup-policy.md) | 1.6.0 (511 of 974) | 1.6.1 |
+
+The old CPU calibration range `004f1ff0..004f22b0` has a non-monotonic history. It is fully padded in retained 1.0.0–1.4.0, then has 692 of 704 bytes equal to `0x90` in 1.5.0–1.5.2. In 1.5.0 the twelve non-NOP bytes are the tail of a modifier-key helper starting outside the range at `004f1fd8`. The shared body calls `USER32.GetAsyncKeyState` through `00534738`, normalizes a negative AX to 1 and returns after testing EAX. This is reuse of the old address range. It returns to full padding in 1.5.3.
 
 The dates apply to the old address ranges. See the paired reports for relocated implementations and earlier behaviour changes.
 
