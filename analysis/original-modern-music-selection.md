@@ -457,3 +457,21 @@ terminator. Each package's own English text resolves ordinal 2 to
 Romulus 3 and ordinal 0 to Random. This confirms that the reset
 default changed between those builds while the two option ordinals
 kept their meaning.
+
+### Direct source playback predates removal of the old loader
+
+The retained 1.0.0–1.4.0 EXEs already jump from `00410217`
+to `00410311`, skipping the former file-copy region. The
+target tests the saved pointer and continues to cleanup and
+return. The five-byte jump is `e9 f5 00 00 00` in all six.
+
+The source-path suffix replacement at `00410917..00410932`
+is byte-identical in all 12 retained Modern EXEs, including
+1.0.0. It locates the terminator, backs up to the final
+four-character suffix and jumps to the common append code
+at `00410947`. Thus 1.0.0 already changes the inspected
+playback route to the source path. The entire 761-byte old
+loader window first becomes NOPs in 1.5.3 and remains so
+through 1.6.1. Read the ranges from each PE by RVA to
+reproduce the comparison. Actual disk I/O, playback and
+performance remain unverified.
