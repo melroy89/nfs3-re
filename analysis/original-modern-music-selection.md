@@ -554,3 +554,9 @@ The complete range `00410a40..00410acf` has SHA-256 `0950f65a446825273e8918904dd
 In the hosted original and official 1.6.1, the first start path stores a byte to `00552590` at `0041052c` and publishes the selected track ID from EDI to `0055258c` at `00410537`. The nonzero `RemoteOnly` branch at `0041053f` then exits to `004107a7`. Consequently the stored track selection can change even when this path skips stream startup.
 
 The second start path clears `00552590` at `004107f1` before testing the flag. Its rejection at `004107f9` still returns directly in both executables. The epilogue moves from `004109c1` to `00410990` as the start body changes. See the [paired start routines](original-modern-music-start.md) for downstream stream and volume work. These are observed store and branch instructions. Actual stream state and audible playback remain untested.
+
+### Early Modern supplies a relative source music directory
+
+The hosted original, Modern 1.0.0 and official 1.6.1 all push path slot `007a2a34` and format `%s%s` at `0041084c..0041085a`; the preceding branch pushes a name from the table at `005525a8`. In the original installer-record layout that slot is record index 8. Modern 1.0.0 initializes it from zero-based string 5 in the consecutive NUL-terminated defaults at `0053ec2c`, written into 128-byte slots from `007a27b4`. That entry is `.\GameData\Audio\PC\`. Official 1.6.1 also initializes the same slot to a [relative PC audio directory](original-modern-startup-paths.md#original-installer-records-and-final-path-slots).
+
+Thus 1.0.0 changes both the producer of the directory prefix and the filename used for playback. The song path is relative to the process's effective working directory. Later writes and successful file access were not tested.
