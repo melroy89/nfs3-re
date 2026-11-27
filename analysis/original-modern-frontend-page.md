@@ -457,3 +457,9 @@ The numeric resource route is already present in retained **1.1.0**, the earlies
 | 1.3.1 | `0040fede` | `004f1ea0` |
 
 All four call sites read record+4 into EAX and all four loader entries pass type 10 and the EAX resource identifier to `FindResourceA`. This dates the text-to-resource change to 1.1.0 or earlier. The 1.4.0 change is specifically from a numeric ID to a named resource. The 1.0.0 route and the decoded artwork remain unverified.
+
+### Decoded About resource across retained builds
+
+The repository's [RefPack decoder](scripts/decode_logo_refpack.py) expands every retained About resource from 1.1.0 through 1.6.1 to 691,496 bytes. All eleven decoded headers are identical: an `SHPI` container, one `cred` entry at offset `0x18`, shape type `0x7d`, and dimensions 584 × 296. The remaining 691,456 bytes after offset `0x28` have eleven distinct SHA-256 hashes. Thus the decoded image data changes in every retained release, including the numeric-to-named transition in 1.4.0. This check compares image bytes and dimensions. Visual differences and successful in-game rendering remain unverified.
+
+To reproduce, extract each archive executable and pass the language-zero type-10 payload to `decode()` from the linked script. Select numeric ID 200 through 1.3.1 and name `ABOUT.QFS` thereafter. Compare the decoded prefix through offset `0x28` separately from the remaining bytes.

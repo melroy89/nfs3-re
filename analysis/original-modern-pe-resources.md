@@ -65,7 +65,7 @@ Comparing resource keys of the form type/name/language and SHA-256 of their payl
 | 1.4.0 | The icon payload moves from `3/106/0` to `3/200/0` unchanged. Named groups `MAIN.ICO` and `ORIG.ICO` replace numeric groups `32512` and `32513`. Numeric resource `10/200/0` is removed. Named `ABOUT.QFS`, `SNAP.WAV` and manifest `24/1/0` appear. |
 | 1.5.0–1.6.1 | The resource keys stay fixed. About and version payloads change in every retained release. Manifest bytes change in 1.6.0 and again in 1.6.1. The screenshot WAV and all icon and group payloads remain byte-identical from 1.4.0 through 1.6.1. |
 
-The original icon's three IDs identify identical 744-byte payloads. The [About page comparison](original-modern-frontend-page.md#numeric-about-resource-in-131) identifies the early numeric resource consumer in 1.3.1. Its decoded pixels remain unverified. The retained sequence begins at 1.1.0, so the 1.0.0 resource layout remains open.
+The original icon's three IDs identify identical 744-byte payloads. The [About page comparison](original-modern-frontend-page.md#numeric-about-resource-in-131) identifies the early numeric resource consumer in 1.3.1. The same report compares decoded image bytes across the retained releases. In-game rendering remains unverified. The retained sequence begins at 1.1.0, so the 1.0.0 resource layout remains open.
 
 The 603-byte manifest first appears in retained **1.4.0** and is byte-identical through 1.5.3. Its own assembly version stays `1.4.0.0` across those builds. The only payload changes in 1.6.0 and 1.6.1 replace that assembly version with `1.6.0.0` and `1.6.1.0`, respectively. The execution level, UI access, Common Controls dependency and absence of a DPI-awareness declaration are consistent across these manifests.
 
