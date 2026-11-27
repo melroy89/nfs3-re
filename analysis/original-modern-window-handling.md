@@ -375,3 +375,18 @@ Destruction marks the app inactive before calling teardown.
 Both skip their state changes on a null context and return zero.
 This verifies the order at these callbacks. Delivery and OS hook
 results remain runtime questions.
+
+### Deferred window destruction keeps its local request consumer
+
+The 67 bytes at `004cd612..004cd655` match the hosted original
+in all 12 retained Modern executables. This window tests and clears
+the private-request latch, optionally calls `004ecd50`, calls
+`DestroyWindow` with the stored HWND, and clears the stored handle
+on ordinary return. The instructions immediately after that block
+do change. In 1.3.1, `004cd655` tests byte `009f3d2d` before the
+next loop iteration. In 1.4.0 and final 1.6.1, the bytes at that
+address begin a direct jump to `004cd582`. The pending-request
+consumer is retained while the surrounding message pump changes.
+See the [renderer cleanup trace](original-modern-renderer-lifecycle.md)
+for the corresponding waiting path. Runtime teardown and wait
+completion remain untested.
