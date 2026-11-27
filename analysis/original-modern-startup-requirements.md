@@ -482,3 +482,23 @@ their bindings to SetErrorMode and UnhandledExceptionFilter.
 This identifies which application instructions survived the
 insertion. It leaves called routine behavior, effective INI
 values and the cause of MP153-014 open.
+
+### Music initialization and cleanup relocation in 1.5.3
+
+The application calls the same wrapper at `004a3d6c` in
+both builds. Its 15-byte body at `004a3390` calls
+`004b5b86` and then `004bc980`. In 1.5.3 the first callee
+adds calls at `004b5cb1` and `004b5cb6` to seed the
+menu track cursor and the race track/style state, respectively.
+The [music comparison](original-modern-music-selection.md)
+traces the two helpers and their RNG inputs.
+
+The adjacent 45-byte cleanup routine moves from `004b5cf0`
+to `004b5cfc`. Its caller at `004a33a8` follows the move.
+The six relative CALLs in the moved body still resolve to their
+original targets, and the indirect renderer call remains through
+`009ef97c`. Every other byte in the two cleanup bodies matches.
+To reproduce, disassemble the startup wrapper, the initializer
+around `004b5cb1`, and the paired cleanup ranges. These changes
+explain a startup and shutdown code delta without identifying
+the affected systems or verifying the reported startup fix.
