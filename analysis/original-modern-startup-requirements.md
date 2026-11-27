@@ -698,3 +698,15 @@ the named export in each DLL and disassembling its 17 bytes.
 The [sound DLL analysis](original-modern-sound-reference-pair.md#the-api-version-call-invalidates-the-capability-cache)
 identifies that cell as the cached capability result. Live loading
 and device results remain untested.
+
+The changed DX5 and SoftTri resource sections each contain a
+single version resource (type 16, ID 1) in both releases. Both
+product versions move from 1.5.1 to 1.5.3. The file version
+changes from `2016.03.25.0233` (DX5) or `2016.03.25.0234`
+(SoftTri) to `2016.05.02.0259` in both. The file descriptions
+continue to identify Thrash API v104, and SoftTri reformats its
+source build date from `26/08/1998` to `1998/08/26`.
+Reproduce by extracting the two DLLs from both archives and
+reading their PE resource trees and version string tables.
+These are resource metadata changes alongside the import-header
+updates. The resource comparison supplies no startup outcome.
