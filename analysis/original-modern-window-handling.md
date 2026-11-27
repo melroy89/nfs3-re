@@ -253,8 +253,20 @@ EXEs. It passes `00554ee8` as the output pointer at `00435111`,
 then uses that slot for the device's format call at `0043512f`
 and for the buffered reader. Compare 304 bytes at PE RVA
 `350c0h` in the extracted executables. This verifies reuse of
-the local creation and setup sequence. It leaves the referenced
-data format, indirect device methods and runtime results separate.
+the local creation and setup sequence.
+
+The referenced mouse format data also match across all 13 EXEs.
+The 24-byte descriptor at `0052f020` declares seven 16-byte object
+records at `0052efb0` and a 16-byte state layout. The object
+offsets are `0, 4, 8, 12, 13, 14, 15`. Concatenate the descriptor,
+the 112-byte object table, and the four 16-byte GUIDs at
+`0056b908`, `0056b948`, `0056b958`, and `0056b968` in that order
+to reproduce SHA-256
+`b2cfa9c31756bf30a724875b17c62be4f60b78dc19eda423162368fae6cbc80a`.
+The first GUID is passed to device creation, and the other three
+are referenced by the object table. This covers the local format
+parameters. Indirect device methods and runtime results remain
+separate.
 
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
