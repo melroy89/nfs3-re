@@ -361,6 +361,8 @@ The248-byte region `6000462d..60004725` is entirely NOP in all three checked bui
 
 The archived 1.1.0 game EXE (SHA-256 `59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72`) still stores 640×480×16 at `004b6027..004b6052`, matching the original setup's three initial values. Its DX8 mode builder independently rejects ordinary enumerated modes of depth other than 32 and writes qualifying 640×480 rows into special slot 1. These are different variables in different components. The 16-bit EXE store therefore coexists with a provider record advertising 32 bits if a matching row is enumerated.
 
+The checked legacy mode-selection branch at `00517692..005176aa` compares ECX with `0x140` and, on equality, calls the renderer's set-video-mode slot with stack arguments `(4, 2, 1)`. Thus this branch does not request slot 1 directly. In archived 1.1.0 `dx8.dll`, the export at `600038b0` treats the first argument as a row index. It retains row 4 if in range and active, and substitutes row 1 otherwise. It separately maps the third argument 1 to `0x10` in `6001eed0`, a field distinct from the catalog row depth. This identifies a conditional route to the reserved slot and gives a concrete reason to keep the EXE's mode ID, the catalog depth and the provider's separate depth-related setting distinct.
+
 This gives MP110-009 partial static support for a concrete provider mechanism. The record selected at menu startup, the final back-buffer format and the reported visual repair remain unverified. A 32-bit row in the provider catalog alone cannot settle those questions.
 
 ### DX8 activation already contains16-bit requests before150
