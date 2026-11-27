@@ -190,6 +190,25 @@ The title delay and the race loading budget can therefore be
 configured independently. See the
 [title delay comparison](original-modern-title-delay.md#packaged-title-delay-release-boundary).
 
+### Final executable's fallback for a missing setting
+
+In 1.6.1, the settings loader supplies section `NFS3`, key
+`LoadingSplashTime` and default 5 to `004fb6f0`. The scenario where the
+INI key is absent has one additional input. The wrapper calls
+`004fb734`, which joins the section and key with an underscore and
+passes `NFS3_LoadingSplashTime` to the
+[environment lookup](original-modern-renderer-loading.md#6-original-environment-override-and-selection-wrapper).
+If a value pointer is returned, the wrapper parses it at `004f0430`
+and uses the result in place of 5 as the default argument to
+`GetPrivateProfileIntA`. The API call at `004fb70a` still receives the
+section, key and INI filename buffer `007a263c`. The executable writes
+the API return value to the budget setting cell `007a27b0`.
+
+This separates the shipped INI value, the literal caller default and
+the environment-derived API fallback. The environment value changes the
+fallback supplied to the profile API. Actual handling of missing or
+malformed entries in Windows or Wine was not exercised.
+
 ### Zero loading budget still runs the progress path
 
 With `LoadingSplashTime=0`, 1.4.0 publishes a zero budget. In
