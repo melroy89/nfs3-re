@@ -507,6 +507,8 @@ The [clock comparison](original-modern-clock-source.md) verifies 16 direct GetTi
 
 The expanded loading comparison also establishes Modern's early update admission, exact-bit completion Boolean, final caller retry and separate100% resubmission tail. Original makes a one-shot final update and discards its return. Its removed input-drain call is not a fixed sleep. These mechanisms explain control-flow changes without establishing the vendor's broad faster-loading claim or a guaranteed splash duration.
 
+The [race-loading call-site comparison](original-modern-loading-timing.md#explicit-progress-values-in-the-race-loading-caller) shows that early Modern changes most percentage arguments while retaining ten direct submissions in the inspected caller window. Version 1.4.0 reduces that count to eight by removing the first 0% submission and the 99.7% submission. It also moves the call to `00422cf0` after the retained 99.8% submission. These counts describe static call sites. Visible updates depend on the progress helper and the path taken through the caller.
+
 ## 18. CPU rating and defaults tier
 
 The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-scaled estimate versus Modern’s family/feature score at the same global, with coordinated changes in two consumer neighborhoods. This is not a measured CPU benchmark or evidence of SIMD racing physics. Full calibration/vendor paths and runtime default choices remain pending.
