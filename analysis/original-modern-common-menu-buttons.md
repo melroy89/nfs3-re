@@ -622,3 +622,21 @@ repeatedly add sources whose target is already in the set until
 it stops growing. This rules out an authored path from those
 four menus in the inspected graph. Executable callbacks, computed
 links and runtime menu selection remain outside the traversal.
+
+The same reverse traversal across the archives dates the loss of
+these authored paths. The totals include the destination basename,
+even when the archive itself does not supply `cedmain.mnu`.
+
+| Archive | Basenames in traversal | Paths from the four inspected menus |
+|---|---:|---|
+| Hosted original | 42 | `pause`, `car1`, `car2`, `cedbasic` |
+| Modern 1.0.0 | 2 | `pause` |
+| Modern 1.1.0–1.4.0 | 20 | `pause`, `car1`, `car2`, `cedbasic` |
+| Modern 1.5.0–1.6.1 | 1 | None |
+
+The early patch archives are overlays, so their graph alone can
+miss a path through an original file still on disk. In particular,
+1.0.0 lacks the original `cedbasic.mnu` member. Its archive-only
+result leaves the installed car-selection route open. The installed
+graph checked above accounts for retained files in the current Wine
+prefix, with runtime dispatch still unresolved.
