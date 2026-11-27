@@ -226,3 +226,22 @@ The apparent exception is the operand at **`0041d4b5`**, target **`005dd22d`**. 
 That is the first byte of the adjacent three-byte effect-table entry, already described in the [effect-table notes](detailed-analysis-notes.md). At index0, the actual four-byte read spans `[005dd22d,005dd231)`: three bytes from the preceding record region are read but discarded. It neither reads nor explains record+2ch. Other index domains and memory validity remain caller-dependent.
 
 **Reconstruction consequence:** on ordinary accessible RAM a signed-byte load reproduces this integer result without expressing an unaligned DWORD read across C objects. It does not reproduce the original four-byte memory-access footprint or possible faults; use explicit byte/sign-extension semantics and retain that limitation. Casting the address to `int32_t *` would introduce alignment/aliasing/object-boundary concerns. This is a verified retained machine idiom, not a newly introduced Modern fix or evidence of an observed original bug. No instructions were executed.
+
+## The final preset body and table are present in 1.5.2
+
+The complete final 196-byte body at `0041d620..0041d6e4` and
+the following 256-byte lookup table at `0041d6e4..0041d7e4`
+match across retained 1.5.2, 1.5.3, 1.6.0 and official 1.6.1.
+Their SHA-256 values are
+`8de86147efcbca1bb489c3e8a410bba265d257005711d48b2b2a200796dd45bd`
+and
+`ea9fba78c204613874515b7f5861cf361d90bda5b7e8aad03822249e2713c2a9`.
+
+Compare the two file-backed spans at PE RVAs `1d620h` and
+`1d6e4h` in the extracted EXEs. The first span differs from
+final in every retained build through 1.5.1. It groups into
+matching byte sequences for 1.0.0–1.3.1, 1.4.0, and 1.5.0–1.5.1.
+The second span already varies within the first group. Those are
+same-address byte comparisons. The earlier function and data
+boundaries require separate tracing before assigning those bytes
+to preset rows or attributing a visual change.
