@@ -31,7 +31,7 @@ Both executables retain identical bytes **`00495e06..00495e3e`**. They pass EDX=
 
 The full **`00495bc0..004960e0`** address envelope is retained for context, and the expanded audit verifies that its only changed bytes are `00495e02..00495e04`, three bytes of this initializer-call displacement. This is not equivalence of the full movie subsystem: callees and input providers can differ. The new helper’s location `004962c2` belongs to different original control flow; it must not be paired with an “old helper” by address alone.
 
-**Conclusion:** MP153-009 has bounded static support: movie playback now overrides default parameter127 with the configured menu music level’s low seven bits. Complete backend field interpretation, every movie entry route, decoder/provider effects, audio timing and audible acceptance remain unverified. The next useful extension is following the parameter through `004f3fec`, alongside the separate NoMovie and idle/minimized admission policies; those are distinct release-note claims.
+**Conclusion:** MP153-009 has bounded static support: movie playback now overrides default parameter127 with the configured menu music level’s low seven bits. The downstream trace below follows the parameter through `004f3fec` to mixer activation on the inspected path. Sample scaling, other movie entry routes, audio timing and audible playback remain open.
 
 ### Movie sound setup switches to the volume wrapper in 1.5.3
 

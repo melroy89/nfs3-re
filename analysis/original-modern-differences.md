@@ -673,7 +673,7 @@ Its resource follow-up separates optional gear-labelled records from primary das
 
 [The pause-title asset comparison](original-modern-pause-title.md) verifies a five-unit authored upward move with shared X/alignment, while recording omitted legacy fields separately. This partially supports MP100-050; screen pixels, improved alignment and historical introduction remain unverified.
 
-Movie sound parameter initialization is compared in [movie playback level](original-modern-movie-volume.md): the original default127 is replaced with the menu music level masked to seven bits, with forwarding and runtime limits recorded.
+Version 1.5.3 replaces the original movie-volume default of 127 with the low seven bits of menu music volume. The value feeds the stereo levels written to an active mixer record. Sample scaling and audible playback remain unverified. [Movie volume evidence](original-modern-movie-volume.md#mixer-path-comparison-across-the-153-change)
 
 The [idle movie controller comparison](original-modern-idle-movie.md) traces NoMovies through the availability mask, application activation through timer reset, and the changed movie-selection order and table type.
 
