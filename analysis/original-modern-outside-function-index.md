@@ -306,6 +306,13 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `00452a9b..00452db0` | All four changed bytes belong to the instruction at `00452cf1`. The [race dialog](original-modern-race-dialog.md) replaces the stored-mode load with a call that swaps dialog ordinals 1 and 3. | Only the nonzero-ESI route takes this call. |
 | `0049f93a..0049fb10` | The four changed bytes are in the import operands of the calls at `0049faba` and `0049fad9`. Both switch from GetTickCount to timeGetTime in the [clock-source comparison](original-modern-clock-source.md). | This establishes the source swap at two call sites. Session timing effects remain untested. |
 
+| `00448345..00448348` | Three NOPs follow the shortened [mode-list initializer](original-modern-display-modes.md#count-caching-and-the-declared-storage-boundary). The original range crosses the boundary between loading the selector and comparing it. | The old same-address instructions belong to the original record selection path. |
+| `00448371..00448374` | Three NOPs follow the Modern [mode-field getter](original-modern-resolution-defaults.md). Original bytes straddle the stack destination setup and source-address calculation for the record copy. | This is the tail of the old copy path at the new getter's boundary. |
+| `004483fd..00448400` | Three NOPs replace an original RET and two-byte alignment instruction after the [mode replay wrapper](original-modern-mode-selection.md#hide16bitmodes-also-changes-the-depth-requested-on-replay). Modern returns at `004483fc`. | This accounts for the boundary bytes. |
+| `00448425..00448428` | Three NOPs follow the Modern [mode publisher](original-modern-mode-selection.md#hide16bitmodes-also-changes-the-depth-requested-on-replay). They replace part of an original alignment LEA. | The changed span is padding in both layouts. |
+| `004cccc1..004cccc4` | Three NOPs follow the Modern [hook teardown](original-modern-window-handling.md). They replace the end of a register move and a short jump in the original hook callback. | The original callback crosses this Modern function boundary. |
+| `004f1fc9..004f1fcc` | Three NOPs after the Modern RET at `004f1fc8` replace part of the original integer store at `004f1fc9`. The next Modern entry begins the [modifier-key wrappers](original-modern-window-key.md). | This identifies the source instruction and the new alignment. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -324,7 +331,9 @@ intervals**, leaving 270 changed bytes across 119 intervals at `caca397`.
 The next eight rows raise coverage to **21,688 bytes across 226
 intervals**, leaving 238 changed bytes across 111 intervals at `700897d`.
 The race dialog and clock rows bring the total to **21,696 bytes
-across 228 intervals**, leaving 230 changed bytes across 109 intervals. These counts measure documented evidence links for this fixed
+across 228 intervals**, leaving 230 changed bytes across 109 intervals at `1a9fd72`.
+The six additional boundary rows bring coverage to **21,714 bytes
+across 234 intervals**, with 212 changed bytes across 103 intervals still unindexed. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
