@@ -10,6 +10,16 @@ The later sections require their named companion audits as well: `audit_projecti
 
 **MP160-003: partial static support, runtime outcome unverified.** The [historical origin-to-centre linkage](#historical-fulldefault-origin-change-reaches-projection-centre) identifies a153→160 Full/default centring mechanism. Earlier unresolved sections below preserve the investigation sequence; they are not the current catalogue classification. Projection-source capture/lifetime, other contexts/orientation and actual visible output remain unresolved. The [integer-rounding examples](#default-centring-retains-half-pixel-integer-rounding) further limit exact midpoint claims.
 
+## The 1.5.0 wide-angle edge glitch remains unattributed
+
+**MP150-007.** The retained 1.4.0 and 1.5.0 builds keep the same two weather calls to the fixed-angle projection wrapper, at `004ded7a` and `004dee36`. The two complete caller envelopes `004dece0..004dedea` and `004dedf0..004dee71`, wrapper `004dbda0..004dbddf`, adapter `004bed20..004bed8c`, projection wrapper `004dbcc0..004dbd97`, and centre builder `004bf260..004bf370` match byte for byte. The rectangle-adjustment helper `004bea40..004beaf7` and derived-geometry builder `004be3d0..004be570` also match.
+
+The main covering rectangle at `007cdb88` still gets the same initial inputs in the selected constructor path. In both builds the first setter writes the physical group, then the second writes the covering group with width W and height `S = (3 * W) >> 2`. For ordinary dimensions with no overflow, both set the covering Y to `D + (D >> 1)`, where `D = (H - S) >> 1`. If `006fbc4c != 0` and `006fd3b0 != 1`, both subtract `((H - (W >> 1)) >> 1) >> 1` from that Y and use physical height `W >> 1`. Compare `004be608..004be67a` in 1.4.0 with `004be60a..004be67c` in 1.5.0, including the relocated setters. The independently verified [mirror rectangle rewrite](original-modern-viewport-pose.md) concerns a different record.
+
+For reproduction, extract `nfs3.exe` from the two `nfs3_modern_patch_v*.7z` members under `analysis/captures/modern-differences/upstream/history/`. The EXE SHA-256 values are `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d` (1.4.0) and `d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae` (1.5.0). Compare the half-open PE VA ranges via the `.code` mapping and disassemble the constructor with `objdump -d -Mintel`.
+
+These matches rule out a rewrite of the inspected projection routines and initial covering-rectangle formulas at this release boundary. The fix remains vendor-claimed. Later geometry, clipping and renderer inputs remain candidates. The archive listing also shows changed CRCs for the existing DX5, DX6, DX8 and Glide renderer DLLs, so a follow-up should hold the backend and settings fixed when comparing frames, then isolate any backend-specific behaviour. No frames were captured.
+
 ## Automatic angle producer and selection
 
 Modern helper **`004dbc48`** loads signed DWORD width/height from `006fd1e4/006fd1e8`, divides width by height on x87, multiplies by file-backed float 0.75, applies FPATAN with 1, doubles and multiplies by float `57.295780181884766`. Ordered comparisons clamp the result to file-backed float limits **90** and **107**, then store binary32 at **`0055fecc`**.
