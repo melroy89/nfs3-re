@@ -122,6 +122,16 @@ The [historical audit](scripts/audit_config_path_history.py) pins author-hosted1
 |1.2.0 | `004a6f04..004a6f6e`;same24-slot copy scheme, then language-path work | `.\FeData\Config\` | `.\FeData\Config\config.dat` |
 | Final1.6.1 | Previously audited `004a6ec4..004a6f2e`;22 strings from `0053f42c` | `.\fedata\config\` | `.\fedata\config\config.dat` |
 
+Across the retained archives, slot 17 stays under FeData/Config
+from 1.2.0 onward. The source table at `0053ec2c` supplies
+`.\FeData\Config\` through 1.3.1. Version 1.4.0 moves the table
+to `0053eb20` and uses lowercase `.\fedata\config\`, retained
+through 1.5.3. The 1.6.0 and 1.6.1 tables at `0053f42c` retain
+that lowercase string. To reproduce, follow the initializer's
+source pointer and read the eighteenth NUL-terminated string
+in each table. The casing observation concerns the initialized
+prefix. Host filesystem lookup behavior remains untested.
+
 The three early initializers copy NUL-terminated strings into128-byte slots starting `007a27b4`. In 1.1.0 and 1.2.0 the call at `004a6e36` targets the respective initializer. The config read witness at `004729aa` pushes that slot and format `%sconfig.dat` (`0053b00c`), then calls formatter `004df690`; the saved complete config-save envelope uses the same slot/format. Thus the changed initializer value has a concrete config consumer. These are default/dataflow-derived paths; effective CWD, later writers, API success, case-sensitive host filesystem behaviour and actual file I/O were not observed.
 
 MP120-013's return to the original-style FeData/Config destination now has **bounded historical static support** from the1.1.0→1.2.0 transition. MP100-044's earlier root move has partial historical support because the recovered 1.0.0 EXE initializes slot 17 to the relative root and passes it at `004729aa`. The supplied original with the inspected installer file initializes the FeData/Config prefix, as shown in the [original installer comparison](#original-installer-records-and-final-path-slots). Reading MP100-044 as a statement about the final executable would be wrong: a later release reverses the path policy.
