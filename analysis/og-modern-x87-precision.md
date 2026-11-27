@@ -1227,3 +1227,17 @@ PE export lookup for `_THRASH_idle@0` gives the following module-relative addres
 | Official Modern `voodoo2a.dll` in the dgVoodoo, Glide3x and nGlide directories, three byte-identical copies | `28d0h` |
 
 This resolves the idle adapter's precision effect for those provider files if the runtime slot points to the exported entry. The DLLs were read from the local original install and the official 1.6.1 archive. Alternate providers, runtime slot reassignment and the other periodic callbacks remain outside this check.
+
+### Other fixed scheduler entries retain their local dispatch
+
+The following original and official 1.6.1 instruction ranges match and contain no x87 instructions within the compared bytes. Some deliberately stop at a branch boundary.
+
+| Compared span (exclusive end) | Next dependency |
+|---|---|
+| `004cc870..004cc88b` | Poll `004ead90`, with callback removal and termination on the alternate path |
+| `004e6d68..004e6d78` | Call `004e8320` |
+| `004e85a8..004e85b4` | Integer flag helper `004f9070..004f908b` |
+| `004f0d20..004f0d98` | Queue helpers and indirect call through record offset `+24h` at `004f0d77` |
+| `004f3ebc..004f3eee` | Integer flag helper `004f9070` and branches to `004f3ab5` or `004f3eee` |
+
+The `004e85a8` route has no x87 operation through its only local callee. For the other entries the matching local code identifies where to trace next. In particular, the queue-record callback is a separate indirect edge from the scheduler's own callback table. A match at the scheduler entry does not bind that second target.
