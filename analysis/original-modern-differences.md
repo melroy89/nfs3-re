@@ -987,7 +987,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-071 | Opponent Name HUD element was moved to the top of screen, just under the rear view mirror. | Partial |
 | MP140-072 | Reset HUD just after installation of this patch over the original version of NFS3. | Partial |
 | MP140-073 | Zoom of cop's minimap will be the same as zoom of racer's minimap (by default, can be changed). | Partial |
-| MP140-074 | i586 and newer are recommended. The game displays a warning for older systems. | Claimed |
+| MP140-074 | i586 and newer are recommended. The game displays a warning for older systems. | Static |
 | MP140-075 | nfs3.exe has an application manifest now. | Static |
 
 ### Version 1.3.1 (2015-07-14)
