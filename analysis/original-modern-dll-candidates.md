@@ -354,3 +354,16 @@ Together with the explicit depth-16 store on the successful query branch,
 this gives static support for both sources of populated 16-bit records.
 Later writes, the exact exported mode list under nGlide, and the Alt+P
 screenshot consequence remain unverified.
+
+The hosted reference table at the same RVA also has 16 populated records,
+all at depth 16. Comparing the width/height pairs shows one substitution:
+`1280×1200` in the reference becomes `1280×1024` in 1.1.0. The four
+larger modes (960×720, 1024×768, 1280×1024 and 1600×1200) occupy slots
+3–6 in 1.1.0. The first two populated slots remain 640×480 and 800×600.
+This is file order before the setup loop or game-side selection.
+
+The legacy setup block `60001940..60001b80` is byte-identical between
+these two DLLs. Both import `_grQueryResolutions@8` at the same IAT slot.
+The observed changes are the new callers that reach the query, the depth
+written on that branch, and the fallback table's content and order.
+The fallback's 16-bit depth predates the patch.
