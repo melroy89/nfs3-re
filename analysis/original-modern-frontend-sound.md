@@ -128,7 +128,7 @@ That scan does not resolve indirect access to the corresponding bytes
 or imply that the original accepts the current file. No file was changed
 or loaded by the game for this check.
 
-These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. The removed per-call multiplier supports the mechanism relevant to **MP140-010**'s consistent-volume claim; sample loudness, backend mixing and audible equality are not established.
+These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. For **MP140-010**, the 1.4.0 mechanism is the new wrapper at `004181c4`, which forces EDX to 127 for eight decoded direct callers. The 12-byte range is alignment bytes in 1.3.1 and has no decoded direct caller there. The 1.4.0 request builder still consumes EDX, so the wrapper establishes a common request multiplier for those eight sites only. In 1.5.0 the dedicated Menu Sounds field replaces the multiplier for the shared handler. Sample loudness, backend mixing and audible equality are unverified.
 
 ## Remaining work
 
