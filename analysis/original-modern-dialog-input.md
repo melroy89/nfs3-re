@@ -88,6 +88,8 @@ The complete renderer `00444000..00444350` (848 bytes) differs only in four PUSH
 
 Both pairs increase by approximately 0.001171887. The respective sequences still reach draw helper `004db000` at `0044412e` and `00444275`; the surrounding pushes, x87 arithmetic, calls and branches are byte-identical. The audit establishes exact changed argument bits, not the final visible texture sample or a texel-alignment fix. Assigning texture-coordinate/depth semantics requires the draw helper's complete argument mapping and resource evidence; a nearby rendering call alone is insufficient.
 
+The retained releases show two edits. In 1.0.0–1.5.3 the four immediates use `0x3f0d4fdf` and `0x3ef89fc7` (each twice). In 1.6.0–1.6.1 they use the slightly lower Modern values in the table. The full 848-byte renderer matches within each group, and each boundary changes only the low two bytes of the four immediates. Reproduce by reading RVA `0x44000` for 848 bytes in each archive and comparing the PUSH operands as little-endian binary32. The display effect remains unverified.
+
 **Bounded work status: done; confidence: verified static initializer/consumer relationship and renderer constants.** Actual text-entry behavior, input limits/aliases, dialog-type coverage, draw-argument interpretation and rendered output remain untested. No target execution, Ghidra writes or reconstruction edits were performed. Preserve the original's replace-first policy or Modern's append policy as appropriate rather than silently choosing a preferred UX.
 
 ## Network-service callback changes only its notice wrapper
