@@ -53,7 +53,24 @@ The creation routines diverge immediately after CreateWindowExA:
 - Original saves the returned handle in ESI and, only when nonzero, calls SetCursor(NULL), conditionally ShowCursor(FALSE) when `context+0x45d` is nonzero, clears `00564814`, and conditionally calls `004fb710` for indices 0,1,2 with EDX=0 when `00561298` is zero. It returns the saved handle at `004cd4c6..004cd4d0`.
 - Modern unconditionally clears `00564814` and returns directly (`004cd475..004cd487`). MOV does not alter EAX, so the API handle/failure result remains the return value. The original local cursor and three-call setup block is absent.
 
-This proves removal from this routine, not removal of every cursor or input-state operation elsewhere. Moving lifecycle responsibility cannot be fully explained without those other callers. Modern also clears `00564814` on creation failure, unlike original's success-only block; the global's complete contract remains unresolved.
+This proves removal from this routine, not removal of every cursor or input-state operation elsewhere. Moving lifecycle responsibility cannot be fully explained without those other callers. Modern also clears `00564814` on creation failure, unlike original's success-only block; the affected state is the keyboard translator latch described below.
+
+### The post-creation clear resets a keyboard translation latch
+
+The supplied original and official 1.6.1 both initialize the
+file-backed DWORD `00564814` to zero. The complete 183-byte translator
+`004f0010..004f00c7` matches in both EXEs (SHA-256
+`0849ac690a7b462bfe2b8cd9ef13b672a3860e84d566388762d7963bf1e5050b`).
+It flips the latch on scan `0x3a`. With higher-priority modifier
+states clear, zero selects table `00564898` and nonzero selects
+`0056494e`. Entry `0x1e` is `0x61` in the former table and
+`0x41` in the latter in both EXEs. This links the post-creation
+clear to a concrete lowercase/uppercase translation choice.
+
+The clear on a failed creation can make a difference when the latch
+was already nonzero. It writes the game's own translation state.
+The separate startup calls discussed below request OS keyboard
+toggle changes. Failed recreation and later input remain untested.
 
 ## Three complete sizing helpers are unchanged
 
