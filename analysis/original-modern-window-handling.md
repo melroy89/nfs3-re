@@ -331,3 +331,13 @@ context, HWND and active-state checks gate hook changes throughout
 these releases. Deactivation still unhooks before clearing the
 128-byte keyboard state and calling the optional notification.
 Actual message delivery and hook acceptance remain untested.
+
+The complete 30-byte callbacks for `WM_CREATE` and `WM_DESTROY`
+also match across the seven retained builds from 1.4.0 through
+1.6.1. Their entries move from `004ccdb0` and `004ccdd0` to
+`004cccc4` and `004ccce4` in 1.5.0. With a nonnull context,
+creation calls the installer before marking the app active.
+Destruction marks the app inactive before calling teardown.
+Both skip their state changes on a null context and return zero.
+This verifies the order at these callbacks. Delivery and OS hook
+results remain runtime questions.
