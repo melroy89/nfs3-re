@@ -418,3 +418,20 @@ This dates the startup RNG seed call pair to 1.5.3 and links it
 to the [final RNG analysis](original-modern-music-selection.md).
 It does not attribute MP153-014 to the insertion. The observed
 pair seeds a value without a local failure test.
+
+### Existing-window rejection survives the 1.5.3 startup edit
+
+The complete 34-byte helper at `004a38c0..004a38e2` is
+byte-identical in 1.5.2 and 1.5.3. In both builds, slot
+`00534734` resolves to USER32.FindWindowA, and the file-backed
+pointer at `005612a0` names the class `NFS3CLASS` at
+`0054045c`. The helper passes that class and a null window
+title, and returns 1 when the API returns a nonzero handle.
+
+Both application callers retain the same conditional exit.
+After the helper, 1.5.2 tests EAX at `004a3a48` and 1.5.3
+at `004a3a52`. A nonzero value reaches the same message
+helper at `004b56f8`, then branches to `004a3f6c`.
+This excludes a local change in the inspected existing-window
+rejection branch as the explanation for MP153-014. The API was
+not called and the live window state remains untested.
