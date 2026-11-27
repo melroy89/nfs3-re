@@ -86,3 +86,13 @@ load of `[EBP+8]` at `005113c1` uses the header pointer that arrived
 in EBX, so it does not by itself establish that the movie's config
 byte is copied into that channel field. The gain calculation and
 backend submission still need a value trace.
+
+On the admitted voice setup path, `0051138f` reloads the config pointer
+and `0051139a` reads its dword at offset 5. Arithmetic right shift by 24
+at `005113ab` extracts the signed byte at offset 8. The subsequent
+left shift by 16 and store at `005113b8` publish that value in
+16.16 representation at channel offset `+20h`. The channel address
+is `00a09b3c + 60h*index` on this path. Thus a movie parameter byte of
+80 reaches channel setup as `00500000h`; the original default 127
+produces `007f0000h`. This closes the config-to-channel transfer.
+Conversion from the channel field to the backend gain remains open.
