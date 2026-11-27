@@ -888,3 +888,15 @@ Following each renderer profile's `File=` value and comparing the selected paylo
 | 1.6.1 | None | All eight |
 
 From 1.5.3 to 1.6.0 all eight selected DLLs and all eight shipped `thrash.ini` profiles match byte for byte, as does the packaged `nfs3.ini`. The nGlide dependency also matches. The auxiliary dgVoodoo `glide3x.dll` changes from 83,456 to 89,600 bytes and is then retained in 1.6.1. See the [dgVoodoo package audit](original-modern-dgvoodoo-version-history.md) for its product version and setup binary. This separates the 1.6.0 executable and dgVoodoo dependency changes from any change to the eight shipped adapter DLLs or their profiles. The comparison covers named archive members. Effective installed settings and runtime results remain outside it.
+
+### The 1.0.0 device selector reaches all three renderer interfaces
+
+The 1.0.0 loader resolves `_THRASH_selectdisplay@4` from the string at `0054d590` and stores the result at `009ef944` at `004f8601`. The common setup call at `004b5ceb` passes the saved `VideoDeviceId` DWORD without a local D3D-only guard. The three archived root-level DLLs export that name with these argument consumers:
+
+| Member | Entry | Observed use of the device argument |
+|---|---|---|
+| `d3da.dll` | `60001654` | Loads the argument into ESI and, on its ordinary enumeration route, compares it against zero and the device count. |
+| `softtria.dll` | `60002c20` | Stores the argument at `6003e094`; the enumeration callback at `60002420` compares its counter against that value. |
+| `voodoo2a.dll` | `60001e60` | Queries the provider, compares the argument against the returned count on a successful query, and forwards it to provider slot `60011018` on the admitted route. |
+
+Reproduce by extracting the three named members from the pinned 1.0.0 archive, reading their PE export tables and disassembling the listed entries. This qualifies MP100-023's D3D-only wording. The setting is forwarded through a common call, and all three implementations contain input-dependent code. Whether nonzero indices select a usable alternative on specific hardware remains untested.
