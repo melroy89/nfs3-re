@@ -866,14 +866,14 @@ This first-reference index includes all **290 release-note entries across 12 rel
 Use the stable IDs when choosing original or Modern behaviour for a reconstructed C module. An executable comparison can guide reconstruction of original behaviour; it does not supply the original source code. The [detailed catalog](modern-patch-change-catalog.md) retains source line numbers, categories, evidence links and qualifications. **Static** means bounded static support, **Partial** means only part of the claim is supported, **Unresolved** includes historical claims needing other releases, and **Claimed** means vendor-only. None of these labels establishes runtime equivalence.
 
 The current table contains **290 unique release-note IDs**: 60 Static,
-200 Partial and 30 Claimed. The count comes from the status column below.
+201 Partial and 29 Claimed. The count comes from the status column below.
 A row can bundle multiple changes, and the executable inventory includes
 differences outside the release notes. Function-navigation coverage and
 catalog status therefore measure different things.
 
-Several Claimed rows need different kinds of evidence. MP130-005 can be
-checked by comparing Graphics and Advanced Graphics control descriptors
-across 1.2.0 and 1.3.0. MP150-028 needs a pinned upstream driver to test
+The [packaged menu comparison](original-modern-common-menu-buttons.md#graphics-controls-move-in-modern-130)
+verifies the placement change in MP130-005. Other Claimed rows need
+different kinds of evidence. MP150-028 needs a pinned upstream driver to test
 the claimed lineage. MP140-060 needs a controlled loading measurement
 and evidence tying the result to a specific mechanism. The known loading
 budget changes alone do not establish that speed claim.
@@ -1102,7 +1102,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP130-002 | Unexpected game termination at the end of gameplay loading was fixed. (Thanks Zeus for help with debugging.) | Partial |
 | MP130-003 | Multiplayer game bug were fixed. It had been introduced by the first version of this patch. (Thanks Ivan_83 for testing.) | Partial |
 | MP130-004 | HUD was updated a little. | Partial |
-| MP130-005 | The Wide Screen setting has no any relation to proper widescreen support, so its location next to the Resolution setting is confusing. This is why this setting was moved from the Graphics to the Advanced Graphics settings. Now it's placed near the View Angle setting because it is more logical. The View Distance setting was moved to freed space in the Graphics settings. | Claimed |
+| MP130-005 | The Wide Screen setting has no any relation to proper widescreen support, so its location next to the Resolution setting is confusing. This is why this setting was moved from the Graphics to the Advanced Graphics settings. Now it's placed near the View Angle setting because it is more logical. The View Distance setting was moved to freed space in the Graphics settings. | Partial |
 | MP130-006 | Menu subitems in the Controller and in the Connect menus aligned vertically like in the other menus. | Partial |
 | MP130-007 | nGlide is updated to version 1.04.3. Now you can safely minimize and restore NFS3. (Thanks Zeus for it.) | Partial |
 

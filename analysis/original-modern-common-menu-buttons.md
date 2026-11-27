@@ -83,7 +83,7 @@ The audit now records unmatched fields in both directions. Its original seven Mo
 
 Five backup-only `(member,section,listname)` bindings are also retained: `advgrph.mnu` cascade `viewlevel`5; `graphics.mnu` cascade `widescreen`10; and `hud.mnu` droplists `buyERTS`, `buyERTS_at75`, `buyERTS_at100`, each15. “Backup-only” means no matching field in that official member, not absence of the underlying feature throughout Modern.
 
-The same `widescreen` binding/count therefore appears in a different menu (backup graphics versus Modern advanced graphics), and likewise `viewlevel` (backup advanced graphics versus Modern graphics). This supports authored redistribution without inventing a count increase for those two values. Complete menu routing, widget equivalence and historical relocation still require separate linkage. The HUD names are not paired as simple renames without descriptor/consumer evidence.
+The same `widescreen` binding/count therefore appears in a different menu (backup graphics versus Modern advanced graphics), and likewise `viewlevel` (backup advanced graphics versus Modern graphics). This supports authored redistribution without inventing a count increase for those two values. The release comparison below dates the authored relocation. Runtime widget equivalence remains open. The HUD names are not paired as simple renames without descriptor/consumer evidence.
 
 No “seven new controls” claim follows from the one-way matching result. The nine uniquely paired numeric increases remain distinct from this unmatched/redistributed set. Both sets retain the same backup provenance and runtime-selection limitations.
 
@@ -370,3 +370,29 @@ The130 Connect definitions omit those explicit x/y fields and retain `buttontype
 The same audit verifies Reset `ypos` history **120=7,130=6,131=6,140=7**. Thus the advertised one-position downward movement in MP140-027 has a direct131→140 asset counterpart, in addition to the earlier backup7→final8 observation above. Those endpoints represent different comparisons and must not be conflated. The final8 value does not date all later layout changes to140. Complete intermediate introduction of position8, active menu defaults and rendered coordinates remain unverified. MP140-027 remains partial, with its historical boundary now supported.
 
 No menu interaction, settings reset, target instructions or Ghidra changes occurred. Executable and database bytes are unchanged.
+
+
+## Graphics controls move in Modern 1.3.0
+
+The retained `fedata/menus/graphics.mnu` and `advgrph.mnu` directly
+show the menu changes described by MP130-005. The line numbers below
+identify both authored occurrences of each binding.
+
+| Binding | 1.2.0 | 1.3.0 |
+|---|---|---|
+| `widescreen` | Graphics 51, 72, immediately after the Resolution group | Advanced Graphics 54, 62, immediately after the View Angle group |
+| `viewlevel` | Advanced Graphics 14, 34 | Graphics 93, 100 |
+| `viewangle` | Advanced Graphics 91, 111 | Advanced Graphics 39, 46 |
+| `nextmenu=advgrph` | Graphics 274 | Graphics 107 |
+
+Extract each member with `7z x -so <archive> fedata/menus/<member>`
+and search for `listname=` and `nextmenu=`. The exact member SHA-256
+values are:
+
+| Release | Graphics | Advanced Graphics |
+|---|---|---|
+| 1.2.0 | `51f742e65620d9d06b709270f1e425213701db35e54a48d1680facc0181284ab` | `c0baf1c660e78d72cf032e3df229f3a43087192f3310145eeaa99f07d108fc16` |
+| 1.3.0 | `a35586b203f428881017792e1495a2b59b6fac92c7bcececd888be92a334fc61` | `b47c16694213257ca626dbeeab4d8e7679455aa18c48bba62aa920085725cb49` |
+
+This establishes the packaged menu placement. How the menus render
+and how the setting affects projection are separate questions.
