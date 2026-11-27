@@ -1373,3 +1373,9 @@ file-backed initializer. In particular, on the inspected normal 1.5.3
 startup path, the call at `004b5cef` publishes `037f` before the
 restore call at `004b5d01` can read it. Initializing the saved cell to
 `037f` directly in a reconstruction would bypass that ordering.
+
+### The first reconstruction helper is unchanged across retained releases
+
+The hosted original and all twelve retained Modern executables have the same 747 bytes at `00485c30` (SHA-256 `3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f`). All thirteen also have the same six decoded direct call sites: `00485ff0`, `00486071`, `004861cf`, `00486247`, `0048627e` and `004862cd`. Reproduce by extracting each archived EXE, hashing 747 bytes from PE RVA `0x85c30` and filtering `objdump -d -Mintel` for direct calls to `0x485c30`.
+
+This extends the original/local Modern comparison to the complete retained release set for this helper. It establishes continuity of the helper instructions and direct call addresses across the x87 policy transition. The control word, caller data and any indirect entry routes remain separate from this byte comparison. Existing reconstruction results apply to their tested inputs and control words.
