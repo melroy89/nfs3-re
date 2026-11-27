@@ -17,6 +17,8 @@ Modern startup calls `InitializeRamPoolFromConfiguredByteCount` at `004f92d0` fr
 
 The original has the same allocation adapter at `004f92b0` and pool initializer at `004f9270`; the initializer passes literal name `RAM` from a different data address. But original entry `004f92d0` does not load a setting: it puts immediate `0x01000000` in EAX (16 MiB), clears EDX, and calls `004f92b0` (`004f92d0–004f92de`). The original caller at `004f8939..004f8945` tests backing pointer `005644fc` for zero and jumps to the allocation call at `004f8a73` when it is null; afterward it jumps back to `004f8946`. The nearby `00564364` checks control a different branch and must not be mistaken for the allocation guard. Modern's caller is instead `004b5c11` in `InitializeGameSubsystems`, after the resource/display check call at `004b5c0c`; the earlier application settings-loader call is `004a3e4e`.
 
+The original also requests a fixed 16 MiB on the direct startup path at `004b6097`, before calling `004f92b0` at `004b609c`. In retained 1.1.0, the same instruction address instead loads the configured byte count from `007a3a24`. The call target and publication of the pool result to `007a1a78` remain in place. This establishes the startup input change independently of the conditional renderer-side allocation entry.
+
 Thus this path changes from a conditional fixed 16 MiB request in the original to the Modern INI/environment-derived, clamped 16–512 MiB request (32 MiB default). This identifies the local null-pointer guard, without proving every initialization/reinitialization sequence.
 
 ## Retained evidence and reproduction
