@@ -1152,3 +1152,9 @@ The same empty-token conversion path exists in the original
 executable. Whether the original loads the same profile text and
 ultimately uses the same table remains a separate asset and runtime
 question.
+
+## Race-frame call moves within its caller
+
+At `004c546e`, both baselines skip to `004c548e` when `007d3674` is nonzero. With that field zero, original tests EDI. If EDI is nonzero, it calls `004c4490`, clears EDI and skips the race-frame call. Otherwise it loads EAX from `007d36a0` and calls `004bc680` at `004c5489`. Final Modern removes the EDI split at this site, performs the same load and calls `004bc680` at `004c547c` before calling `004c4480`. Both routes rejoin at `004c548e`.
+
+The relocated call and old-site padding first appear in retained 1.4.0. The original has another decoded direct call to `004bc680` at `004c4541`, which does not appear in final Modern's direct-call census. These are static edges. The frequency of the enclosing branches remains unverified.
