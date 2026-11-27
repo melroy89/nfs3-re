@@ -264,6 +264,18 @@ as 40 little-endian values, and comparing the later byte block directly.
 This comparison covers table values and their local selection.
 Mode overrides and later configuration writes can change the result.
 
+The same release introduces two direct writes in this initializer.
+From 1.5.0 through 1.6.1, the 27-byte tail at
+`00472e02..00472e1d` is byte-identical. The store at `00472e09`
+writes the tier-indexed rear-view detail to `006fd1d8`. The next
+table load at `00472e0f` writes EDX, while the fog store at
+`00472e16` takes EAX from the selected display mode and writes
+`006fd1d4`. Thus the table load/store mismatch already exists
+in 1.5.0. The original paired initializer and the retained Modern
+initializer windows through 1.4.0 have no direct stores to those
+two addresses. Other writers and effective fog remain outside this
+release comparison.
+
 ### ECX tier survives the two intervening mode calls
 
 The later mirror byte read at`00472e02` occurs after calls to mode selector`00448394` and field10 accessor`00448368`. The expanded audit retains their exact bytes: the selector uses balanced PUSHAD/POPAD on its normal return; the accessor and its leaf`00448348` write EAX and the selected-index global, but not ECX. Thus the original effective tier survives these two calls under ordinary valid-stack/no-alias-mutation conditions. This closes the earlier specific callee-register question for the later table lookup, without certifying every mode helper or failure path.
