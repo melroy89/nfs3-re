@@ -430,3 +430,16 @@ Extract each archived EXE and hash the bytes at the corresponding
 PE RVAs through the terminating RET. This establishes that the menu
 move left these two instruction ranges intact. Inputs, tables and
 callees can still differ, so overall rendering equivalence is open.
+
+The View Distance routine's static inputs match across those builds
+as well. At `0041d625..0041d649` it selects one of four 64-byte preset
+blocks at `0041d6c8`, then adds 0 or 32 bytes and 0 or 16 bytes
+according to the two race flags. Each selected row supplies eight
+WORDs for two records. The complete 256-byte table has SHA-256
+`ea9fba78c204613874515b7f5861cf361d90bda5b7e8aad03822249e2713c2a9`
+in 1.2.0, 1.3.0 and 1.3.1. The eight-byte conversion constant
+at `00536ce4` also matches and decodes to exactly 1/65536.
+Reproduce by reading those two PE ranges from each archive.
+This covers the static preset inputs for all valid ordinals.
+The record count, pre-existing record fields and downstream
+rendering remain outside this comparison.
