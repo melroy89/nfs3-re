@@ -341,14 +341,16 @@ This supports a specific mechanism: important unchanged physics/input-replay ins
 
 Both executables have 207 import entries, but the symbol sets differ. Counts alone would conceal the changes.
 
-| Static import additions in Modern | Static imports removed from the executable table |
-|---|---|
-| `GetPrivateProfileIntA`, `GetPrivateProfileStringA`, `GetPrivateProfileSectionA` | `CompareFileTime`, `GetFileTime`, `GetDriveTypeA`, `GetLogicalDriveStringsA`, `GetLogicalDrives`, `GetVolumeInformationA`, `GetVersionExA` |
-| `GetProcessHeap`, `HeapAlloc`, `HeapFree`, `HeapReAlloc`, `HeapSize` | `_lopen`, `_lclose` |
-| `FindResourceA`, `LoadResource`, `LockResource`, `SizeofResource` | `GetFileVersionInfoA`, `GetFileVersionInfoSizeA`, `VerQueryValueA` |
-| `PlaySoundA`, `timeGetTime` | `DirectDrawCreate`, `DirectDrawEnumerateA` |
+The table dates every named import that differs between the original and final Modern. It uses the first retained executable with the final presence or absence. Each listed change persists through 1.6.1. The 1.0.0 executable is missing from the retained archive set.
 
-The retained releases date these removals separately. The static `VERSION.dll` descriptor and all three listed version-query imports are already absent in 1.1.0. `DirectDrawEnumerateA` remains through 1.3.1 and disappears in 1.4.0. `DirectDrawCreate` survives in 1.4.0 and disappears with the static `DDRAW.dll` descriptor in 1.5.0. The [DirectDraw thunk comparison](original-modern-small-entry-followup.md#directdraw-import-transition) traces the replacement diagnostic. The [configuration comparison](original-modern-config-loading.md) traces the original version-query callers. To reproduce the import history, extract `nfs3.exe` from each retained archive and compare the named imports with `objdump -p`.
+| First retained release | Added | Removed |
+|---|---|---|
+| 1.1.0 | `GetPrivateProfileIntA`, `GetPrivateProfileStringA`, `GetProcessHeap`, `HeapAlloc`, `HeapFree`, `HeapReAlloc`, `HeapSize`, `FindResourceA`, `LoadResource`, `LockResource`, `SizeofResource` | `CompareFileTime`, `GetFileTime`, `GetDriveTypeA`, `GetLogicalDriveStringsA`, `GetLogicalDrives`, `GetVolumeInformationA`, `GetVersionExA`, `_lopen`, `_lclose`, `GetFileVersionInfoA`, `GetFileVersionInfoSizeA`, `VerQueryValueA` |
+| 1.4.0 | `GetPrivateProfileSectionA`, `PlaySoundA` | `DirectDrawEnumerateA` |
+| 1.5.0 | | `DirectDrawCreate` |
+| 1.5.3 | `timeGetTime` | |
+
+The `VERSION.dll` descriptor is absent from retained 1.1.0. The `DDRAW.dll` descriptor is absent from 1.5.0. The [DirectDraw thunk comparison](original-modern-small-entry-followup.md#directdraw-import-transition) traces the replacement diagnostic. The [configuration comparison](original-modern-config-loading.md) traces the original version-query callers. To reproduce, extract `nfs3.exe` from each retained archive and compare the DLL and symbol pairs with `objdump -p`. This table covers the net differences against the final executable. Intermediate-only imports require a separate comparison.
 
 These are verified dependency-table changes, not yet complete proofs of behavior at every use. Removed static DirectDraw imports do not prove DirectDraw support was removed: dynamic loading and renderer interfaces must be traced. Added INI/heap/resource imports provide concrete anchors for the corresponding code chapters rather than establishing all of their semantics on their own.
 
