@@ -66,4 +66,14 @@ The original creation caller supplies desired EDX0 for indices0/1/2 at `004cd4a9
 
 Modern returns directly after its shared-state store at `004cd475..004cd488`, omitting the original reset calls. The old helper's address range is reused by the [INI/environment implementation](original-modern-configuration.md), so same-address Modern bytes are not a corresponding keyboard helper. Both imports and the keybd_event thunk remain; their presence must not be reported as proof that startup still resets toggles, or as newly added functionality.
 
+All three original startup call slots already contain NOPs in
+the retained 1.1.0 executable. Its old helper tail
+`004fb76a..004fb790` is also all NOPs. From 1.2.0 through 1.6.0,
+the first four bytes of that tail hold the register-pop/RET
+sequence of the neighboring INI environment helper
+(`59 5f 5e c3`), followed by 34 NOPs. Final 1.6.1 ends that
+helper one byte earlier and leaves the entire indexed tail as
+padding again. The original startup call removal thus predates
+the later reuse and repadding of the helper bytes.
+
 MP100-038 has **bounded static support** for removal of this original startup operation. All alternate/indirect callers, device/OS effects, toggle state observed at launch and v1.0.0 introduction remain unverified. The separate [Num Lock keypad translation change](original-modern-window-key.md) concerns handling later input and must not be conflated with this removed reset.
