@@ -475,3 +475,15 @@ The complete aligned type-5 arm `0040fed0..0040ff66` has six differing bytes bet
 Retained 1.5.2 still uses `0040fed0..0040ff66`. Retained 1.5.3 moves the 150-byte arm to `00437820..004378b6`, the location retained in final Modern. Comparing the aligned spans shows changes only in relative branch and call operands. The resource-loader target changes from `004f1f64` to `004f1f58`. The size, allocation, unpack, shape lookup, drawing and free targets remain `004f2710`, `004e1620`, `004f2620`, `004ef1e0`, `004ef3f0` and `004e1890`. Failure exits and the final jump still reach `004421b8`. This establishes relocation of the caller and a loader retarget.
 
 The corresponding resource loader also moved. Its complete 48-byte body at `004f1f64..004f1f94` in 1.5.2 is identical to `004f1f58..004f1f88` in both 1.5.3 and 1.6.1 (SHA-256 `5cbc7314ba5bccd0b50de883c5d98267abfa577ea418cdcaa4c5b93f26786018`). The three IAT slots resolve to the same APIs in each build: `FindResourceA`, `LoadResource` and `LockResource`. The loader's input, failure branches and return instructions are therefore retained across the move. Actual resource loading and rendered output remain untested.
+
+### Module-handle storage across releases
+
+Comparing the complete 48-byte About resource loader across the retained builds, the only byte differences are the two absolute operands that supply the module handle to the lookup and load calls. The code and relative failure branches otherwise match after aligning each body at its entry.
+
+| Retained builds | Module handle cell | Verified initial store |
+|---|---|---|
+| 1.1.0 | `007a3a20` | `004a6e58` |
+| 1.2.0–1.3.1 | `007a2768` | `004a6e58` in 1.2.0 |
+| 1.4.0–1.6.1 | `009f3d48` | `004a3a2e` in 1.4.0 |
+
+Each representative store takes EAX directly from `GetModuleHandleA(NULL)`. These witnesses link the relocated cells to the executable's own module. They leave later writes, failure behavior in the OS and in-game rendering untested.
