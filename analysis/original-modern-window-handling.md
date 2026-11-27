@@ -113,6 +113,8 @@ Modern replaces that entire tail with a direct jump at `004cd655` back to `004cd
 
 Retained 1.1.0, 1.2.0, 1.3.0 and 1.3.1 still begin this tail at `004cd655` with the original test of `009f3d2d`. The `nfs3.exe` member from the retained 1.4.0 archive (SHA-256 `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`) instead jumps directly to `004cd582` and places the epilogue at `004cd65a`, as in 1.5.0 and installed 1.6.1. The handle-clear instruction at `004cd64f` remains in place. To check the boundary, stream the 1.4.0 member with `7z x -so` and use `objdump -d -Mintel --start-address=0x4cd64d --stop-address=0x4cd665` on it and the retained 1.3.1 EXE.
 
+Across the full 472-byte window-thread span `004cd4e0..004cd6b7`, 1.4.0 and installed 1.6.1 are byte-identical (span SHA-256 `0094e35550f96e19a93badbbebba0bd604843c574aa4eddc36e5c44fc9e3fd61`). Compared with 1.3.1, only the exit-branch displacement bytes at `004cd58a..004cd58b` differ before `004cd655`. The branch now targets the relocated epilogue, and all bytes from `004cd663` through the old end are NOPs. This also pins the pending-request consumer and handle-clear sequence as preserved locally across the transition. Called helpers and Windows callback effects remain outside the span.
+
 This dates the removal of this particular loop tail to the inspected 1.3.1 → 1.4.0 boundary. MP100-040 describes an earlier focus change. Its attribution to this specific mechanism remains unverified, and other focus paths may account for the release note.
 
 ### Original mode-state producers: a bounded link
