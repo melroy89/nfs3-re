@@ -56,3 +56,9 @@ The complete same-address wrapper `00524290..005242ed` is 93 bytes in both versi
 | Diagnostic trigger and error handling | Pending / unresolved | Trace callers and complete `004b570c` contract. |
 | Progress constant reachability and actual presentation | Direct absolute reference search done / verified; computed aliases and visual behavior unresolved | Trace computed aliases if evidence warrants it; runtime comparison only if subsequently authorized. |
 | Whole-game behavior and external component effects | Pending / unresolved | Broader existing audit backlog; these seven entries cannot establish it. |
+
+### Incoming DirectDraw call chains
+
+The paired executable listings retain three decoded calls into `004eb430` at `004ebb5f`, `004ebb82` and `004ebd0a`. That routine passes a device selector from EDX, a local output pointer and a null outer object to the thunk at `004eb445`. The separate call at `0050557e` enters `005051c0`, which reaches the thunk at `005051ec` only when `00567e2c` and `00567ddc` are zero and `00567df4` is nonzero. It supplies `00567e2c` as the output slot and null for the other two arguments. These direct caller edges and local argument setups survive in final Modern.
+
+Reproduce the edge census with `objdump -d` on both executables and filter decoded CALLs to `004eb430` and `005051c0`. Neither entry address occurs as a raw little-endian DWORD in the final PE sections, which narrows the search for direct stored pointers. Computed pointers and reachability from game startup or a supported renderer remain unresolved.
