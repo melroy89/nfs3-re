@@ -42,6 +42,12 @@ Modern helper `004ccc40..004ccca3` checks the sum of `[00561284]` and `[00561288
 
 Modern WM_CREATE calls the install helper and sets active flag 1; WM_DESTROY sets active flag zero and calls teardown. The original destroy callback merely returns zero. This is a concrete lifecycle change beyond moving code. Whether OS/Wine focus behavior improves in a particular setup requires runtime observation; no such run was made here.
 
+### Original installer tail becomes screenshot code and padding
+
+The original installer begins at `004cdc90` and returns at `004cdccb`. The final Modern keyboard repeat handler occupies part of that address range and returns at `004cdcba`. All 21 bytes at `004cdcbb..004cdcd0` become NOPs. They cover the last three bytes of the original `MOV ECX,1` at `004cdcb9`, the stores of the returned handle to `0056127c` and request flag to `00561280`, the epilogue and the alignment before the next entry. Modern's hook setup at `004ccc40` instead puts the handle in `00561280` and uses `0056127c` as the fallback marker.
+
+Comparing this exact 21-byte slice of the [retained release executables](original-modern-differences.md#5-confirmed-menu-routing-difference), 1.1.0–1.3.1 match the original. Versions 1.4.0–1.5.2 have a RET at `004cdcbb` followed by 20 NOPs. The all-NOP slice first appears in the retained 1.5.3 and persists through final 1.6.1. Reproduce by extracting each `nfs3.exe` and reading the slice with `objdump -s --start-address=0x4cdcbb --stop-address=0x4cdcd0`. This dates the bytes at the old site. Hook installation success remains a runtime question.
+
 ## 3. Preserved dispatcher exposes a power-handler anomaly
 
 The complete window procedure `004cd2d0..004cd347` is **120 identical bytes** in both baselines (SHA-256 `228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6`). It initializes a local Windows result to zero and calls the selected callback with six stack arguments:
