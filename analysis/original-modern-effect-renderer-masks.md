@@ -20,6 +20,15 @@ Eleven same-address original/Modern functions have exactly one changed byte each
 
 Labels come from saved analysis, not original source. Complete envelopes include any internal gaps; they must not be substituted for saved-body-union measurements without checking the boundary.
 
+All eleven complete envelopes match in every retained Modern
+EXE from 1.0.0 through 1.6.1. Each already contains the `50h`
+test in 1.0.0. To reproduce, extract the root `nfs3.exe` from
+each archive and compare the full ranges in the table by PE
+RVA, subtracting image base `00400000` from the listed VAs.
+This dates the grouped effect gates to the same release as the
+colour helper. It does not determine which effects were visible
+with a particular renderer.
+
 ## Exact branch difference
 
 The tested value is byte `007a3a58`, either read directly by TEST or loaded into AH/BL shortly before the test. Each test is followed by a zero branch that skips a block involving float `006fbc38`. Thus:
@@ -43,7 +52,7 @@ The admitted blocks read `006fbc38`, compare it with 1 using x87 and perform ret
 
 Preserve the OR-of-bits meaning: `50h` admits either bit; it does not require both. Preserve downstream float conditions and packed-color arithmetic until their domains are qualified. TEST also writes CPU flags: even where the following zero-branch decision is unchanged, parity can differ when both tested bits are set. The grouped audit establishes branch predicates and byte differences, not full machine-state equivalence or deadness of every flag.
 
-**Work status: done for these eleven bounded static comparisons. Confidence: verified.** Actual renderer output, all producers of the renderer byte, the complete meaning/lifetime of `006fbc38`, asset effects and historical introduction dates remain outside this evidence. Reuse this grouped result rather than treating eleven isolated one-byte edits as eleven independently proven visual features. No executable, Ghidra database or reconstruction sources were changed.
+**Work status: done for these eleven bounded static comparisons. Confidence: verified.** Actual renderer output, all producers of the renderer byte, the complete meaning/lifetime of `006fbc38`, and asset effects remain outside this evidence. Reuse this grouped result rather than treating eleven isolated one-byte edits as eleven independently proven visual features. No executable, Ghidra database or reconstruction sources were changed.
 
 ## Retained View Distance scale in the world-effect builder
 
