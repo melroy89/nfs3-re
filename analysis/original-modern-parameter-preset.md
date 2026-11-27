@@ -304,3 +304,20 @@ The 1.5.2 branch keeps the same zero-count decision but does not
 set arithmetic flags at that check. Neither observation proves
 a caller uses the affected EAX or flags. The two fixed-point
 preset writes still precede the conversion gate in each version.
+
+### Direct callers discard the observed EAX and flag differences
+
+Linear disassembly of retained 1.3.1 and official 1.6.1 finds the
+same three direct calls to `0041d620`. The checked continuations
+match across the pair.
+
+| Call site | Continuation |
+|---|---|
+| `0041aaf6` | Replaces EAX with EDX and calls `0041d310`. No local flag read before the call. |
+| `0041d894` | Returns through wrapper `0041d870`. Its decoded direct caller at `004c5012` replaces EAX before calling `0048f7b0` and tests that call's result. |
+| `0041da01` | Calls `00419b60`, whose prologue sets EAX to `00536c60` and clears EDX and EBX with XOR before using flags. |
+
+The immediate continuations show no dependency on the changed
+return state. The wrapper can still pass that state through to
+a computed caller, and the first continuation's callee is outside
+this local check. No runtime trace was taken.
