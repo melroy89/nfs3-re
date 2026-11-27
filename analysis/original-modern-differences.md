@@ -240,6 +240,18 @@ remaining-work status varies; the linked reports retain the precise unknowns.
 This table does not convert a verified local mechanism into a verified whole
 feature, or historical-package evidence into original-retail provenance.
 
+### Renderer, focus and memory changes by release
+
+| Change | Earliest verified release or boundary | Code-level finding | Open question |
+|---|---|---|---|
+| [Recurring foreground requests](original-modern-window-handling.md#the-foreground-and-cursor-branches-disappear-at-different-points) | Absent by 1.1.0 | The original loop's foreground request is bypassed. The separate cursor branch remains through 1.3.1 and is removed in 1.4.0. | Exact 1.0.0 behavior and actual OS focus outcomes |
+| [Renderer failure dialog](original-modern-renderer-loading.md#renderer-initialization-failure-dialog-introduced-in-120) | 1.1.0 → 1.2.0 | Six original-style zero-state branches gain a message box before the shared termination call. | Actual dialog display and other failure routes |
+| [DirectDraw compatibility setting](original-modern-renderer-loading.md#initial-directdrawlagfix-route-in-120) | 1.1.0 → 1.2.0 | Startup adds the INI-gated SetAppCompatData call. The setting moves to the selected driver's INI in 1.3.1. | Windows performance effect |
+| [Startup handle and heap adapters](original-modern-heap-initialization.md#process-heap-adapters-appear-at-the-140-boundary) | 1.3.1 → 1.4.0 | The process heap replaces the named mutex in the shared handle slot and feeds four heap operations. | Full allocation-caller migration |
+| [Render scratch arena](original-modern-heap-initialization.md#the-render-arena-migrates-in-150) | 1.4.0 → 1.5.0 | The arena moves from the game pool to the process heap and grows from 799,744 bytes to 8 MiB. Its reset, limit check and paired-record logic are retained. | Runtime allocation and high-poly-car coverage |
+| [Race setup and shutdown](original-modern-heap-initialization.md#race-lifecycle-callers-change-in-two-steps) | 1.5.3 → 1.6.0 | The setup wrapper is bypassed while its calls keep their order. Shutdown invokes its three substantive routines directly and omits four no-op paths. | Full transitive lifecycle and exceptional paths |
+| [Rejected startup video mode](original-modern-renderer-lifecycle.md#the-startup-mode-result-gate-appears-in-161) | 1.6.0 → 1.6.1 | Startup checks the mode request result before publishing renderer state. This is separate from the earlier check of driver initialization. | Live driver failure and exit behavior |
+
 ### Startup findings added after the14-audit checkpoint
 
 These later investigations have their own reproducible static audits; the earlier14-audit checkpoint does not cover them.
