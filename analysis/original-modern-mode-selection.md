@@ -272,3 +272,21 @@ It has identical bytes in all six retained releases:
 The resulting depth is passed alongside the saved width
 and height to `004bedcc`. It is a request used in ranking,
 and the available eligible rows still determine the result.
+
+The graphics-menu commit path sets bit 0 at `00448500` before
+examining the selected and final rows. If those pointers match,
+it saves the packed sentinel and leaves the bit set. Otherwise it
+compares the depth DWORDs at row offset `+0x0c`. Equal depths
+leave the bit set. Unequal depths clear it via BTC at `0044852e`
+after the earlier BTS, then the path stores the selected width
+and height. The bit therefore encodes equality with the final
+row's depth on the ordinary commit path. The replay reader's
+fixed mapping of 1 to 32 and 0 to 16 only reproduces the selected
+depth when the final row is 32-bit and the candidate is 16 or 32.
+The availability and sort order of the driver's modes matter.
+
+The complete 54-byte window at PE RVA `48500h` is identical
+from 1.5.0 through 1.6.1 except for the displacements of the
+two row-accessor calls. The paired default write and settings
+restore paths can initialize the bit separately. This comparison
+covers the graphics-menu commit path and local replay preference.
