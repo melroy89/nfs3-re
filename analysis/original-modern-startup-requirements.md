@@ -593,3 +593,21 @@ each exact archive member and compare optional-header data directories
 descriptor-referenced thunk lists in place. This comparison establishes
 when the explicit directory appears and how long it persists. Actual
 loader behavior on the systems mentioned in MP153-014 remains unknown.
+
+The 1.5.3 executable adds one static import, WINMM.timeGetTime,
+and removes none. Comparing each imported DLL and symbol (or
+ordinal) gives four existing imports whose thunk VA changes:
+
+| Import | 1.5.2 | 1.5.3 |
+|---|---|---|
+| WINMM.PlaySoundA | `00534664` | `00534668` |
+| KERNEL32.GetPrivateProfileIntA | `0053466c` | `00534670` |
+| KERNEL32.GetPrivateProfileStringA | `00534670` | `00534674` |
+| KERNEL32.GetPrivateProfileSectionA | `00534674` | `00534678` |
+
+The new clock import takes `00534664`. To reproduce, compare
+the PE import descriptors and their named or ordinal entries,
+including each entry's IAT address. The integer profile reader
+[tracks the relocated slot](ini-environment-contract.md#integer-reader-history).
+The import comparison identifies the slot changes. A complete
+audit of the instructions that reference those slots remains open.
