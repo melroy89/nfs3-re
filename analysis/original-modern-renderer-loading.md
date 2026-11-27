@@ -655,3 +655,7 @@ Both INIs specify Type=voodoo, FogSupport=1 and LightBeams=1; the nGlide variant
 **MP120-028 advances vendor-only→partial:**120 contains a wrapper identifying as1.04.2, but the projected-headlight repair needs code/visual evidence. **MP100-059 advances vendor-only→partial:** the earliest retained110 package corroborates a1.04.1-labelled wrapper; no100 archive is inspected, and support for the advertised extended API is not established by that label. Exact100 inclusion and API acceptance remain unresolved.
 
 The release-note hardware recipe MP120-022 remains vendor-only. Package composition, a matching DLL name or Type=voodoo alone cannot establish native Voodoo/Voodoo2 compatibility. No provider, adapter, game, API or target instruction executes; binaries and Ghidra are unchanged.
+
+### Initial DirectDrawLagFix route in 1.2.0
+
+The key is absent from the retained 1.1.0 executable and shipped INI. Retained 1.2.0 ships `DirectDrawLagFix=1` and implements the `[NFS3]` setting in the helper at `004b55d8`. It supplies fallback 1 to `004fb6f0`. A zero result skips the compatibility call. Otherwise it looks up `DDRAW.DLL` and resolves `SetAppCompatData`, passing stack arguments 12 and 0 if lookup succeeds. This is the same route described above for 1.3.0, before 1.3.1 moves the option into the selected driver INI. This supplies partial static support for MP120-010. Actual OS compatibility effects and the reported performance improvement remain untested.
