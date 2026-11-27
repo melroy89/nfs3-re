@@ -199,3 +199,13 @@ The 1.3.1 controller still matches the hosted original across its
 availability-mask admission in MP140-029 and MP140-031 to 1.4.0.
 Whether the mask is rebuilt after a file or setting changes is
 outside this check.
+
+The same 1.3.1→1.4.0 comparison dates MP140-030's inactivity gate.
+Version 1.4.0 adds the zero test of `009f3d4c` at `0049623a`.
+Once the earlier idle admission checks pass, a zero value branches
+to `004962b6`, which resets the timestamp through `004961e0` and
+returns zero. The 1.3.1 controller has no corresponding read.
+The 1.4.0 window handler at `004cce04..004cce14` also compares and
+stores the activation argument to the same global, at `004cce0f`.
+This dates the application-activation mechanism. Actual Windows or
+Wine minimize/restore event sequences remain untested.
