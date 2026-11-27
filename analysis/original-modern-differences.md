@@ -1238,7 +1238,7 @@ The [movie-option history](original-modern-idle-movie.md#historical-movie-option
 
 ## CPU-rating overflow and low-class consequence
 
-The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping-can-select-the-lowest-class) links original’s low32 million-scale IMUL to signed default/movie thresholds and records twelve hypothetical arithmetic cases. Negative stored results select the lowest default class/movie selector1 on the admitted paths; repeated wrapping is not monotonic. “166MHz” denotes a class, not a literal reassignment. MP100-028 advances vendor-only→partial; counts117/50/121/2. Actual calibration inputs, CPU/video outcomes, bypass paths and1.0.0 introduction remain qualified; no benchmark or target execution.
+The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping-can-select-the-lowest-class) links original’s low32 million-scale IMUL to signed default/movie thresholds and records twelve hypothetical arithmetic cases. Negative stored results select the lowest default class/movie selector1 on the admitted paths; repeated wrapping is not monotonic. “166MHz” denotes a class, not a literal reassignment. MP100-028 advances vendor-only→partial; counts117/50/121/2. The [1.0.0 comparison](original-modern-cpu-tier.md#modern-100-already-uses-the-feature-score) verifies the replacement producer and defaults consumer. Calibration inputs, CPU/video outcomes and bypass paths remain qualified.
 
 ## Free-space warning arithmetic and retained failures
 

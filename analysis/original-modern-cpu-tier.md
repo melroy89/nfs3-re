@@ -124,7 +124,7 @@ For nonnegative integer N,2148 is the first value at which this multiplication c
 
 The5000 example matters: repeated modulo2^32 wrapping means **not every larger N selects the lowest tier**. A saturating arithmetic explanation, or an unqualified statement that every fast CPU is misdetected identically, would contradict the inspected instructions.
 
-Modern replaces the shared quantity with the feature/family score and changes both consumers, avoiding this specific frequency-like multiply/divide contract on the reviewed paths. That is coordinated static evidence, not proof of accurate speed measurement, every legacy CPU branch or all hardware-detection fixes. Precise1.0.0 introduction and actual behavior on a particular machine remain unverified.
+Modern replaces the shared quantity with the feature/family score and changes both consumers, avoiding this specific frequency-like multiply/divide contract on the reviewed paths. That is coordinated static evidence, not proof of accurate speed measurement, every legacy CPU branch or all hardware-detection fixes. The retained 1.0.0 executable already uses the replacement producer and both selected consumers. Actual behavior on particular hardware remains unverified.
 
 For an original-faithful C reconstruction, use explicit32-bit wrapping, signed reinterpretation and truncation-toward-zero division under a validated domain. Signed C multiplication overflow cannot model this contract safely; silently widening/saturating it would change the original’s results. Modern’s small score must remain a distinct version-specific field meaning rather than being fed into original frequency thresholds.
 
@@ -144,11 +144,21 @@ span matches (SHA-256
 `e51b0598373a517cfddb360e69ef3a38476e715a1fc76b1c206e54e476800910`),
 including the MMX and score publications and the 19 NOPs at
 `004f1e13..004f1e26` that replace the original `ISMMX` override tail.
-The defaults prefix at `00472d10` also matches for `36h` bytes,
-including the direct score read, cap and renderer-dependent adjustment.
-This dates both the selected scoring mechanism and the local override
-removal to 1.0.0. Other writers and the actual hardware-selected tier
-remain outside the comparison.
+The early defaults code still begins at `00472d10` with stack/table
+setup. Its actual score consumer is at `00472d8e` in 1.0.0–1.3.1.
+In 1.0.0, the preceding call at `00472d89` invokes `004f1c70`.
+The consumer loads `005652a4`, uses a signed cap of 4, and halves
+the selected value if renderer mask `0x06` is set. Final uses a
+direct read at `00472d11` and an unsigned cap of 5. The direct
+read moves to that final address in 1.5.0 among the retained builds
+(it is at `00472d89` in 1.4.0). Compare the decoded operands within
+`00472d10..00472df0` in the archive members to reproduce the address survey.
+
+The original IMUL/publication sequence at `004f2076` is replaced by
+NOPs over the same 16-byte window in 1.0.0, 1.1.0 and final.
+This dates the removal of the reviewed wrapping producer and the switch
+to the feature score on the selected defaults path to 1.0.0.
+Actual hardware-selected tiers remain untested.
 
 ### The movie conversion tier changes in 1.0.0
 
