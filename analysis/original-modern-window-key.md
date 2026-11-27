@@ -75,3 +75,13 @@ entry (32 bytes) matches at the two locations. It requests
 `GetAsyncKeyState` with virtual key `0x11` or `0x12` and
 returns the high-bit test in EAX and ZF. This is a relocation
 of the modifier check with no change to the nearby branch policy.
+
+Across all six retained releases from 1.5.0 through 1.6.1,
+the 32-byte Control/Alt block has SHA-256
+`67c29030b111fa5e2d2a9f5a7d4109ed65c9a5af4240dfc233030efede7e13d5`.
+The PE import table binds slot `00534738` to
+`USER32.dll!GetAsyncKeyState` in every checked EXE. To reproduce,
+follow the relative call at `004ccbe7`, hash 32 bytes at its
+target, and resolve the import slot. This confirms continuity of
+the executable's modifier check and API binding. Actual key state
+still depends on what Windows or Wine returns.
