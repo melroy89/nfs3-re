@@ -436,3 +436,14 @@ Extract each exact archive member and compare those two PE RVA slices
 to reproduce the result. This dates the captured instructions only.
 Provider binding, configuration and other code outside those spans can
 still affect the live mode list.
+
+The 1.4.0→1.5.0 builder change adds a 25-byte sequence at
+`60001a0c..60001a25`. It reserves a four-byte output, calls the resolved
+`_grGet@12` slot `600110c0` with selector 10 and length 4, and stores
+the output dword to both `6000fd24` and `6000fd30`. The caller does not
+test the API return before publishing the output. Version 1.4.0 starts
+the mode-query setup immediately at that point. The query setup and
+record loop shift by 25 bytes in 1.5.0, including the retained 640×480
+seed and optional 32-bit insertion. The early cached branch is retargeted
+to the moved exit. The selector's provider-specific result and the
+downstream effects of those two stores remain open.
