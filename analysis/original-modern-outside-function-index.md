@@ -331,6 +331,15 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `00472295..00472298` | Three NOPs follow the Modern return and replace the final displacement bytes of the original call at `00472293` to `004ee310`. | The original call crosses the Modern boundary. |
 | `0047248a..0047248d` | Three NOPs replace the last displacement bytes of the original call to `00472300`. Modern jumps directly to `0047248d`. | Local call removal within the [configuration code](original-modern-config-loading.md). |
 
+| `0048099b..0048099e` | Three NOPs replace the final displacement bytes of the first original [HUD pixel rounding](original-modern-hud-layout.md) call at `00480999`. | Modern jumps over the padding. |
+| `004809a5..004809a8` | Same replacement at the second HUD rounding call, `004809a3`. | Modern jumps over the padding. |
+| `004809ac..004809af` | Same replacement at the third HUD rounding call, `004809aa`. | Modern jumps over the padding. |
+| `004809b5..004809b8` | Same replacement at the fourth HUD rounding call, `004809b3`. | Modern jumps over the padding. |
+| `004844bd..004844c0` | Three NOPs after the Modern return replace the original alignment LEA. | Padding in both layouts. |
+| `004900c5..004900c8` | The original POP EDX, POP ECX and RET become NOPs after the Modern return at `004900c4`. | The two routines use different ending sequences. |
+| `004a6e65..004a6e68` | Modern alignment before its [language selector](original-modern-language-table.md) overlaps three immediate bytes of the original `MOV EDX,0x7f`. | The original instruction straddles the new boundary. |
+| `004a6ec1..004a6ec4` | Alignment after the Modern [language selector](original-modern-language-table.md) replaces the original XOR EAX,EAX and REPNE prefix of the following string scan. | Original language parsing continues across the boundary. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -355,7 +364,9 @@ across 234 intervals**, with 212 changed bytes across 103 intervals still uninde
 The next eight rows bring coverage to **21,738 bytes across 242
 intervals**, leaving 188 changed bytes across 95 intervals at `e942a54`.
 Eight further rows bring coverage to **21,762 bytes across 250
-intervals**, leaving 164 changed bytes across 87 intervals. These counts measure documented evidence links for this fixed
+intervals**, leaving 164 changed bytes across 87 intervals at `6d098d8`.
+The HUD and startup rows bring the total to **21,786 bytes across
+258 intervals**, leaving 140 changed bytes across 79 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
