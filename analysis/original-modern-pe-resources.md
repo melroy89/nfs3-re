@@ -78,6 +78,17 @@ For each group, hash the group payload followed by each referenced image payload
 | 1.0.0–1.3.1 | `32513` | `4b8d1aecbd37b4c007b2e7403cd431f788027c3eb3f0b367c8beedf1942c9545` |
 | 1.4.0–1.6.1 | `ORIG.ICO` | `068d579cd61973df8e838f5cfc8059dfd58e8e29bcdc5d7a826dc5ce4a460d76` |
 
+### The 1.3.0 icon change reaches the decoded pixels
+
+Extract `3/105/0` from the 1.2.0 and 1.3.0 executables and decode each PNG with Pillow (`Image.open(BytesIO(payload)).convert("RGBA")`). Both images are 256×256. Comparing corresponding RGBA tuples gives 55,492 differing pixels out of 65,536. This includes 3,024 with differing alpha and 38,435 whose RGB differs while both pixels are fully opaque. The PNG payload shrinks from 24,221 to 24,070 bytes. These counts establish a pixel change independent of PNG compression and include differences that can affect visible output.
+
+| Retained versions | Decoded row-major RGBA SHA-256 |
+|---|---|
+| 1.0.0–1.2.0 | `35061eb57a6deae77a0128a45d9f084529c2118c51039b884a6005818b66335d` |
+| 1.3.0–1.6.1 | `36e9ead53af432fc013eaf4151f52f305562eaa8a167685c1475869bf66b3aa5` |
+
+### Manifest payload changes
+
 The 603-byte manifest first appears in retained **1.4.0** and is byte-identical through 1.5.3. Its own assembly version stays `1.4.0.0` across those builds. The only payload changes in 1.6.0 and 1.6.1 replace that assembly version with `1.6.0.0` and `1.6.1.0`, respectively. The execution level, UI access, Common Controls dependency and absence of a DPI-awareness declaration are consistent across these manifests.
 
 | Manifest version | Payload SHA-256 |
