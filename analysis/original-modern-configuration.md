@@ -24,6 +24,8 @@ The string reader at `004fb714` has the corresponding sequence: call the environ
 
 ## Original-to-Modern differences and retained bytes
 
+The [release comparison](ini-environment-contract.md#integer-reader-history) dates both fallback paths to 1.1.0 → 1.2.0. Version 1.1.0 already uses the INI APIs and supplies caller defaults directly. Later releases reuse the original executable's environment-vector lookup. Version 1.6.1 changes how the lookup key is uppercased and copied while retaining the fallback call sequence.
+
 The supplied original imports `RegOpenKeyExA` and `RegQueryValueExA`, and does not import `GetPrivateProfileIntA` or `GetPrivateProfileStringA`. The official executable imports the two profile APIs and implements the INI/environment fallback above. This is consistent with the README's statement that system settings moved from the registry to INI. The import-table change is binary evidence for the configuration architecture; the [registry follow-up](original-modern-registry.md) maps selected original queries and shows why not every Modern option should be assumed to have an original registry counterpart.
 
 At the named official caller address `004b5580`, the original bytes are a data/pointer area, not the corresponding `LoadGameIniSettings` routine. The original-versus-Modern function audit records `004b5580` as `different_same_VA_bytes` and `original_entry_identified_by_autoanalysis: false`. Therefore the official caller must not be treated as a byte-for-byte edit to an original function at that virtual address; the old and new settings paths are laid out differently.
