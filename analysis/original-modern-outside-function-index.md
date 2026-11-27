@@ -358,6 +358,11 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004f91e9..004f91ec` | NOPs after the Modern return replace part of the original EAX test and its following conditional jump. | The original function continues through the new boundary. |
 | `005177a9..005177ac` | NOPs replace three address bytes of the original store at `005177a7` in the [renderer mode callback](original-modern-renderer-lifecycle.md). | Modern returns before this interval. |
 
+| `0040a005..0040a006` | One pointer byte changes the DWORD at `0040a004` from `005364b4` (the string E) to `0053a9b4` (the Modern string W). | The change is pointer data near the [speech bank initializer](original-modern-sound-bank-language.md). |
+| `004b7a0a..004b7a60` | The only changed bytes are `004b7a54` and `004b7a58`. They change the three vehicle render budget DWORDs at `004b7a50` from 10,8,6 to 10,10,8. | See the [vehicle budget analysis](original-modern-vehicle-dispatch.md). |
+| `004becca..004bed20` | The only changed byte, `004becf8`, retargets the call at `004becf7` from `004dbce0` to `004dbcc0`. | The [projection comparison](original-modern-projection.md) describes both wrapper contracts. |
+| `00533e62..00533e86` | The only changed byte, `00533e82`, changes the thunk at `00533e80` from import slot `0053466c` to `00534668`. The paired import tables bind those slots to DirectDrawEnumerateA and PlaySoundA, respectively. | This records repurposed thunk code, with caller behavior separate. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -388,7 +393,9 @@ The HUD and startup rows bring the total to **21,786 bytes across
 The nine startup and string-helper rows bring coverage to **21,813
 bytes across 267 intervals**, leaving 113 bytes across 70 intervals at `e68cd1c`.
 The final seven three-byte rows bring coverage to **21,834 bytes
-across 274 intervals**, leaving 92 bytes across 63 intervals. These counts measure documented evidence links for this fixed
+across 274 intervals**, leaving 92 bytes across 63 intervals at `846caa1`.
+The four operand and data rows bring coverage to **21,839 bytes
+across 278 intervals**, leaving 87 changed bytes across 59 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
