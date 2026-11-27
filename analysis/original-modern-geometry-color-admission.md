@@ -27,7 +27,7 @@ The unchanged tail includes track/object filtering calls, transforms, loops and 
 
 Paired direct calls at **`004baab3`**, **`004babe2`**, **`004bae85`** and **`004bb283`** retain target`004ba350`. The audit captures their immediate EAX/EDX/EBX setup from locals. These are call-argument witnesses, not a completed proof of the locals’ upstream producers or a universal direct-call inventory. A reconstruction should keep EAX context, EDX object and EBX input explicit until that trace is complete.
 
-The bounded finding is an expanded context1 admission at High detail with retained downstream code, plus removed/relocated early-return instructions. It is not an arithmetic rewrite or runtime visual-equivalence claim. Historical release attribution and the affected rendered effect remain pending. No catalog status is promoted from a suggestive renderer name.
+The bounded finding is an expanded context1 admission at High detail with retained downstream code, plus removed/relocated early-return instructions. It is not an arithmetic rewrite or runtime visual-equivalence claim. The release boundary is documented below. The affected rendered effect remains pending. No catalog status is promoted from a suggestive renderer name.
 
 ## Current context trace and stopping point
 
@@ -36,3 +36,20 @@ The additional official-Modern spans retain this explicit argument chain: scene 
 This is strong local data-flow support for the shared viewport context, but intervening helper register preservation, aliases and every branch have not been audited end-to-end. The [existing mirror-context producer](original-modern-night-lighting.md#context-producer-optional-mirror-setting-gated-pass) supplies relevant upstream evidence, not permission to skip those remaining checks. The current report therefore keeps full context correspondence **inferred**, and the visible color effect **unresolved**.
 
 Stop this branch here for the current pass. Required follow-up, if prioritized later: verify preservation of ESI/ECX and saved context locals across intervening calls, identify the geometry/color output consumers, then decide whether a named release-note claim is supported. Do not repeatedly expand every retained callee merely to restate that runtime rendering is untested.
+
+### The High-only gate first appears in 1.5.0
+
+The complete 1,208-byte envelope at PE RVA `ba350h`
+matches the hosted original in all six Modern releases
+from 1.0.0 through 1.4.0 (SHA-256
+`fe37270e19b1b01c4e8a55077c1288304b56c9e6e4292707b6d004383cb67887`).
+All six retained releases from 1.5.0 through 1.6.1
+match the final envelope (SHA-256
+`9e4c3665cf4dd3b9137a9a6c31f03daef5fe0df50270fe8f8361880e7363487c`).
+Thus 1.5.0 first lets context tag 1 past the local gate
+when Rear View Detail is High. The independent enable cell
+`006fbc24` resolves to Car Chrome in the
+[graphics defaults binding](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings).
+The release boundary is verified for the local body.
+End-to-end context forwarding and the rendered effect retain
+the limitations above.
