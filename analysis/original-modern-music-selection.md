@@ -294,7 +294,7 @@ The immediate read/write results are not tested by this loop before it advances 
 
 The retained earlier path builder appends`.lin` or`.map` according to its branch; the final replacement assumes an appropriate four-character suffix and valid NUL-terminated path. It is a byte-string rewrite, not UTF16. Unbounded construction and shared path/base state remain reconstruction concerns; no new bounds checks or silent bug fixes are proposed.
 
-**MP100-037 advances to partial support:** the inspected original preloading copy is removed and final requests a source-directory`.mus` filename instead of temporary music. That does not prove successful streaming/playback or absence of every other copy path. The vendor's proposed slow-CD rationale, fixed10 MiB per race, SSD-write savings, measured loading improvement, universal race-start admission and1.0.0 introduction remain unverified.512 KiB is a requested chunk capacity, **not total bytes copied or saved**. Existing retained music helpers still have their separate backend/state dependencies. No file copy, game, audio API, instruction probe or Ghidra mutation was performed.
+**MP100-037 advances to partial support:** the inspected original preloading copy is removed and final requests a source-directory`.mus` filename instead of temporary music. That does not prove successful streaming/playback or absence of every other copy path. The vendor's proposed slow-CD rationale, fixed10 MiB per race, SSD-write savings, measured loading improvement, and universal race-start admission remain unverified. The retained-release comparison below confirms the source-path change in 1.0.0. The 512 KiB is a requested chunk capacity, **not total bytes copied or saved**. Existing retained music helpers still have their separate backend/state dependencies. No file copy, game, audio API, instruction probe or Ghidra mutation was performed.
 
 ### First track by seed residue
 
@@ -475,6 +475,8 @@ loader window first becomes NOPs in 1.5.3 and remains so
 through 1.6.1. Read the ranges from each PE by RVA to
 reproduce the comparison. Actual disk I/O, playback and
 performance remain unverified.
+
+A case-insensitive ASCII scan finds one `temp.mus` occurrence in each retained 1.0.0–1.4.0 executable, in the original format slot at `00536880`. Starting with 1.5.0, the ten bytes in that slot are zero and the literal is absent through 1.6.1. This distinguishes three changes: the 1.0.0 copy bypass, the 1.5.0 literal removal and the 1.5.3 retirement of the old loader.
 
 In 1.5.0–1.5.2 the direct call at `00477fe1` still reaches
 the old loader at `00410030`. The source-building path
