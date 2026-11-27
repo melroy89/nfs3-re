@@ -82,6 +82,8 @@ In both builds slot `60018070` binds to `MSVCRT.floor`.
 
 The pair and its complete caller at `6000c281..6000c352` also match in all eleven retained DX8 archive members from 1.1.0 through 1.6.1. The 51-byte helper pair has SHA-256 `822d52e074537538b5542b456eba4920ec1724cbd71e331f1431a980e3d0c509` in every member. Each PE imports `floor` at slot `60018070`. The renderer's temporary truncation scope therefore predates the executable's 1.6.0 precision change and retains whichever precision bits arrive on entry.
 
+A linear `objdump -d -Mintel` scan finds the same direct edges into the half-open helper range `6000b631..6000b664` in every retained DX8 build. The only decoded direct entry call is `6000c2bd → 6000b631`, and the only decoded direct restore call is `6000c347 → 6000b654`. The nearby call at `6000cd4f` targets `6000b664`, the prologue of the next function, outside the range. This narrows the known callers of the shared saved word to one paired path. Indirect dispatch, reentry and execution on multiple threads remain separate questions.
+
 This places the same temporary rounding scope in the renderer
 that shipped alongside the 1.6.0 executable's extended-precision
 change. The 1.6.1 video-mode initialization refactor did not
