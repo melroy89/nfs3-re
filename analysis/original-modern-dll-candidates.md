@@ -494,4 +494,20 @@ Compare the first PE sections at equal raw offsets. The DX5 callback
 rewrite and SoftTri filters are already present in 1.0.0 under the
 original names. The three package names change at the verified
 1.0.0→1.1.0 boundary. Voodoo2 also changes code at that boundary.
-The 328 changed bytes still need instruction-level comparison.
+The queried-record depth change is traced below.
+
+#### Voodoo2 query depth changes at the rename
+
+All 328 differing first-section bytes between the recovered 1.0.0
+and 1.1.0 members are within the `6000d8a0..6000daff` setup window.
+Both versions already query Glide and use the same legacy fallback
+call and table-copy sequence at `6000d8ff..6000d935`.
+The call to Glide therefore predates the rename.
+
+On the successful query branch, 1.0.0 stores depth 32 at `6000d9a8`.
+It then overrides the depth to 16 at `6000d9b3` when the zero-based
+record index in EDX is zero. In 1.1.0, the corresponding store at
+`6000d9a8` writes 16 unconditionally and the index test is removed.
+This directly supports the 1.1.0 depth change for the queried records.
+The remaining shifted tail and actual screenshot behavior are separate
+from this verified depth write.
