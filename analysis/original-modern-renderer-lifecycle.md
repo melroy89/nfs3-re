@@ -475,3 +475,34 @@ The final loop's 27 bytes have SHA-256
 `fccba56e4bffed1a967aed3fd1e79c56c473ce5526b52ca9bdec5e3ba230c026`.
 This comparison establishes argument and local control-flow
 continuity. Driver effects remain dependent on the bound implementation.
+
+#### Eight final EXE sites read the cached descriptor
+
+The direct-operand scan finds eight descriptor reads in 1.6.1.
+Seven replace a call through the about slot `009ef980` at the
+corresponding site in 1.6.0. Texture-limit setup is the eighth
+and uses a reorganized code window, as detailed in the
+[texture-limit comparison](original-modern-texture-limits.md).
+
+| 1.6.1 load | Corresponding 1.6.0 about call |
+|---|---|
+| `00488a8f` | `00488a8e` |
+| `0049c5c6` | `0049c5c5` |
+| `004b5bd6` | Reorganized texture-limit path |
+| `004be582` | `004be581` |
+| `004bed99` | `004bed99` |
+| `004beddd` | `004beddd` |
+| `004beec0` | `004beec0` |
+| `004d37bf` | `004d37be` |
+
+In the mode-dimension helper `004be570..004be5d1` (end
+exclusive), only five bytes differ between the builds. The
+six-byte about call at `004be581` becomes a NOP plus the
+cached pointer load. The helper still compares the signed
+input index against descriptor field `+0x3c`. It uses the
+table at `+0x40` with 40-byte records to copy width and height,
+or writes 640×480 when the index is greater than the field.
+The comparison and fallback bytes are unchanged, including the
+acceptance of equality in this local check. This is a
+static comparison of direct references and does not establish
+descriptor validity at runtime.
