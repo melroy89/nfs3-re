@@ -129,6 +129,7 @@ The [eleven-audit checkpoint](evidence/validation/later-static-mechanisms-checkp
 ## Evidence and scope
 
 - [x87 precision comparison](og-modern-x87-precision.md): verified original single-precision switches removed by Modern Patch; frontend/render scopes and runtime limits explained.
+- [Renderer FPU flags](original-modern-packaged-x87.md): the inspected original D3D, Modern DX5 and DX7 setup paths leave the FPU bits clear from their initial state. DX6 mode changes explicitly request FPU setup from the earliest retained DX6 package (1.2.0). The checked DX8 creation call omits the FPU preservation flag in every retained Modern release. These are API arguments. Effective x87 state during a race still requires runtime evidence.
 - [Original/Modern/local function-range and PE inventory](evidence/audits/original-modern-function-diff.json): all 4,133 local functions in the saved Modern database, plus imports, resources and section-level byte counts.
 - [Official download and local-edit provenance](evidence/audits/modern-official-provenance.json).
 - [290-entry release-note catalog](modern-patch-change-catalog.md): a traceability backlog, not 290 verified code changes.
