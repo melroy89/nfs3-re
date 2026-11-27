@@ -290,3 +290,19 @@ from 1.5.0 through 1.6.1 except for the displacements of the
 two row-accessor calls. The paired default write and settings
 restore paths can initialize the bit separately. This comparison
 covers the graphics-menu commit path and local replay preference.
+
+The final-row accessor in 1.6.1 at `0044837c` returns
+`00a18330 + (count - 1) * 0x114` for a nonempty list.
+With `Hide16bitModes=0`, the collector compares width first,
+then height, then depth at `00448254`. A wider 16-bit row can
+therefore sort after a narrower 32-bit row.
+
+For example, consider a driver table supplying eligible
+1280×720×16, 1280×720×32 and 1920×1080×16 rows. The last
+menu row is 1920×1080×16. If the player commits the first
+1280×720 row, its depth matches the last row's, so the save
+path writes ordinary dimensions and leaves bit 0 set.
+On restore, the reader requests 1280×720×32. That row is an
+exact match and wins over the 16-bit row in the same driver
+table. This is an instruction-derived example with an unchanged
+mode table, rather than a captured driver session.
