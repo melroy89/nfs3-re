@@ -262,9 +262,21 @@ the callback span beginning at `600017c7`.
   format-class-3 override can set it to 15. The comparison against a
   populated slot uses the incoming depth, before either output override.
 
-This identifies a code-level change behind the paired filenames. The
-renderer API's enumeration order, the resulting in-game list, and any other
-differences within the 283-byte section comparison remain separate questions.
+All 283 unequal code bytes fall within `600017c7..600018e2` inclusive,
+covering this callback rewrite and padding after the shorter Modern return.
+The renderer API's enumeration order and the resulting in-game list remain
+untested.
+
+The code change also accounts for the changed effective relocation targets.
+Comparing decoded PE base-relocation entries as `(RVA, type)` pairs, with
+type-0 padding excluded, removes five HIGHLOW entries (`1801`, `1828`,
+`189a`, `18ad`, `18c4`) and adds two (`180a`, `1826`). Each falls
+inside the callback span. The raw import, initialized data and export
+sections match byte for byte. The resource section grows from 1,024 to
+1,536 raw bytes and both resource directories list type 16 (version
+information). The resource payload and headers are outside the code-byte
+count. The zero-raw-pointer `.bss` is excluded from file-backed byte
+comparisons.
 
 #### DX5 callback history
 
