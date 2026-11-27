@@ -421,3 +421,14 @@ comparing PE RVA `cd6c0h` for `279h` bytes and decoding the two
 operands. This confines the changes within the initializer after
 1.5.0 to the diagnostic operands. The called routines and runtime
 registration results require separate evidence.
+
+Following the diagnostic call in all six retained 1.5.0–1.6.1
+EXEs leads to a 25-byte body. The bodies match after excluding
+the displacement of the call at offset `+0x13`. That call always
+targets the termination thunk at `004f2a7d`. Each helper calls
+`MessageBoxA` via import slot `00534764`, with the initializer's
+text, the same title pointer and flags `0x51010`. It calls the
+termination thunk on return from the dialog without testing
+the dialog result. This verifies the local diagnostic policy
+despite relocation. Actual dialog and shutdown outcomes remain
+untested.
