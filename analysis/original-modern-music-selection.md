@@ -520,3 +520,9 @@ The hosted original, retained 1.0.0 and official 1.6.1 executable match byte for
 | `00418c60..00418cbb` | `9d49b06c6c60f3cb52d43b67f2c41cc49c3f479e377b262da13e24f4774e8f78` | Branches at `00418c7d` directly to the return, skipping the Pathfinder event interrupt at `004e7208` and subsequent call to `004e70fc`. |
 
 Reproduce by reading each span from its PE RVA and disassembling from the listed entry. The zero case still checks the other audio state fields before admitting the alternate path. This establishes local control flow and a surviving state update. Audibility and call-site reachability in a live session remain untested.
+
+### The indexed update can still request sound
+
+The decoded direct caller at `00483558` passes the selected value in EAX and the index from `[ESI+4]` in EDX. It skips the call when the value is `-1`. On the indexed path described above, a signed increase invokes `00418930`, which stores the requested value at `0055283c + 4*index`, calls sound dispatcher `004182b0` with request selector `0x31`, then stores the returned value at `00571110 + 4*index`. The caller subsequently updates `00552844 + 4*index`. A decrease updates only that last slot locally. An equal value exits without updating either slot.
+
+The direct-call span `00483553..0048355d` decodes the same way in the hosted original, Modern 1.0.0 and official 1.6.1. The complete helper `00418930..00418981` is byte-identical across those three executables (SHA-256 `f07eaa416ae076d490236cb6d819fb22a6d97e3491b46fb7b21e6bd8eb85aaf9`). Thus a nonzero flag can leave a sound request available on the indexed path. Dispatcher admission and audible playback require separate evidence.
