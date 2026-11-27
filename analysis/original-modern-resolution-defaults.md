@@ -358,3 +358,25 @@ The local tier computation, table bytes and stores therefore stay
 stable in the inspected span. Matching local bytes leaves changes in
 the tier producer, the called routines and live user settings in scope
 for the resulting graphics configuration.
+
+### The area-plus-depth selector is present in Modern 1.0.0
+
+The hosted original ranks eligible modes by distance from a
+target **width**. Modern 1.0.0 already ranks them by distance
+from a target **width × height + depth** score and applies
+the broader aspect and depth checks described in the
+[viewport history](original-modern-viewport-geometry.md#historical-mode-dimension-input).
+This dates the selector rewrite independently of the two
+callers that supply startup and frontend defaults.
+
+Read 203 bytes at PE RVA `bee80h` from each retained
+`nfs3.exe`. The complete selector window has SHA-256
+`c7031dcbd776a438336e639cb722dafa48c4d53da1128a4539f0aa0630f67ec3`
+in the hosted original and
+`aaf49436bdda52b5d9c3bc4674baa6043490ae689e51a1aa581da53548fee1e9`
+in each of the six retained Modern releases from 1.0.0
+through 1.4.0. Starting in 1.5.0, the same address window
+has different code. The packed-request path above documents
+the later selection mechanism. The comparison establishes
+the first observed release and the local algorithm, while
+selected resolutions depend on the available mode rows.
