@@ -31,6 +31,8 @@ Shift helper sets AL=`0x10`, calls the imported **GetAsyncKeyState** at `[005347
 
 The previous/next selection routines at `00449f30..0044a0b4` and `0044a0c0..0044a23a` are byte-identical between versions. Modern reuses them for Tab and as arrow fallbacks; it does not introduce a different selection algorithm inside those bodies. Their dependencies/data can still change behavior.
 
+For arrows the original requests sound ID 0 with EDX=`0x2d`, then calls previous at `0044a40e` for Up/Left or next at `0044a423` for Down/Right. Final Modern tries the named action first and calls the same selection helpers on a miss at `0044a3db` or `0044a402`. Neither direct fallback path requests sound before entering the helper. A named hit instead branches to `0044a409` and invokes the selected entry as Enter. This comparison covers local call order. Audio from the selected callback or other downstream code remains separate. Reproduce by disassembling `0044a315..0044a429` in both baselines.
+
 ## 3. Escape-specific lookup becomes a token-parameterized helper
 
 Original `0044a240..0044a2c8` scans entry records of stride **0xbc** at `00604ee0`, starting from the signed WORD at menu `+0x18` (recovered through a wider unaligned load and shift). It searches specifically for literal `escape` at `00538fbc`.
