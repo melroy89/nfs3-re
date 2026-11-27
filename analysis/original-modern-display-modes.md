@@ -413,3 +413,20 @@ The last distinction is a concrete conditional counterexample to **local callbac
 If a later accepted16-bit input arrives, the occupied-slot path admits it and can replace that32-bit row. Once occupied, non16 incoming depth takes the skip path. Enumeration order and the presence of a16-bit candidate therefore matter. Seed metadata alone must not be rewritten as a guaranteed post-enumeration depth, and the release-note rationale about intro-movie failure is not independently tested here.
 
 **MP120-017/018 advance vendor-only→partial** for the bounded capacity arithmetic and height gate present120. **MP120-019 advances vendor-only→partial with a caveat:** the16-bit seed/preference is verified, but the absolute wording exceeds the local mechanism. Missing prepatch comparison, later state changes, provider ordering, mode-menu/activation and movie behavior remain open. Existing DLL/EXE bytes and Ghidra state are unchanged; no target or API executes.
+
+### The original budget bypass is already present in 1.0.0
+
+The recovered 1.0.0 EXE matches 1.1.0 across the complete 226-byte
+enumerator at `004bed90..004bee72` (exclusive end). The shared span
+SHA-256 is
+`84a8ea1447b72f9083948d93858788cbc0a1bd79128b8f7771dff7980eed7f47`.
+Extract `nfs3.exe` from the
+[pinned 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+and compare PE RVA `bed90` for `e2h` bytes.
+
+Consequently the first retained Modern release already skips the
+original size/budget block and applies the same wider aspect interval
+and signed depth-at-least-16 predicate as 1.1.0. This dates the
+mechanisms for MP100-001 and MP100-003 to the named release. Driver
+enumeration, other eligibility checks and successful use of large
+resolutions remain separate.
