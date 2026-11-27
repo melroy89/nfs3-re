@@ -75,8 +75,19 @@ The original creation caller supplies desired EDX0 for indices0/1/2 at `004cd4a9
 
 Modern returns directly after its shared-state store at `004cd475..004cd488`, omitting the original reset calls. The old helper's address range is reused by the [INI/environment implementation](original-modern-configuration.md), so same-address Modern bytes are not a corresponding keyboard helper. Both imports and the keybd_event thunk remain; their presence must not be reported as proof that startup still resets toggles, or as newly added functionality.
 
-All three original startup call slots already contain NOPs in
-the retained 1.1.0 executable. Its old helper tail
+All three startup call slots already contain NOPs in the retained
+1.0.0 EXE. Relative to the hosted original, the post-creation span
+`004cd475..004cd4d1` differs only at `004cd4a3..004cd4c6`.
+A short jump (`eb 21`) skips to `004cd4c6`, and the remaining
+33 bytes of the changed span are NOPs. Thus the cursor handling
+and success-only clear remain in 1.0.0–1.3.1, whose 92-byte
+post-creation spans match. Version 1.4.0 introduces the shorter
+19-byte tail with an unconditional clear and immediate return.
+The full 92-byte window, including the padding after that return,
+matches from 1.4.0 through 1.6.1. Compare PE RVA `cd475h` in
+the archived root EXEs to reproduce both boundaries.
+
+In retained 1.1.0, the old helper tail
 `004fb76a..004fb790` is also all NOPs. From 1.2.0 through 1.6.0,
 the first four bytes of that tail hold the register-pop/RET
 sequence of the neighboring INI environment helper
@@ -85,4 +96,4 @@ helper one byte earlier and leaves the entire indexed tail as
 padding again. The original startup call removal thus predates
 the later reuse and repadding of the helper bytes.
 
-MP100-038 has **bounded static support** for removal of this original startup operation. All alternate/indirect callers, device/OS effects, toggle state observed at launch and v1.0.0 introduction remain unverified. The separate [Num Lock keypad translation change](original-modern-window-key.md) concerns handling later input and must not be conflated with this removed reset.
+MP100-038 has **bounded static support** for removal of this original startup operation. All alternate/indirect callers, device/OS effects, and toggle state observed at launch remain unverified. The separate [Num Lock keypad translation change](original-modern-window-key.md) concerns handling later input and must not be conflated with this removed reset.
