@@ -313,6 +313,15 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004cccc1..004cccc4` | Three NOPs follow the Modern [hook teardown](original-modern-window-handling.md). They replace the end of a register move and a short jump in the original hook callback. | The original callback crosses this Modern function boundary. |
 | `004f1fc9..004f1fcc` | Three NOPs after the Modern RET at `004f1fc8` replace part of the original integer store at `004f1fc9`. The next Modern entry begins the [modifier-key wrappers](original-modern-window-key.md). | This identifies the source instruction and the new alignment. |
 
+| `00431c4d..00431c50` | Three NOPs after the Modern RET replace the end of an original alignment LEA and a self-move. | Padding in both layouts. |
+| `004377c1..004377c4` | Modern alignment overlaps the original [funkeys callback](original-modern-menu-callback-table.md) prologue and first XOR byte. | The original descriptor no longer points to that entry. |
+| `0043781d..00437820` | Three NOPs follow the Modern return and replace the first three bytes of the original WORD load from `00559cb4`. | The original instruction extended beyond the Modern boundary. |
+| `00439cfd..00439d00` | Three NOPs follow the factored [frontend page helper](original-modern-frontend-page.md), replacing the end of an original compare and the opcode of its conditional branch. | The original control-flow operation straddled the new boundary. |
+| `0043eb85..0043eb88` | NOPs replace three displacement bytes of the original call at `0043eb84` in the [colour handler](original-modern-colour-control.md). | Modern returns before the next helper. |
+| `0043eb9d..0043eba0` | Alignment after the [dialog cursor wrapper](original-modern-cursor-position.md) overlaps the last byte of an original call displacement and the start of a WORD store. | The original handler continued through the new boundary. |
+| `0043fd35..0043fd38` | Three NOPs after the [alternate suffix getter](original-modern-network-port-menu.md) overlap the start of the original store to `005f4064`. | Only the removed store's first bytes lie in this interval. |
+| `0043fd6d..0043fd70` | Alignment after the [network menu helper](original-modern-network-port-menu.md) overlaps the final byte of an original immediate load and a two-byte PUSH. | The surrounding replacement code determines runtime menu behavior. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -333,7 +342,9 @@ intervals**, leaving 238 changed bytes across 111 intervals at `700897d`.
 The race dialog and clock rows bring the total to **21,696 bytes
 across 228 intervals**, leaving 230 changed bytes across 109 intervals at `1a9fd72`.
 The six additional boundary rows bring coverage to **21,714 bytes
-across 234 intervals**, with 212 changed bytes across 103 intervals still unindexed. These counts measure documented evidence links for this fixed
+across 234 intervals**, with 212 changed bytes across 103 intervals still unindexed at `58e2186`.
+The next eight rows bring coverage to **21,738 bytes across 242
+intervals**, leaving 188 changed bytes across 95 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
