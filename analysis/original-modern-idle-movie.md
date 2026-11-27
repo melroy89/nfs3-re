@@ -131,7 +131,7 @@ The catalog label is now Partial. Final-pair code supports this bounded mechanis
 
 The1.1.0/1.2.0 caller explicitly sets EDI=`0055eb2c` and section EBP=`NFS3`, then loads the key, supplies default EDX0 and calls`004fb6f0`. Its normal-return nonzero branch ORs byte+1 with mask08h, exactly DWORD bit11. The reader invokes the PE-resolved **GetPrivateProfileIntA**; its IAT address varies between the early and later historical builds and is recorded per version. This is a key-read-to-state chain, not inference from the string alone.
 
-Both early frontend setup prefixes test that same byte/bit at`0047313d` and jump past the `titleav.mad` request at`00473159` when it is set. The supplied-original setup already checks this bit from its original command-line path; Modern adds the INI-derived producer. Therefore the supported early change is **an additional configuration source feeding a retained title-disable gate**, not invention of all movie suppression. The1.0.0 artifact and every possible intro/movie request route remain uninspected here, so the vendor’s “all intro movies” claim is partial.
+Both early frontend setup prefixes test that same byte/bit at`0047313d` and jump past the `titleav.mad` request at`00473159` when it is set. The supplied-original setup already checks this bit from its original command-line path; Modern adds the INI-derived producer. Therefore the supported early change is **an additional configuration source feeding a retained title-disable gate**, not invention of all movie suppression. The 1.0.0 producer and title gate are verified below. Other intro/movie request routes remain unqualified, so the vendor’s “all intro movies” claim is partial.
 
 At1.5.1→1.5.2, the **complete24-byte INI branch `004b55b6..004b55ce` is identical**, while the pointed string grows from singular to plural. The **complete108-byte availability builder `004a2f90..004a2ffc` also matches**. Thus this pair supplies an actual option-spelling transition with retained disable-bit/mask logic. The switch-table entry independently changes in the same pair; that observation does not exclude every alternate parser or external launch wrapper.
 
@@ -141,7 +141,7 @@ The captured1.5.2 key-read branch performs no singular-key retry. Its integer re
 
 The final README’s v1.2.0 example uses `NFS3_NOMOVIE`, matching the historical singular key. It must not be presented as proof that final1.6.1 queries that exact spelling: the final selected reader receives `NoMovies`. No alias between those names is established by this path. Other flag producers remain possible, so an apparent runtime movie-disable outcome alone would not establish which key was consumed.
 
-All inspected setting branches are **set-only locally**: a nonzero result sets bit11; zero skips the write instead of explicitly clearing an existing bit. Preserve that accumulation behaviour and the chosen version’s spellings in reconstruction. Replacing the whole flag DWORD, clearing the bit on zero, inventing a legacy-name alias or treating the playback wrapper as the sole disable gate would change the observed contracts. Actual profile files, initialization/flag lifetime, movie presence, decoder results and1.0.0 introduction remain separate evidence requirements.
+All inspected setting branches are **set-only locally**: a nonzero result sets bit11; zero skips the write instead of explicitly clearing an existing bit. Preserve that accumulation behaviour and the chosen version’s spellings in reconstruction. Replacing the whole flag DWORD, clearing the bit on zero, inventing a legacy-name alias or treating the playback wrapper as the sole disable gate would change the observed contracts. Actual profile files, initialization/flag lifetime, movie presence, and decoder results remain separate evidence requirements.
 
 ### Movie display conversion bodies match across all retained releases
 
@@ -157,3 +157,15 @@ among the existing conversion paths. The byte comparison covers
 the five display bodies. Decoder behavior, callees outside those
 ranges, backend selection on a live system and resulting image
 quality remain outside this check.
+
+### The INI title-movie gate is present in 1.0.0
+
+In the [recovered 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames),
+the shipped INI contains `NoMovie=0`. The EXE reads the singular
+key at `0053ee90` through its integer-profile wrapper at
+`004b6345`, with default zero. A nonzero result sets bit 11 at
+`004b634e..004b6356`. The existing gate at `0047313d` tests this
+bit and can skip the title playback call at `00473159`. This dates
+the INI producer for MP100-024 to the named release. The inspected
+path covers the title movie. Other intro requests and actual
+playback suppression remain unverified.
