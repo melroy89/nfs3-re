@@ -377,3 +377,14 @@ the five-byte CALLs and the entry window above. The instruction
 comparison dates the redirection and the new descriptor read at this
 site. It does not establish that the earlier target never queried
 the renderer or that both paths choose the same mode at runtime.
+
+The old 447-byte body at `004bef50..004bf10f` matches the hosted
+original in every retained Modern release from 1.0.0 through 1.5.1.
+Its SHA-256 is
+`79c65010b5d10696515607cd701f323ca39b9bdd5a83d47b1661b1943de3f6b7`.
+In 1.5.2, address `004bef50` lands inside the replacement body,
+before its return, and no longer starts the old routine. Linear
+disassembly finds the four direct calls above and no direct jumps
+to the old entry in 1.5.1. It finds neither direct calls nor direct
+jumps to that address in 1.5.2. This establishes retirement of the
+old entry at that address. Computed references are outside the scan.
