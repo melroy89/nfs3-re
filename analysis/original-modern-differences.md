@@ -820,7 +820,7 @@ The [car-profile comparison](original-modern-car-profile.md) records the changed
 
 The [music-worker cleanup comparison](original-modern-music-worker-cleanup.md) verifies replacement of forced termination plus close with direct handle closure at one shutdown tail.
 
-The [dead-zone slider comparison](original-modern-deadzone-sliders.md) verifies removed truncation calls, shifted enabled-row numbering, layout/register changes and the removed named-widget flag tail.
+The [controller comparison](original-modern-deadzone-sliders.md) separates three release changes. Most Modern builds refresh 15 frontend cache slots instead of 16, with 1.3.0 briefly reverting to 16. The controller initializer, enumeration routine and device query retain the separate sixteen-slot setup and sweep. Version 1.5.0 changes dead-zone row numbering and removes a widget flag-update block. Version 1.5.3 removes explicit truncation from device-value writeback, while the [two-axis caption path](original-modern-slider-percentage.md#display-and-device-writeback-use-different-conversions) retains a truncation call. These are static findings. Actual device counts, displayed values and driver behavior remain untested.
 
 The [car-registry comparison](original-modern-car-registry-flags.md) verifies removal of Ferrari/Mercedes flag assignment and a changed copy-source getter; the Hot Pursuit claim has partial static support.
 
