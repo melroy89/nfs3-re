@@ -96,7 +96,18 @@ Microsoft documents the event selector in **wParam** for [WM_POWERBROADCAST](htt
 
 ## 4. Class registration and failure handling
 
-The original initializer calls GetModuleHandleA(NULL) at `004cd6f1` and stores it at `009f3d48`; Modern reads an already stored handle there at `004cd6ef`. Original also supplies a fallback class-name pointer when `[005612a4]` is null (`004cd6f8..004cd723`); Modern's shown initializer uses the existing value without this local fallback. This moves responsibility to earlier setup; that producer must be traced before asserting invalid or missing initialization.
+The original initializer calls GetModuleHandleA(NULL) at `004cd6f1` and stores it at `009f3d48`; Modern reads an already stored handle there at `004cd6ef`. Original also supplies a fallback class-name pointer when `[005612a4]` is null (`004cd6f8..004cd723`); Modern's shown initializer uses the existing value without this local fallback. The final startup call at `004a3de7` obtains GetModuleHandleA(NULL)
+and stores the result at `004a3ded` before the class initializer reads it.
+
+The file-backed class-name pointer starts at zero in the hosted
+original and retained Modern 1.0.0–1.3.1. From 1.4.0 onward it is
+`0053ce40`, which points to the same class name in the checked 1.4.0
+and 1.6.1 images. The 134-byte initializer prefix through the
+RegisterClassA call matches between those two Modern releases.
+This dates the removal of the local fallback alongside the new
+initial pointer. Reproduce by checking PE RVA `1612a4h` and the
+prefix at `cd6c0h` in the extracted EXEs. Registration success
+and any later writes to the pointer remain untested.
 
 Both still build class style `0x0b`, procedure `004cd2d0`, zero extra bytes, icon/cursor/name fields and call RegisterClassA. On class-registration failure, original gets the last error, calls its diagnostic routine and returns zero (`004cd787..004cd79e`); Modern calls the fatal-error wrapper `004b570c` with a message (`004cd74b..004cd750`). The wrapper's known fatal-error behavior is existing research, not newly executed here. The [geometry comparison](original-modern-window-geometry.md) now verifies retained creation policy through CreateWindowExA, shortened post-creation setup and three identical sizing helpers; context producers and all windowed/fullscreen effects remain unresolved.
 
