@@ -1246,7 +1246,7 @@ The [directory/error follow-up](original-modern-startup-requirements.md#director
 
 ## Fitted reference dimensions reach text scaling
 
-The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales-reach-a-conditional-text-path) connects the changed width/coefficient producer to retained85-byte adapter00451530 and bitmap setter. Wide-branch fitted width is height-derived; backend/font flags and unchanged width-based bitmap paths prevent a universal all-font claim. MP100-004 advances vendor-only→partial; counts115/50/123/2. Actual glyph sizes, other font routes, reference lifetime and1.0.0 introduction remain unverified; no font rendering or target execution.
+The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales-reach-a-conditional-text-path) connects the changed width/coefficient producer to retained85-byte adapter00451530 and bitmap setter. Wide-branch fitted width is height-derived; backend/font flags and unchanged width-based bitmap paths prevent a universal all-font claim. MP100-004 advances vendor-only→partial; counts115/50/123/2. The [early executable comparison](original-modern-hud-layout.md#the-fitted-text-scale-path-is-already-present-in-100) verifies this wide-branch text-scale route in 1.0.0. Actual glyph sizes, other font routes and reference lifetime remain unverified.
 
 ## Police HUD widget claim remains unverified
 

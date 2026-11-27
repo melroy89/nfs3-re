@@ -231,7 +231,25 @@ The equal-height wide examples keep Modern’s input/base equal while original g
 
 The separate [bitmap-font investigation](original-modern-car-alias.md#scale-initialization-and-setter-are-retained) remains valid: when font flag`00840188==0`, the setter accepts the supplied scale; when nonzero, it selects a font variant and computes scale from **actual width`007cdac8` times the retained approximately1/320 coefficient**, rather than the supplied scale itself. The complete loader also still chooses its FFN file set using signed actual width>=640. Both bodies are identical in original and final.
 
-Accordingly **MP100-004 receives partial static support for the fitted-reference→scale→conditional-text route**. This review does not establish a universal height-based rule for all menu, atlas, bitmap and HUD fonts, nor that every widescreen label avoids excessive size. Other font-selection paths, historical1.0.0 introduction and visible output remain follow-up requirements. Preserve the chosen version’s scale sources and both gates in reconstruction; globally replacing width with height would alter retained behaviour that this comparison has not shown the patch changed.
+Accordingly **MP100-004 receives partial static support for the fitted-reference→scale→conditional-text route**. This review does not establish a universal height-based rule for all menu, atlas, bitmap and HUD fonts, nor that every widescreen label avoids excessive size. Other font-selection paths and visible output remain follow-up requirements. Preserve the chosen version’s scale sources and both gates in reconstruction; globally replacing width with height would alter retained behaviour that this comparison has not shown the patch changed.
+
+### The fitted text-scale path is already present in 1.0.0
+
+The retained 1.0.0 and official 1.6.1 EXEs match over the complete
+scale initializer `00484b70..00484c10` (SHA-256
+`3620c18726db32aba8b11237bb2fb4e855ca937e1ff4ee228bea61af2cc9338f`),
+the text adapter and setter spans above, and the coefficient DWORD at
+`0053b620` (file bytes `89 d2 de 3a`; hosted original `cd cc cc 3a`).
+
+The 1.0.0 rectangle producer uses different addresses from final.
+Its wide branch at `004be7e3` calculates `trunc(4*H/3)` for ordinary
+positive dimensions and passes it in ECX to the rectangle writer
+`004be898`. The call at `004be811` sets the writer destination to
+`007a2740`, so ECX lands at `007a2748`, the width used by the
+scale initializer. This establishes the early wide-branch route in code.
+Reproduce by extracting the [retained 1.0.0 EXE](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+and comparing those file-backed spans and disassembly addresses.
+Actual glyph sizes remain untested.
 
 ## Opponent Name and List have distinct profile defaults
 
