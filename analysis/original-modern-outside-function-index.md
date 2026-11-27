@@ -294,6 +294,15 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `0046ab44..0046ab49` | The last byte of the original row lookup and its four-byte store become NOPs after the [rewritten slider geometry](original-modern-slider-percentage.md). | Modern performs the lookup and adjusted store earlier. |
 | `004642ee..004642f3` | Modern returns five bytes earlier from the [consolidated dropdown close path](original-modern-dropdown-input.md#closeupdate-branches-are-consolidated), replacing the original pops and RET with NOPs. | The code before the new return contains the behavior changes. |
 
+| `0042dc3c..0042dc40` | Four NOPs replace the final loop jump and epilogue of the [original input worker](original-modern-input-worker.md). | The Modern stop helper at the same entry returns before this span. |
+| `0043fdcc..0043fdd0` | The final four bytes of original LEA alignment become NOPs after the Modern return at `0043fdcb`. | This identifies the padding only. |
+| `004640f2..004640f6` | Four NOPs replace register pops and RET after the [dropdown selection-update branch](original-modern-dropdown-input.md). | The Modern jump at `004640ed` uses the shared tail at `004642db`. |
+| `0046420e..00464212` | Four NOPs replace register pops and RET after the [dropdown opening branch](original-modern-dropdown-input.md). | The Modern jump at `00464209` uses the same shared tail. |
+| `00494f9c..00494fa0` | Modern returns four bytes earlier from the [loading artwork routine](original-modern-loading-artwork.md). | The original final three pops and RET become NOPs. |
+| `004ba3ab..004ba3af` | Four NOPs replace the original inline epilogue in the [geometry-color admission path](original-modern-geometry-color-admission.md). | Modern branches to the epilogue at `004ba7fd`. |
+| `004daffc..004db000` | Four bytes of original LEA alignment become NOPs after the Modern return at `004daffb`. | This identifies the padding only. |
+| `005176a6..005176aa` | Four NOPs follow the new short jump to the shared continuation at `005176aa` in the [renderer mode callback](original-modern-renderer-lifecycle.md). | They replace the final operand bytes of the original indirect call. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -308,7 +317,9 @@ gaps have five changed bytes each, including `00472a56..00472a5b`.
 The config row now accounts for that interval, raising the indexed
 total to **21,631 bytes across 213 intervals** at `2c56e8c`. The five
 additional rows above raise coverage to **21,656 bytes across 218
-intervals**, leaving 270 changed bytes across 119 intervals. These counts measure documented evidence links for this fixed
+intervals**, leaving 270 changed bytes across 119 intervals at `caca397`.
+The next eight rows raise coverage to **21,688 bytes across 226
+intervals**, leaving 238 changed bytes across 111 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
