@@ -267,6 +267,10 @@ Slot9 follows a distinct sequence at **`004a40dc..004a40f7`**: it first stores t
 
 These findings explain how the new dynamic logo list affects index selection and why an empty loaded list does not automatically imply a divide-by-zero in the inspected draw consumer. The count lifecycle, first slot9 seed, indirect callers and concurrent reloads remain unresolved. No division, animation or renderer call was executed.
 
+### The slot 9 sequence starts using a loader-provided count in 1.5.0
+
+In retained 1.4.0, the producer writes literal six to `007a1b90` at `004a40cd`, and slot 9 divides the incremented sequence by a separate literal six at `004a40eb..004a40f7`. Version 1.5.0 replaces the count store with NOPs and, in the slot 9 branch, loads the divisor from `007a1abc` at `004a40ea`. The 1.5.3 executable still uses that address. Version 1.6.0 changes the operand to `007a1b90`, which now holds the atlas loader's count. In all four checked builds, the producer publishes the old sequence to the slot at `004a40e1` and stores the new remainder at `004a4114`. The old sequence therefore reaches the slot before any wrap against the newly loaded count. Reload scheduling remains unresolved.
+
 ## First animation state versus later reloads
 
 The audit verifies **file-backed** initial values, including PE file offsets, in both executable baselines: sequence **`0055e984=0`** and animation sentinel **`0055e95c=-1`**. These are actual initialized bytes, not values guessed from a zero-filled virtual section. The consumer’s sentinel test at `004a445f` selects its initialization loop when the first slot remains−1.
