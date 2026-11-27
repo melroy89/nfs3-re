@@ -711,3 +711,7 @@ a negative result can preserve the EAX selection in the saved
 configuration check while a separate start attempt skips the
 audio backend on the same result. The two paths can issue
 separate queries. No shared runtime result is assumed.
+
+### Fog and Rear View Detail in the 1.5.0 config block
+
+The 1.5.0 save routine copies `0x20f0` bytes from `006fbb40` into the temporary file buffer at `0047287e..0047288b`. That places the Fog selector `006fd1d4` and Rear View Detail selector `006fd1d8` at file offsets `0x1694` and `0x1698`, respectively, as little-endian DWORDs. The explicit buffer clear at `00472898` targets `0x1860`, outside both fields. The reader copies the data back to the same base at `00472a94` onward. After acceptance of a `0x20f0` header with version WORD `0004..00ff`, the jump at `00472ac6` skips the grouped defaults. These are static copy and acceptance rules. They do not establish a successful save, a particular value in an installed file, or preservation by later [menu capability and Cancel handling](original-modern-graphics-menu-transition.md#the-two-fog-cancel-paths-already-differ-in-150).
