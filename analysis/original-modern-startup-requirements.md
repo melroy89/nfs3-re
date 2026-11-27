@@ -84,7 +84,19 @@ The caller subtracts64 from that first byte to form a drive number. The retained
 
 When GetDiskFreeSpaceA returns zero, the geometry wrapper calls`00500ff4`, whose imported GetLastError result reaches`00500f8c`. All inspected ordinary converter exits request runtime error state and return`ffffffff`; the geometry wrapper propagates that nonzero result, and the outer check returns0. The runtime-state setter’s indirect callback and exceptional/nonlocal behaviour remain unqualified. Specific errno meanings and actual OS/Wine failures are not assigned from the numbers alone.
 
-**MP100-029 conclusion:** the directly verified change is the preceding free-byte arithmetic: signed low32-bit products/comparison become unsigned products with overflow-to-success and an unsigned threshold. This explains conditional false warnings for ordinary large positive geometry, including the2-GiB and4-GiB examples above. The directory, geometry and error helpers remain, so Modern does not simply remove the free-space check or guarantee success on every failed query. Actual warning occurrence, directory/API outcomes and precise1.0.0 introduction remain unverified. No disk query, dialog or target instructions were executed.
+**MP100-029 conclusion:** the directly verified change is the preceding free-byte arithmetic: signed low32-bit products/comparison become unsigned products with overflow-to-success and an unsigned threshold. This explains conditional false warnings for ordinary large positive geometry, including the2-GiB and4-GiB examples above. The directory, geometry and error helpers remain, so Modern does not simply remove the free-space check or guarantee success on every failed query. Actual warning occurrence and directory/API outcomes remain unverified. No disk query, dialog or target instructions were executed.
+
+### Modern 1.0.0 already uses the overflow-aware check
+
+The complete 84-byte Modern disk-check body at `004516a0..004516f4`
+matches between retained 1.0.0 and official 1.6.1
+(SHA-256 `11a3aec02d8fca7c783036ff38d51793fde2b5ca4f69991a20bf0666e0e8e71e`).
+The hosted original differs over that window. The complete directory and
+geometry adapters listed above match across all three binaries. To reproduce,
+extract `nfs3.exe` from the [retained 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+and compare the file-backed bytes at these virtual addresses with the paired
+audit. This dates the local arithmetic change to the first retained Modern
+release. Actual disk warnings remain untested.
 
 For reconstruction, keep the chosen version’s arithmetic separate from the retained directory/error preconditions. Adding a checked directory result or silently replacing an API failure with guessed free space would be a deliberate behaviour change, not an observed part of this patch.
 

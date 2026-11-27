@@ -1242,7 +1242,7 @@ The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping
 
 ## Free-space warning arithmetic and retained failures
 
-The [directory/error follow-up](original-modern-startup-requirements.md#directory-and-error-paths-qualify-the-false-free-space-warning-fix) verifies four retained helper bodies, used-buffer length/copy conditions and normal geometry-error return. It connects the previously verified unsigned overflow-aware arithmetic to MP100-029 without claiming the check was removed. Directory return remains unchecked by the caller; actual API outcomes and warnings remain unverified. Catalog advances that row vendor-only→partial, counts116/50/122/2. No disk, dialog or target execution.
+The [directory/error follow-up](original-modern-startup-requirements.md#directory-and-error-paths-qualify-the-false-free-space-warning-fix) verifies four retained helper bodies, used-buffer length/copy conditions and normal geometry-error return. It connects the previously verified unsigned overflow-aware arithmetic to MP100-029 without claiming the check was removed. Directory return remains unchecked by the caller; actual API outcomes and warnings remain unverified. [Modern 1.0.0 already contains the final overflow-aware disk check](original-modern-startup-requirements.md#modern-100-already-uses-the-overflow-aware-check). Catalog advances that row vendor-only→partial, counts116/50/122/2. No disk, dialog or target execution.
 
 ## Fitted reference dimensions reach text scaling
 
