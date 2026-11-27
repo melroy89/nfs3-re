@@ -399,3 +399,25 @@ consumer is retained while the surrounding message pump changes.
 See the [renderer cleanup trace](original-modern-renderer-lifecycle.md)
 for the corresponding waiting path. Runtime teardown and wait
 completion remain untested.
+
+### Later initializer changes are confined to the registration-failure diagnostic
+
+The 633-byte address window `004cd6c0..004cd939` matches the
+hosted original through retained 1.3.1. After the 1.4.0 and 1.5.0
+registration rewrites, only two byte positions in that same
+window vary from 1.5.0 through 1.6.1:
+
+| Release | Diagnostic string operand at `004cd74b` | Call target at `004cd750` |
+|---|---|---|
+| 1.5.0 | `00540468` | `004b56c4` |
+| 1.5.1 | `00540468` | `004b56e8` |
+| 1.5.2–1.5.3 | `00540468` | `004b56f8` |
+| 1.6.0 | `0054046c` | `004b56f8` |
+| 1.6.1 | `0054046c` | `004b570c` |
+
+The old and new pointers resolve to the same RegisterClass
+failure text in the checked 1.5.2 and 1.6.1 EXEs. Reproduce by
+comparing PE RVA `cd6c0h` for `279h` bytes and decoding the two
+operands. This confines the changes within the initializer after
+1.5.0 to the diagnostic operands. The called routines and runtime
+registration results require separate evidence.
