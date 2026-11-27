@@ -570,3 +570,5 @@ Across all twelve retained Modern releases, the two argument pushes at `0041084c
 | 1.6.0–1.6.1 | `0053f42c` | `.\gamedata\audio\pc\` |
 
 Reproduce by extracting each executable, reading the sixth NUL-terminated string from the listed table and comparing the two pushes. The 1.4.0 table rewrite preserves the music slot address and changes its casing. Behaviour on a case-sensitive host remains untested.
+
+The ten little-endian pointers at `005525a8` resolve to the same ordered stems in the hosted original and all twelve retained Modern EXEs: `home, lost, atla, alpi, home, lost, atla, alpi, empr, chuck`. To reproduce, read 40 bytes at RVA `0x1525a8` and resolve each pointer as a NUL-terminated string using the executable's image base. This preserves the repeated entries at indices 4–7 and the `empr` entry at index 8. The [1.5.3 Random change](#packaged-152-to-153-menu-seed-boundary) changes which existing indices the selector can supply. The stem table itself already contains those names in the original.
