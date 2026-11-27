@@ -145,14 +145,22 @@ span matches (SHA-256
 including the MMX and score publications and the 19 NOPs at
 `004f1e13..004f1e26` that replace the original `ISMMX` override tail.
 The early defaults code still begins at `00472d10` with stack/table
-setup. Its actual score consumer is at `00472d8e` in 1.0.0–1.3.1.
-In 1.0.0, the preceding call at `00472d89` invokes `004f1c70`.
-The consumer loads `005652a4`, uses a signed cap of 4, and halves
-the selected value if renderer mask `0x06` is set. Final uses a
-direct read at `00472d11` and an unsigned cap of 5. The direct
-read moves to that final address in 1.5.0 among the retained builds
-(it is at `00472d89` in 1.4.0). Compare the decoded operands within
-`00472d10..00472df0` in the archive members to reproduce the address survey.
+setup. In 1.0.0 the call at `00472d89` invokes `004f1c70` before
+reading the score. The retained release sequence shows two distinct changes:
+
+| Retained releases | Score load from `005652a4` | Cap comparison | Cap |
+|---|---|---|---:|
+| 1.0.0–1.3.1 | `00472d8e` | Signed JLE (`7e 05`) at `00472d97` | 4 |
+| 1.4.0 | `00472d89` | Unsigned JBE (`76 05`) at `00472d92` | 4 |
+| 1.5.0–1.6.1 | `00472d11` | Unsigned JBE (`76 05`) at `00472d1a` | 5 |
+
+Each checked release shifts the capped score right by one if renderer
+mask `0x06` is set. For incoming score 5, the selected index therefore
+changes from 4 to 5 in 1.5.0 with the mask clear, and remains 2 with the
+mask set. This is a derived index comparison; the graphics tables
+also change. See [named defaults in the final tables](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings).
+Reproduce with `objdump -d -Mintel --start-address=0x472d10
+--stop-address=0x472db0` on the extracted EXEs.
 
 The original IMUL/publication sequence at `004f2076` is replaced by
 NOPs over the same 16-byte window in 1.0.0, 1.1.0 and final.
