@@ -267,7 +267,9 @@ Slot9 follows a distinct sequence at **`004a40dc..004a40f7`**: it first stores t
 
 These findings explain how the new dynamic logo list affects index selection and why an empty loaded list does not automatically imply a divide-by-zero in the inspected draw consumer. The count lifecycle, first slot9 seed, indirect callers and concurrent reloads remain unresolved. No division, animation or renderer call was executed.
 
-### The slot 9 sequence starts using a loader-provided count in 1.5.0
+### Both logo selection paths start using a loader-provided count in 1.5.0
+
+The ordinary-slot path at `004a4337..004a4365` is byte-identical in the hosted original and the six Modern releases through 1.4.0. In 1.5.0–1.5.3, exactly two bytes change in that 46-byte span, at `004a434b..004a434d`, redirecting the divisor load from `007a1b90` to `007a1abc`. In 1.6.0–1.6.1, the rewritten path divides by the atlas count at `007a1b90` and stores the slot index before incrementing the shared byte cursor. The earlier path increments and stores the cursor before storing the slot index. Both compute the same remainder and advance the cursor once when supplied the same stable positive count and table byte. The ordering difference is verified statically.
 
 In retained 1.4.0, the producer writes literal six to `007a1b90` at `004a40cd`, and slot 9 divides the incremented sequence by a separate literal six at `004a40eb..004a40f7`. Version 1.5.0 replaces the count store with NOPs and, in the slot 9 branch, loads the divisor from `007a1abc` at `004a40ea`. The 1.5.3 executable still uses that address. Version 1.6.0 changes the operand to `007a1b90`, which now holds the atlas loader's count. In all four checked builds, the producer publishes the old sequence to the slot at `004a40e1` and stores the new remainder at `004a4114`. The old sequence therefore reaches the slot before any wrap against the newly loaded count. Reload scheduling remains unresolved.
 
