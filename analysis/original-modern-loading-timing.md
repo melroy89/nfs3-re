@@ -203,3 +203,15 @@ result reaches 100% or the abort path wins. A zero setting removes the
 configured time budget. Progress updates, input handling and renderer
 work can still take time. This is derived from the audited instructions.
 Visible splash duration with a zero setting remains unmeasured.
+
+### Explicit progress values in the race-loading caller
+
+Scanning `004a33d0..004a3690` in all thirteen retained executable baselines gives three sequences of immediate binary32 arguments pushed directly before calls to `00495230`. The values below are rounded for display and listed in instruction-address order.
+
+| Build | Direct call sites in the window | Progress arguments |
+|---|---:|---|
+| Hosted original | 10 | 5, 10, 35, 40, 70, 75, 90, 93, 95, 100 |
+| Modern 1.0.0–1.3.1 | 10 | 0, 0, 10, 12.5, 95.7, 96, 99.7, 99.8, 99.9, 100 |
+| Modern 1.4.0–1.6.1 | 8 | 0, 10, 12.5, 95.7, 96, 99.8, 99.9, 100 |
+
+Reproduce with `objdump -d -Mintel` over the window and decode the immediate PUSH preceding each direct call as binary32. These are static call sites, not a sequence observed in one loading session. The [scene initializer comparison](original-modern-viewport-pose.md#direct-callers-of-the-snapshot-producing-routines) identifies the two submissions around scene setup. The helper's separate throttling, retry and presentation logic still governs what appears on screen.
