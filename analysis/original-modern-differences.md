@@ -555,7 +555,7 @@ The rear-view mirror geometry changes at two separate release boundaries. Versio
 
 ## 32. Resource-backed frontend page
 
-The [frontend-page comparison](original-modern-frontend-page.md) verifies a one-byte dispatch extension plus an out-of-line resource arm, and page record 75 changing from localized text to `ABOUT.QFS`/`cred`. Payload/render validation remains pending.
+The [frontend-page comparison](original-modern-frontend-page.md) verifies a one-byte dispatch extension plus an out-of-line resource arm, and page record 75 changing from localized text to `ABOUT.QFS`/`cred`. The type-5 route already loads numeric resource 200 in 1.0.0. Version 1.4.0 switches to the named resource. The decoded image data differs in each of the twelve retained builds. In-game rendering remains untested.
 
 ## 33. Pending localized overlay
 
@@ -641,7 +641,9 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Ordinary Credits navigation and initial selection
 
-[The Credits page follow-up](original-modern-frontend-page.md#ordinary-credits-nextprevious-removed-conditional-text-page-skip) verifies removal of the original conditional text-page skip and page0-to-last-page initialization change. The official More button is repositioned while retaining `credits1` routing; visual effect and runtime selection remain untested.
+[The Credits page follow-up](original-modern-frontend-page.md#ordinary-credits-nextprevious-removed-conditional-text-page-skip) verifies removal of the original conditional text-page skip and page0-to-last-page initialization change. Both navigation callbacks drop the Ford Falcon GT presence check by 1.0.0. The official More button is repositioned while retaining `credits1` routing. Visual effect and runtime selection remain untested.
+
+The [car-selection background comparison](original-modern-frontend-page.md#shared-presence-consumer-background-resource-substitution) traces a separate use of the same lookup. On selector 3, the original requests `opp4.qfs` when the Ford Falcon GT is registered. Starting with Modern 1.6.0, the HSV VT GTS must also be registered. Otherwise that path requests `opp3.qfs`. Both files decode to distinct assets and each matches its local backup. Actual registry membership and rendering remain untested.
 
 ## Car slideshow navigation and deferred refresh
 
@@ -1343,7 +1345,7 @@ The [quad follow-up](original-modern-state14.md#dx6-quad-attribute-copying-is-no
 
 ## Setup Credits-to-Options chronology verified in retained assets
 
-The [four-package menu audit](original-modern-setup-website.md#early-credits-route-and140-options-replacement-are-present-in-assets) finds explicit Credits text/codelink/nextmenu in1.1.0 and1.3.1, replaced by Options in1.4.0 and retained final. This closes the intermediate authored-route gap behind MP100-052/MP140-017. Exact1.0.0 introduction, historical callback activation and visible placement remain unverified; both catalog entries remain partial.
+The [four-package menu audit](original-modern-setup-website.md#early-credits-route-and140-options-replacement-are-present-in-assets) finds explicit Credits text/codelink/nextmenu in1.1.0 and1.3.1, replaced by Options in1.4.0 and retained final. This closes the intermediate authored-route gap behind MP100-052/MP140-017. The retained 1.0.0 package also ships the authored Credits route. Historical callback activation and visible placement remain unverified. Both catalog entries remain partial.
 
 
 ## Screenshot counter has a configuration serialization route
