@@ -48,7 +48,7 @@ Original has no type24 resource. Official Modern has `24/1/0`, a603-byte XML ass
 - `requestedExecutionLevel` attributes `level=asInvoker`, `uiAccess=false`.
 - Dependency `Microsoft.Windows.Common-Controls`, version`6.0.0.0`, architecture`x86`, publicKeyToken`6595b64144ccf1df`, language`*`.
 
-No DPI-awareness element is present in this complete manifest. These are declarations, not proof of actual loader behavior, applied privileges, control theme or Wine handling. **MP140-075 has static presence support**; introduction in v1.4.0 cannot be established from the original/final pair alone.
+No DPI-awareness element is present in this complete manifest. These are declarations, not proof of actual loader behavior, applied privileges, control theme or Wine handling. **MP140-075 has static presence support.** The retained release comparison below dates the manifest to 1.4.0.
 
 The local analysis target's manifest is byte-identical after replacing only assembly version`1.6.1.0` with`1.6.2.0`. Of all13 resource keys shared with official Modern, only `16/1/0` (version information) and `24/1/0` have changed payloads locally. Icons, `ABOUT.QFS` and `SNAP.WAV` remain byte-identical. The separately redirected local About string is outside these payload identities; see the [three-way provenance](original-modern-differences.md#1-three-way-provenance). Do not attribute local version preparation to the official patch.
 
@@ -66,3 +66,11 @@ Comparing resource keys of the form type/name/language and SHA-256 of their payl
 | 1.5.0–1.6.1 | The resource keys stay fixed. About and version payloads change in every retained release. Manifest bytes change in 1.6.0 and again in 1.6.1. The screenshot WAV and all icon and group payloads remain byte-identical from 1.4.0 through 1.6.1. |
 
 The original icon's three IDs identify identical 744-byte payloads. The matching compression header alone leaves the decoded content and callers of the early numeric resource unverified. The retained sequence begins at 1.1.0, so the 1.0.0 resource layout remains open.
+
+The 603-byte manifest first appears in retained **1.4.0** and is byte-identical through 1.5.3. Its own assembly version stays `1.4.0.0` across those builds. The only payload changes in 1.6.0 and 1.6.1 replace that assembly version with `1.6.0.0` and `1.6.1.0`, respectively. The execution level, UI access, Common Controls dependency and absence of a DPI-awareness declaration are consistent across these manifests.
+
+| Manifest version | Payload SHA-256 |
+|---|---|
+| `1.4.0.0` | `a74a453c565f3b485ab30c359a7b61f8146bd8f145d230653d47c925e283d4ec` |
+| `1.6.0.0` | `5b225855803ab1a36494e46f4edd2e1003a72957183392ea1a6b5be3157c624a` |
+| `1.6.1.0` | `9dab66dde3ecb916b9ba533b478e5059ea0f190b2dd65948fa3edc65c307c45c` |
