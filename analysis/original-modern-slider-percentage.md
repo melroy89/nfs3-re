@@ -227,3 +227,21 @@ slider and to (169, 115) for the indexed slider. Row 8 has a different
 vertical delta because its original table value is 103. These values
 describe the stores under the stated table assumption. Actual row
 selection and rendered positions remain open.
+
+## Release boundary for car-tuning percentage display
+
+The [car-tuning menu history](original-modern-common-menu-buttons.md#official-161-menu-archive-coverage)
+dates the seven sliders' switch from type 1 to type 2 to 1.5.0.
+The executable changes at the same boundary. The 1.4.0 tail
+reads the type at `0046a534` and admits type 1. In 1.5.0 the
+new gate at that address admits nonzero types, with the type 2
+test at `0046a54b` selecting the bipolar formula. Thus the menu
+and code changes preserve the bipolar mapping for those sliders.
+
+The rounding path changes at a separate boundary. The 1.5.0
+and 1.5.2 tails still apply a sign-dependent bias and call
+`004dfd56` at `0046a57a` before FISTP. The 1.5.3 tail instead
+converts directly with FISTP at `0046a55b`, using ambient rounding.
+To reproduce, disassemble `0046a52b..0046a5e0` in the four
+retained EXEs. This dates the local mapping and conversion
+changes. Actual displayed values and dead-zone coverage remain open.
