@@ -123,6 +123,7 @@ The catalog label is now Partial. Final-pair code supports this bounded mechanis
 
 | Build | INI key actually read | Switch-table slot11 | Local setting mechanism |
 |---|---|---|---|
+|1.0.0 |`NoMovie` at `0053ee90` | See title gate below | Default 0 passed to the integer reader. A nonzero result sets bit 11 of `0055eb2c`. |
 |1.1.0 |`NoMovie` at`0053ee74` |`-nomovie` | Default0 passed to integer profile reader; nonzero ORs byte`[0055eb2c+1]` with8 |
 |1.2.0 |`NoMovie` at`0053ee58` |`-nomovie` | Same flag write; reader now first checks environment fallback |
 |1.5.1 |`NoMovie` at`0053ed24` |`-nomovie` | Default0; nonzero BTS bit11 of`0055eb2c` |
