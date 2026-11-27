@@ -588,6 +588,17 @@ To reproduce, list `nfs3_orig.7z` and `nfs3_modern_patch_v1.0.0.7z` from the ret
 
 All seven layouts retain exactly one `texteffects` image in every retained Modern release through 1.6.1. Comparing key/value lines in each enclosing section shows that all seven keep `image=nfsl`, position (236, 118), and `fadelevel=0`. Their priorities also stay fixed, ranging from 4 in `connect.mnu` to 15 in `audio.mnu`. In 1.3.0, all seven drop the two demo switches, and `advgrph.mnu` and `graphics.mnu` also drop `postonly` and `mainonly`. In 1.4.0, the remaining five drop those two fields and all seven drop `borderColor=0`. No other key/value changes occur in these seven widget sections. The asset comparison leaves the effects of omitted fields dependent on loader defaults.
 
+The `texteffects` draw dispatch at `0046019c..004601ce` persists in the hosted original and all twelve retained Modern executables. In this 50-byte span only byte `004601c5`, the low displacement byte of the call at `004601c4`, varies. Extract each archived executable and resolve the signed call displacement relative to `004601c9` to reproduce these boundaries.
+
+| Executable | Animation call target |
+|---|---|
+| Hosted original and Modern 1.0.0–1.4.0 | `004a4410` |
+| Modern 1.5.0–1.5.2 | `004a4424` |
+| Modern 1.5.3 | `004a4430` |
+| Modern 1.6.0–1.6.1 | `004a444c` |
+
+The target history dates changes to the dispatch operand. An identical target address alone does not establish an identical animation body.
+
 This verifies expansion on seven packaged menus. The vendor's “all slides without large amount of text” criterion and actual rendering remain unverified.
 
 ## 1.0.0 changes the graphics and opponent menu effect bindings
