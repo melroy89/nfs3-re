@@ -432,3 +432,21 @@ termination thunk on return from the dialog without testing
 the dialog result. This verifies the local diagnostic policy
 despite relocation. Actual dialog and shutdown outcomes remain
 untested.
+
+### 1.4.0 removes the OS error code from the registration diagnostic
+
+In the hosted original and retained 1.3.1, `RegisterClassA` at
+`004cd77b` branches on AX. On zero, the initializer calls
+`GetLastError` at `004cd787` and passes its result alongside
+the format string at `00540468`, which ends in `(%d)`, to
+`00401010`. If that helper returns, the initializer clears EAX
+and jumps to its epilogue.
+
+In 1.4.0, the call at `004cd740` still tests AX. On zero it
+passes the fixed text at the same string address to `004b5720`.
+The text now omits `(%d)`, and this branch has no GetLastError
+call. The 25-byte helper has the later MessageBoxA and termination
+sequence described above. If it returns, the initializer falls
+through to the same continuation as successful registration.
+These are static caller paths. They establish neither ordinary
+return from the termination thunk nor an observed registration failure.
