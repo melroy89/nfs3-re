@@ -288,6 +288,12 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004ccdb4..004cce90` | [Window handling](original-modern-window-handling.md) maps the old focus-handler tail, focus-loss, close, pending-latch and no-op destroy callbacks to revised registrations and Modern callbacks. | Some behavior moves rather than disappears; the new power callback has a separately documented ABI/result anomaly. Runtime focus/power behavior is untested. |
 | `004fd280..004fd490` | [Projection](original-modern-projection.md) identifies the old origin/centre setter, angle/scale builder and conversion wrapper; Modern removes their calls from the compared wrapper. | Lookup-table interpretation, other caller coverage and runtime projection equivalence remain unresolved. |
 
+| `004f279b..004f27a0` | The [clock reader](original-modern-clock-source.md) drops a CS prefix, returning a byte earlier. The original RET and alignment become NOPs. | The clock source itself is covered by the paired reader comparison. |
+| `004c45cb..004c45d0` | The trailing five bytes of original alignment after synchronous capture become NOP alignment after the [Modern screenshot launcher](original-modern-screenshots.md). | The runtime capture changes are in the preceding body. |
+| `00489614..00489619` | Five operand bytes of the original indirect call at `00489613` become NOPs in the [vehicle overlay envelope](original-modern-view-overlay.md). | The original instruction starts inside the saved-body range. |
+| `0046ab44..0046ab49` | The last byte of the original row lookup and its four-byte store become NOPs after the [rewritten slider geometry](original-modern-slider-percentage.md). | Modern performs the lookup and adjusted store earlier. |
+| `004642ee..004642f3` | Modern returns five bytes earlier from the [consolidated dropdown close path](original-modern-dropdown-input.md#closeupdate-branches-are-consolidated), replacing the original pops and RET with NOPs. | The code before the new return contains the behavior changes. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -300,7 +306,9 @@ The other **125 intervals** have 300 changed bytes and no matching
 mechanism row. No interval has partial overlap. The largest remaining
 gaps have five changed bytes each, including `00472a56..00472a5b`.
 The config row now accounts for that interval, raising the indexed
-total to **21,631 bytes across 213 intervals**. These counts measure documented evidence links for this fixed
+total to **21,631 bytes across 213 intervals** at `2c56e8c`. The five
+additional rows above raise coverage to **21,656 bytes across 218
+intervals**, leaving 270 changed bytes across 119 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
