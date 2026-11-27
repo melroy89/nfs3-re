@@ -69,4 +69,14 @@ The helper copies incoming EAX/EDX colours to EDI/ESI. On admitted renderer mask
 
 These exact ordinary examples are instruction-derived arithmetic, not executed probes. In particular, half intensity uses q=128, so a255 byte becomes127 through division by256. At intensity1 the helper bypasses arithmetic altogether. For other inputs, FISTP rounding/exception state matters; there is no local general lower clamp for negative settings. Do not replace the packed operations with signed-overflowing C or a generic floating colour multiplication and call it machine-equivalent. Global writes are the verified outputs; intermediate EAX does not establish a scalar C return interface.
 
-**MP100-015 advances to partial support:** the menu gate and eleven effect gates admit the v-type bit, and this complete helper shows how the shared intensity changes published colours when its value is below1. Actual car shine, semantic channel ordering, blend state, driver support, every caller/state writer and1.0.0 introduction remain unverified. The result is a local mechanism, not proof that all Voodoo rendering now honors the setting or that the menu always enables it. No game, driver, colour helper, new instruction probe or Ghidra write was executed.
+**MP100-015 advances to partial support:** the menu gate and eleven effect gates admit the v-type bit, and this complete helper shows how the shared intensity changes published colours when its value is below1. Actual car shine, semantic channel ordering, blend state, driver support, and all callers and state writers remain unverified. The result is a local mechanism, not proof that all Voodoo rendering now honors the setting or that the menu always enables it. No game, driver, colour helper, new instruction probe or Ghidra write was executed.
+
+
+The hosted original uses mask `40h` at PE RVA `9d814h`.
+All 12 retained Modern EXEs from 1.0.0 through 1.6.1 use
+`50h` and match across the entire 235-byte helper at RVA
+`9d800h`. This dates admission of renderer bit `10h`
+to 1.0.0 for the colour-scaling helper. The final menu
+binding above establishes how the slider feeds the setting.
+This byte comparison does not establish that every historical
+menu and driver exposes the same behavior.
