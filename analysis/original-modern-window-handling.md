@@ -191,6 +191,17 @@ how the downstream helper ultimately interprets/clamps it or whether such
 coordinates reach it in an actual window. Do not silently replace extraction
 with signed16-bit conversion while claiming exact original behaviour.
 
+The shared coordinate helper also matches across the hosted original
+and all 12 retained Modern EXEs. Compare its main span
+`004fb470..004fb564` and the separate branch targets
+`004fb6a0..004fb6e8`, with exclusive ends. The helper saves the
+incoming ECX notification flag and EBX button mask separately.
+On the notification path it tests the saved ECX after releasing the
+lock, then passes the saved EBX in EAX to the callback at `0056446c`.
+Thus the registration move preserves the inspected coordinate helper
+and the distinction between down/double-click notification and up/move.
+The installed callback and live clipping and capture state can differ.
+
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
 `004fb470` state/clip/capture processing, external message delivery, mouse
