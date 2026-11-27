@@ -58,6 +58,8 @@ Original resolves the incoming localized ID through`004d1850`, stores one pointe
 
 Complete constructor **`00444a80..00444b1d` (157 bytes)** is byte-identical. It stores EAX as line count`00558b1c`, EDX as pointer-array address`00558b20`, timestamp`0079c1a4` into`00558b44`, and the absolute value of EBX into`00558b48`. Zero EBX sets byte`00558b4c` to1; positive EBX copies CL there. The wrapper therefore changes line count and configured timer/state inputs without rewriting this constructor. Visible wording, elapsed-time behaviour and dismissal still require their own localization/event-loop evidence.
 
+The call at `0043fe09` targets the one-line wrapper through retained 1.3.1 and the two-line wrapper starting in 1.4.0. The new 44-byte wrapper and the common 157-byte constructor each match across all seven releases from 1.4.0 onward. The old 45-byte wrapper is still byte-identical in original and final, and final still calls it at sites including `00438284` and `0044e768`. This is a redirection for the inspected notice. Both one-line and two-line wrappers remain available in final.
+
 Modern’s PUSHAD/POPAD preserves incoming general registers, including EAX, while original restores its narrower saved set and leaves a constructor-derived EAX. Neither saves flags or x87 state. Both use shared pointer storage, so a maintained C interface must preserve its lifetime/overlap requirements rather than assume stack-local text arrays. Reentrancy and all notice callers remain unresolved. No dialog or instruction probes were run.
 
 ## Initial edit state stops requesting first-character replacement
