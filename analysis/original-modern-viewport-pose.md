@@ -153,3 +153,14 @@ The unchanged choices decode as None, In Car, Roof Cam, Heli Cam, Bumper Cam, Hi
 The hosted original and retained 1.5.0, 1.5.1 and 1.6.1 builds have the same five decoded direct calls to vehicle binding `004215c0`: `004257ca`, `0048aa21`, `0048b288`, `0048e6b8` and `004c5227`. The same builds have two decoded direct calls to scene initializer `00422cf0`. One remains at `004a33c2`. The other is at `004a356b` in the original, `004a352e` in the 1.5.0/1.5.1 pair and `004a3500` in 1.6.1.
 
 The call sites to both enclosing routines are unchanged at the 1.5.0 → 1.5.1 boundary. The two snapshot operations were inserted inside those routines. In the final loading path, the scene initializer at `004a3500` runs between progress calls at `004a34fb` and `004a350a`. The other final path calls it after `0041de80` and before `00411680`. Reproduce by filtering linear disassembly for direct transfers to the two routine entries. The census bounds known static call sites and leaves their invocation frequency and live ordering open.
+
+Scanning every retained release narrows the loading-site moves to three boundaries. The five vehicle-binding sites and the other scene call at `004a33c2` stay fixed throughout.
+
+| Release | Loading-path call to `00422cf0` |
+|---|---|
+| Original and 1.0.0–1.3.1 | `004a356b` |
+| 1.4.0 | `004a3529` |
+| 1.5.0–1.5.3 | `004a352e` |
+| 1.6.0–1.6.1 | `004a3500` |
+
+At all four checked addresses, two progress calls to `00495230` bracket the scene call and `004bc830` follows the second progress call. The progress arguments in the original are binary32 90 and 93. The checked 1.4.0, 1.5.0 and 1.6.0 neighborhoods instead pass `0x42c7999a` and `0x42c7cccd` (approximately 99.8 and 99.9). The order is retained while the supplied progress values change. This is a local instruction sequence. It does not establish when the progress appears on screen or when the complete scene-loading path runs.
