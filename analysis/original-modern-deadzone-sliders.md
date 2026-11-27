@@ -13,6 +13,14 @@
 
 Original calls rounding helper `004dfd56` at `00442e03` and `00442e0d`; Modern replaces each five-byte CALL with a short jump and three NOPs. All other bytes in the 138-byte envelope are identical, including the two retained FISTP DWORD conversions at `00442e16` and `00442e1f` and `RET 16` stack cleanup.
 
+Comparing the full 138-byte range at PE RVA `0x42dd0` in the
+hosted original and all twelve retained patch executables gives
+two versions. Modern 1.0.0 through 1.5.2 matches the original.
+Modern 1.5.3 through 1.6.1 shares the two `eb 03 90 90 90`
+sequences. These two five-byte sites account for every difference
+in the range. This dates the writeback change independently of
+the separate slider renderer and initializer changes.
+
 The four stack arguments include two binary32 values and two DWORD indices. Both multiply the float inputs by the same file-backed 100.0 at `00538a10`, calculate an indexed pair at `006fc970 + 136*device_index + 72 + 8*axis_index`, compare converted values with its two DWORDs and write/call `00435b40` only for changed members. The two calls distinguish pair members using EBX=1 or EBX=0. This establishes caller-side propagation; full downstream device-property semantics are not qualified here.
 
 As established by the [HUD rounding comparison](original-modern-hud-layout.md#pixel-conversion-removes-explicit-truncation-before-fistp), original's helper performs toward-zero FRNDINT and restores the incoming control word. Modern's removed calls leave final FISTP governed directly by that incoming word. For ordinary representable values, a product of 12.75 therefore becomes 12 in original and, **if round-to-nearest is active**, 13 in Modern. This is a conditional instruction-level derivation, not a tested controller value. Exception behavior and actual caller control state remain separate.
