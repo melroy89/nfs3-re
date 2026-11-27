@@ -1401,3 +1401,13 @@ A standalone host x87 check confirms the decisive comparison. Starting with an e
 | `037f` | `0x3f800000` | `0x0100` | Below |
 
 This checks the arithmetic and status-producing instruction sequence on host hardware. The full NFS III helper and ARM64 code were not executed for this check.
+
+The [native i386 differential harness](../reconstruction/tests/test_line_boundary.py) subsequently executed the full 747-byte helper and maintained C for these three cases at all three control words. The run supplied nine custom rows through `make_rows`, with return policy 1 and initial mask zero. It used the existing function and executable hash checks and a temporary output directory.
+
+| Case | `007f` | `027f` | `037f` |
+|---|---|---|---|
+| Edge mask, coordinates `(1, 1)` | Accepted, `0x04` | Accepted, `0x04` | Accepted, `0x01` |
+| Coordinate, left edge | Accepted, Y = 0 | Accepted, Y = `2^-46` | Accepted, Y = `2^-46` |
+| Tightened upper bound | Accepted, mask `0x04` | Null, mask zero | Null, mask zero |
+
+The maintained C matched the original return class, scratch bits and mask for all nine rows. The harness also checked input buffers and canaries. These are isolated x87 execution results. The 53-bit setting still uses x87's exponent range, and gameplay, replay and ARM64 behavior remain outside the test.
