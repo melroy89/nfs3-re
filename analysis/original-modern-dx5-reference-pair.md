@@ -257,3 +257,34 @@ This includes 1.0.0's root `d3da.dll`, 1.1.0's root `dx5.dll`,
 out-of-range fallback survives throughout these releases. The
 enumerated device count and the outcome of opening the selected
 adapter depend on code outside the compared body.
+
+### DirectDraw enumeration supplies the device count
+
+The enumeration helper at `600015e8` clears the count at
+`60010ef0` and the pointer at `60010eec`, then passes callback
+`60001734` and a pointer to a zero-initialized stack DWORD to
+`DirectDrawEnumerateA`. The call at `60001607` goes through
+`6000e640` to the `DDRAW.dll` import at IAT slot `6000f278`.
+The helper returns the callback-populated count in EAX.
+
+The callback uses the current count as the slot index. It stores a
+null adapter pointer or copies the supplied 16-byte GUID into
+`60012680 + index * 16` and stores its address in the pointer table
+at `60012860`. It passes the description and a limit of 32 to
+the copy helper for the selector's name table at `60012720`.
+After the copy, it increments the count at `60001792` and
+returns 1 to continue enumeration.
+
+The original reference and all 12 Modern members listed above have
+the same image base, named import slot, and bytes in these ranges.
+Read each range from the PE by RVA and compare its SHA-256.
+
+| Range (PE RVA, end exclusive) | SHA-256 |
+|---|---|
+| `15e8..1617` | `9e3904d648fe4fb0e1d486bd91d29f1e518d39b2f061e577bed160b1ba336f82` |
+| `1734..17bb` | `44d9024570b8123c38950733c99e1070c273fe24688946160b58db1a136f20a6` |
+| `e640..e646` | `44e4efef8bf834c1190f354aaba8acd6eb2c7d13aee42503d1602dc81dd1c604` |
+
+This establishes the retained count producer. The adapters reported
+by a particular DirectDraw implementation and the eventual device
+activation remain runtime questions.
