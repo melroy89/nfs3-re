@@ -30,6 +30,15 @@ This proves removal from this routine, not removal of every cursor or input-stat
 
 ## Three complete sizing helpers are unchanged
 
+The hosted original and all 12 retained Modern EXEs match over the
+complete bodies at `004cdb10..004cdbcd`, `004cdbd0..004cdc14` and
+`004cdc20..004cdc4c` (301 bytes in total, exclusive ends). Extract
+each root EXE and compare those file-backed spans. This covers the
+release boundary where the [mode-application caller changed its
+centring policy](original-modern-nglide-window-history.md#exe-mode-publication-changes-to-selected-dimension-centring).
+The helper formulas were retained. Which helper runs and the inputs
+it receives can differ across releases.
+
 The manifest asserts exact equality for:
 
 | Entry/range, inclusive | Bytes | Retained behavior |
