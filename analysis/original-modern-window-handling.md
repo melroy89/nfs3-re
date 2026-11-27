@@ -162,3 +162,7 @@ callback bodies, register forwarding and the61 changed-byte tail. Full
 capture/focus interaction, Wine/VM behaviour and actual user input remain
 unverified. This is evidence against interpreting the NOP tail as removed
 mouse support, not proof of identical end-to-end mouse behaviour.
+
+### The 1.2.0 KeyboardHook setting gates the original-style installer
+
+Retained 1.2.0 startup calls `004b562c` at `004b616f`. The helper passes section `NFS3`, key `KeyboardHook` and fallback zero to the integer reader `004fb6f0`. A zero result skips installation. A nonzero result calls `004cdc90` with EAX=1 and EDX=0 at `004b564a`, the same installer arguments observed on the original startup route. The literal key is absent from retained 1.1.0. This verifies the 1.2.0 setting's startup gate. Actual key suppression and hook acceptance remain untested.

@@ -778,7 +778,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **37 Claimed, 60 Static, 193 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **36 Claimed, 61 Static, 193 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -1026,7 +1026,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-008 | Resolutions count limit was extended up to 100. | Partial |
 | MP120-009 | Fixed a bug of the first release of this patch: returning to the main setup menu instead of a menu of a current game mode. | Claimed |
 | MP120-010 | Added an ini setting DirectDrawLagFix which fixes performance problems of DirectX 5/6/7 in Windows 8+ via enabling “DXPrimaryEmulation -DisableMaxWindowedMode” compatibility mode (enabled by default). | Claimed |
-| MP120-011 | Added an ini setting KeyboardHook which allows to disable keyboard hook that has been used by the game for blocking Win key and keystrokes like Ctrl+Esc, but this code doesn't work in Windows 7+ so it is better to disable it (disabled by default). | Claimed |
+| MP120-011 | Added an ini setting KeyboardHook which allows to disable keyboard hook that has been used by the game for blocking Win key and keystrokes like Ctrl+Esc, but this code doesn't work in Windows 7+ so it is better to disable it (disabled by default). | Static |
 | MP120-012 | Slightly better multilanguage support. When language directory is absent in the ./GameData/Audio/Speech/ directory the game doesn't crash and uses sound files from the English subdirectory. Also Swedish language can use own speech sounds (original game uses English sounds for it) now. The name of the language directory have to be Swedish, and the one-letter code in file names is W. | Partial |
 | MP120-013 | config.dat was moved to its original destination (./FeData/Config/) for preserving settings of original NFS3 when updating. However, graphics settings are reset to their defaults in this case (because format is changed a little). | Static |
 | MP120-014 | Based on the 3dsetup/d3da.dll from the NFS4, supports fog effect in the NFS3. | Claimed |
