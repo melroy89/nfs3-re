@@ -381,3 +381,21 @@ and applying the stated integer rounding rules. This example
 shows why the change cannot be evaluated from the FISTP opcode
 alone. The assumed quantizer result and control word are inputs
 to the derivation. Neither was observed in a game session.
+
+### Display and device writeback use different conversions
+
+The two-axis caption renderer retains its explicit truncation
+call in 1.5.3. The separate dead-zone writeback routine
+`00442dd0` bypasses two truncation calls at `00442e03` and
+`00442e0d` in that release, making the two conversions that
+feed the device cache depend on ambient rounding. The
+[writeback analysis](original-modern-deadzone-sliders.md#applying-slider-values-removes-explicit-truncation)
+traces both integer stores and distinguishes their changed-value
+callbacks. A caption result alone therefore cannot verify the
+integer sent to the device setup path.
+
+The [application x87 trace](og-modern-x87-precision.md) establishes
+round-to-nearest at the final dispatcher reset (`004a3ea0`).
+This supplies a concrete upstream source for the nearest-rounding
+example. The trace does not establish that the mode survives every
+call between dispatch and rendering or writeback.
