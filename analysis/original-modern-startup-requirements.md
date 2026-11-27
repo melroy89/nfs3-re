@@ -462,3 +462,23 @@ only on a null result. The export resolver then uses the same
 GetProcAddress import at `00534558`. The matching code and
 import names establish continuity for the local lookup sequence.
 The returned handles and affinity call result depend on runtime.
+
+### Error-policy setup retains its downstream code in 1.5.3
+
+After command-line admission, the application retains the same
+ordered calls to `004a2f90`, `004a393c` and `004b5734`.
+Their sites move ten bytes later, from `004a3a87`,
+`004a3a8c` and `004a3a95` in 1.5.2. The lookup of
+`[NFS3] NoErrorReporting` also moves ten bytes, from
+`004a3aac` to `004a3ab6`. Both versions use the same file-backed
+section and key strings and branch to `004a3ad9` on a nonzero
+result. The zero branch still rejoins at `004a3b3d`.
+
+The downstream range `004a3ad9..004a3e48` matches byte for
+byte in both files (SHA-256
+`235260008f034d398f518231875f84d1bc7a4079dc6846b1377b3ea30329a477`).
+The two import operands in the error-policy block also keep
+their bindings to SetErrorMode and UnhandledExceptionFilter.
+This identifies which application instructions survived the
+insertion. It leaves called routine behavior, effective INI
+values and the cause of MP153-014 open.
