@@ -264,6 +264,15 @@ The original and official Modern 1.6.1 executables in the [baseline comparison](
 | DWORD is zero | `004bc24a` tests EBX. When EBX is zero, `004bc253` calls `00431c40` with EAX=1, then `004bc25d` calls `00431c30` with EAX=2. | An unconditional jump at `004bc24a` reaches `004bc262`. The intervening 22 bytes are NOPs. |
 | DWORD is nonzero | `004bc2c5` tests EBX. When EBX is zero, `004bc2ce` calls `00431c40` with EAX=1, then `004bc2d8` calls `00431c30` with EAX=2. | An unconditional jump at `004bc2c5` reaches `004bc2dd`. The intervening 22 bytes are NOPs. |
 
-Both original callees consist of the five bytes `55 89 e5 5d c3` (save EBP, set up a frame, restore EBP, return). In both versions the join immediately replaces EAX with `007a3d14` before the next call to `004c6f00`. The original EBX tests still differed in their effects on FLAGS, and the original calls wrote temporary stack slots. Full machine-state equivalence and the release that first removed these two sequences remain unverified.
+Both original callees consist of the five bytes `55 89 e5 5d c3` (save EBP, set up a frame, restore EBP, return). In both versions the join immediately replaces EAX with `007a3d14` before the next call to `004c6f00`. The original EBX tests still differed in their effects on FLAGS, and the original calls wrote temporary stack slots. Full machine-state equivalence remains unverified.
 
 Reproduce with `objdump -d --start-address=0x4bc240 --stop-address=0x4bc2ea` on both executables and `objdump -d --start-address=0x431c30 --stop-address=0x431c45` on the original.
+
+Both complete 24-byte sites match the original in every retained release from 1.1.0 through 1.4.0. They switch together in **1.5.0**, the first retained release with `EB 16` followed by 22 NOPs at both addresses. The new spans persist through the retained 1.6.0 archive and final 1.6.1 baseline. The timing coincides with the contextual fog gate above. It does not by itself establish a shared design purpose.
+
+Extract each historical member with `7z x -so <archive> nfs3.exe`. The transition inputs have these SHA-256 values:
+
+| Release | Archive | Extracted executable |
+|---|---|---|
+| 1.4.0 | `8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9` | `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d` |
+| 1.5.0 | `de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f` | `d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae` |
