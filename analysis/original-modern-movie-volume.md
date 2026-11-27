@@ -173,3 +173,23 @@ movie's default initializer sets to 127. Thus the patched movie
 volume affects the stereo pair, while a different input determines
 whether the secondary callback is reached. The live header and
 global values remain unverified.
+
+### Mixer path comparison across the 1.5.3 change
+
+The hosted original, 1.5.2, 1.5.3 and 1.6.1 match byte for byte across
+the seven inspected EXE spans below. Read each span by PE RVA after
+subtracting the image base `00400000`. Ends are exclusive.
+
+| VA span | Role |
+|---|---|
+| `004f3c39..004f3c68` | Stream-header handoff to voice setup |
+| `005112d0..005114ac` | Voice setup through successful submission return |
+| `005014a0..00501538` | Channel level calculation |
+| `005222f0..00522316` | Stereo pan calculation |
+| `00523d94..00523f86` | Platform packet setup |
+| `005000b8..00500244` | Mixer setup entry and common tail through active flag store |
+| `00500654..005006a4` | Secondary level and callback handoff |
+
+The 1.5.3 wrapper changes the input to this retained path. The compared
+spans do not cover all callees, alternate mixer setup blocks, callback
+targets or runtime audio.
