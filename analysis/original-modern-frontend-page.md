@@ -141,7 +141,7 @@ The same string pointer is then published into record+`0x40` at **`00427164`** a
 
 Across all twelve retained Modern EXEs, the call at `00427142` targets the one-key predicate at `00439ce0` through 1.5.3. In 1.6.0 and 1.6.1 it targets `00439d00`, where the wrapper checks `0x25` followed by `0x26`. To repeat the release check, extract `nfs3.exe` from each archive, resolve the relative call at `00427142`, and disassemble the destination. The 1.6.0 boundary applies to the background resource choice. Both Credits navigation callbacks had already dropped their lookup in 1.0.0.
 
-For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Actual resource availability and visual differences remain untested.
+For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Both named files exist in the inspected installation and decode to distinct assets, as detailed below. Actual loading and rendering remain untested.
 
 ### Model keys in the installed car archives
 
@@ -152,7 +152,18 @@ The [hashed car inventory](evidence/inventories/installed-car-selector-categorie
 | `0x25` | `FFAL/CAR.VIV` | Ford Falcon GT at `+0xde` |
 | `0x26` | `HGTS/CAR.VIV` | HSV VT GTS at `+0xda` |
 
-This identifies the exact keys in the inspected installation. Registry admission, alternate car packs and the artwork in `opp3.qfs` and `opp4.qfs` are separate questions.
+This identifies the exact keys in the inspected installation. Registry admission and alternate car packs remain outside this check.
+
+### Installed opponent-selection backgrounds
+
+Both files exist under active `FEDATA/ART`. Each matches its corresponding file under the local `fedata_org/art` backup byte for byte. The existing [RefPack decoder](scripts/decode_logo_refpack.py) expands each file to a 684,544-byte `SHPI` container.
+
+| File | Compressed bytes | Decoded SHA-256 |
+|---|---:|---|
+| `OPP3.QFS` | 172,527 | `9bb9ce8553228ccdcc84aa66121edb6d694326166fa22a0a1fc8824cb8f11b68` |
+| `OPP4.QFS` | 182,276 | `adbfa56a6c9dab32fb1dfe3cfc3df81e9fdb98a6692a225b07bf1bff6a2372d5` |
+
+Both directories name `crbg` at offset `0x20` (503×480) and `cmsk` at `0x75e70` (210×480). The 16-byte shape headers agree, but 207,257 bytes differ in the first entry's range and 8,810 in the second (through container end). These are byte counts for entry ranges. The executable's filename choice can select different decoded data even with the same installed asset set. Which pixels are ultimately displayed remains untested.
 
 ## Additional Modern consumer: logo-table model filtering
 
