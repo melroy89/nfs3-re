@@ -534,3 +534,9 @@ The complete dispatcher `004182b0..004184f0` also matches across the hosted orig
 The branch at `0041334a` jumps directly to the epilogue at `004136cb` when `006fbb54` is nonzero. This skips the write to `0055284c` and the conditional calls to the Pathfinder controller setter (`0041352a`), event interrupt (`0041356e`) and pending-event setter (`0041358e` and `004136c6`). The zero route still has independent sound and race-state conditions. See the [Pathfinder helper analysis](detailed-analysis-notes.md) for the three callee contracts at `004e705c`, `004e7208` and `004e70fc`.
 
 Compare PE RVA `0x13336` for `0x395` bytes. The hosted original and all twelve retained Modern releases have SHA-256 `782b537c9f7ffb83e70a42fcb2a421230be89777bab81ada0a51b3b98656f644` over that span. This is a retained branch whose normal configuration input changed in 1.4.0. The selected events and audible results remain untested.
+
+### Music stream storage creation depends on the flag
+
+The default creator at `00410330` and sized creator at `00410370` both return immediately when `006fbb54` is nonzero. They leave the stream pointer at `00552598` untouched. When the flag is zero and the separate audio gate `00552910` is nonzero, both call `004e4790` with EDX `0x4000` and EBX zero, then store its return value. The default request passes `0x4b000` (300 KiB) in EAX. The sized request shifts incoming EAX left by 10, retaining the low 32 bits. These are requested sizes. See the [allocator contract](detailed-analysis-notes.md) for the separate initialization and failure paths.
+
+The combined PE VA span `00410330..0041039f` matches in the hosted original, Modern 1.0.0 and official 1.6.1 (SHA-256 `dfeb82c3809f3b1d8881928d91d9dbd47c93eb4347c9439cdec78e67c68a4c54`). The [configuration change](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140) therefore removed the normal user-controlled input to these branches while retaining both creators.
