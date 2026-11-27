@@ -273,3 +273,7 @@ The earliest retained Modern executable, 1.1.0, already replaces the original st
 ### The mutex slot becomes the process-heap slot in 1.4.0
 
 In retained 1.3.1 the startup call at `004b6058` still reaches the mutex helper, with its handle store at `004f91fd`. In the retained 1.4.0 archive member, the instruction at `004a3a33` calls through `0053448c`. The PE import thunk at that slot points to the hint/name entry for GetProcessHeap. The next instruction at `004a3a39` stores EAX to the same `009f3d40` slot. The old direct call is absent, as documented in the [foreground-call comparison](original-modern-window-handling.md#direct-foreground-requests-across-builds). The store remains at `004a3a39` in the checked 1.5.0–1.6.0 executables and appears at `004a3df8` in 1.6.1. This dates the change in the startup producer to 1.3.1 → 1.4.0. The presence of a GetProcessHeap import in 1.3.1 alone does not establish what populates this slot.
+
+### The DirectX 5 startup gate disappears in 1.5.0
+
+In the retained 1.4.0 archive member, startup still calls the capability probe at `004b57df`, compares EAX against 5 using a signed comparison, and sends lower results to the shared fatal helper at `004b57ee`. The 1.5.0 executable fills the entire 540-byte probe span `004b6590..004b67ab` with NOPs. A decoded direct-call sweep finds the 1.4.0 caller and no direct call to that address in 1.5.0. This establishes the removal of the legacy startup gate at 1.4.0 → 1.5.0. Renderer-specific DirectDraw dependencies can still exist.
