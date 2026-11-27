@@ -85,3 +85,15 @@ follow the relative call at `004ccbe7`, hash 32 bytes at its
 target, and resolve the import slot. This confirms continuity of
 the executable's modifier check and API binding. Actual key state
 still depends on what Windows or Wine returns.
+
+The adjacent modifier gate already appears in retained 1.4.0 at
+`004cccb9`, before the keypad translator rewrite. Its 53-byte
+block matches the 1.5.0 block at `004ccbcd` after masking the
+two CALL displacements. The 1.4.0 Alt and Control calls target
+`004f1f80` and `004f1f7c`, respectively. Both blocks test
+`00561284` and use the same comparisons for Alt with Tab or
+Escape, Control with Escape, and key values `0x5b..0x5d`.
+A scan of `004ccb00..004ccf00` finds no instance of that
+exact seven-byte flag test in the hosted original or retained
+1.0.0–1.3.1. This dates the observed gate in this window and
+leaves other input paths and OS shortcut behavior unverified.
