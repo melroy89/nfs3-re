@@ -396,3 +396,22 @@ values are:
 
 This establishes the packaged menu placement. How the menus render
 and how the setting affects projection are separate questions.
+
+The two controls kept their executable setting bindings across this
+move. In 1.2.0, 1.3.0 and 1.3.1, both 20-byte descriptors below
+match byte for byte. Their name strings and zero-terminated choice
+lists also match.
+
+| Menu key | Descriptor VA | Name VA | Choice list VA and WORDs | Setting destination |
+|---|---|---|---|---|
+| `viewlevel` | `00556730` | `00537fc8` | `00556252`: 184, 183, 182, 181, 0 | `006fbc28` |
+| `widescreen` | `005567a8` | `00538008` | `005561be`: 229, 228, 0 | `006fbc4c` |
+
+To reproduce, read each descriptor as five little-endian DWORDs
+from the executable's PE RVA, resolve its first two pointers, and
+read the WORDs through the first zero. The fourth and third DWORDs
+are zero in both records. The [View Distance analysis](original-modern-parameter-preset.md#user-facing-binding-view-distance-and-the-full-preset)
+and [Frame Size analysis](original-modern-frame-setting.md) trace
+the corresponding settings into their consumers. Descriptor equality
+establishes continuity of setting storage and choice IDs across the
+move. It leaves layout, localization and projection effects open.
