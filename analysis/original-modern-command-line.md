@@ -60,6 +60,20 @@ the last call and jump occupy `004a51ae..004a51b5`; the remaining
 67 bytes are NOPs. The entire range only becomes NOPs in 1.6.1.
 The exact 1.0.0 transition remains unverified.
 
+The 1.6.0 parser first copies the argument into scratch, then
+uses in-place case conversion. Its tail call at `004a51ae`
+passes scratch in EDI to `004f93e0`, which sets ESI to the same
+address and calls the uppercase mapper `004eede0` for each
+byte. In 1.6.1 the corresponding call moves to `004a51a7`
+and invokes the bounded copy at `004f943c`, with the original
+argument as the source and scratch as the destination. The
+`-driver=` setter likewise changes its input from the lowercased
+scratch suffix in 1.6.0 to the original argument suffix in
+1.6.1. This establishes what bytes are supplied to the setter.
+Filename interpretation and actual driver loads depend on the
+setter and filesystem.
+
+
 
 
 ## Help presentation and precedence limits
