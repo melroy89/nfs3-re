@@ -313,6 +313,18 @@ conditional path derived from the executable. Whether an actual
 driver supplies this state and how later rendering responds
 remain untested.
 
+The same conditional zero-row publication is present from retained
+1.5.0 onward. In all six EXEs, the initializer reached by the wrapper's
+first call is 37 bytes and differs only in the displacement of its call
+to `004bed90`. The count gate and label-only clear match, as does the
+zero-fill extent containing the count and row zero. The 60-byte window
+`004bed90..004bedcc` is identical in 1.5.0–1.6.0 (SHA-256
+`3e81e19d2f5040c7d1ae63fc1e1a8378b244ac913dda15aa97cf95ad5c02d8fe`).
+Those versions get the descriptor through the indirect call via
+`009ef980`; 1.6.1 loads `007a3a5c` directly. Given a valid descriptor
+with count zero, both forms skip the collector, so the empty-list
+outcome above does not depend on matching descriptor acquisition.
+
 The graphics-menu commit path sets bit 0 at `00448500` before
 examining the selected and final rows. If those pointers match,
 it saves the packed sentinel and leaves the bit set. Otherwise it
