@@ -284,3 +284,23 @@ The eight bytes of the scale at `00536ce4` also match in every
 build. This verifies the five conversion operations independently
 of the changing table addresses and second-record source policy.
 Different inputs or live x87 control words can still affect results.
+
+### Register saves and the zero-count branch
+
+The retained Modern builds all skip conversion only when the
+loaded record count is zero. The original uses a signed count
+comparison. The Modern register and branch encodings change as
+follows:
+
+| Retained releases | General registers saved | Zero-count check |
+|---|---|---|
+| 1.0.0–1.3.1 | Explicit pushes and pops of EBX, ECX, EDX, ESI and EDI | `CMP ECX,0; JE` at `0041d686` |
+| 1.4.0 | `PUSHAD/POPAD` | `CMP ECX,0; JE` at `0041d682` |
+| 1.5.0–1.5.1 | `PUSHAD/POPAD` | `CMP ECX,0; JE` at `0041d69c` |
+| 1.5.2–1.6.1 | `PUSHAD/POPAD` | `JECXZ` at `0041d6a6` |
+
+The 1.4.0 save change preserves incoming EAX on ordinary return.
+The 1.5.2 branch keeps the same zero-count decision but does not
+set arithmetic flags at that check. Neither observation proves
+a caller uses the affected EAX or flags. The two fixed-point
+preset writes still precede the conversion gate in each version.
