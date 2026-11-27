@@ -756,3 +756,20 @@ raw size, then enumerate each relocation block. Sum block sizes
 and compare the type-3 target RVAs. The counts describe the
 rebasing records, with their behavioral causes classified
 separately where the referenced instructions have been traced.
+
+All 4,617 `.data` relocation sites also retain the same RVAs.
+Three of the stored pointer values change. They are choice-list
+pointers in the frontend menu descriptors:
+
+| Descriptor key | Pointer site | 1.5.2 target | 1.5.3 target |
+|---|---|---|---|
+| `enginesound` | `00556bd0` | `0055631a` | `0055630e` |
+| `tunenames` | `00556be4` | `00556320` | `00556314` |
+| `menutunes` | `00556bf8` | `0055633e` | `00556336` |
+
+Compare both sets of `.data` HIGHLOW target RVAs and the
+file-backed DWORDs at those sites. For the three changed
+values, the preceding DWORD resolves to the descriptor key.
+This distinguishes unchanged relocation coverage from changed
+menu data. The [music selection comparison](original-modern-music-selection.md)
+covers the playlist changes separately.
