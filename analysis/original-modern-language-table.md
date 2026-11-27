@@ -226,6 +226,10 @@ A linear `objdump -d -Mintel` scan of the supplied original and all eleven retai
 
 The 1.4.0 change therefore removes the documented INI source while leaving many consumers in the executable. Counts describe decoded direct operands. They do not establish reachability or account for computed addresses, aliased or bulk writes, or instructions missed by linear disassembly.
 
+Comparing the addresses between consecutive releases isolates the changes. In 1.4.0, direct references at `0043fe57` and `00473013` disappear. The frontend movie gate moves from `0047312b` to `0047312f` and still branches to `00473169` on a nonzero value. The idle-movie gate moves from `00496217` to `00496213` and still rejects a nonzero value, now via a branch to `004962bb`. The new locations therefore account for two address changes without reducing the count of consumers.
+
+In 1.5.0, the remaining frontend movie reference at `0047312f` and the title-draw reference at `00472fc4` disappear. In 1.5.3, the original music loader's reference at `0041004d` and its race-loading wrapper's reference at `00477fd3` disappear. The final 18 read addresses are already present at the same addresses in 1.5.3.
+
 ## Six language tables enter the140 package
 
 **Bounded static support for MP140-070.** The [package audit](evidence/audits/language-asset-introduction.json), reproduced with `python3 analysis/scripts/audit_language_asset_introduction.py`, verifies the exact author-hosted131/140 archive hashes and inventories every path under `fedata/text/`.131 has none;140 has exactly the six files below. This is a package-content change, separate from the EXE language-selection mechanisms above.
