@@ -506,3 +506,14 @@ The comparison and fallback bytes are unchanged, including the
 acceptance of equality in this local check. This is a
 static comparison of direct references and does not establish
 descriptor validity at runtime.
+
+The full 97-byte mode-dimension helper matches the supplied original
+in every retained Modern release from 1.0.0 through 1.6.0. Its SHA-256
+is `bc69b769d28aa42f63bf08443a979053e8ce53ee43f564a81d45c9e152a3e129`.
+Official 1.6.1 has span SHA-256
+`6984e838709db38ff94856c46ada2bdb869b1e8ce7020c24bbfe7a08d5cce02b`.
+Extract each archive's root EXE and hash 97 file-backed bytes at
+PE RVA `be570h`. This dates the cached descriptor read to 1.6.1
+for a helper shared by the old and new viewport initializers.
+The matching earlier code does not establish identical descriptors
+from different renderer DLLs.
