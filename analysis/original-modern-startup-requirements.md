@@ -565,3 +565,10 @@ ends four bytes beyond that computed endpoint. Reproduce using
 PE directory entries 1 and 12 and each descriptor's FirstThunk
 plus four bytes per import and terminator. These details establish
 a common packaging change. Startup causality remains unverified.
+
+Exact extraction confirms that the other five bundled DLLs match
+byte for byte: the dgVoodoo and nGlide `glide3x.dll` wrappers,
+`dx6a.dll`, `dx7a.dll` and `dx8a.dll`. This bounds the shared
+header edit to the six changed DLLs and the executable within
+this archive pair. It also leaves the source of the reported
+startup fix unresolved.
