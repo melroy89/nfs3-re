@@ -164,7 +164,7 @@ Consequently, with stable saved storage and clear DF, let **S** be the configure
 
 Final also restores its added menu-sound setting`006fd1d0` from`00664680` only when`00559234==0`. This is separate from the two configured volume fields and does not reintroduce their cache overwrite. The subsequent music-preview stop/restart paths can have further effects; this finding does not assert unchanged backend calls or immediate audible state.
 
-**MP100-027 conclusion:** removal of the conditional cache-to-configured-volume overwrite gives concrete partial support for the advertised Cancel fix affecting Engine Volume and Sound Effects. The shared snapshot was not removed, and Modern does not simply stop restoring audio state. Still unverified: the flag/cache lifecycle for an actual affected session, all UI transition admission, later audio application, audible maximum-volume behavior and precise1.0.0 introduction. A faithful reconstruction must preserve the chosen version’s two saved-value sources and post-copy order rather than merging their globals or silently fixing the original path.
+**MP100-027 conclusion:** removal of the conditional cache-to-configured-volume overwrite gives concrete partial support for the advertised Cancel fix affecting Engine Volume and Sound Effects. The shared snapshot was not removed, and Modern does not simply stop restoring audio state. Still unverified: the flag/cache lifecycle for an actual affected session, all UI transition admission, later audio application and audible maximum-volume behavior. The release comparison below dates removal of the local overwrite to 1.0.0. A faithful reconstruction must preserve the chosen version’s two saved-value sources and post-copy order rather than merging their globals or silently fixing the original path.
 
 ### Modern 1.0.0 already removes the Cancel overwrite
 
@@ -178,6 +178,13 @@ Modern EXEs. Later Modern builds reuse the removed-store
 window for other restore instructions. Its NOP count is
 therefore evidence for the early implementation only.
 
+Across 1.0.0–1.4.0, the 24 bytes starting at `004381a3` are
+`eb 16` followed by 22 NOPs. The hosted original instead starts
+with `84 db 74 14` (test BL and skip the two stores when zero).
+Reproduce by extracting `nfs3.exe` from the retained release
+archives and disassembling at `004381a3`. The checked 1.0.0
+member has SHA-256
+`988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`.
 This dates the local removal behind MP100-027 to 1.0.0.
 The saved cache values, active mixer behavior and audible
 result remain unverified.
