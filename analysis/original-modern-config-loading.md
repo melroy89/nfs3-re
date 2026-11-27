@@ -690,3 +690,12 @@ API failures and subsequent audio initialization were not observed.
 Reproduce by resolving `_iSNDdirectcaps@4` in the paired sound
 DLLs and disassembling the result paths, then following
 `004e220a..004e2221` and `0040faf0..0040fb0f` in the game EXE.
+
+The 24-byte normalizer at `00472230`, the 31-byte predicate
+at `0040faf0` and the seven-byte accepted-header call and
+jump at `00472ac6` match across 1.5.3, 1.6.0 and 1.6.1.
+Compare those PE ranges in the three archived executables to
+reproduce. The local bit test therefore retains the same handling
+of negative values through final. The receiving header minimum
+rises from 5 to 6 in 1.6.0, so an otherwise valid version-5 file
+takes the reset route there instead of reaching this branch.
