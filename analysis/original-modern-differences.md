@@ -119,7 +119,7 @@ The [eleven-audit checkpoint](evidence/validation/later-static-mechanisms-checkp
 |[Loading artwork](original-modern-loading-artwork.md#early-modern-already-has-the-six-tile-loading-artwork-path) |Early1.1.0 already has the six-tile path retained in final |Better visual quality and separate sprite-edge fix remain unverified |
 |[Race-dialog preselection](original-modern-race-dialog.md) |1.1.0→1.2.0 introduces1↔3 remap; checked direct callers establish ordinary order and helper stores/clamps row index |Indirect/restricted admission and live menu interaction remain separate |
 |[Border history](original-modern-border-geometry.md#historical-coefficient-halving-precedes-the-fitted-width-cache-rewrite) |Early coefficient4→2;1.5.3→1.6.0 adds fitted-width/cached thickness |Integer/visible ratio and refresh lifetime untested |
-|[Installer settings](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) |Original install records→early INI Language/RemoteOnly; final remote gate writes0 |Startup without file, complete access coverage and exact RemoteOnly removal date unknown |
+|[Installer settings](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) |Original install records → early INI Language/RemoteOnly. Version 1.4.0 removes RemoteOnly and writes zero to the gate | Startup without the file and complete access coverage remain unverified |
 |[Installation directories](original-modern-startup-paths.md#early-four-directory-installation-check-versus-final-preparation-tables) |Early checks four directories; final requires thirteen plus four preparations |Directory attributes do not validate assets, permissions or startup success |
 |[Early mode restrictions](original-modern-display-modes.md#early-modern-already-bypasses-the-budget-gate-and-has-a-broader-depth-test) |Early bypasses budget gate and admits signed depth>=16 |Provider support, actual menu/display operation and1.0.0 introduction untested |
 |[Mode refactor dates](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases) |Depth16/32 helper introduced140→150; descriptor cache use160→161 |Cache/provider side effects and machine-state equivalence remain separate |
@@ -796,7 +796,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **35 Claimed, 61 Static, 194 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **35 Claimed, 60 Static, 195 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -973,7 +973,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-039 | DX5 thrash driver outputs 16bpp resolutions, limit of resolutions count is expanded from 30 to 100. | Partial |
 | MP140-040 | Refactoring of the thrash driver initialization code. | Partial |
 | MP140-041 | No more hardcoded environment variables for the 3dfx Voodoo. | Partial |
-| MP140-042 | Instead of this the game sets environment variables from the [ENV] section of the current thrash.ini file. | Static |
+| MP140-042 | Instead of this the game sets environment variables from the [ENV] section of the current thrash.ini file. | Partial |
 | MP140-043 | The nGlide uses general voodoo2a.dll now, its settings can be changed using the [ENV] section of the thrash.ini. | Partial |
 | MP140-044 | Added separate Glide3x thrash driver for using on the real 3dfx Voodoo hardware. | Partial |
 | MP140-045 | VideoDriver ini setting was renamed to ThrashDriver (original name). Filenames of all thrash drivers also were renamed using original format. | Static |
