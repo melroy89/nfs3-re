@@ -589,3 +589,13 @@ requests 0. The same initializer calls the config loader at
 INI result before the config load can write the shared cell.
 Other later reads or writers and actual window creation remain
 outside this ordering check.
+
+The 1.5.2 raster setup consumes bit 0 of that display flag at
+`0050818a`. A clear bit branches to `00508265` to zero AL.
+A set bit loads AL=1. Both routes store it at `009f3d2d`
+through `0050819f`. The [window setup trace](original-modern-window-handling.md)
+identifies the downstream use of this state byte as the BL input to
+the window initializer at `0050844e`. The INI option therefore
+feeds an existing window setup input through two Boolean conversions.
+Values read on other initializer paths and live window presentation
+remain separate.
