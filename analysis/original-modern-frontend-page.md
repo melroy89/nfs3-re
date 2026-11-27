@@ -499,11 +499,16 @@ To reproduce, extract each archive executable and pass the language-zero type-10
 The last three release transitions change between 18,803 and
 20,521 of the 172,864 four-byte image records:
 
-| Transition | Compressed bytes in later build | Changed image records |
-|---|---:|---:|
-| 1.5.2 → 1.5.3 | 45,945 | 20,070 |
-| 1.5.3 → 1.6.0 | 47,038 | 20,521 |
-| 1.6.0 → 1.6.1 | 47,372 | 18,803 |
+| Transition | Compressed bytes in later build | Changed image records | Changes per byte position (0–3) |
+|---|---:|---:|---|
+| 1.5.2 → 1.5.3 | 45,945 | 20,070 | 16,616 / 14,862 / 13,994 / 539 |
+| 1.5.3 → 1.6.0 | 47,038 | 20,521 | 17,328 / 14,233 / 13,894 / 1,476 |
+| 1.6.0 → 1.6.1 | 47,372 | 18,803 | 16,067 / 13,431 / 14,023 / 1,316 |
+
+All four stored byte positions change in each transition. The fourth
+changes far less often than the first three. The counts refer to
+stored byte positions, with channel order and renderer interpretation
+outside this comparison.
 
 All three changed-record sets span columns 28–543 and stored rows
 62–233, zero-based, assuming the 584-wide sequential layout.
