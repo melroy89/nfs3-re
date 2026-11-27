@@ -259,3 +259,9 @@ These writers establish that the snapshot and restore tests
 read shared menu context state. Whether a writer can intervene
 between the two callbacks for a single Audio Cancel interaction
 remains unverified.
+
+### Bank slot zero can be repopulated during gameplay
+
+The hosted original and final 1.6.1 match over the loader `00410b50..00410c2b` and the caller branch `00413c32..00413cd9`. On that branch, the caller selects one of the stems `strex`, `scrate`, `struck` or `slimo`, combines it with path slot `007a2ab4`, and passes EDX zero at `00413cd4`. The loader appends the retained `.bnk` suffix and stores its bank-load result into record zero at `00571124` when it reaches the publication path. The frontend request's read of that slot therefore does not by itself identify a fixed bank filename across game states.
+
+The official final patch archive lists no loose `.bnk` members. This leaves the installed assets, any banks inside other containers, and the frontend-specific initialization sequence to be checked before assigning a sample name to a frontend sound ID.
