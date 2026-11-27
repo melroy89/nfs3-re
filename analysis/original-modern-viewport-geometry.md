@@ -361,3 +361,25 @@ through `004be570`. This establishes that startup retains
 the viewport call after removing the second direct mode-index
 write. Indirect calls and actual display results are outside
 the scan.
+
+The removed lookup had a version-specific input. The hosted
+original and 1.0.0–1.4.0 share the 15-byte sequence at
+`004b6102`: load the DWORD at `0055fecc` into EAX, load 90
+into EDX, and call `004bee80`. The file-backed DWORD is
+`00000280h` (640) in the hosted original and `0004b010h`
+(640 × 480 + 16) in all six Modern builds with that sequence.
+The 1.4.0 selector scores eligible rows by the distance from
+width × height + depth to the EAX input and returns 1 when
+no row qualifies. Thus the historical caller can provide a
+driver-dependent index even with a fixed file-backed input.
+
+All retained 1.5.0–1.6.1 EXEs have 15 NOP bytes in that
+former call window. The file-backed cell is zero in
+1.5.0–1.5.3 and contains `42b40000h` (float 90) in 1.6.0
+and 1.6.1. The final EXE accesses it through an x87 store
+at `004dbc8a` and a DWORD load at `004dbca6`. For
+reproduction, read PE RVAs `b6102h` (15 bytes) and
+`15fecch` (four bytes). The original scalar input, early
+Modern score and final float storage have separate contracts.
+The driver table supplied at runtime determines the actual
+dimensions.
